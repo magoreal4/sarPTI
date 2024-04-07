@@ -16,7 +16,7 @@ LLEGADA_CHOICES = (
     ('no', 'No Llegada'),
 )
 
-class Registro(models.Model):
+class RegistroCampo(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="sitios")
     fecha = models.DateTimeField()
