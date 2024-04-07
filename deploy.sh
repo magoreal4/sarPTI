@@ -67,11 +67,14 @@ services:
 EOF
 
 sudo mv .env.sample .env
+
+sudo docker-compose up -d --build
+
 sudo cp $app /etc/nginx/sites-available/$app
 sudo ln -s /etc/nginx/sites-available/$app /etc/nginx/sites-enabled/$app
 nginx -t
 
 
-# sudo docker-compose up -d --build
+
 
 exit
