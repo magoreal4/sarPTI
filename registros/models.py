@@ -5,8 +5,8 @@ class Sitio(models.Model):
     pais = models.CharField(max_length=25)
     PTICellID = models.CharField(max_length=15)
     nombre = models.CharField(max_length=100, blank=True)
-    lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Mandato')
-    lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Mandato')
+    lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
+    lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Nominal')
     altura = models.CharField(max_length=10, blank=True, null=True)
     empresa = models.CharField(max_length=25, blank=True, null=True)
 
