@@ -41,6 +41,7 @@ LLEGADA_CHOICES = (
 class RegistroLlegada(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='llegada_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="llegada_sitio")
+    candidato = models.IntegerField(validators=[MaxValueValidator(9)], default=1)
     
     fecha_llegada = models.DateTimeField()
     lat_llegada = models.FloatField(blank=True, null=True)
@@ -52,6 +53,7 @@ class RegistroLlegada(models.Model):
 class RegistroLocalidad(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='localidad_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="localidad_sitio")
+    candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="localidad_candidato")
     
     provincia = models.CharField(max_length=25, blank=True, null=True)
     municipio = models.CharField(max_length=25, blank=True, null=True)
@@ -62,7 +64,7 @@ class RegistroLocalidad(models.Model):
 class RegistroPropietario(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='propietario_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="propietario_sitio")
-    candidato = models.IntegerField(validators=[MaxValueValidator(9)], default=1)
+    candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="propietario_candidato")
     
     propietario_nombre_apellido = models.CharField(max_length=100)
     propietario_born = models.DateTimeField()
@@ -74,7 +76,7 @@ class RegistroPropietario(models.Model):
 class RegistroPropiedad(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='propiedad_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="propiedad_sitio")
-    candidato = models.ForeignKey(RegistroPropietario, on_delete=models.CASCADE, related_name="propiedad_candidato")
+    candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="propiedad_candidato")
     
     propiedad_rol = models.CharField(max_length=100)
     propiedad_escritura = models.CharField(max_length=15)
@@ -85,7 +87,7 @@ class RegistroPropiedad(models.Model):
 class RegistroSitio(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sitio_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="sitio_sitio")
-    candidato = models.ForeignKey(RegistroPropietario, on_delete=models.CASCADE, related_name="sitio_candidato")
+    candidado = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="sitio_candidato")
     
     sitio_lat = models.FloatField(blank=True, null=True)
     sitio_lon = models.FloatField(blank=True, null=True)
@@ -99,7 +101,7 @@ class RegistroSitioImagenes(models.Model):
 class RegistioElectrico(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='electrico_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="electrico_sitio")
-    candidato = models.ForeignKey(RegistroPropietario, on_delete=models.CASCADE, related_name="candidatos")
+    candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="electrico_candidato")
     
     electrico_lat = models.FloatField(blank=True, null=True)
     electrico_lon = models.FloatField(blank=True, null=True)

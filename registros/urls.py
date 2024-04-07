@@ -20,3 +20,5 @@ urlpatterns = [
     path('api/registrositioimagen/', RegistroSitioImagenesList.as_view(), name='registrositioimagen'),
     path('api/registroelectrico/', RegistioElectricoList.as_view(), name='registroelectrico'),
 ]
+
+
