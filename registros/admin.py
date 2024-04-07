@@ -8,6 +8,7 @@ from .models import (Servicio,
                      RegistroPropietario,
                      RegistroPropiedad,
                      RegistroSitio,
+                     RegistroSitioImagenes,
                      RegistioElectrico
                      )
 
@@ -26,6 +27,8 @@ admin.site.register(RegistroPropietario)
 admin.site.register(RegistroPropiedad)
 
 admin.site.register(RegistroSitio)
+
+admin.site.register(RegistroSitioImagenes)
 
 admin.site.register(RegistioElectrico)
 

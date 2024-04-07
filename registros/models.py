@@ -79,7 +79,7 @@ class RegistroPropiedad(models.Model):
     candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="propiedad_candidato")
     
     propiedad_rol = models.CharField(max_length=100)
-    propiedad_escritura = models.CharField(max_length=15)
+    propiedad_escritura = models.CharField(max_length=100)
     propiedad_registro_civil = models.TextField(max_length=100) 
     propiedad_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
     propiedad_descripcion = models.TextField(blank=True, null=True)
@@ -91,7 +91,6 @@ class RegistroSitio(models.Model):
     
     sitio_lat = models.FloatField(blank=True, null=True)
     sitio_lon = models.FloatField(blank=True, null=True)
-    sitio_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
 
 class RegistroSitioImagenes(models.Model):
     registrositio = models.ForeignKey(RegistroSitio, on_delete=models.CASCADE, related_name="registros")
