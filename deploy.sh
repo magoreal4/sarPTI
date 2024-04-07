@@ -43,7 +43,7 @@ version: "3.9"
 services:
 
   django:
-    container_name: Django
+    container_name: Dj-$app
     build: .
     restart: always
     ports:
@@ -55,7 +55,7 @@ services:
 
   db:
     image: postgres:14.3-alpine3.16
-    container_name: postgres
+    container_name: db-$app
     ports:
       - 5431:5432
     environment:
