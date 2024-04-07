@@ -1,19 +1,52 @@
 from rest_framework import serializers
-from .models import RegistroCampo, Sitio
 from django.contrib.auth.models import User
+from .models import (
+    RegistroLlegada, 
+    RegistroLocalidad,
+    RegistroPropietario,
+    RegistroPropiedad,
+    RegistroSitio,
+    RegistioElectrico,
+    RegistroSitioImagenes,
+    )
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username']
 
-class PaisSerializer(serializers.ModelSerializer):
+class RegistroLlegadaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Sitio
-        fields = ['pais']
+        model = RegistroLlegada
+        fields = '__all__'
+
+class RegistroLocalidadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegistroLocalidad
+        fields = '__all__'
+
+class RegistroPropietarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegistroPropietario
+        fields = '__all__'
+
+class RegistroPropiedadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegistroPropiedad
+        fields = '__all__'
+        
+class RegistroSitioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegistroSitio
+        fields = '__all__'
+
+class RegistroSitioImagenesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegistroSitioImagenes
+        fields = '__all__'
 
 
-class RegistroCampoSerializer(serializers.ModelSerializer):
+class RegistioElectricoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = RegistroCampo
+        model = RegistioElectrico
         fields = '__all__'
