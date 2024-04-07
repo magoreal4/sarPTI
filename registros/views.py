@@ -6,6 +6,7 @@ from rest_framework import status
 from .models import RegistroCampo
 from .serializers import RegistroCampoSerializer
 from rest_framework.parsers import MultiPartParser, FormParser
+from .models import Sitio
 
 class LoginAPIView(APIView):
     permission_classes = [AllowAny]
@@ -23,6 +24,17 @@ class LoginAPIView(APIView):
             return Response({"success": True, "data": data, "message": "Usuario logueado correctamente."}, status=status.HTTP_200_OK)
         else:
             return Response({"success": False, "error": {"message": "Credenciales inválidas."}}, status=status.HTTP_400_BAD_REQUEST)
+
+class ListaPaises(APIView):
+    """
+    Vista para listar todos los países únicos.
+    """
+    def get(self, request, format=None):
+        # Obtener todos los países únicos
+        paises = Sitio.objects.values_list('pais', flat=True).distinct()
+        paises_lista = list(paises)
+        return Response(paises_lista)
+
 
 class RegistroCampoList(APIView):
     parser_classes = (MultiPartParser, FormParser)
