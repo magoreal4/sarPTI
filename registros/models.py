@@ -93,7 +93,10 @@ class RegistroSitio(models.Model):
     sitio_lon = models.FloatField(blank=True, null=True)
 
 class RegistroSitioImagenes(models.Model):
-    registrositio = models.ForeignKey(RegistroSitio, on_delete=models.CASCADE, related_name="registros")
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sitio_imagenes_usuario')
+    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="sitio_imagenes_sitio")
+    candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="sitio_imagenes_candidato")
+    
     pic = models.FileField(upload_to='fotografias/')
     descripcion = models.CharField(max_length=100, blank=True, null=True)
     
