@@ -57,7 +57,7 @@ services:
     image: postgres:14.3-alpine3.16
     container_name: $app-db
     ports:
-      - 5431:5432
+      - 5433:5432
     environment:
       - POSTGRES_DB=base
       - POSTGRES_USER=magoreal
