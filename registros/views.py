@@ -45,8 +45,8 @@ class LoginAPIView(APIView):
             except Usuario.DoesNotExist:
                 # Maneja el caso en que no se encuentre una instancia de Usuario
                 pais_empresa_id = "None"  # O maneja este caso como prefieras
-                mensaje = "Contactate con el administrador."
-                return Response({"success": False, "data": data, "message": mensaje}, status=status.HTTP_400_BAD_REQUEST)
+                mensaje = "Contactese con el administrador."
+                
             data = {
                 'user_id': user.id,
                 'pais_empresa_id': pais_empresa_id,  # Devuelve el ID de pais_empresa
