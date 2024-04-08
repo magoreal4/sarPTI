@@ -91,6 +91,9 @@ class RegistroSitio(models.Model):
     
     sitio_lat = models.FloatField(blank=True, null=True)
     sitio_lon = models.FloatField(blank=True, null=True)
+    sitio_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
+    sitio_descripcion = models.TextField(blank=True, null=True)
+    
 
 class RegistroSitioImagenes(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sitio_imagenes_usuario')
