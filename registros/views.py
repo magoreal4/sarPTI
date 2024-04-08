@@ -157,7 +157,8 @@ class RegistroSitioImagenesList(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 class RegistioElectricoList(APIView):
     """
     Lista todos los registros de electrico o crea un nuevo registro.
@@ -172,7 +173,7 @@ class RegistioElectricoList(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 # class ListaPaises(APIView):
 #     """
 #     Vista para listar todos los países únicos.
