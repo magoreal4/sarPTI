@@ -16,6 +16,7 @@ from .serializers import (
     )
 
 from .models import (
+    Usuario,
     RegistroLlegada, 
     RegistroLocalidad,
     RegistroPropietario,
@@ -25,6 +26,8 @@ from .models import (
     RegistioElectrico
     )
 
+
+
 class LoginAPIView(APIView):
     permission_classes = [AllowAny]
 
@@ -33,13 +36,22 @@ class LoginAPIView(APIView):
         password = request.data.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            # Aquí simplemente devolvemos una respuesta de éxito sin generar tokens
+            try:
+                # Busca la instancia de Usuario relacionada con el usuario autenticado
+                usuario = Usuario.objects.get(user=user)
+                # Ahora, accedemos al ID de pais_empresa directamente
+                pais_empresa_id = usuario.pais_empresa.id
+                mensaje = "Usuario logueado correctamente."
+            except Usuario.DoesNotExist:
+                # Maneja el caso en que no se encuentre una instancia de Usuario
+                pais_empresa_id = "None"  # O maneja este caso como prefieras
+                mensaje = "Contactate con el administrador."
+                return Response({"success": False, "data": data, "message": mensaje}, status=status.HTTP_400_BAD_REQUEST)
             data = {
                 'user_id': user.id,
-                # Aún puedes optar por devolver el ID del usuario o cualquier otra información necesaria
-                # Otros campos que consideres necesarios
+                'pais_empresa_id': pais_empresa_id,  # Devuelve el ID de pais_empresa
             }
-            return Response({"success": True, "data": data, "message": "Usuario logueado correctamente."}, status=status.HTTP_200_OK)
+            return Response({"success": True, "data": data, "message": mensaje}, status=status.HTTP_200_OK)
         else:
             return Response({"success": False, "error": {"message": "Credenciales inválidas."}}, status=status.HTTP_400_BAD_REQUEST)
 
