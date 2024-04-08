@@ -35,7 +35,8 @@ class LoginAPIView(APIView):
         if user is not None:
             # Aquí simplemente devolvemos una respuesta de éxito sin generar tokens
             data = {
-                'user_id': user.id,  # Aún puedes optar por devolver el ID del usuario o cualquier otra información necesaria
+                'user_id': user.id,
+                # Aún puedes optar por devolver el ID del usuario o cualquier otra información necesaria
                 # Otros campos que consideres necesarios
             }
             return Response({"success": True, "data": data, "message": "Usuario logueado correctamente."}, status=status.HTTP_200_OK)

@@ -13,7 +13,7 @@ class Servicio(models.Model):
         return f"{self.pais} - {self.empresa}"
 
 class Sitio(models.Model):
-    servicio = models.ForeignKey(Servicio, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
+    pais_empresa = models.ForeignKey(Servicio, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
     PTICellID = models.CharField(max_length=15)
     nombre = models.CharField(max_length=100, blank=True)
     lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
@@ -93,7 +93,6 @@ class RegistroSitio(models.Model):
     sitio_lon = models.FloatField(blank=True, null=True)
     sitio_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
     sitio_descripcion = models.TextField(blank=True, null=True)
-    
 
 class RegistroSitioImagenes(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sitio_imagenes_usuario')
