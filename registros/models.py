@@ -25,7 +25,6 @@ class Sitio(models.Model):
     
 class Usuario(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    nombre = models.CharField(max_length=100)
     telf = models.CharField(max_length=15)
     pais_empresa = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     
@@ -49,6 +48,15 @@ class RegistroLlegada(models.Model):
     status_llegada = models.CharField("Llegada", max_length=10, choices=LLEGADA_CHOICES, default='ok')
     imagen_llegada = models.ImageField(upload_to='sitios/', blank=True, null=True)
     observaciones = models.TextField(blank=True, null=True)
+    
+    def __str__(self):
+        return f"{self.sitio}"
+    
+    class Meta:
+        verbose_name = "Site Adquisition Report"
+        verbose_name_plural = "Site Adquisition Report"
+
+
 
 class RegistroLocalidad(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='localidad_usuario')

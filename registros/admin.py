@@ -61,6 +61,8 @@ class RegistioElectricoInline(admin.StackedInline):
     model = RegistioElectrico
     extra = 0
 
+
+
 # Admin para RegistroLlegada
 class RegistroLlegadaAdmin(admin.ModelAdmin):
     inlines = [
@@ -72,5 +74,15 @@ class RegistroLlegadaAdmin(admin.ModelAdmin):
         RegistioElectricoInline,
     ]
     # Configuraciones adicionales como list_display, search_fields, etc.
+    list_display = ('sitio', 'pais_empresa', 'candidato', 'usuario', )
+    
+    def pais_empresa(self, obj):
+        # Intenta recuperar el objeto Usuario relacionado al user de RegistroLlegada
+        try:
+            usuario = Usuario.objects.get(user=obj.usuario)
+            return usuario.pais_empresa
+        except Usuario.DoesNotExist:
+            return "No definido"  # O puedes retornar un valor que indique que no se encontró el Usuario
 
+    pais_empresa.short_description = 'País Empresa' 
 admin.site.register(RegistroLlegada, RegistroLlegadaAdmin)
