@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
+from django.utils import timezone
 
 class Servicio(models.Model):
     pais = models.CharField(max_length=25)
@@ -97,6 +98,7 @@ class RegistroSitio(models.Model):
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="sitio_sitio")
     candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="sitio_candidato")
     
+    sitio_fecha = models.DateTimeField(default=timezone.now) 
     sitio_lat = models.FloatField(blank=True, null=True)
     sitio_lon = models.FloatField(blank=True, null=True)
     sitio_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
