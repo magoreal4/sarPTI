@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import (
+    Sitio,
     RegistroLlegada, 
     RegistroLocalidad,
     RegistroPropietario,
@@ -14,6 +15,11 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username']
+        
+class SitioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sitio
+        fields = '__all__'
 
 class RegistroLlegadaSerializer(serializers.ModelSerializer):
     class Meta:

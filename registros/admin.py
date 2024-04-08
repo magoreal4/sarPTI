@@ -11,10 +11,13 @@ from .models import (Servicio,
                      RegistroSitioImagenes,
                      RegistioElectrico
                      )
+class ServicioAdmin(admin.ModelAdmin):
+    list_display = ('id', 'pais', 'empresa')
+admin.site.register(Servicio, ServicioAdmin)
 
-admin.site.register(Servicio)
-
-admin.site.register(Sitio)
+class SitioAdmin(admin.ModelAdmin):
+    list_display = ('pais_empresa', 'PTICellID', 'nombre')  # Reemplaza 'campo1', 'campo2', 'campo3' con los nombres reales de los campos de tu modelo
+admin.site.register(Sitio, SitioAdmin)
 
 admin.site.register(Usuario)
 

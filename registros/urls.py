@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     LoginAPIView,
+    SitioListView,
     RegistroLlegadaList,
     RegistroLocalidadList,
     RegistroPropietarioList,
@@ -12,6 +13,7 @@ from .views import (
 
 urlpatterns = [
     path('api/login/', LoginAPIView.as_view(), name='login'),
+    path('api/sitios/<int:pais_empresa_id>/', SitioListView.as_view(), name='sitio-list'),
     path('api/registrollegada/', RegistroLlegadaList.as_view(), name='registrollegada'),
     path('api/registrolocalidad/', RegistroLocalidadList.as_view(), name='registrolocalidad'),
     path('api/registropropietario/', RegistroPropietarioList.as_view(), name='registropropietario'),

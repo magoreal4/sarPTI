@@ -6,6 +6,7 @@ from rest_framework import status
 # from .models import RegistroLocalidad
 from rest_framework.parsers import MultiPartParser, FormParser
 from .serializers import (
+    SitioSerializer,
     RegistroLlegadaSerializer, 
     RegistroLocalidadSerializer, 
     RegistroPropietarioSerializer, 
@@ -17,6 +18,7 @@ from .serializers import (
 
 from .models import (
     Usuario,
+    Sitio,
     RegistroLlegada, 
     RegistroLocalidad,
     RegistroPropietario,
@@ -54,6 +56,12 @@ class LoginAPIView(APIView):
             return Response({"success": True, "data": data, "message": mensaje}, status=status.HTTP_200_OK)
         else:
             return Response({"success": False, "error": {"message": "Credenciales inválidas."}}, status=status.HTTP_400_BAD_REQUEST)
+
+class SitioListView(APIView):
+    def get(self, request, pais_empresa_id):
+        sitios = Sitio.objects.filter(pais_empresa_id=pais_empresa_id)
+        serializer = SitioSerializer(sitios, many=True)
+        return Response(serializer.data)
 
 class RegistroLlegadaList(APIView):
     """
