@@ -95,7 +95,7 @@ class RegistroPropiedad(models.Model):
 class RegistroSitio(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sitio_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="sitio_sitio")
-    candidado = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="sitio_candidato")
+    candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="sitio_candidato")
     
     sitio_lat = models.FloatField(blank=True, null=True)
     sitio_lon = models.FloatField(blank=True, null=True)

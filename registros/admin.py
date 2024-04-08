@@ -85,4 +85,5 @@ class RegistroLlegadaAdmin(admin.ModelAdmin):
             return "No definido"  # O puedes retornar un valor que indique que no se encontró el Usuario
 
     pais_empresa.short_description = 'País Empresa' 
+    
 admin.site.register(RegistroLlegada, RegistroLlegadaAdmin)
