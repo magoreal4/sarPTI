@@ -9,32 +9,28 @@
 <link rel="stylesheet" href="{% static './leaflet/MarkerCluster.Default.css' %}" /> {% endcomment %}
 {% endblock css %}
 
-{% block body_class %}bg-yellow-500{% endblock %}
+{% block body_class %}bg-gray-200{% endblock %}
 
 {% block header %} 
-    {% include "header.html" %}  
+    {% comment %} {% include "header.html" %}   {% endcomment %}
 {% endblock header %}
     
 {% block content %} 
-<div class="bg-yellow-200 mt-28  "> 
-Hola como estas
-Aqui van las imagenes 
+<div class="relative h-screen">
+    <!-- Botón en la parte superior derecha -->
+    <div class="absolute top-0 right-0 m-4">
+        <a href="https://sar.btspti.com/admin" class="bg-[#ea3323] hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block text-center no-underline">
+            Sistema Búsqueda
+        </a>
+    </div>
 
-
-{% for img in imagenes %}
-<img src="{{ img.imagen.url }}" alt="Imagen destacada" class="h-48 object-cover">
-
-<li>{{ img.imagen.url }} - {{ img.description }}</li>
-{% endfor %}
-
-
-
+    <!-- Contenido centrado, por ejemplo, tu imagen -->
+    <div class="flex justify-center items-center h-full">
+        <img src="{% static 'img/Logo3.png' %}" alt="Descripción de la imagen" class="max-w-full max-h-full">
+    </div>
 </div>
 
-    <!-- Mapa -->
-    <div id="map" class="h-screen max-w-full"> 
-    </div>
- 
+
 {% endblock content %}
 
 {% block extra_js %}

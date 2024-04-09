@@ -15,6 +15,8 @@ load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
+    "semantic_admin",
+    "semantic_forms",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,6 +31,8 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'rest_framework',
+    'django_filters',
+
     # 'rest_framework_tracking',
 ]
 

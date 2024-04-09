@@ -30,7 +30,7 @@ class Usuario(models.Model):
     pais_empresa = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f"{self.user}, {self.pais_empresa}"
+        return f"{self.user}"
 
 LLEGADA_CHOICES = (
     ('ok', 'Llegada al lugar'),
@@ -51,12 +51,11 @@ class RegistroLlegada(models.Model):
     observaciones = models.TextField(blank=True, null=True)
     
     def __str__(self):
-        return f"{self.sitio}"
+        return f"{self.candidato}"
     
     class Meta:
         verbose_name = "Site Adquisition Report"
         verbose_name_plural = "Site Adquisition Report"
-
 
 
 class RegistroLocalidad(models.Model):
@@ -70,17 +69,31 @@ class RegistroLocalidad(models.Model):
     energia_localidad = models.BooleanField(default=True)
     imagen_maps = models.ImageField(upload_to='sitios/gmaps', blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.provincia}"
+    
+    class Meta:
+        verbose_name = "Localidad"
+        verbose_name_plural = "Localidad"
+    
 class RegistroPropietario(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='propietario_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="propietario_sitio")
     candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="propietario_candidato")
     
     propietario_nombre_apellido = models.CharField(max_length=100)
-    propietario_born = models.DateTimeField()
-    propietario_ci = models.CharField(max_length=15, blank=True, null=True)
-    propietario_telf = models.CharField(max_length=15)
-    propietario_direccion = models.TextField(max_length=100)
-    propietario_estado_civil = models.BooleanField(default=True)
+    propietario_born = models.DateTimeField("Fecha de Nacimiento")
+    propietario_ci = models.CharField("Documento de Identidad", max_length=15, blank=True, null=True)
+    propietario_telf = models.CharField("Telefono de Contacto", max_length=15)
+    propietario_direccion = models.TextField("Direccion Domicilio",max_length=100)
+    propietario_estado_civil = models.BooleanField("Casado",default=True)
+    
+    def __str__(self):
+        return f"{self.propietario_nombre_apellido}"
+    
+    class Meta:
+        verbose_name = "Propietario"
+        verbose_name_plural = "Propietario"
    
 class RegistroPropiedad(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='propiedad_usuario')
@@ -88,22 +101,36 @@ class RegistroPropiedad(models.Model):
     candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="propiedad_candidato")
     
     propiedad_rol = models.CharField(max_length=100)
-    propiedad_escritura = models.CharField(max_length=100)
-    propiedad_registro_civil = models.TextField(max_length=100) 
+    propiedad_escritura = models.CharField("Escritura", max_length=100)
+    propiedad_registro_civil = models.TextField("Registro Civil",max_length=100) 
     propiedad_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
-    propiedad_descripcion = models.TextField(blank=True, null=True)
+    propiedad_descripcion = models.TextField("Observaciones",blank=True, null=True)
     
+    def __str__(self):
+        return f"Rol {self.propiedad_rol}"
+    
+    class Meta:
+        verbose_name = "Propiedad"
+        verbose_name_plural = "Propiedad"
+        
 class RegistroSitio(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sitio_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="sitio_sitio")
     candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="sitio_candidato")
     
-    sitio_fecha = models.DateTimeField(default=timezone.now) 
-    sitio_lat = models.FloatField(blank=True, null=True)
-    sitio_lon = models.FloatField(blank=True, null=True)
+    sitio_fecha = models.DateTimeField("Fecha de Visita", default=timezone.now) 
+    sitio_lat = models.FloatField("Latitud Torre", blank=True, null=True)
+    sitio_lon = models.FloatField("Longitud Torre", blank=True, null=True)
     sitio_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
-    sitio_descripcion = models.TextField(blank=True, null=True)
+    sitio_descripcion = models.TextField("Comentarios",blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.sitio}"
+    
+    class Meta:
+        verbose_name = "Sitio"
+        verbose_name_plural = "Sitio"
+        
 class RegistroSitioImagenes(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sitio_imagenes_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="sitio_imagenes_sitio")
@@ -112,14 +139,21 @@ class RegistroSitioImagenes(models.Model):
     pic = models.FileField(upload_to='fotografias/')
     descripcion = models.CharField(max_length=100, blank=True, null=True)
     
+    def __str__(self):
+        return f"{self.descripcion}"
+    
+    class Meta:
+        verbose_name = "Imagen Sitio"
+        verbose_name_plural = "Imagenes"
+        
 class RegistioElectrico(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='electrico_usuario')
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE, related_name="electrico_sitio")
     candidato = models.ForeignKey(RegistroLlegada, on_delete=models.CASCADE, related_name="electrico_candidato")
     
-    electrico_lat = models.FloatField(blank=True, null=True)
-    electrico_lon = models.FloatField(blank=True, null=True)
-    electrico_no_poste = models.CharField(max_length=10, blank=True, null=True)
-    electrico_comentario = models.TextField(blank=True, null=True)
-    electrico_imagen1 = models.ImageField(upload_to='sitios/')
-    electrico_imagen2 = models.ImageField(upload_to='sitios/', blank=True, null=True)
+    electrico_lat = models.FloatField("Latitud Poste", blank=True, null=True)
+    electrico_lon = models.FloatField("Longitud Poste", blank=True, null=True)
+    electrico_no_poste = models.CharField("Identificacion Poste",max_length=10, blank=True, null=True)
+    electrico_comentario = models.TextField("Comentario", blank=True, null=True)
+    electrico_imagen1 = models.ImageField("Imagen Poste",upload_to='sitios/')
+    electrico_imagen2 = models.ImageField("Imagen Electrico",upload_to='sitios/', blank=True, null=True)
