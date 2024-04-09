@@ -26,17 +26,17 @@ admin.site.register(Usuario, UsuarioAdmin)
 
 # admin.site.register(RegistroLlegada)
 
-# admin.site.register(RegistroLocalidad)
+admin.site.register(RegistroLocalidad)
 
-# admin.site.register(RegistroPropietario)
+admin.site.register(RegistroPropietario)
 
-# admin.site.register(RegistroPropiedad)
+admin.site.register(RegistroPropiedad)
 
-# admin.site.register(RegistroSitio)
+admin.site.register(RegistroSitio)
 
-# admin.site.register(RegistroSitioImagenes)
+admin.site.register(RegistroSitioImagenes)
 
-# admin.site.register(RegistioElectrico)
+admin.site.register(RegistioElectrico)
 
 
 # Clases Inline para cada modelo relacionado
