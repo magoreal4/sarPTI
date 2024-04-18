@@ -12,7 +12,7 @@ services:
       - POSTGRES_USER=magoreal
       - POSTGRES_PASSWORD=ojalaque
     volumes:
-      - postgres-data:/var/lib/postgresql/data/
+      - ./db:/var/lib/postgresql/data/
 
   pgadmin:
     container_name: pgadmin4_container
@@ -24,25 +24,25 @@ services:
     ports:
       - "5050:80"
 
-  rabbitmq:
-    image: "rabbitmq:alpine"
-    container_name: rabbitmq
-    healthcheck:
-      test: rabbitmq-diagnostics -q ping
-      interval: 30s
-      timeout: 30s
-      retries: 3
+  # rabbitmq:
+  #   image: "rabbitmq:alpine"
+  #   container_name: rabbitmq
+  #   healthcheck:
+  #     test: rabbitmq-diagnostics -q ping
+  #     interval: 30s
+  #     timeout: 30s
+  #     retries: 3
 
-  redis:
-    image: redis:7
-    container_name: redis
-    ports:
-      - 6379:6379
-    volumes:
-      - redis-data:/data
+  # redis:
+  #   image: redis:7
+  #   container_name: redis
+  #   ports:
+  #     - 6379:6379
+  #   volumes:
+  #     - redis-data:/data
 
 
-volumes:
-    postgres-data:
-    redis-data:
+# volumes:
+#     postgres-data:
+#     redis-data:
 

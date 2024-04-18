@@ -3,8 +3,9 @@ from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
+from django.core.exceptions import ValidationError
 # from .models import RegistroLocalidad
-from rest_framework.parsers import MultiPartParser, FormParser
+# from rest_framework.parsers import MultiPartParser, FormParser
 from .serializers import (
     SitioSerializer,
     RegistroLlegadaSerializer, 
@@ -42,26 +43,27 @@ class LoginAPIView(APIView):
                 # Busca la instancia de Usuario relacionada con el usuario autenticado
                 usuario = Usuario.objects.get(user=user)
                 # Ahora, accedemos al ID de pais_empresa directamente
-                pais_empresa_id = usuario.pais_empresa.id
+                empresa_id = usuario.empresa.id
                 mensaje = "Usuario logueado correctamente."
             except Usuario.DoesNotExist:
                 # Maneja el caso en que no se encuentre una instancia de Usuario
-                pais_empresa_id = "None"  # O maneja este caso como prefieras
+                empresa_id = "None"  # O maneja este caso como prefieras
                 mensaje = "Contactese con el administrador."
                 
             data = {
                 'user_id': user.id,
-                'pais_empresa_id': pais_empresa_id,  # Devuelve el ID de pais_empresa
+                'empresa_id': empresa_id,  # Devuelve el ID de pais_empresa
             }
             return Response({"success": True, "data": data, "message": mensaje}, status=status.HTTP_200_OK)
         else:
             return Response({"success": False, "error": {"message": "Credenciales inválidas."}}, status=status.HTTP_400_BAD_REQUEST)
 
 class SitioListView(APIView):
-    def get(self, request, pais_empresa_id):
-        sitios = Sitio.objects.filter(pais_empresa_id=pais_empresa_id)
+    def get(self, request, empresa_id):
+        sitios = Sitio.objects.filter(empresa_id=empresa_id)
         serializer = SitioSerializer(sitios, many=True)
         return Response(serializer.data)
+
 
 class RegistroLlegadaList(APIView):
     """
@@ -74,10 +76,15 @@ class RegistroLlegadaList(APIView):
 
     def post(self, request, format=None):
         serializer = RegistroLlegadaSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except ValidationError as e:
+            return Response(e.message_dict, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 class RegistroLocalidadList(APIView):
     """
@@ -174,6 +181,7 @@ class RegistioElectricoList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 # class ListaPaises(APIView):
 #     """
 #     Vista para listar todos los países únicos.
