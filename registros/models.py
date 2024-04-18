@@ -125,7 +125,7 @@ class RegistroPropiedad(models.Model):
     propiedad_escritura = models.CharField("Escritura", max_length=100)
     propiedad_registro_civil = models.TextField("Registro Civil",max_length=100) 
     propiedad_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
-    propiedad_descripcion = models.TextField("Observaciones",blank=True, null=True)
+    propiedad_descripcion = models.TextField("Comentarios",blank=True, null=True)
     
     def __str__(self):
         return f"Rol {self.propiedad_rol}"
