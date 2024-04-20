@@ -78,8 +78,8 @@ class RegistroLlegadaList(APIView):
         serializer = RegistroLlegadaSerializer(data=request.data)
         try:
             if serializer.is_valid(raise_exception=True):
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
+                serializer.save(), 
+                return Response({"success": True, "data": serializer.data}, status=status.HTTP_201_CREATED)
         except ValidationError as e:
             return Response(e.message_dict, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
