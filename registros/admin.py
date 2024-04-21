@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.formats import date_format
 from .models import (Empresa, 
                      Usuario, 
                      Sitio, 
@@ -12,17 +13,38 @@ from .models import (Empresa,
                      RegistroSitioImagenes,
                      RegistioElectrico
                      )
+
+
+def dec_to_gms(decimal_deg, is_lat=True):
+    if decimal_deg is None or decimal_deg == "":
+        return "-"
+    # Determina si el grado es negativo (Sur o Oeste)
+    is_negative = decimal_deg < 0
+    # Convierte el grado a positivo para el cálculo
+    decimal_deg = abs(decimal_deg)
+    
+    degrees = int(decimal_deg)
+    minutes = int((decimal_deg - degrees) * 60)
+    seconds = (decimal_deg - degrees - minutes/60) * 3600.00
+
+    # Decide el sufijo basado en si es latitud y si es positivo/negativo
+    if is_lat:
+        suffix = "S" if is_negative else "N"
+    else:
+        suffix = "O" if is_negative else "E"
+    
+    return f"{degrees}° {minutes}' {seconds:.2f}\" {suffix}"
+
 class EmpresaAdmin(admin.ModelAdmin):
     list_display = ('id', 'pais', 'nombre')
 
-
-class SitioAdmin(admin.ModelAdmin):
-    list_display = ('PTICellID', 'nombre', 'empresa', 'altura' )
-    list_editable = ('empresa',)  
-admin.site.register(Sitio, SitioAdmin)
+# class SitioAdmin(admin.ModelAdmin):
+    # list_display = ('PTICellID', 'nombre', 'empresa', 'altura' )
+    # list_editable = ('empresa',)  
+admin.site.register(Sitio)
 
 class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'telf', 'empresa')  
+    list_display = ('id', 'user', 'nombre', 'telf', 'empresa')  
     list_editable = ('empresa', )
 admin.site.register(Usuario, UsuarioAdmin)
 
@@ -262,23 +284,105 @@ class CandidatoAdmin(admin.ModelAdmin):
         RegistioElectricoInline,
     ]
     list_display = (
-        'id', 
+        # 'id', 
         'sitio', 
         'sitio_nombre',
         'sitio_altura',
         'candidato', 
+        'formatted_fecha_creacion'
         )
-    readonly_fields = ('id',)
+    readonly_fields = ('id',
+                       'sitio_ID', 'sitio_nombre', 'sitio_altura',
+                       'sitio_provincia', 'sitio_municipio', 'sitio_localidad',
+                       'usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa',
+                       'sitio_lat_nominal', 'sitio_lat_nominal_gms',
+                       'sitio_lon_nominal', 'sitio_lon_nominal_gms',
+                       'imagen_gmaps'
+                       )
+
+    def sitio_ID(self, obj):
+        return f"{obj.sitio.PTICellID}"
+    sitio_ID.short_description = 'PTI ID'
 
     def sitio_nombre(self, obj):
         return f"{obj.sitio.nombre}"
     sitio_nombre.short_description = 'Nombre'
+
+    def sitio_lat_nominal(self, obj):
+        return f"{obj.sitio.lat_nominal}"
+    sitio_lat_nominal.short_description = 'Latitud Nominal'
+    
+    def sitio_lat_nominal_gms(self, obj):
+        return dec_to_gms(obj.sitio.lat_nominal)
+    sitio_lat_nominal_gms.short_description = "Latitud Nominal (GMS)"
+    
+    def sitio_lon_nominal(self, obj):
+        return f"{obj.sitio.lon_nominal}"
+    sitio_lon_nominal.short_description = 'Longitud Nominal'
+    
+    def sitio_lon_nominal_gms(self, obj):
+        return dec_to_gms(obj.sitio.lon_nominal)
+    sitio_lon_nominal_gms.short_description = "Longitud Nominal (GMS)"
     
     def sitio_altura(self, obj):
-        return f"{obj.sitio.altura}"
+        return f"{obj.sitio.altura} m."
     sitio_altura.short_description = 'Altura'
     
+    def sitio_provincia(self, obj):
+        return f"{obj.sitio.provincia}"
+    sitio_provincia.short_description = 'Provincia'
     
+    def sitio_municipio(self, obj):
+        return f"{obj.sitio.municipio}"
+    sitio_municipio.short_description = 'Municipio'
+    
+    def sitio_localidad(self, obj):
+        return f"{obj.sitio.localidad}"
+    sitio_localidad.short_description = 'Localidad'
+    
+    def sitio_empresa(self, obj):
+        return f"{obj.sitio.empresa}"
+    sitio_empresa.short_description = 'Empresa'
+    
+    def usuario_nombre(self, obj):
+        return f"{obj.usuario.nombre}"
+    usuario_nombre.short_description = 'Buscador'
+
+    def usuario_user(self, obj):
+        return f"{obj.usuario.user}"
+    usuario_user.short_description = 'Username'
+
+    def usuario_telf(self, obj):
+        return f"{obj.usuario.telf}"
+    usuario_telf.short_description = 'Telefono'    
+    
+    def formatted_fecha_creacion(self, obj):
+        return date_format(obj.fecha_creacion, "d/m/Y H:i")
+    formatted_fecha_creacion.short_description = 'Fecha'
+    formatted_fecha_creacion.admin_order_field = 'fecha_creacion'  # Permite ordenar por este campo en el admin
+    
+    def imagen_gmaps(self, obj):
+        if obj.sitio.img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+            return format_html('<img src="{}" width="620" height=""/>', obj.sitio.img_google.url)
+        return "No hay imagen"
+    imagen_gmaps.short_description = 'Vista Previa de la Imagen'
+    
+    
+    fieldsets = (
+        ('Datos de Proyecto', {  
+            'fields': (    
+                ('sitio_ID', 'sitio_nombre', 'sitio_altura' ),
+                ('sitio_provincia', 'sitio_municipio', 'sitio_localidad', ),
+                ('usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa'),
+                ('sitio_lat_nominal', 'sitio_lat_nominal_gms' ),
+                ('sitio_lon_nominal', 'sitio_lon_nominal_gms' ),
+                'imagen_gmaps',
+                ),
+
+            # 'description': 'Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto. Para más detalles, <a href="https://example.com">visita este enlace</a>.'
+    
+        }),
+    )
     # fieldsets = (
     #     ('Información General', {  # Ajusta los títulos y campos según necesites
     #         'fields': (

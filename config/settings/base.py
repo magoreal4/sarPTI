@@ -15,8 +15,9 @@ load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
-    # "semantic_admin",
-    # "semantic_forms",
+
+    "semantic_admin",
+    "semantic_forms",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,6 +36,7 @@ INSTALLED_APPS = [
 
     # 'rest_framework_tracking',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -112,7 +114,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
+                    ]
+
 
 MEDIA_URL = '/media/'
 
@@ -124,4 +130,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # APPEND_SLASH = True
+
+SEMANTIC_APP_LIST = [
+    {
+        "app_label": "auth", 
+        "models": [{"object_name": "User"}, {"object_name": "Group"}],
+    },
+    {
+        "app_label": "registros",
+        "models": [
+            {"object_name": "Empresa"},
+            {"object_name": "Usuario"},
+            {"object_name": "Sitio"}, 
+            {"object_name": "Candidato"}, 
+            ],
+    },
+]
 

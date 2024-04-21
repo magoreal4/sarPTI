@@ -2,6 +2,68 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
 from django.utils import timezone
+import requests
+from django.core.files.base import ContentFile
+
+
+def obtener_imagen_google_maps(latitud, 
+                               longitud, 
+                               label,
+                               color,
+                               lat_mandato=None, 
+                               lon_mandato=None, 
+                               lat_energia=None, 
+                               lon_energia=None, 
+                               zoom=18, 
+                               maptype="hybrid", 
+                               scale=2, 
+                               tamano="640x400",
+                               ):
+    base_url = "https://maps.googleapis.com/maps/api/staticmap?"
+    api_key = "AIzaSyD22EmbDEXIc7Meum5e2MCYj4D0JpDrmpU"
+
+
+    # Verificar si lat_mandato y lon_mandato son válidos
+    if lat_mandato in [None, ""] or lon_mandato in [None, ""]:
+        centro = f"{latitud},{longitud}"
+        if lat_energia in [None, ""] or lon_energia in [None, ""]:
+            markers = [
+                f"size:normal|color:{color}|label:{label}|{latitud},{longitud}",
+                ]
+        else:
+            markers = [
+                f"size:normal|color:{color}|label:{label}|{latitud},{longitud}",
+                f"size:tiny|color:0x00FFFF|{lat_energia},{lon_energia}",
+            ]
+    else:
+        # Si son válidos, calcular promedio para el centro y usar ambos para marcadores¡
+        promedio_latitud = (latitud + lat_mandato) / 2
+        promedio_longitud = (longitud + lon_mandato) / 2
+        centro = f"{promedio_latitud},{promedio_longitud}"
+        markers = [
+            f"size:normal|color:0x00FF00|label:M|{lat_mandato},{lon_mandato}",
+            f"size:mid|color:0xFFFF00|label:I|{latitud},{longitud}",
+            f"size:tiny|color:0x00FFFF|{lat_energia},{lon_energia}",
+        ]
+    # print(imagen_content)
+    params = {
+        "center": centro,
+        "zoom": zoom,
+        "size": tamano,
+        "maptype": maptype,  # "roadmap" Agrega este parámetro para obtener imágenes satelitales
+        "scale" : scale,
+        "key": api_key,
+        "markers": markers,  # Agrega un marcador rojo con la etiqueta 'A'
+    }
+    
+    response = requests.get(base_url, params=params)
+    
+    if response.status_code == 200:
+
+        return response.content
+    else:
+        return None
+
 
 class Empresa(models.Model):
     pais = models.CharField(max_length=25)
@@ -9,13 +71,12 @@ class Empresa(models.Model):
     
     class Meta:
         verbose_name = "Empresa"
-        verbose_name_plural = "1. Empresas"
+        verbose_name_plural = "Empresas"
          
     def __str__(self):
-        return f"{self.pais} - {self.nombre}"
+        return f"{self.nombre} - {self.pais}"
 
 class Sitio(models.Model):
-    empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
     PTICellID = models.CharField(max_length=15)
     nombre = models.CharField(max_length=100, blank=True)
     lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
@@ -24,26 +85,44 @@ class Sitio(models.Model):
     provincia = models.CharField(max_length=25, blank=True, null=True)
     municipio = models.CharField(max_length=25, blank=True, null=True)
     localidad = models.CharField(max_length=25, blank=True, null=True)   
+    empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
     
+    img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
+    
+    
+    def save(self, *args, **kwargs):
+        print("==============")
+        if not self.img_google:  # Si no hay imagen ya asociada, obten una nueva
+            imagen_content = obtener_imagen_google_maps(
+                self.lat_nominal, 
+                self.lon_nominal, 
+                label= "N",
+                color="	#0f52ba",
+                zoom=15
+                )
+            
+            if imagen_content:
+                filename = f"mapa_{self.pk or 'nuevo'}.png"
+                self.img_google.save(filename, ContentFile(imagen_content), save=False)
+
+        super(Sitio, self).save(*args, **kwargs)
+        
     class Meta:
         verbose_name = "Sitio"
-        verbose_name_plural = "3. Sitios"
+        verbose_name_plural = "Sitios"
         
     def __str__(self):
         return f"{self.PTICellID}"
     
-    # class Meta:
-#     verbose_name = "Site Adquisition Report"
-#     verbose_name_plural = "Site Adquisition Report"
-    
 class Usuario(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=120)
     telf = models.CharField(max_length=15)
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, blank=True, null=True)
     
     class Meta:
         verbose_name = "Usuario"
-        verbose_name_plural = "2. Usuarios"
+        verbose_name_plural = "Usuarios"
     def __str__(self):
         return f"{self.user}"
 
@@ -52,7 +131,7 @@ class Candidato(models.Model):
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     candidato = models.IntegerField(validators=[MaxValueValidator(9)], default=1)
-
+    fecha_creacion = models.DateTimeField("Fecha", auto_now_add=True)
     def generate_id(self):
         # Genera el ID utilizando información del sitio y el número de candidato
         # pticell_suffix = self.sitio.PTICellID[-4:]
@@ -62,6 +141,7 @@ class Candidato(models.Model):
         if not self.pk:
             self.id = self.generate_id()
         super(Candidato, self).save(*args, **kwargs)
+        
 
     class Meta:
         verbose_name = "Registro Campo"

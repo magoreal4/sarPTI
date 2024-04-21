@@ -11,6 +11,8 @@ from .views import (
     RegistioElectricoList
     )
 
+
+
 urlpatterns = [
     path('api/login/', LoginAPIView.as_view(), name='login'),
     path('api/sitios/<int:empresa_id>/', SitioListView.as_view(), name='sitio-list'),

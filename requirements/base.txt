@@ -4,5 +4,6 @@ django-tailwind==3.8.0
 pillow==10.2.0
 whitenoise==6.6.0
 djangorestframework==3.15.1
-django-semantic-admin==0.5.0
+django-semantic-admin==0.5.0 # https://globophobe.github.io/django-semantic-admin/
 django-filter==24.2
+requests==2.31.0
