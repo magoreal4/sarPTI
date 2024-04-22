@@ -10,8 +10,8 @@ def obtener_imagen_google_maps(latitud,
                                longitud, 
                                label,
                                color,
-                               lat_mandato=None, 
-                               lon_mandato=None, 
+                               lat_nominal=None, 
+                               lon_nominal=None, 
                                lat_energia=None, 
                                lon_energia=None, 
                                zoom=18, 
@@ -23,8 +23,8 @@ def obtener_imagen_google_maps(latitud,
     api_key = "AIzaSyD22EmbDEXIc7Meum5e2MCYj4D0JpDrmpU"
 
 
-    # Verificar si lat_mandato y lon_mandato son válidos
-    if lat_mandato in [None, ""] or lon_mandato in [None, ""]:
+    # Verificar si lat_nominal y lon_nominal son válidos
+    if lat_nominal in [None, ""] or lon_nominal in [None, ""]:
         centro = f"{latitud},{longitud}"
         if lat_energia in [None, ""] or lon_energia in [None, ""]:
             markers = [
@@ -37,11 +37,11 @@ def obtener_imagen_google_maps(latitud,
             ]
     else:
         # Si son válidos, calcular promedio para el centro y usar ambos para marcadores¡
-        promedio_latitud = (latitud + lat_mandato) / 2
-        promedio_longitud = (longitud + lon_mandato) / 2
+        promedio_latitud = (latitud + lat_nominal) / 2
+        promedio_longitud = (longitud + lon_nominal) / 2
         centro = f"{promedio_latitud},{promedio_longitud}"
         markers = [
-            f"size:normal|color:0x00FF00|label:M|{lat_mandato},{lon_mandato}",
+            f"size:normal|color:0x00FF00|label:N|{lat_nominal},{lon_nominal}",
             f"size:mid|color:0xFFFF00|label:I|{latitud},{longitud}",
             f"size:tiny|color:0x00FFFF|{lat_energia},{lon_energia}",
         ]
@@ -77,7 +77,7 @@ class Empresa(models.Model):
         return f"{self.nombre} - {self.pais}"
 
 class Sitio(models.Model):
-    PTICellID = models.CharField(max_length=15)
+    PTICellID = models.CharField("Cell ID", max_length=15)
     nombre = models.CharField(max_length=100, blank=True)
     lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
     lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Nominal')
@@ -156,15 +156,19 @@ LLEGADA_CHOICES = (
 class RegistroLlegada(models.Model):
     candidato = models.OneToOneField(Candidato, on_delete=models.CASCADE)
  
-    fecha_llegada = models.DateTimeField(default=timezone.now)
+    fecha_llegada = models.DateTimeField("Fecha de llegada", default=timezone.now)
     lat_llegada = models.FloatField(blank=True, null=True)
     lon_llegada = models.FloatField(blank=True, null=True)
-    status_llegada = models.CharField("Llegada", max_length=10, choices=LLEGADA_CHOICES, default='ok')
+    status_llegada = models.CharField("Estatus", max_length=10, choices=LLEGADA_CHOICES, default='ok')
     imagen_llegada = models.ImageField(upload_to='sitios/', blank=True, null=True)
     observaciones = models.TextField(blank=True, null=True)
     
     def __str__(self):
         return f"{self.candidato.sitio}-{self.status_llegada}"
+    
+    class Meta:
+        verbose_name = "Llegada Localidad"
+        verbose_name_plural = "Llegada Localidad"
 
 class RegistroLocalidad(models.Model):
     candidato = models.OneToOneField(Candidato, on_delete=models.CASCADE)
@@ -179,29 +183,29 @@ class RegistroLocalidad(models.Model):
     
     class Meta:
         verbose_name = "Localidad"
-        verbose_name_plural = "Localidades"
+        verbose_name_plural = "Localidad"
     
 class RegistroPropietario(models.Model):
     candidato = models.OneToOneField(Candidato, on_delete=models.CASCADE)
     
-    propietario_nombre_apellido = models.CharField(max_length=100)
+    propietario_nombre_apellido = models.CharField('Nombre y Apellido',max_length=100)
     propietario_born = models.DateTimeField("Fecha de Nacimiento")
     propietario_ci = models.CharField("Documento de Identidad", max_length=15, blank=True, null=True)
     propietario_telf = models.CharField("Telefono de Contacto", max_length=15)
     propietario_direccion = models.TextField("Direccion Domicilio",max_length=100)
-    propietario_estado_civil = models.BooleanField("Casado",default=True)
+    propietario_estado_civil = models.BooleanField("Estado Civil",default=True)
     
     def __str__(self):
         return f"{self.propietario_nombre_apellido}"
     
     class Meta:
         verbose_name = "Propietario"
-        verbose_name_plural = "Propietarios"
+        verbose_name_plural = "Propietario"
    
 class RegistroPropiedad(models.Model):
     candidato = models.OneToOneField(Candidato, on_delete=models.CASCADE)
         
-    propiedad_rol = models.CharField(max_length=100)
+    propiedad_rol = models.CharField("Rol",max_length=100)
     propiedad_escritura = models.CharField("Escritura", max_length=100)
     propiedad_registro_civil = models.TextField("Registro Civil",max_length=100) 
     propiedad_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
@@ -223,6 +227,30 @@ class RegistroSitio(models.Model):
     sitio_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
     sitio_descripcion = models.TextField("Comentarios",blank=True, null=True)
 
+    sitio_img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
+    
+    def save(self, *args, **kwargs):
+        sitio = self.candidato.sitio  # Acceder al Sitio a través de Candidato
+        latitud = sitio.lat_nominal  # Acceder a la latitud nominal
+        longitud = sitio.lon_nominal  # Acceder a la longitud nominal
+    
+        if not self.sitio_img_google:  # Si no hay imagen ya asociada, obten una nueva
+            imagen_content = obtener_imagen_google_maps(
+                self.sitio_lat, 
+                self.sitio_lon,
+                label= "S",
+                color="	red",
+                lat_nominal=latitud,
+                lon_nominal=longitud,
+                zoom=15
+                )
+            
+            if imagen_content:
+                filename = f"mapa_{self.pk or 'nuevo'}.png"
+                self.sitio_img_google.save(filename, ContentFile(imagen_content), save=False)
+
+        super(RegistroSitio, self).save(*args, **kwargs)
+        
     # def __str__(self):
     #     return f"{self.sitio}"
     
@@ -252,3 +280,29 @@ class RegistioElectrico(models.Model):
     electrico_comentario = models.TextField("Comentario", blank=True, null=True)
     electrico_imagen1 = models.ImageField("Imagen Poste",upload_to='sitios/')
     electrico_imagen2 = models.ImageField("Imagen Electrico",upload_to='sitios/', blank=True, null=True)
+    
+    electrico_img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
+    
+    # def save(self, *args, **kwargs):
+    #     id_candidato = self.candidato.pk
+    #     registro_sitio = RegistroSitio.objects.get(pk=id_candidato)
+    #     latitud_torre = registro_sitio.electrico_lat
+    #     longitud_torre = registro_sitio.electrico_lon
+
+        
+    #     if not self.electrico_img_google:  # Si no hay imagen ya asociada, obten una nueva
+    #         imagen_content = obtener_imagen_google_maps(
+    #             self.electrico_lat, 
+    #             self.electrico_lon,
+    #             label= "S",
+    #             color="	red",
+    #             lat_nominal=latitud_torre,
+    #             lon_nominal=longitud_torre,
+    #             zoom=15
+    #             )
+            
+    #         if imagen_content:
+    #             filename = f"mapa_{self.pk or 'nuevo'}.png"
+    #             self.electrico_img_google.save(filename, ContentFile(imagen_content), save=False)
+
+    #     super(RegistroSitio, self).save(*args, **kwargs)

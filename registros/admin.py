@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.formats import date_format
+from geopy.distance import geodesic
 from .models import (Empresa, 
                      Usuario, 
                      Sitio, 
@@ -35,28 +36,42 @@ def dec_to_gms(decimal_deg, is_lat=True):
     
     return f"{degrees}° {minutes}' {seconds:.2f}\" {suffix}"
 
+def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
+    """Calcula la distancia entre dos puntos usando geopy."""
+    if lat_1 is not None and lon_1 is not None and lat_2 is not None and lon_2 is not None:
+        origen_coords = (lat_1, lon_1)
+        destino_coords = (lat_2, lon_2)
+        # Calcula la distancia usando geodesic de geopy
+        distancia = geodesic(origen_coords, destino_coords).meters
+        return distancia
+    else:
+        return None
+    
+
 class EmpresaAdmin(admin.ModelAdmin):
     list_display = ('id', 'pais', 'nombre')
-
-# class SitioAdmin(admin.ModelAdmin):
-    # list_display = ('PTICellID', 'nombre', 'empresa', 'altura' )
-    # list_editable = ('empresa',)  
-admin.site.register(Sitio)
+admin.site.register(Empresa, EmpresaAdmin)
 
 class UsuarioAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'nombre', 'telf', 'empresa')  
     list_editable = ('empresa', )
 admin.site.register(Usuario, UsuarioAdmin)
 
-admin.site.register(Empresa, EmpresaAdmin)
+class SitioAdmin(admin.ModelAdmin):
+    list_display = ('PTICellID', 'nombre', 'altura', 'empresa','id' )  
+    list_editable = ('empresa', )
+admin.site.register(Sitio, SitioAdmin)
+
+# class RegistroSitioAdmin(admin.ModelAdmin):
+#     list_display = ('sitio_lat', 'sitio_lon',  )
+# admin.site.register(RegistroSitio, RegistroSitioAdmin)
+
 
 # admin.site.register(RegistroLocalidad)
 
 # admin.site.register(RegistroPropietario)
 
 # admin.site.register(RegistroPropiedad)
-
-# admin.site.register(RegistroSitio)
 
 # admin.site.register(RegistroSitioImagenes)
 
@@ -68,48 +83,99 @@ admin.site.register(Empresa, EmpresaAdmin)
 
 class RegistroLlegadaInline(admin.StackedInline):
     model = RegistroLlegada
-    extra = 0  # Número de formas extra vacías que se mostrarán
-# admin.site.register(RegistroLlegada)
+    extra = 0
+    readonly_fields = (
+        'fecha_llegada', 'status_llegada',
+        'lat_llegada', 'lat_llegada_gms',
+        'lon_llegada', 'lon_llegada_gms',
+        'imagen_llegada_preview', 'observaciones',
+        )
+    fieldsets = (
+    ('', {  
+        'fields': (    
+            ('fecha_llegada', 'status_llegada',),  
+            ('lat_llegada', 'lat_llegada_gms',  ),
+            ('lon_llegada', 'lon_llegada_gms', ),
+            ('imagen_llegada_preview', 'observaciones'),
 
+        ),
+    }),)	
+    def lat_llegada_gms(self, obj):
+        return dec_to_gms(obj.lat_llegada)
+    lat_llegada_gms.short_description = "Latitud Llegada (GMS)"
+    
+    def lon_llegada_gms(self, obj):
+        return dec_to_gms(obj.lon_llegada)
+    lon_llegada_gms.short_description = "Longitud Llegada (GMS)"
+
+    def imagen_llegada_preview(self, obj):
+        if obj.imagen_llegada:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+            return format_html('<img src="{}" width="320" height=""/>', obj.imagen_llegada.url)
+        return "No hay imagen"
+    imagen_llegada_preview.short_description = 'Vista Previa de la Imagen'
+    
 # Clases Inline para cada modelo relacionado
 class RegistroLocalidadInline(admin.StackedInline):
     model = RegistroLocalidad
     extra = 0
-    fields = ('municipio', 'localidad', 'energia_localidad')
-    # readonly_fields = ( 'municipio', 'localidad', 'energia_localidad',)
-
-
+    readonly_fields = ('provincia','municipio', 'localidad', 'energia_localidad_mensaje')
+    fieldsets = (
+                ('', {  
+                    'fields': (    
+                        ('provincia', 'municipio','localidad'),
+                        ('energia_localidad_mensaje')
+                    ),
+                }),)	
+    def energia_localidad_mensaje(self, obj):
+        if obj.energia_localidad:
+            return "Cuenta con energía Electríca"
+        else:
+            return "No Cuenta con energía Electríca"
+    energia_localidad_mensaje.short_description = "Energía Ecéctrica"
 
 class RegistroPropietarioInline(admin.StackedInline):
     model = RegistroPropietario
     extra = 0
-    fields =('propietario_nombre_apellido',
-             'propietario_born',
+    readonly_fields =('propietario_nombre_apellido',
+             'fecha_nacimiento',
              'propietario_ci',
              'propietario_telf',
              'propietario_direccion',
-             'propietario_estado_civil',)
+             'propietario_estado_civil_mensaje',)
+    fieldsets = (
+            ('', {  
+                'fields': (
+                    'propietario_nombre_apellido',
+                    ('fecha_nacimiento', 'propietario_ci', 'propietario_telf'),
+                    ('propietario_direccion', 'propietario_estado_civil_mensaje'),
+                ),
+            }),)
 
-    # readonly_fields =('propietario_born',
-    #         'propietario_ci',
-    #         'propietario_telf',
-    #         'propietario_direccion',
-    #         'propietario_estado_civil',)
-
-
+    def propietario_estado_civil_mensaje(self, obj):
+        if obj.propietario_estado_civil:
+            return "Casado"
+        else:
+            return "Soltero"
+    propietario_estado_civil_mensaje.short_description = "Estado Civil"
+    
+    def fecha_nacimiento(self, obj):
+        return date_format(obj.propietario_born, "d/m/Y")
+    fecha_nacimiento.short_description = 'Fecha de Nacimiento'
+    
 class RegistroPropiedadInline(admin.StackedInline):
     model = RegistroPropiedad
     extra = 0
-    fields =('propiedad_escritura',
+    readonly_fields =('propiedad_rol','propiedad_escritura',
             'propiedad_registro_civil',
             'propiedad_imagen_thumbnail',
-            'propiedad_imagen',
             'propiedad_descripcion',)
-    # readonly_fields =('propiedad_escritura',
-    #         'propiedad_registro_civil',
-    #         'propiedad_imagen_thumbnail',
-    #         'propiedad_descripcion',)
-    readonly_fields =('propiedad_imagen_thumbnail',)
+    fieldsets = (
+            ('', {  
+                'fields': (
+                    ('propiedad_rol', 'propiedad_escritura', 'propiedad_registro_civil'),
+                    ('propiedad_imagen_thumbnail', 'propiedad_descripcion'),
+                ),
+            }),)
     
     def propiedad_imagen_thumbnail(self, obj):
         if obj.propiedad_imagen:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
@@ -120,23 +186,58 @@ class RegistroPropiedadInline(admin.StackedInline):
 class RegistroSitioInline(admin.StackedInline):
     model = RegistroSitio
     extra = 0
-    fields =('sitio_fecha',
-            'sitio_lat',
-            'sitio_lon',
+    readonly_fields =('sitio_fecha',
+            'sitio_lat', 'sitio_lat_gms',
+            'sitio_lon', 'sitio_lon_gms',
             'sitio_imagen_thumbnail',
             'sitio_imagen',
-            'sitio_descripcion',)
-    # readonly_fields =('sitio_fecha',
-    #         'sitio_lat',
-    #         'sitio_lon',
-    #         'sitio_imagen_thumbnail',
-    #         'sitio_descripcion',)
-    readonly_fields =('sitio_imagen_thumbnail',)
+            'sitio_descripcion',
+            'sitio_google_thumbnail',
+            'distancia_coordenadas')
+    fieldsets = (
+            ('', {  
+                'fields': (
+                    'sitio_fecha', 
+                    ('sitio_lat', 'sitio_lat_gms'),
+                    ('sitio_lon', 'sitio_lon_gms'),
+                    ('sitio_imagen_thumbnail', 'sitio_descripcion'),
+                    ('sitio_google_thumbnail', 'distancia_coordenadas',),
+                    
+                ),
+            }),)
+    
     def sitio_imagen_thumbnail(self, obj):
         if obj.sitio_imagen:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="320" height=""/>', obj.sitio_imagen.url)
         return "No hay imagen"
     sitio_imagen_thumbnail.short_description = 'Imagen Principal de Sitio'
+    
+    def distancia_coordenadas(self, obj):
+        if obj.sitio_lat:
+            distancia = calcular_distancia_geopy(
+                    obj.sitio_lat, 
+                    obj.sitio_lon, 
+                    obj.candidato.sitio.lat_nominal, 
+                    obj.candidato.sitio.lon_nominal
+                    )
+            return f"{round(distancia, 2)} m" 
+        return "Sin distancia"
+    distancia_coordenadas.short_description = 'Distancia a Coordenadas nominales'
+        
+    def sitio_google_thumbnail(self, obj):
+        if obj.sitio_img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+            return format_html('<img src="{}" width="320" height=""/>', obj.sitio_img_google.url)
+        return "No hay imagen"
+    sitio_google_thumbnail.short_description = 'Imagen Google'
+
+    def sitio_lat_gms(self, obj):
+        return dec_to_gms(obj.sitio_lat)
+    sitio_lat_gms.short_description = "Latitud Torre (GMS)"
+    
+    def sitio_lon_gms(self, obj):
+        return dec_to_gms(obj.sitio_lon)
+    sitio_lon_gms.short_description = "Longitud Torre (GMS)"
+    
 
 class RegistroSitioImagenesInline(admin.StackedInline):
     model = RegistroSitioImagenes
@@ -158,23 +259,34 @@ class RegistroSitioImagenesInline(admin.StackedInline):
 class RegistioElectricoInline(admin.StackedInline):
     model = RegistioElectrico
     extra = 0
-    fields =('electrico_no_poste',
-            'electrico_lat',
-            'electrico_lon',
-            'electrico_comentario',
-            'electrico_imagen1_thumbnail',
-            'electrico_imagen1',
-            'electrico_imagen2_thumbnail',
-            'electrico_imagen2',)
-    # readonly_fields =('electrico_no_poste',
+    # fields =('electrico_no_poste',
     #         'electrico_lat',
     #         'electrico_lon',
     #         'electrico_comentario',
     #         'electrico_imagen1_thumbnail',
-    #         'electrico_imagen2_thumbnail',)
-    readonly_fields =(
+    #         'electrico_imagen1',
+    #         'electrico_imagen2_thumbnail',
+    #         'electrico_imagen2',)
+    readonly_fields =('electrico_no_poste',
+            'electrico_lat', 'electrico_lat_gms',
+            'electrico_lon','electrico_lon_gms',
+            'electrico_comentario',
             'electrico_imagen1_thumbnail',
-            'electrico_imagen2_thumbnail',)
+            'electrico_imagen2_thumbnail',
+            # 'electrico_google_thumbnail', 'distancia_coordenadas'
+            )
+    fieldsets = (
+        ('', {  
+            'fields': (
+                'electrico_no_poste', 
+                ('electrico_lat', 'electrico_lat_gms'),
+                ('electrico_lon', 'electrico_lon_gms'),
+                ('electrico_imagen1_thumbnail', 'electrico_comentario'),
+                'electrico_imagen2_thumbnail',
+                # ('electrico_google_thumbnail', 'distancia_coordenadas'),
+                
+            ),
+        }),)
     def electrico_imagen1_thumbnail(self, obj):
         if obj.electrico_imagen1:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="320" height=""/>', obj.electrico_imagen1.url)
@@ -187,91 +299,33 @@ class RegistioElectricoInline(admin.StackedInline):
         return "No hay imagen"
     electrico_imagen2_thumbnail.short_description = 'Imagen Sistema electrico'
     
-# Admin para RegistroLlegada
-# class RegistroLlegadaAdmin(admin.ModelAdmin):
-#     inlines = [
-#         RegistroLocalidadInline,
-#         RegistroPropietarioInline,
-#         RegistroPropiedadInline,
-#         RegistroSitioInline,
-#         RegistroSitioImagenesInline,
-#         RegistioElectricoInline,
-#     ]
-    # readonly_fields = (
-    #     'sitio', 
-    #     'sitio_nombre', 
-    #     'sitio_altura',
-    #     'sitio_empresa', 
-    #     'candidato', 
-    #     'usuario',
-    #     'sitio_latitud',
-    #     'sitio_longitud',
-    #     'status_llegada',
-    #     'sitio_imagen',
-    #     'observaciones',
-    #     )
-    # list_display = (
-    #     'sitio', 
-    #     'sitio_nombre', 
-    #     'sitio_altura',
-    #     'sitio_empresa', 
-    #     'candidato', 
-    #     'usuario',
-    #     'lat_llegada',
-    #     'lon_llegada',
-    #     'status_llegada',
-    #     'sitio_imagen',
-    #     'observaciones',
-    #     )
-    # fieldsets = (
-    #     ('Información General', {  # Ajusta los títulos y campos según necesites
-    #         'fields': (
-    #             'sitio_empresa',
-    #             ('sitio', 'sitio_nombre', 'sitio_altura'),
-    #             ('usuario', 'candidato'),
-    #             ('sitio_latitud', 'sitio_longitud'),
-    #             ),
-    #     }),
-    #     ('Información de Llegada', {
-    #         'fields': (
-    #             'status_llegada',
-    #             ('sitio_imagen', 'observaciones'),
-    #             'imagen_llegada',
-    #             ),
-    #     })
-    #     )
-#     def sitio_empresa(self, obj):
-#         # Intenta recuperar el objeto Usuario relacionado al user de RegistroLlegada
-#         try:
-#             usuario = Usuario.objects.get(user=obj.usuario)
-#             return usuario.empresa
-#         except Usuario.DoesNotExist:
-#             return "No definido"  # O puedes retornar un valor que indique que no se encontró el Usuario
-#     sitio_empresa.short_description = 'País Empresa' 
-    
-#     def sitio_nombre(self, obj):
-#         return obj.sitio.nombre
-#     sitio_nombre.short_description = 'Nombre'
-    
-#     def sitio_altura(self, obj):
-#         return f"{obj.sitio.altura} m."
-#     sitio_altura.short_description = 'Altura'
-    
-#     def sitio_latitud(self, obj):
-#         return f"{obj.sitio.lat_nominal}"
-#     sitio_latitud.short_description = 'Latitud'
-    
-#     def sitio_longitud(self, obj):
-#         return f"{obj.sitio.lon_nominal}"
-#     sitio_longitud.short_description = 'Longitud'
-    
-#     def sitio_imagen(self, obj):
-#         if obj.imagen_llegada:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
-#             return format_html('<img src="{}" width="320" height=""/>', obj.imagen_llegada.url)
-#         return "No hay imagen"
-#     sitio_imagen.short_description = 'Imagen llegada localidad'
+    # def distancia_coordenadas(self, obj):
+    #     sitio_relacionado = RegistroSitio.objects.filter(candidato=obj.campo_comun).first()
+    #     if sitio_relacionado and obj.electrico_lat:
+    #         distancia = calcular_distancia_geopy(
+    #             obj.electrico_lat, 
+    #             obj.electrico_lon, 
+    #             sitio_relacionado.sitio_lat, 
+    #             sitio_relacionado.sitio_lon
+    #         )
+    #         return f"{round(distancia, 2)} m" 
+    #     return "Sin distancia"
+    # distancia_coordenadas.short_description = 'Distancia a Coordenadas nominales'
         
-# admin.site.register(RegistroLlegada, RegistroLlegadaAdmin)
+    # def electrico_google_thumbnail(self, obj):
+    #     if obj.electrico_img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+    #         return format_html('<img src="{}" width="320" height=""/>', obj.electrico_img_google.url)
+    #     return "No hay imagen"
+    # electrico_google_thumbnail.short_description = 'Imagen Google'
+
+    def electrico_lat_gms(self, obj):
+        return dec_to_gms(obj.electrico_lat)
+    electrico_lat_gms.short_description = "Latitud (GMS)"
+    
+    def electrico_lon_gms(self, obj):
+        return dec_to_gms(obj.electrico_lon)
+    electrico_lon_gms.short_description = "Longitud (GMS)"
+
 
 class CandidatoAdmin(admin.ModelAdmin):
     inlines = [
@@ -280,7 +334,7 @@ class CandidatoAdmin(admin.ModelAdmin):
         RegistroPropietarioInline,
         RegistroPropiedadInline,
         RegistroSitioInline,
-        RegistroSitioImagenesInline,
+        # RegistroSitioImagenesInline,
         RegistioElectricoInline,
     ]
     list_display = (
@@ -300,6 +354,21 @@ class CandidatoAdmin(admin.ModelAdmin):
                        'imagen_gmaps'
                        )
 
+    fieldsets = (
+        ('Datos de Proyecto', {  
+            'fields': (    
+                ('sitio_ID', 'sitio_nombre', 'sitio_altura' ),
+                ('sitio_provincia', 'sitio_municipio', 'sitio_localidad', ),
+                ('usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa'),
+                ('sitio_lat_nominal', 'sitio_lat_nominal_gms' ),
+                ('sitio_lon_nominal', 'sitio_lon_nominal_gms' ),
+                'imagen_gmaps',
+                ),
+
+            # 'description': 'Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto. Para más detalles, <a href="https://example.com">visita este enlace</a>.'
+    
+        }),
+    )
     def sitio_ID(self, obj):
         return f"{obj.sitio.PTICellID}"
     sitio_ID.short_description = 'PTI ID'
@@ -363,42 +432,11 @@ class CandidatoAdmin(admin.ModelAdmin):
     
     def imagen_gmaps(self, obj):
         if obj.sitio.img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
-            return format_html('<img src="{}" width="620" height=""/>', obj.sitio.img_google.url)
+            return format_html('<img src="{}" width="480" height=""/>', obj.sitio.img_google.url)
         return "No hay imagen"
     imagen_gmaps.short_description = 'Vista Previa de la Imagen'
     
     
-    fieldsets = (
-        ('Datos de Proyecto', {  
-            'fields': (    
-                ('sitio_ID', 'sitio_nombre', 'sitio_altura' ),
-                ('sitio_provincia', 'sitio_municipio', 'sitio_localidad', ),
-                ('usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa'),
-                ('sitio_lat_nominal', 'sitio_lat_nominal_gms' ),
-                ('sitio_lon_nominal', 'sitio_lon_nominal_gms' ),
-                'imagen_gmaps',
-                ),
 
-            # 'description': 'Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto. Para más detalles, <a href="https://example.com">visita este enlace</a>.'
-    
-        }),
-    )
-    # fieldsets = (
-    #     ('Información General', {  # Ajusta los títulos y campos según necesites
-    #         'fields': (
-    #             'sitio_empresa',
-    #             ('sitio', 'sitio_nombre', 'sitio_altura'),
-    #             ('usuario', 'candidato'),
-    #             ('sitio_latitud', 'sitio_longitud'),
-    #             ),
-    #     }),
-    #     ('Información de Llegada', {
-    #         'fields': (
-    #             'status_llegada',
-    #             ('sitio_imagen', 'observaciones'),
-    #             'imagen_llegada',
-    #             ),
-    #     })
-    #     )
 
 admin.site.register(Candidato, CandidatoAdmin)

@@ -142,6 +142,7 @@ SEMANTIC_APP_LIST = [
             {"object_name": "Empresa"},
             {"object_name": "Usuario"},
             {"object_name": "Sitio"}, 
+            {"object_name": "RegistroSitio"}, 
             {"object_name": "Candidato"}, 
             ],
     },
