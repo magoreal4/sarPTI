@@ -14,7 +14,10 @@ from .models import (Empresa,
                      RegistroSitioImagenes,
                      RegistioElectrico
                      )
-
+from semantic_admin import SemanticModelAdmin, SemanticStackedInline, SemanticTabularInline
+from semantic_admin.contrib.import_export.admin import SemanticImportExportModelAdmin
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
 
 def dec_to_gms(decimal_deg, is_lat=True):
     if decimal_deg is None or decimal_deg == "":
@@ -57,10 +60,37 @@ class UsuarioAdmin(admin.ModelAdmin):
     list_editable = ('empresa', )
 admin.site.register(Usuario, UsuarioAdmin)
 
-class SitioAdmin(admin.ModelAdmin):
-    list_display = ('PTICellID', 'nombre', 'altura', 'empresa','id' )  
+
+class SitiosResource(resources.ModelResource):
+    class Meta:
+        model = Sitio
+
+# class SitioAdmin(admin.ModelAdmin):
+#     list_display = ('PTICellID', 'nombre', 'altura', 'empresa','id' )  
+#     list_editable = ('empresa', )
+
+
+class SitioAdmin(SemanticImportExportModelAdmin):
+    resource_class = SitiosResource
+    list_display = ('PTICellID', 'nombre', 'altura', 'empresa', 'id')
     list_editable = ('empresa', )
 admin.site.register(Sitio, SitioAdmin)
+        
+# class SitioImportExportAdmin(SemanticImportExportModelAdmin):
+#     resource_class = SitiosResource
+#     list_display = (
+#         'PTICellID',
+#         'EntelID',
+#         'nombre_modificado',
+#         'altura',
+#         'lat_nombre',
+#         'lon_nombre',
+#     )
+
+    # class Meta:
+    #     model = Sitio
+
+
 
 # class RegistroSitioAdmin(admin.ModelAdmin):
 #     list_display = ('sitio_lat', 'sitio_lon',  )
@@ -81,7 +111,7 @@ admin.site.register(Sitio, SitioAdmin)
 
 
 
-class RegistroLlegadaInline(admin.StackedInline):
+class RegistroLlegadaInline(SemanticStackedInline):
     model = RegistroLlegada
     extra = 0
     readonly_fields = (
@@ -115,7 +145,7 @@ class RegistroLlegadaInline(admin.StackedInline):
     imagen_llegada_preview.short_description = 'Vista Previa de la Imagen'
     
 # Clases Inline para cada modelo relacionado
-class RegistroLocalidadInline(admin.StackedInline):
+class RegistroLocalidadInline(SemanticStackedInline):
     model = RegistroLocalidad
     extra = 0
     readonly_fields = ('provincia','municipio', 'localidad', 'energia_localidad_mensaje')
@@ -133,7 +163,7 @@ class RegistroLocalidadInline(admin.StackedInline):
             return "No Cuenta con energía Electríca"
     energia_localidad_mensaje.short_description = "Energía Ecéctrica"
 
-class RegistroPropietarioInline(admin.StackedInline):
+class RegistroPropietarioInline(SemanticStackedInline):
     model = RegistroPropietario
     extra = 0
     readonly_fields =('propietario_nombre_apellido',
@@ -162,7 +192,7 @@ class RegistroPropietarioInline(admin.StackedInline):
         return date_format(obj.propietario_born, "d/m/Y")
     fecha_nacimiento.short_description = 'Fecha de Nacimiento'
     
-class RegistroPropiedadInline(admin.StackedInline):
+class RegistroPropiedadInline(SemanticStackedInline):
     model = RegistroPropiedad
     extra = 0
     readonly_fields =('propiedad_rol','propiedad_escritura',
@@ -183,7 +213,7 @@ class RegistroPropiedadInline(admin.StackedInline):
         return "No hay imagen"
     propiedad_imagen_thumbnail.short_description = 'Imagen Principal de la Propiedad'
 
-class RegistroSitioInline(admin.StackedInline):
+class RegistroSitioInline(SemanticStackedInline):
     model = RegistroSitio
     extra = 0
     readonly_fields =('sitio_fecha',
@@ -239,7 +269,7 @@ class RegistroSitioInline(admin.StackedInline):
     sitio_lon_gms.short_description = "Longitud Torre (GMS)"
     
 
-class RegistroSitioImagenesInline(admin.StackedInline):
+class RegistroSitioImagenesInline(SemanticStackedInline):
     model = RegistroSitioImagenes
     extra = 0
     fields =('pic_with_description', 'pic', 'descripcion')
@@ -256,7 +286,7 @@ class RegistroSitioImagenesInline(admin.StackedInline):
     pic_with_description.short_description = "Imagen y Descripción"
 
     
-class RegistioElectricoInline(admin.StackedInline):
+class RegistioElectricoInline(SemanticStackedInline):
     model = RegistioElectrico
     extra = 0
     # fields =('electrico_no_poste',
@@ -327,7 +357,7 @@ class RegistioElectricoInline(admin.StackedInline):
     electrico_lon_gms.short_description = "Longitud (GMS)"
 
 
-class CandidatoAdmin(admin.ModelAdmin):
+class CandidatoAdmin(SemanticModelAdmin):
     inlines = [
         RegistroLlegadaInline,
         RegistroLocalidadInline,

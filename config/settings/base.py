@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'theme',
     'rest_framework',
     'django_filters',
+    'import_export',
 
     # 'rest_framework_tracking',
 ]
