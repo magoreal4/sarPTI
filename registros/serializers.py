@@ -25,7 +25,8 @@ class SitioSerializer(serializers.ModelSerializer):
 class CandidatoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Candidato
-        fields = ['id', 'sitio', 'usuario', 'candidato']
+        fields = '__all__'
+        # fields = ['sitio', 'usuario', 'candidato']
 
 class RegistroLlegadaSerializer(serializers.ModelSerializer): 
     candidato = CandidatoSerializer()
@@ -39,7 +40,7 @@ class RegistroLlegadaSerializer(serializers.ModelSerializer):
                 'imagen_llegada',
                 'observaciones',
                 ]
-
+        # fields = '__all__'
     def create(self, validated_data):
         candidato_data = validated_data.pop('candidato')
         candidato = Candidato.objects.create(**candidato_data)

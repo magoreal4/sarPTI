@@ -1,0 +1,66 @@
+
+.field-sitio_lat_nominal,
+.field-sitio_lon_nominal,
+.field-sitio_empresa {
+    width: 350px!important;
+}
+
+/* Les pone a las imagenes marco */
+img {
+    margin-right: 2%; /* Añade un pequeño margen entre columnas */
+    padding: 10px; /* Añade un padding alrededor de la imagen */
+    border-radius: 15px; /* Redondea las esquinas del borde de la imagen */
+    border: 1px solid #ccc; /* Añade un borde sólido de color gris claro */
+    display: block; /* Asegura que la imagen se muestre como un bloque */
+    margin: 10px;
+}
+
+/* Centrea la descripcion de la imagen */
+.inline-description {
+    text-align: center;
+}
+
+/* Borra la opcion de borrar */
+/* y ademas el encabezado */
+/* h3.ui.header, */
+.ui.checkbox.delete {
+    display: none;
+}
+
+h3 {
+    display: none;
+} 
+
+/* Marco de las imagenes */
+fieldset {
+    border-radius: 5px; /* Redondea los bordes */
+    border: 1px solid #ccc; /* Añade un borde sutil */
+    margin-bottom: 20px;
+}
+
+.model- td {
+    background-color: #ffd1c4;
+    color: black;
+}
+
+div.app-registros.module > table > thead > tr > th,
+div.app-auth.module > table > thead > tr > th {
+    background-color: #ea3323;
+}
+
+div.app-registros.module > table > thead > tr > th > a,
+div.app-auth.module > table > thead > tr > th > a{
+    color: white;
+    text-transform: uppercase;
+}
+
+.green.button {
+    background-color: #58A4B0!important;
+    color: white!important;
+}
+
+.primary.button {
+    background-color: #ffd1c4!important;
+    color: black!important;
+    box-shadow: none!important;
+}

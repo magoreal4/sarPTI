@@ -4,8 +4,6 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.exceptions import ValidationError
-# from .models import RegistroLocalidad
-# from rest_framework.parsers import MultiPartParser, FormParser
 from .serializers import (
     SitioSerializer,
     RegistroLlegadaSerializer, 
@@ -130,8 +128,11 @@ class RegistroPropiedadList(APIView):
     def post(self, request, format=None):
         serializer = RegistroPropiedadSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except ValueError as e:
+                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroSitioList(APIView):
@@ -146,8 +147,11 @@ class RegistroSitioList(APIView):
     def post(self, request, format=None):
         serializer = RegistroSitioSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except ValueError as e:
+                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroSitioImagenesList(APIView):
@@ -174,20 +178,13 @@ class RegistioElectricoList(APIView):
         registros = RegistioElectrico.objects.all()
         serializer = RegistioElectricoSerializer(registros, many=True)
         return Response(serializer.data)
-
+    
     def post(self, request, format=None):
         serializer = RegistioElectricoSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except ValueError as e:
+                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-# class ListaPaises(APIView):
-#     """
-#     Vista para listar todos los países únicos.
-#     """
-#     def get(self, request, format=None):
-#         # Obtener todos los países únicos
-#         paises = Sitio.objects.values_list('pais', flat=True).distinct()
-#         paises_lista = list(paises)
-#         return Response(paises_lista)

@@ -14,10 +14,16 @@ load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
-
+    # 'whitenoise.runserver_nostatic',
     "semantic_admin",
     "semantic_forms",
+    # "admin_interface",
+    # "colorfield",
+    # 'admin_menu',
+    # 'admin_tools',
+    # 'admin_tools.theming',
+    # 'admin_tools.menu',
+    # 'admin_tools.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     
@@ -50,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 # SITE_ID = 1
@@ -64,7 +72,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR / 'templates')],
-        'APP_DIRS': True,
+        'APP_DIRS': True,  
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -72,10 +80,15 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+        
+            # 'loaders': [  # Agrega esta sección si no existe
+            #     'admin_tools.template_loaders.Loader',
+            #     'django.template.loaders.filesystem.Loader',
+            #     'django.template.loaders.app_directories.Loader',
+            # ],
         },
     },
 ]
-
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
@@ -117,8 +130,8 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
-                    ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
 
 
 MEDIA_URL = '/media/'
@@ -132,20 +145,30 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # APPEND_SLASH = True
 
-SEMANTIC_APP_LIST = [
-    {
-        "app_label": "auth", 
-        "models": [{"object_name": "User"}, {"object_name": "Group"}],
-    },
-    {
-        "app_label": "registros",
-        "models": [
-            {"object_name": "Empresa"},
-            {"object_name": "Usuario"},
-            {"object_name": "Sitio"}, 
-            {"object_name": "RegistroSitio"}, 
-            {"object_name": "Candidato"}, 
-            ],
-    },
-]
+CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://magoreal.loca.lt' ]
 
+# SEMANTIC_APP_LIST = [
+#     {
+#         "app_label": "registros",
+#         "models": [
+#             {"object_name": "Empresa"},
+#             {"object_name": "Usuario"},
+#             {"object_name": "Sitio"}, 
+#             # {"object_name": "RegistroLlegada"}, 
+#             # {"object_name": "RegistroSitio"}, 
+#             # {"object_name": "Candidato"}, 
+#             ],
+#     },
+#     {
+#         "app_label": "auth", 
+#         "models": [{"object_name": "User"}, {"object_name": "Group"}],
+#     },
+
+# ]
+
+# ADMIN_REORDER = (
+#      {'app': 'auth', 'label': 'Grupos y Usuarios'},
+#      {'app': 'registros', 'models': ('Empresa', )},
+#     # 'registros',
+    
+# )
