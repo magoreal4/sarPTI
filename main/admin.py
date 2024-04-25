@@ -1,12 +1,17 @@
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
+from solo.admin import SingletonModelAdmin
+from .models import SiteConfiguration
+from django.utils.html import format_html
+from .forms import ConfiguracionForm
 
 
 class MyAdminSite(admin.AdminSite):
-    site_header = 'Administración BTS PTI'
-    site_title = 'Sitio Admin'
-    index_title = ''
+    site_header = 'BTS PTI'
+    site_title = 'BTS PTI'
+    index_title = 'Inicio'
+
     class Media:
         # js = ('js/admin_custom.js',)
         css = {
@@ -18,15 +23,13 @@ class MyAdminSite(admin.AdminSite):
         app_list = super().get_app_list(request)
 
         # Definir el orden deseado para las aplicaciones
-        app_order = [ 'registros','auth']
+        app_order = ['registros', 'main', 'auth']
 
         # Configuración de orden personalizado y agrupación para 'registros'
         custom_order = {
             'registros': {
                 'Grupo1': ['Empresa', 'Usuario', 'Sitio'],
-                'Grupo2': [
-                    'Candidato',
-                ],
+                'Grupo2': ['Candidato',],
                 'Grupo3': [
                     'RegistroLlegada',
                     'RegistroLocalidad', 
@@ -37,6 +40,12 @@ class MyAdminSite(admin.AdminSite):
                     'RegistioElectrico'
                 ]
             },
+            # 'main': {
+            #     'Grupo4': ['SiteConfiguration'],
+            # }
+            # 'main': {
+            #     'Grupo4': ['SiteConfiguration'],
+            # }
             # 'auth': {
             #     'Usuarios': ['User', 'Group'],  # Asumiendo que quieres agrupar User y Group
             # }
@@ -45,9 +54,11 @@ class MyAdminSite(admin.AdminSite):
             'registros': {
                 'Grupo1': 'Datos del Proyecto',
                 'Grupo2': 'Registros',
-                'Grupo3': 'Detalle de Registros de campo'
-                
+                'Grupo3': 'Detalle de Registros de campo',
             },
+            # 'main': {
+            #     'Grupo4': 'Configuración',
+            # }
             # 'auth': {
             #     'Usuarios': 'CONTROL DE ACCESO'
             # }
@@ -56,6 +67,7 @@ class MyAdminSite(admin.AdminSite):
         # Títulos personalizados para las aplicaciones
         custom_titles = {
             'registros': 'Sistema de Registros',
+            'main': 'Configuración',
         }
 
         # Reordenar la lista de aplicaciones según el orden definido
@@ -89,3 +101,22 @@ admin.site = MyAdminSite(name='myadmin')
 admin.site.register(User, UserAdmin)
 
 admin.site.register(Group, GroupAdmin)
+
+class SiteConfigurationAdmin(SingletonModelAdmin):
+    form = ConfiguracionForm
+    def logo_img(self, obj):
+        if obj.logo_thumbnail:
+            return format_html('<img src="{}" width="100" height="100" />', obj.logo_thumbnail.url)
+        else:
+            return "No hay imagen"
+    logo_img.short_description = 'Logo Preview'
+
+    readonly_fields = ['logo_img']
+    fields = ('logo', 'logo_img', 'api_key')
+    
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        form.base_fields['api_key'].help_text = 'Ingrese la clave API para acceder a la ganereacion de imagenes satelitales.'
+        return form
+
+admin.site.register(SiteConfiguration, SiteConfigurationAdmin)

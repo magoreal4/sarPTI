@@ -43,11 +43,14 @@ fieldset {
     color: black;
 }
 
+
+/* Titulos de la tabla */
+div.app-main.module > table > thead > tr > th,
 div.app-registros.module > table > thead > tr > th,
 div.app-auth.module > table > thead > tr > th {
     background-color: #ea3323;
 }
-
+div.app-main.module > table > thead > tr > th > a,
 div.app-registros.module > table > thead > tr > th > a,
 div.app-auth.module > table > thead > tr > th > a{
     color: white;

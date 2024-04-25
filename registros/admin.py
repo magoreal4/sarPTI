@@ -78,10 +78,37 @@ class SitiosResource(resources.ModelResource):
         import_id_fields = ('PTICellID',)
 
 class SitioAdmin(ImportExportModelAdmin):
-    list_display = ('PTICellID', 'nombre', 'altura', 'empresa', 'contador_llegadas')
+    list_display = ('PTICellID', 
+                    'nombre', 
+                    'altura', 
+                    'empresa', 
+                    'contador_llegadas',
+                    # 'img_thumbnail'
+                    )
     list_editable = ('empresa', )
-    resource_class = SitiosResource
+    readonly_fields = ['img_thumbnail']
+    fields = (
+        'PTICellID',
+        'nombre',
+        'lat_nominal',
+        'lon_nominal',
+        'altura',
+        'provincia',
+        'municipio',
+        'localidad',
+        'empresa',    
+        'img_google',
+        'contador_llegadas',
+        'img_thumbnail' 
+    )
 
+    resource_class = SitiosResource
+    def img_thumbnail(self, obj):
+        if obj.img_google:
+            return format_html('<img src="{}" width="320"  />', obj.img_google.url)
+        else:
+            return "No hay imagen"
+    img_thumbnail.short_description = 'Ubicaion Preview'
 admin.site.register(Sitio, SitioAdmin)
 
 # REGISTRO LLEGADA

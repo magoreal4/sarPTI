@@ -14,16 +14,10 @@ load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 # Application definition
 
 INSTALLED_APPS = [
-    # 'whitenoise.runserver_nostatic',
-    "semantic_admin",
-    "semantic_forms",
-    # "admin_interface",
-    # "colorfield",
-    # 'admin_menu',
-    # 'admin_tools',
-    # 'admin_tools.theming',
-    # 'admin_tools.menu',
-    # 'admin_tools.dashboard',
+    'whitenoise.runserver_nostatic',
+    # "semantic_admin",
+    # "semantic_forms",
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,8 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'import_export',
-
-    # 'rest_framework_tracking',
+    'solo',
 ]
 
 

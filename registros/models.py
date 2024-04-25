@@ -3,11 +3,12 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 import requests
 from django.core.files.base import ContentFile
-from django.db.models import Max
 from django.db import transaction
 from django.db import IntegrityError
 from geopy.distance import geodesic
 from django.utils.html import format_html
+from main.models import SiteConfiguration
+
 
 def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
     """Calcula la distancia entre dos puntos usando geopy."""
@@ -19,6 +20,12 @@ def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
         return distancia
     else:
         return None
+def use_api_key():
+    # Obtener la configuración del sitio
+    config = SiteConfiguration.objects.get()
+    api_key = config.api_key
+    # Aquí puedes usar la api_key para lo que necesites
+    return api_key
 
 def get_google_maps(
     lat1, 
@@ -34,7 +41,9 @@ def get_google_maps(
     scale=2, 
     tamano="640x400",
     ):
+      
     base_url = "https://maps.googleapis.com/maps/api/staticmap?"
+    api_key = use_api_key()
     api_key = "AIzaSyD22EmbDEXIc7Meum5e2MCYj4D0JpDrmpU"
 
 
@@ -134,7 +143,7 @@ class Sitio(models.Model):
     
     img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
     contador_llegadas = models.PositiveIntegerField("Registro/Candidato", default=0) 
-    
+
     def save(self, *args, **kwargs):
         if not self.img_google:  # Si no hay imagen ya asociada, obten una nueva
             imagen_content = get_google_maps(
@@ -160,8 +169,8 @@ class Usuario(models.Model):
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, blank=True, null=True)
     
     class Meta:
-        verbose_name = "Usuario"
-        verbose_name_plural = "Usuarios"
+        verbose_name = "Buscador"
+        verbose_name_plural = "Buscadores"
     def __str__(self):
         return f"{self.user}"
 
