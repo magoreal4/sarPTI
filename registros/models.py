@@ -116,8 +116,8 @@ def ajustar_zoom(distancia):
     return z
 
 class Empresa(models.Model):
-    pais = models.CharField(max_length=25)
-    nombre = models.CharField("Empresa", max_length=25)
+    pais = models.CharField(max_length=25, blank=True, null=True)
+    nombre = models.CharField("Empresa", max_length=25, blank=True, null=True)
     
     class Meta:
         verbose_name = "Empresa"
@@ -144,39 +144,35 @@ class Sitio(models.Model):
     img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
     contador_llegadas = models.PositiveIntegerField("Registro/Candidato", default=0) 
 
-    def save(self, *args, **kwargs):
-        if not self.img_google:  # Si no hay imagen ya asociada, obten una nueva
-            imagen_content = get_google_maps(
-                self.lat_nominal, 
-                self.lon_nominal, 
-                zoom=15
-                )
+    # def save(self, *args, **kwargs):
+    #     if not self.img_google:  # Si no hay imagen ya asociada, obten una nueva
+    #         imagen_content = get_google_maps(
+    #             self.lat_nominal, 
+    #             self.lon_nominal, 
+    #             zoom=15
+    #             )
             
-            if imagen_content:
-                filename = f"{self.pk or 'nuevo'}_nominal.png"
-                self.img_google.save(filename, ContentFile(imagen_content), save=False)
-        super(Sitio, self).save(*args, **kwargs)
-    def __str__(self):
-        return self.PTICellID
+    #         if imagen_content:
+    #             filename = f"{self.pk or 'nuevo'}_nominal.png"
+    #             self.img_google.save(filename, ContentFile(imagen_content), save=False)
+    #     super(Sitio, self).save(*args, **kwargs)
+    # def __str__(self):
+    #     return self.PTICellID
 
     class Meta:
         verbose_name = "Datos Sitio"
         verbose_name_plural = "Datos Sitio"
-class Usuario(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    nombre = models.CharField(max_length=120)
     telf = models.CharField(max_length=15)
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, blank=True, null=True)
     
-    class Meta:
-        verbose_name = "Buscador"
-        verbose_name_plural = "Buscadores"
     def __str__(self):
-        return f"{self.user}"
+        return self.user.username
 
 class Candidato(models.Model):
     sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     candidato = models.CharField(
         max_length=15,
         primary_key=True,  # Establece como clave primaria

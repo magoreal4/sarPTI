@@ -16,7 +16,7 @@ from .serializers import (
     )
 
 from .models import (
-    Usuario,
+    UserProfile,
     Sitio,
     RegistroLlegada, 
     RegistroLocalidad,
@@ -39,11 +39,11 @@ class LoginAPIView(APIView):
         if user is not None:
             try:
                 # Busca la instancia de Usuario relacionada con el usuario autenticado
-                usuario = Usuario.objects.get(user=user)
+                usuario = UserProfile.objects.get(user=user)
                 # Ahora, accedemos al ID de pais_empresa directamente
                 empresa_id = usuario.empresa.id
                 mensaje = "Usuario logueado correctamente."
-            except Usuario.DoesNotExist:
+            except UserProfile.DoesNotExist:
                 # Maneja el caso en que no se encuentre una instancia de Usuario
                 empresa_id = "None"  # O maneja este caso como prefieras
                 mensaje = "Contactese con el administrador."
@@ -62,27 +62,24 @@ class SitioListView(APIView):
         serializer = SitioSerializer(sitios, many=True)
         return Response(serializer.data)
 
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class RegistroLlegadaList(APIView):
-    """
-    Lista todos los registros de llegada o crea un nuevo registro.
-    """
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+    
     def get(self, request, format=None):
         registros = RegistroLlegada.objects.all()
         serializer = RegistroLlegadaSerializer(registros, many=True)
         return Response(serializer.data)
 
-    def post(self, request, format=None):
-        serializer = RegistroLlegadaSerializer(data=request.data)
-        try:
-            if serializer.is_valid(raise_exception=True):
-                serializer.save(), 
-                return Response({"success": True, "data": serializer.data}, status=status.HTTP_201_CREATED)
-        except ValidationError as e:
-            return Response(e.message_dict, status=status.HTTP_400_BAD_REQUEST)
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+    def post(self, request, *args, **kwargs):
+        serializer = RegistroLlegadaSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroLocalidadList(APIView):
     """

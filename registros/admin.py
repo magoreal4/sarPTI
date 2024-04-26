@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (Empresa, 
                      Sitio, 
-                     Usuario, 
+                     UserProfile, 
                      Candidato, 
                      RegistroLlegada,
                      RegistroLocalidad,
@@ -16,6 +16,21 @@ from import_export import resources
 from django.utils.formats import date_format
 from django.utils.html import format_html
 from geopy.distance import geodesic
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import User
+
+class UserProfileInline(admin.StackedInline):
+    model = UserProfile
+    can_delete = False
+    verbose_name_plural = 'Buscador'
+
+class UserAdmin(BaseUserAdmin):
+    inlines = (UserProfileInline,)
+
+# Re-register UserAdmin
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
+
 
 def dec_to_gms(decimal_deg, is_lat=True):
     if decimal_deg is None or decimal_deg == "":
@@ -56,18 +71,18 @@ class EmpresaAdmin(admin.ModelAdmin):
     list_display = ('pais', 'nombre')
 admin.site.register(Empresa, EmpresaAdmin)
 
-class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ('user', 'nombre', 'telf', 'empresa_nombre', 'empresa_pais')
-    # list_editable = ('telf', )
-    def empresa_nombre(self, obj):
-        return obj.empresa.nombre if obj.empresa else 'Sin asignación'
-    empresa_nombre.short_description = 'Empresa' 
+# class UsuarioAdmin(admin.ModelAdmin):
+#     list_display = ('user', 'nombre', 'telf', 'empresa_nombre', 'empresa_pais')
+#     # list_editable = ('telf', )
+#     def empresa_nombre(self, obj):
+#         return obj.empresa.nombre if obj.empresa else 'Sin asignación'
+#     empresa_nombre.short_description = 'Empresa' 
 
-    def empresa_pais(self, obj):
-        return obj.empresa.pais if obj.empresa else 'Sin asignación'
-    empresa_pais.short_description = 'Pais' 
+#     def empresa_pais(self, obj):
+#         return obj.empresa.pais if obj.empresa else 'Sin asignación'
+#     empresa_pais.short_description = 'Pais' 
     
-admin.site.register(Usuario, UsuarioAdmin)
+# admin.site.register(Usuario, UsuarioAdmin)
 
 
 
