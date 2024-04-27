@@ -7,7 +7,7 @@ from .views import (
     RegistroPropietarioList,
     RegistroPropiedadList,
     RegistroSitioList,
-    RegistroSitioImagenesList,
+    RegistroSitioImagenesList,                     
     RegistioElectricoList
     )
 

@@ -1,26 +1,25 @@
 from django.contrib.auth import authenticate
+from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.exceptions import ValidationError
-# from .models import RegistroLocalidad
-# from rest_framework.parsers import MultiPartParser, FormParser
 from .serializers import (
     SitioSerializer,
-    RegistroLlegadaSerializer, 
-    RegistroLocalidadSerializer, 
-    RegistroPropietarioSerializer, 
-    RegistroPropiedadSerializer, 
+    RegistroLlegadaSerializer,
+    RegistroLocalidadSerializer,
+    RegistroPropietarioSerializer,
+    RegistroPropiedadSerializer,
     RegistroSitioSerializer,
-    RegistroSitioImagenesSerializer, 
+    RegistroSitioImagenesSerializer,
     RegistioElectricoSerializer
     )
 
 from .models import (
-    Usuario,
+    UserProfile,
     Sitio,
-    RegistroLlegada, 
+    RegistroLlegada,
     RegistroLocalidad,
     RegistroPropietario,
     RegistroPropiedad,
@@ -29,7 +28,8 @@ from .models import (
     RegistioElectrico
     )
 
-
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class LoginAPIView(APIView):
     permission_classes = [AllowAny]
@@ -38,27 +38,33 @@ class LoginAPIView(APIView):
         username = request.data.get('username')
         password = request.data.get('password')
         user = authenticate(request, username=username, password=password)
+        token = None
         if user is not None:
             try:
                 # Busca la instancia de Usuario relacionada con el usuario autenticado
-                usuario = Usuario.objects.get(user=user)
+                usuario = UserProfile.objects.get(user=user)
                 # Ahora, accedemos al ID de pais_empresa directamente
                 empresa_id = usuario.empresa.id
                 mensaje = "Usuario logueado correctamente."
-            except Usuario.DoesNotExist:
+                token, _ = Token.objects.get_or_create(user=user)
+            except UserProfile.DoesNotExist:
                 # Maneja el caso en que no se encuentre una instancia de Usuario
                 empresa_id = "None"  # O maneja este caso como prefieras
                 mensaje = "Contactese con el administrador."
-                
+
             data = {
                 'user_id': user.id,
                 'empresa_id': empresa_id,  # Devuelve el ID de pais_empresa
+                'token': token.key,
             }
             return Response({"success": True, "data": data, "message": mensaje}, status=status.HTTP_200_OK)
         else:
             return Response({"success": False, "error": {"message": "Credenciales inválidas."}}, status=status.HTTP_400_BAD_REQUEST)
 
+
 class SitioListView(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, empresa_id):
         sitios = Sitio.objects.filter(empresa_id=empresa_id)
         serializer = SitioSerializer(sitios, many=True)
@@ -66,25 +72,20 @@ class SitioListView(APIView):
 
 
 class RegistroLlegadaList(APIView):
-    """
-    Lista todos los registros de llegada o crea un nuevo registro.
-    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
         registros = RegistroLlegada.objects.all()
         serializer = RegistroLlegadaSerializer(registros, many=True)
         return Response(serializer.data)
 
-    def post(self, request, format=None):
-        serializer = RegistroLlegadaSerializer(data=request.data)
-        try:
-            if serializer.is_valid(raise_exception=True):
-                serializer.save(), 
-                return Response({"success": True, "data": serializer.data}, status=status.HTTP_201_CREATED)
-        except ValidationError as e:
-            return Response(e.message_dict, status=status.HTTP_400_BAD_REQUEST)
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+    def post(self, request, *args, **kwargs):
+        serializer = RegistroLlegadaSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save(usuario=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroLocalidadList(APIView):
     """
@@ -101,7 +102,7 @@ class RegistroLocalidadList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
 class RegistroPropietarioList(APIView):
     """
     Lista todos los registros de propietario o crea un nuevo registro.
@@ -117,7 +118,7 @@ class RegistroPropietarioList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
 class RegistroPropiedadList(APIView):
     """
     Lista todos los registros de propiedad o crea un nuevo registro.
@@ -130,8 +131,11 @@ class RegistroPropiedadList(APIView):
     def post(self, request, format=None):
         serializer = RegistroPropiedadSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except ValueError as e:
+                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroSitioList(APIView):
@@ -146,8 +150,11 @@ class RegistroSitioList(APIView):
     def post(self, request, format=None):
         serializer = RegistroSitioSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except ValueError as e:
+                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroSitioImagenesList(APIView):
@@ -165,7 +172,7 @@ class RegistroSitioImagenesList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
 class RegistioElectricoList(APIView):
     """
     Lista todos los registros de electrico o crea un nuevo registro.
@@ -178,16 +185,9 @@ class RegistioElectricoList(APIView):
     def post(self, request, format=None):
         serializer = RegistioElectricoSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            try:
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except ValueError as e:
+                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-# class ListaPaises(APIView):
-#     """
-#     Vista para listar todos los países únicos.
-#     """
-#     def get(self, request, format=None):
-#         # Obtener todos los países únicos
-#         paises = Sitio.objects.values_list('pais', flat=True).distinct()
-#         paises_lista = list(paises)
-#         return Response(paises_lista)

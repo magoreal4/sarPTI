@@ -1,12 +1,11 @@
 from django.contrib import admin
-from django.utils.html import format_html
-from django.utils.formats import date_format
-from geopy.distance import geodesic
-from .models import (Empresa, 
-                     Usuario, 
-                     Sitio, 
-                     Candidato, 
-                     RegistroLlegada, 
+from django.db.models import F
+
+from .models import (Empresa,
+                     Sitio,
+                     UserProfile,
+                     Candidato,
+                     RegistroLlegada,
                      RegistroLocalidad,
                      RegistroPropietario,
                      RegistroPropiedad,
@@ -14,10 +13,29 @@ from .models import (Empresa,
                      RegistroSitioImagenes,
                      RegistioElectrico
                      )
-from semantic_admin import SemanticModelAdmin, SemanticStackedInline, SemanticTabularInline
-from semantic_admin.contrib.import_export.admin import SemanticImportExportModelAdmin
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
+from django.utils.formats import date_format
+from django.utils.html import format_html
+from geopy.distance import geodesic
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import User
+
+
+class UserProfileInline(admin.StackedInline):
+    model = UserProfile
+    can_delete = False
+    verbose_name_plural = 'Buscador'
+
+
+class UserAdmin(BaseUserAdmin):
+    inlines = (UserProfileInline,)
+
+
+# Re-register UserAdmin
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
+
 
 def dec_to_gms(decimal_deg, is_lat=True):
     if decimal_deg is None or decimal_deg == "":
@@ -26,18 +44,19 @@ def dec_to_gms(decimal_deg, is_lat=True):
     is_negative = decimal_deg < 0
     # Convierte el grado a positivo para el cálculo
     decimal_deg = abs(decimal_deg)
-    
+
     degrees = int(decimal_deg)
     minutes = int((decimal_deg - degrees) * 60)
-    seconds = (decimal_deg - degrees - minutes/60) * 3600.00
+    seconds = (decimal_deg - degrees - minutes / 60) * 3600.00
 
     # Decide el sufijo basado en si es latitud y si es positivo/negativo
     if is_lat:
         suffix = "S" if is_negative else "N"
     else:
         suffix = "O" if is_negative else "E"
-    
+
     return f"{degrees}° {minutes}' {seconds:.2f}\" {suffix}"
+
 
 def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
     """Calcula la distancia entre dos puntos usando geopy."""
@@ -49,424 +68,677 @@ def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
         return distancia
     else:
         return None
-    
+
+
+# admin.site.register(User, UserAdmin)
+
+# admin.site.register(Group, GroupAdmin)
 
 class EmpresaAdmin(admin.ModelAdmin):
-    list_display = ('id', 'pais', 'nombre')
+    list_display = ('pais', 'nombre')
+
+
 admin.site.register(Empresa, EmpresaAdmin)
 
-class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'nombre', 'telf', 'empresa')  
-    list_editable = ('empresa', )
-admin.site.register(Usuario, UsuarioAdmin)
+
+# class UsuarioAdmin(admin.ModelAdmin):
+#     list_display = ('user', 'nombre', 'telf', 'empresa_nombre', 'empresa_pais')
+#     # list_editable = ('telf', )
+#     def empresa_nombre(self, obj):
+#         return obj.empresa.nombre if obj.empresa else 'Sin asignación'
+#     empresa_nombre.short_description = 'Empresa' 
+
+#     def empresa_pais(self, obj):
+#         return obj.empresa.pais if obj.empresa else 'Sin asignación'
+#     empresa_pais.short_description = 'Pais' 
+
+# admin.site.register(Usuario, UsuarioAdmin)
 
 
+# SITIOS
 class SitiosResource(resources.ModelResource):
     class Meta:
         model = Sitio
-
-# class SitioAdmin(admin.ModelAdmin):
-#     list_display = ('PTICellID', 'nombre', 'altura', 'empresa','id' )  
-#     list_editable = ('empresa', )
+        import_id_fields = ('PTICellID',)
 
 
-class SitioAdmin(SemanticImportExportModelAdmin):
+class SitioAdmin(ImportExportModelAdmin):
+    list_display = ('PTICellID',
+                    'nombre',
+                    'altura',
+                    'empresa',
+                    'contador_llegadas',
+                    # 'img_thumbnail'
+                    )
+    list_editable = ('empresa',)
+    readonly_fields = ['img_thumbnail']
+    fields = (
+        'PTICellID',
+        'nombre',
+        'lat_nominal',
+        'lon_nominal',
+        'altura',
+        'provincia',
+        'municipio',
+        'localidad',
+        'empresa',
+        'img_google',
+        'contador_llegadas',
+        'img_thumbnail'
+    )
+
     resource_class = SitiosResource
-    list_display = ('PTICellID', 'nombre', 'altura', 'empresa', 'id')
-    list_editable = ('empresa', )
+
+    def img_thumbnail(self, obj):
+        if obj.img_google:
+            return format_html('<img src="{}" width="320"  />', obj.img_google.url)
+        else:
+            return "No hay imagen"
+
+    img_thumbnail.short_description = 'Ubicaion Preview'
+
+
 admin.site.register(Sitio, SitioAdmin)
-        
-# class SitioImportExportAdmin(SemanticImportExportModelAdmin):
-#     resource_class = SitiosResource
-#     list_display = (
-#         'PTICellID',
-#         'EntelID',
-#         'nombre_modificado',
-#         'altura',
-#         'lat_nombre',
-#         'lon_nombre',
-#     )
-
-    # class Meta:
-    #     model = Sitio
 
 
-
-# class RegistroSitioAdmin(admin.ModelAdmin):
-#     list_display = ('sitio_lat', 'sitio_lon',  )
-# admin.site.register(RegistroSitio, RegistroSitioAdmin)
-
-
-# admin.site.register(RegistroLocalidad)
-
-# admin.site.register(RegistroPropietario)
-
-# admin.site.register(RegistroPropiedad)
-
-# admin.site.register(RegistroSitioImagenes)
-
-# admin.site.register(RegistioElectrico)
-
-# admin.site.register(Candidato)
-
-
-
-class RegistroLlegadaInline(SemanticStackedInline):
+# REGISTRO LLEGADA
+class RegistroLlegadaInline(admin.StackedInline):
     model = RegistroLlegada
     extra = 0
     readonly_fields = (
-        'fecha_llegada', 'status_llegada',
+        'fecha_llegada', 'status_llegada_text',
         'lat_llegada', 'lat_llegada_gms',
         'lon_llegada', 'lon_llegada_gms',
         'imagen_llegada_preview', 'observaciones',
-        )
+    )
     fieldsets = (
-    ('', {  
-        'fields': (    
-            ('fecha_llegada', 'status_llegada',),  
-            ('lat_llegada', 'lat_llegada_gms',  ),
-            ('lon_llegada', 'lon_llegada_gms', ),
-            ('imagen_llegada_preview', 'observaciones'),
+        ('', {
+            'fields': (
+                ('fecha_llegada', 'status_llegada_text',),
+                ('lat_llegada', 'lat_llegada_gms',),
+                ('lon_llegada', 'lon_llegada_gms',),
+                ('imagen_llegada_preview', 'observaciones'),
 
-        ),
-    }),)	
+            ),
+        }),)
+
     def lat_llegada_gms(self, obj):
         return dec_to_gms(obj.lat_llegada)
+
     lat_llegada_gms.short_description = "Latitud Llegada (GMS)"
-    
+
     def lon_llegada_gms(self, obj):
         return dec_to_gms(obj.lon_llegada)
+
     lon_llegada_gms.short_description = "Longitud Llegada (GMS)"
 
     def imagen_llegada_preview(self, obj):
         if obj.imagen_llegada:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="320" height=""/>', obj.imagen_llegada.url)
         return "No hay imagen"
-    imagen_llegada_preview.short_description = 'Vista Previa de la Imagen'
-    
-# Clases Inline para cada modelo relacionado
-class RegistroLocalidadInline(SemanticStackedInline):
+
+    imagen_llegada_preview.short_description = 'Imagen Localidad'
+
+    def status_llegada_text(self, obj):
+        if obj.status_llegada == "true":
+            return format_html('<span style="color: green;">&#10003; Llegada Exitosa</span>')
+        else:
+            return format_html('<span style="color: red;">&#10005; No se llegó a la zona</span>')
+
+    status_llegada_text.short_description = "Estatus"
+
+
+class RegistroLlegadaAdmin(admin.ModelAdmin):
+    list_display = ('candidato',
+                    'status_llegada',
+                    'fecha_llegada',
+                    # 'imagen_thumbnail',
+                    )
+    list_editable = ('status_llegada',)
+    readonly_fields = ['image_tag']
+    fields = (
+        'candidato', 'status_llegada', 'fecha_llegada', 'lat_llegada', 'lon_llegada', 'observaciones', 'imagen_llegada',
+        'image_tag')
+
+    def imagen_thumbnail(self, obj):
+        if obj.imagen_llegada:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+            return format_html('<img src="{}" width="160" height=""/>', obj.imagen_llegada.url)
+        return "No hay imagen"
+
+    imagen_thumbnail.short_description = 'Imagen Localidad'
+
+
+admin.site.register(RegistroLlegada, RegistroLlegadaAdmin)
+
+
+# REGISTRO LOCALIDAD
+class RegistroLocalidadInline(admin.StackedInline):
     model = RegistroLocalidad
     extra = 0
-    readonly_fields = ('provincia','municipio', 'localidad', 'energia_localidad_mensaje')
+    readonly_fields = ('provincia', 'municipio', 'localidad', 'energia_localidad_mensaje')
     fieldsets = (
-                ('', {  
-                    'fields': (    
-                        ('provincia', 'municipio','localidad'),
-                        ('energia_localidad_mensaje')
-                    ),
-                }),)	
+        ('', {
+            'fields': (
+                ('provincia', 'municipio', 'localidad'),
+                ('energia_localidad_mensaje')
+            ),
+        }),)
+
     def energia_localidad_mensaje(self, obj):
         if obj.energia_localidad:
             return "Cuenta con energía Electríca"
         else:
             return "No Cuenta con energía Electríca"
+
     energia_localidad_mensaje.short_description = "Energía Ecéctrica"
 
-class RegistroPropietarioInline(SemanticStackedInline):
+
+class RegistroLocalidadAdmin(admin.ModelAdmin):
+    list_display = ('candidato',
+                    'provincia',
+                    'municipio',
+                    'localidad',
+                    'energia_localidad'
+                    )
+    list_editable = ('energia_localidad',)
+
+
+admin.site.register(RegistroLocalidad, RegistroLocalidadAdmin)
+
+
+# REGISTRO PROPIETARIO
+class RegistroPropietariodInline(admin.StackedInline):
     model = RegistroPropietario
     extra = 0
-    readonly_fields =('propietario_nombre_apellido',
-             'fecha_nacimiento',
-             'propietario_ci',
-             'propietario_telf',
-             'propietario_direccion',
-             'propietario_estado_civil_mensaje',)
+    readonly_fields = ('propietario_nombre_apellido',
+                       'fecha_nacimiento',
+                       'propietario_ci',
+                       'propietario_telf',
+                       'propietario_direccion',
+                       'propietario_estado_civil_mensaje',)
     fieldsets = (
-            ('', {  
-                'fields': (
-                    'propietario_nombre_apellido',
-                    ('fecha_nacimiento', 'propietario_ci', 'propietario_telf'),
-                    ('propietario_direccion', 'propietario_estado_civil_mensaje'),
-                ),
-            }),)
+        ('', {
+            'fields': (
+                'propietario_nombre_apellido',
+                ('fecha_nacimiento', 'propietario_ci', 'propietario_telf'),
+                ('propietario_direccion', 'propietario_estado_civil_mensaje'),
+            ),
+        }),)
 
     def propietario_estado_civil_mensaje(self, obj):
         if obj.propietario_estado_civil:
             return "Casado"
         else:
             return "Soltero"
+
     propietario_estado_civil_mensaje.short_description = "Estado Civil"
-    
+
     def fecha_nacimiento(self, obj):
         return date_format(obj.propietario_born, "d/m/Y")
+
     fecha_nacimiento.short_description = 'Fecha de Nacimiento'
-    
-class RegistroPropiedadInline(SemanticStackedInline):
+
+
+class RegistroPropietarioAdmin(admin.ModelAdmin):
+    list_display = ('candidato',
+                    'propietario_nombre_apellido',
+                    'propietario_telf',
+                    )
+    fields = ('candidato',
+              'propietario_nombre_apellido',
+              'propietario_born',
+              'propietario_estado_civil',
+              'propietario_ci',
+              'propietario_telf',
+              'propietario_direccion',
+              )
+
+
+admin.site.register(RegistroPropietario, RegistroPropietarioAdmin)
+
+
+# REGISTRO PROPIEDAD
+class RegistroPropiedadInline(admin.StackedInline):
     model = RegistroPropiedad
     extra = 0
-    readonly_fields =('propiedad_rol','propiedad_escritura',
-            'propiedad_registro_civil',
-            'propiedad_imagen_thumbnail',
-            'propiedad_descripcion',)
+    readonly_fields = ('propiedad_rol', 'propiedad_escritura',
+                       'propiedad_registro_civil',
+                       'propiedad_imagen_thumbnail',
+                       'propiedad_descripcion',)
     fieldsets = (
-            ('', {  
-                'fields': (
-                    ('propiedad_rol', 'propiedad_escritura', 'propiedad_registro_civil'),
-                    ('propiedad_imagen_thumbnail', 'propiedad_descripcion'),
-                ),
-            }),)
-    
+        ('', {
+            'fields': (
+                ('propiedad_rol', 'propiedad_escritura', 'propiedad_registro_civil'),
+                ('propiedad_imagen_thumbnail', 'propiedad_descripcion'),
+            ),
+        }),)
+
     def propiedad_imagen_thumbnail(self, obj):
         if obj.propiedad_imagen:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="320" height=""/>', obj.propiedad_imagen.url)
         return "No hay imagen"
+
     propiedad_imagen_thumbnail.short_description = 'Imagen Principal de la Propiedad'
 
-class RegistroSitioInline(SemanticStackedInline):
+
+class RegistroPropiedadAdmin(admin.ModelAdmin):
+    list_display = ('candidato',
+                    'propiedad_rol',
+                    'propiedad_escritura',
+                    'propiedad_registro_civil',
+                    )
+    # list_editable = ('status_llegada', )
+    readonly_fields = ['image_tag']
+    fields = ('candidato',
+              'propiedad_rol',
+              'propiedad_escritura',
+              'propiedad_registro_civil',
+              'propiedad_descripcion',
+              'propiedad_imagen', 'image_tag',)
+
+
+admin.site.register(RegistroPropiedad, RegistroPropiedadAdmin)
+
+
+# REGISTRO SITIO
+class RegistroSitioInline(admin.StackedInline):
     model = RegistroSitio
     extra = 0
-    readonly_fields =('sitio_fecha',
-            'sitio_lat', 'sitio_lat_gms',
-            'sitio_lon', 'sitio_lon_gms',
-            'sitio_imagen_thumbnail',
-            'sitio_imagen',
-            'sitio_descripcion',
-            'sitio_google_thumbnail',
-            'distancia_coordenadas')
+    readonly_fields = ('sitio_fecha',
+                       'sitio_lat', 'sitio_lat_gms',
+                       'sitio_lon', 'sitio_lon_gms',
+                       'sitio_imagen_thumbnail',
+                       'sitio_descripcion',
+                       'img_google_distancia_nominal',
+                       'distancia_coordenadas',
+                       'img_google')
     fieldsets = (
-            ('', {  
-                'fields': (
-                    'sitio_fecha', 
-                    ('sitio_lat', 'sitio_lat_gms'),
-                    ('sitio_lon', 'sitio_lon_gms'),
-                    ('sitio_imagen_thumbnail', 'sitio_descripcion'),
-                    ('sitio_google_thumbnail', 'distancia_coordenadas',),
-                    
-                ),
-            }),)
-    
+        ('', {
+            'fields': (
+                'sitio_fecha',
+                ('sitio_lat', 'sitio_lat_gms'),
+                ('sitio_lon', 'sitio_lon_gms'),
+                ('img_google_distancia_nominal', 'sitio_descripcion'),
+                ('distancia_coordenadas',),
+                'img_google',
+            ),
+        }),)
+
     def sitio_imagen_thumbnail(self, obj):
         if obj.sitio_imagen:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="320" height=""/>', obj.sitio_imagen.url)
         return "No hay imagen"
-    sitio_imagen_thumbnail.short_description = 'Imagen Principal de Sitio'
-    
+
+    sitio_imagen_thumbnail.short_description = 'Imagen Principal del Sitio'
+
     def distancia_coordenadas(self, obj):
         if obj.sitio_lat:
             distancia = calcular_distancia_geopy(
-                    obj.sitio_lat, 
-                    obj.sitio_lon, 
-                    obj.candidato.sitio.lat_nominal, 
-                    obj.candidato.sitio.lon_nominal
-                    )
-            return f"{round(distancia, 2)} m" 
+                obj.sitio_lat,
+                obj.sitio_lon,
+                obj.candidato.sitio.lat_nominal,
+                obj.candidato.sitio.lon_nominal
+            )
+            return f"{round(distancia, 2)} m"
         return "Sin distancia"
+
     distancia_coordenadas.short_description = 'Distancia a Coordenadas nominales'
-        
-    def sitio_google_thumbnail(self, obj):
-        if obj.sitio_img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
-            return format_html('<img src="{}" width="320" height=""/>', obj.sitio_img_google.url)
+
+    def img_google_distancia_nominal(self, obj):
+        if obj.img_google_dist_nominal:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+            return format_html('<img src="{}" width="320" height=""/>', obj.img_google_dist_nominal.url)
         return "No hay imagen"
-    sitio_google_thumbnail.short_description = 'Imagen Google'
+
+    img_google_distancia_nominal.short_description = 'Imagen Satelital Distancia a Coordenadas nominales'
+
+    def img_google(self, obj):
+        if obj.img_google_sitio:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+            return format_html('<img src="{}" width="480" height=""/>', obj.img_google_sitio.url)
+        return "No hay imagen"
+
+    img_google.short_description = 'Imagen Satelital Sitio'
 
     def sitio_lat_gms(self, obj):
         return dec_to_gms(obj.sitio_lat)
+
     sitio_lat_gms.short_description = "Latitud Torre (GMS)"
-    
+
     def sitio_lon_gms(self, obj):
         return dec_to_gms(obj.sitio_lon)
-    sitio_lon_gms.short_description = "Longitud Torre (GMS)"
-    
 
-class RegistroSitioImagenesInline(SemanticStackedInline):
+    sitio_lon_gms.short_description = "Longitud Torre (GMS)"
+
+
+class RegistroSitioAdmin(admin.ModelAdmin):
+    list_display = ('candidato',
+                    'formatted_fecha_sitio',
+                    'sitio_descripcion',
+                    )
+    exclude = ('sitio',)
+    # list_editable = ('sitio_descripcion', )
+    readonly_fields = ('image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
+    fields = ('candidato',
+              'sitio_fecha',
+              'sitio_lat',
+              'sitio_lon',
+              'sitio_descripcion',
+              'image_tag_img_google_sitio',
+              'image_tag_img_google_dist_nominal')
+    ordering = ['sitio_fecha']
+
+    def formatted_fecha_sitio(self, obj):
+        return date_format(obj.sitio_fecha, "d/m/Y  -  H:i")
+
+    formatted_fecha_sitio.short_description = 'Fecha - Hora'
+    formatted_fecha_sitio.admin_order_field = 'sitio_fecha'
+
+
+admin.site.register(RegistroSitio, RegistroSitioAdmin)
+
+
+# REGISTRO SITIO IMAGENES
+class RegistroSitioImagenesInline(admin.StackedInline):
     model = RegistroSitioImagenes
     extra = 0
-    fields =('pic_with_description', 'pic', 'descripcion')
-    readonly_fields =('pic_with_description',)
-    
+    template = 'admin/edit_inline/mosaic.html'
+    readonly_fields = ('pic_with_description', 'pic', 'descripcion')
+    fieldsets = (
+        ('', {
+            'fields': (
+                'pic_with_description',
+            ),
+        }),)
+
     def pic_with_description(self, obj):
-        # Verificar si hay una imagen y una descripción disponibles
         if obj.pic:
-            image_html = format_html('<img src="{}" width="320" height="auto"/>', obj.pic.url)
-            description_html = format_html('<p style="margin-top: 10px;"><strong> {}</p>', obj.descripcion if obj.descripcion else "Sin descripción" '</strong>')
-            return image_html + description_html
+            image_html = format_html(
+                '<div class="image-with-description"><img src="{}" style="width: 100%; height: auto;"/></div>',
+                obj.pic.url)
+            description_html = format_html('<div class="inline-description"><p><strong>{}</strong></p></div>',
+                                           obj.descripcion if obj.descripcion else "Sin descripción")
+            return format_html('{}{}', image_html, description_html)
         return "No hay imagen"
-    
+
     pic_with_description.short_description = "Imagen y Descripción"
 
-    
-class RegistioElectricoInline(SemanticStackedInline):
+
+class RegistroSitioImagenesAdmin(admin.ModelAdmin):
+    list_display = ('candidato',
+                    'image_tag_pic',
+                    'descripcion',
+                    )
+    exclude = ('sitio',)
+    list_editable = ('descripcion',)
+    readonly_fields = ('image_tag_pic',)
+
+
+admin.site.register(RegistroSitioImagenes, RegistroSitioImagenesAdmin)
+
+
+# REGISTRO ELECTRICO
+class RegistroElectricoInline(admin.StackedInline):
     model = RegistioElectrico
     extra = 0
-    # fields =('electrico_no_poste',
-    #         'electrico_lat',
-    #         'electrico_lon',
-    #         'electrico_comentario',
-    #         'electrico_imagen1_thumbnail',
-    #         'electrico_imagen1',
-    #         'electrico_imagen2_thumbnail',
-    #         'electrico_imagen2',)
-    readonly_fields =('electrico_no_poste',
-            'electrico_lat', 'electrico_lat_gms',
-            'electrico_lon','electrico_lon_gms',
-            'electrico_comentario',
-            'electrico_imagen1_thumbnail',
-            'electrico_imagen2_thumbnail',
-            # 'electrico_google_thumbnail', 'distancia_coordenadas'
-            )
+    readonly_fields = ('electrico_no_poste',
+                       'electrico_lat', 'electrico_lat_gms',
+                       'electrico_lon', 'electrico_lon_gms',
+                       'electrico_comentario',
+                       'electrico_imagen1_thumbnail',
+                       'electrico_imagen2_thumbnail',
+                       'img_google_electrico', 'distancia_poste',
+                       # 'electrico_google_thumbnail', 'distancia_coordenadas'
+                       )
     fieldsets = (
-        ('', {  
+        ('', {
             'fields': (
-                'electrico_no_poste', 
+                'electrico_no_poste',
                 ('electrico_lat', 'electrico_lat_gms'),
                 ('electrico_lon', 'electrico_lon_gms'),
                 ('electrico_imagen1_thumbnail', 'electrico_comentario'),
-                'electrico_imagen2_thumbnail',
+                ('electrico_imagen2_thumbnail',),
+                ('img_google_electrico', 'distancia_poste'),
                 # ('electrico_google_thumbnail', 'distancia_coordenadas'),
-                
+
             ),
         }),)
+
     def electrico_imagen1_thumbnail(self, obj):
         if obj.electrico_imagen1:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="320" height=""/>', obj.electrico_imagen1.url)
         return "No hay imagen"
+
     electrico_imagen1_thumbnail.short_description = 'Imagen Poste'
-    
+
     def electrico_imagen2_thumbnail(self, obj):
         if obj.electrico_imagen2:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="320" height=""/>', obj.electrico_imagen2.url)
         return "No hay imagen"
-    electrico_imagen2_thumbnail.short_description = 'Imagen Sistema electrico'
-    
-    # def distancia_coordenadas(self, obj):
-    #     sitio_relacionado = RegistroSitio.objects.filter(candidato=obj.campo_comun).first()
-    #     if sitio_relacionado and obj.electrico_lat:
-    #         distancia = calcular_distancia_geopy(
-    #             obj.electrico_lat, 
-    #             obj.electrico_lon, 
-    #             sitio_relacionado.sitio_lat, 
-    #             sitio_relacionado.sitio_lon
-    #         )
-    #         return f"{round(distancia, 2)} m" 
-    #     return "Sin distancia"
-    # distancia_coordenadas.short_description = 'Distancia a Coordenadas nominales'
-        
-    # def electrico_google_thumbnail(self, obj):
-    #     if obj.electrico_img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
-    #         return format_html('<img src="{}" width="320" height=""/>', obj.electrico_img_google.url)
-    #     return "No hay imagen"
-    # electrico_google_thumbnail.short_description = 'Imagen Google'
+
+    electrico_imagen2_thumbnail.short_description = 'Imagen Electrico'
 
     def electrico_lat_gms(self, obj):
         return dec_to_gms(obj.electrico_lat)
+
     electrico_lat_gms.short_description = "Latitud (GMS)"
-    
+
     def electrico_lon_gms(self, obj):
         return dec_to_gms(obj.electrico_lon)
+
     electrico_lon_gms.short_description = "Longitud (GMS)"
 
+    def img_google_electrico(self, obj):
+        if obj.electrico_img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+            return format_html('<img src="{}" width="480" height=""/>', obj.electrico_img_google.url)
+        return "No hay imagen"
 
-class CandidatoAdmin(SemanticModelAdmin):
+    img_google_electrico.short_description = 'Imagen Satelital Sitio & Empalme Electrico'
+
+    def distancia_poste(self, obj):
+        try:
+            # Acceder a RegistroSitio a través de la relación Candidato
+            registro_sitio = obj.candidato.registrositio
+            if obj.electrico_lat and registro_sitio.sitio_lat:
+                distancia = calcular_distancia_geopy(
+                    obj.electrico_lat,
+                    obj.electrico_lon,
+                    registro_sitio.sitio_lat,
+                    registro_sitio.sitio_lon
+                )
+                return f"{round(distancia, 2)} m"
+        except AttributeError:
+            return "Sin coordenadas"
+        except Exception as e:
+            # Manejo de cualquier otro error no esperado
+            print(f"Error al calcular la distancia: {e}")
+            return "Error en cálculo"
+        return "Sin distancia"
+
+    distancia_poste.short_description = 'Distancia a Empalme electrico'
+
+
+class RegistioElectricoAdmin(admin.ModelAdmin):
+    list_display = ('candidato',
+                    'electrico_no_poste',
+                    'electrico_comentario',
+                    )
+    exclude = ('sitio',)
+    # list_editable = ('sitio_descripcion', )
+    # readonly_fields = ('image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
+    # fields = ('candidato', 
+    #           'sitio_fecha', 
+    #           'sitio_lat', 
+    #           'sitio_lon', 
+    #           'sitio_descripcion', 
+    #           'image_tag_img_google_sitio',
+    #           'image_tag_img_google_dist_nominal'  ) 
+    # ordering = ['sitio_fecha']
+    # def formatted_fecha_sitio(self, obj):
+    #     return date_format(obj.sitio_fecha, "d/m/Y  -  H:i")
+    # formatted_fecha_sitio.short_description = 'Fecha - Hora'
+    # formatted_fecha_sitio.admin_order_field = 'sitio_fecha'
+
+
+admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
+
+
+# REGISTRO CAMPO
+class CandidatoAdmin(admin.ModelAdmin):
+    user_model = None
+    list_display = ('candidato', 'candidato_empresa', 'formatted_fecha_creacion')
+
     inlines = [
         RegistroLlegadaInline,
         RegistroLocalidadInline,
-        RegistroPropietarioInline,
+        RegistroPropietariodInline,
         RegistroPropiedadInline,
         RegistroSitioInline,
-        # RegistroSitioImagenesInline,
-        RegistioElectricoInline,
+        RegistroSitioImagenesInline,
+        RegistroElectricoInline,
     ]
-    list_display = (
-        # 'id', 
-        'sitio', 
-        'sitio_nombre',
-        'sitio_altura',
-        'candidato', 
-        'formatted_fecha_creacion'
-        )
-    readonly_fields = ('id',
-                       'sitio_ID', 'sitio_nombre', 'sitio_altura',
-                       'sitio_provincia', 'sitio_municipio', 'sitio_localidad',
-                       'usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa',
-                       'sitio_lat_nominal', 'sitio_lat_nominal_gms',
-                       'sitio_lon_nominal', 'sitio_lon_nominal_gms',
-                       'imagen_gmaps'
-                       )
+
+    class Media:
+        js = ('js/admin_custom.js',)
+        css = {
+            'all': ('css/custom_admin.css',),
+        }
+
+    # CANDIDATO
+    def formatted_fecha_creacion(self, obj):
+        return date_format(obj.fecha_creacion, "d/m/Y  -  H:i")
+
+    formatted_fecha_creacion.short_description = 'Fecha - Hora'
+
+    def candidato_empresa(self, obj):
+        # Asegurarse de que el usuario tiene un UserProfile asociado
+        if not hasattr(obj, 'usuario'):
+            return "No disponible"
+        if hasattr(obj.usuario, 'userprofile'):
+            # Asegurarse de que el UserProfile tiene una empresa asociada
+            if obj.usuario.userprofile.empresa:
+                # Suponiendo que 'Empresa' tiene un campo llamado 'pais' para el país
+                empresa_nombre = obj.usuario.userprofile.empresa.nombre
+                empresa_pais = obj.usuario.userprofile.empresa.pais
+                return f"{empresa_nombre} - {empresa_pais}"
+        return "No disponible"
+
+    candidato_empresa.short_description = 'Empresa - País'
+
+    # DATOS PROYECTO
+    readonly_fields = (
+        'sitio_ID', 'sitio_nombre', 'sitio_altura',
+        'sitio_provincia', 'sitio_municipio', 'sitio_localidad',
+        'usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa',
+        'sitio_lat_nominal', 'sitio_lat_nominal_gms',
+        'sitio_lon_nominal', 'sitio_lon_nominal_gms',
+        'imagen_gmaps'
+    )
 
     fieldsets = (
-        ('Datos de Proyecto', {  
-            'fields': (    
-                ('sitio_ID', 'sitio_nombre', 'sitio_altura' ),
-                ('sitio_provincia', 'sitio_municipio', 'sitio_localidad', ),
+        ('Datos de Proyecto', {
+            'fields': (
+                ('sitio_ID', 'sitio_nombre', 'sitio_altura'),
+                ('sitio_provincia', 'sitio_municipio', 'sitio_localidad',),
                 ('usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa'),
-                ('sitio_lat_nominal', 'sitio_lat_nominal_gms' ),
-                ('sitio_lon_nominal', 'sitio_lon_nominal_gms' ),
+                ('sitio_lat_nominal', 'sitio_lat_nominal_gms'),
+                ('sitio_lon_nominal', 'sitio_lon_nominal_gms'),
                 'imagen_gmaps',
-                ),
-
-            # 'description': 'Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto. Para más detalles, <a href="https://example.com">visita este enlace</a>.'
-    
+            ),
+            # 'classes': ('collapse',),  # Hace este grupo colapsable
+            # 'description': ('Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto.'
+            #                 ' Para más detalles, <a href="https://example.com">visita este enlace</a>.')
         }),
     )
+
+    def get_llegada(self, obj):
+        llegada = RegistroLlegada.objects.filter(candidato=obj).annotate(
+            usuario_telf=F('usuario__userprofile__telf'),
+            user_profile=F('usuario__userprofile'),
+        ).first()
+
+        if llegada:
+            llegada.user_profile = UserProfile.objects.filter(user=llegada.usuario).first()
+            return llegada
+
+        return None
+
     def sitio_ID(self, obj):
         return f"{obj.sitio.PTICellID}"
+
     sitio_ID.short_description = 'PTI ID'
 
     def sitio_nombre(self, obj):
         return f"{obj.sitio.nombre}"
+
     sitio_nombre.short_description = 'Nombre'
 
     def sitio_lat_nominal(self, obj):
         return f"{obj.sitio.lat_nominal}"
+
     sitio_lat_nominal.short_description = 'Latitud Nominal'
-    
+
     def sitio_lat_nominal_gms(self, obj):
         return dec_to_gms(obj.sitio.lat_nominal)
+
     sitio_lat_nominal_gms.short_description = "Latitud Nominal (GMS)"
-    
+
     def sitio_lon_nominal(self, obj):
         return f"{obj.sitio.lon_nominal}"
+
     sitio_lon_nominal.short_description = 'Longitud Nominal'
-    
+
     def sitio_lon_nominal_gms(self, obj):
         return dec_to_gms(obj.sitio.lon_nominal)
+
     sitio_lon_nominal_gms.short_description = "Longitud Nominal (GMS)"
-    
+
     def sitio_altura(self, obj):
         return f"{obj.sitio.altura} m."
+
     sitio_altura.short_description = 'Altura'
-    
+
     def sitio_provincia(self, obj):
         return f"{obj.sitio.provincia}"
+
     sitio_provincia.short_description = 'Provincia'
-    
+
     def sitio_municipio(self, obj):
         return f"{obj.sitio.municipio}"
+
     sitio_municipio.short_description = 'Municipio'
-    
+
     def sitio_localidad(self, obj):
         return f"{obj.sitio.localidad}"
+
     sitio_localidad.short_description = 'Localidad'
-    
+
     def sitio_empresa(self, obj):
         return f"{obj.sitio.empresa}"
+
     sitio_empresa.short_description = 'Empresa'
-    
+
     def usuario_nombre(self, obj):
-        return f"{obj.usuario.nombre}"
+        return self.get_llegada(obj).user_profile.get_full_name if self.get_llegada(obj) else "Sin usuario"
+
     usuario_nombre.short_description = 'Buscador'
 
     def usuario_user(self, obj):
-        return f"{obj.usuario.user}"
+        return self.get_llegada(obj).usuario.username if self.get_llegada(obj) else "Sin usuario"
+
     usuario_user.short_description = 'Username'
 
     def usuario_telf(self, obj):
-        return f"{obj.usuario.telf}"
-    usuario_telf.short_description = 'Telefono'    
-    
-    def formatted_fecha_creacion(self, obj):
-        return date_format(obj.fecha_creacion, "d/m/Y H:i")
-    formatted_fecha_creacion.short_description = 'Fecha'
-    formatted_fecha_creacion.admin_order_field = 'fecha_creacion'  # Permite ordenar por este campo en el admin
-    
+        return self.get_llegada(obj).usuario_telf if self.get_llegada(obj) else "Sin teléfono"
+
+    usuario_telf.short_description = 'Teléfono'
+
     def imagen_gmaps(self, obj):
-        if obj.sitio.img_google:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+        if obj.sitio.img_google:
             return format_html('<img src="{}" width="480" height=""/>', obj.sitio.img_google.url)
-        return "No hay imagen"
-    imagen_gmaps.short_description = 'Vista Previa de la Imagen'
-    
-    
+        return "Sin imagen"
+
+    imagen_gmaps.short_description = 'Imagen Satelital (coordenadas nominales)'
 
 
 admin.site.register(Candidato, CandidatoAdmin)
+
+# admin.site.register(Candidato)
