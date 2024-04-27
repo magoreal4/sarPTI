@@ -551,7 +551,16 @@ class CandidatoAdmin(admin.ModelAdmin):
     formatted_fecha_creacion.short_description = 'Fecha - Hora'
     
     def candidato_empresa(self, obj):
-        return f"{obj.usuario.empresa}"
+        # Asegurarse de que el usuario tiene un UserProfile asociado
+        if hasattr(obj.usuario, 'userprofile'):
+            # Asegurarse de que el UserProfile tiene una empresa asociada
+            if obj.usuario.userprofile.empresa:
+                # Suponiendo que 'Empresa' tiene un campo llamado 'pais' para el país
+                empresa_nombre = obj.usuario.userprofile.empresa.nombre
+                empresa_pais = obj.usuario.userprofile.empresa.pais
+                return f"{empresa_nombre} - {empresa_pais}"
+        return "No disponible"
+
     candidato_empresa.short_description = 'Empresa - País'
     
     # DATOS PROYECTO
@@ -642,6 +651,8 @@ class CandidatoAdmin(admin.ModelAdmin):
     imagen_gmaps.short_description = 'Imagen Satelital (coordenadas nominales)'
     
 admin.site.register(Candidato, CandidatoAdmin)
+
+# admin.site.register(Candidato)
 
 
 

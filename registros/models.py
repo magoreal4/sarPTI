@@ -156,8 +156,8 @@ class Sitio(models.Model):
     #             filename = f"{self.pk or 'nuevo'}_nominal.png"
     #             self.img_google.save(filename, ContentFile(imagen_content), save=False)
     #     super(Sitio, self).save(*args, **kwargs)
-    # def __str__(self):
-    #     return self.PTICellID
+    def __str__(self):
+        return self.PTICellID
 
     class Meta:
         verbose_name = "Datos Sitio"
@@ -183,6 +183,15 @@ class Candidato(models.Model):
     
     fecha_creacion = models.DateTimeField("Fecha", null=True, auto_now_add=True)
 
+    def get_user_profile_info(self):
+        # Asegúrate de que existe un UserProfile asociado al usuario
+        if hasattr(self.usuario, 'userprofile'):
+            return {
+                'telefono': self.usuario.userprofile.telf,
+                'empresa': self.usuario.userprofile.empresa
+            }
+        return None
+    
     def save(self, *args, **kwargs):
         if not self.pk:  # Comprobar si es una nueva instancia
             with transaction.atomic():
