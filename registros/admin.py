@@ -584,7 +584,7 @@ admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
 # REGISTRO CAMPO
 class CandidatoAdmin(admin.ModelAdmin):
     user_model = None
-    list_display = ('candidato', 'candidato_empresa', 'formatted_fecha_creacion')
+    list_display = ('candidato', 'sitio_nombre', 'usuario_nombre', 'sitio_empresa',  'formatted_fecha_creacion')
 
     inlines = [
         RegistroLlegadaInline,
@@ -605,8 +605,8 @@ class CandidatoAdmin(admin.ModelAdmin):
     # CANDIDATO
     def formatted_fecha_creacion(self, obj):
         return date_format(obj.fecha_creacion, "d/m/Y  -  H:i")
-
     formatted_fecha_creacion.short_description = 'Fecha - Hora'
+    formatted_fecha_creacion.admin_order_field = 'fecha_creacion'
 
     def candidato_empresa(self, obj):
         # Asegurarse de que el usuario tiene un UserProfile asociado
@@ -620,7 +620,6 @@ class CandidatoAdmin(admin.ModelAdmin):
                 empresa_pais = obj.usuario.userprofile.empresa.pais
                 return f"{empresa_nombre} - {empresa_pais}"
         return "No disponible"
-
     candidato_empresa.short_description = 'Empresa - País'
 
     # DATOS PROYECTO
@@ -663,12 +662,10 @@ class CandidatoAdmin(admin.ModelAdmin):
 
     def sitio_ID(self, obj):
         return f"{obj.sitio.PTICellID}"
-
     sitio_ID.short_description = 'PTI ID'
 
     def sitio_nombre(self, obj):
         return f"{obj.sitio.nombre}"
-
     sitio_nombre.short_description = 'Nombre'
 
     def sitio_lat_nominal(self, obj):

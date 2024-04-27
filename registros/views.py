@@ -63,7 +63,7 @@ class LoginAPIView(APIView):
 
 
 class SitioListView(APIView):
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     def get(self, request, empresa_id):
         sitios = Sitio.objects.filter(empresa_id=empresa_id)
@@ -88,9 +88,9 @@ class RegistroLlegadaList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroLocalidadList(APIView):
-    """
-    Lista todos los registros de localidad o crea un nuevo registro.
-    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
         registros = RegistroLocalidad.objects.all()
         serializer = RegistroLocalidadSerializer(registros, many=True)
@@ -104,9 +104,9 @@ class RegistroLocalidadList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroPropietarioList(APIView):
-    """
-    Lista todos los registros de propietario o crea un nuevo registro.
-    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
         registros = RegistroPropietario.objects.all()
         serializer = RegistroPropietarioSerializer(registros, many=True)
@@ -120,9 +120,9 @@ class RegistroPropietarioList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroPropiedadList(APIView):
-    """
-    Lista todos los registros de propiedad o crea un nuevo registro.
-    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
     def get(self, request, format=None):
         registros = RegistroPropiedad.objects.all()
         serializer = RegistroPropiedadSerializer(registros, many=True)
@@ -139,9 +139,8 @@ class RegistroPropiedadList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroSitioList(APIView):
-    """
-    Lista todos los registros de sitio o crea un nuevo registro.
-    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
         registros = RegistroSitio.objects.all()
         serializer = RegistroSitioSerializer(registros, many=True)
@@ -158,9 +157,8 @@ class RegistroSitioList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistroSitioImagenesList(APIView):
-    """
-    Lista todos los registros de sitio o crea un nuevo registro.
-    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
         registros = RegistroSitioImagenes.objects.all()
         serializer = RegistroSitioImagenesSerializer(registros, many=True)
@@ -174,9 +172,8 @@ class RegistroSitioImagenesList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistioElectricoList(APIView):
-    """
-    Lista todos los registros de electrico o crea un nuevo registro.
-    """
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
         registros = RegistioElectrico.objects.all()
         serializer = RegistioElectricoSerializer(registros, many=True)

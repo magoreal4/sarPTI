@@ -46,7 +46,6 @@ def get_google_maps(
 ):
     base_url = "https://maps.googleapis.com/maps/api/staticmap?"
     api_key = use_api_key()
-
     # Verificar si lat_nominal y lon_nominal son válidos
     if lat2 in [None, ""] or lon2 in [None, ""]:
         centro = f"{lat1},{lon1}"
@@ -146,19 +145,7 @@ class Sitio(models.Model):
 
     img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
     contador_llegadas = models.PositiveIntegerField("Registro/Candidato", default=0)
-
-    # def save(self, *args, **kwargs):
-    #     if not self.img_google:  # Si no hay imagen ya asociada, obten una nueva
-    #         imagen_content = get_google_maps(
-    #             self.lat_nominal, 
-    #             self.lon_nominal, 
-    #             zoom=15
-    #             )
-
-    #         if imagen_content:
-    #             filename = f"{self.pk or 'nuevo'}_nominal.png"
-    #             self.img_google.save(filename, ContentFile(imagen_content), save=False)
-    #     super(Sitio, self).save(*args, **kwargs)
+    
     def __str__(self):
         return self.PTICellID
 
@@ -236,18 +223,31 @@ class RegistroLlegada(models.Model):
     )
 
     fecha_llegada = models.DateTimeField("Fecha de llegada", default=timezone.now)
-    lat_llegada = models.FloatField(blank=True, null=True)
-    lon_llegada = models.FloatField(blank=True, null=True)
-    status_llegada = models.CharField("Estatus", choices=LLEGADA_CHOICES, max_length=5, blank=True, )
+    lat_llegada = models.FloatField(null=True)
+    lon_llegada = models.FloatField(null=True)
+    status_llegada = models.CharField("Estatus", choices=LLEGADA_CHOICES, max_length=5)
     imagen_llegada = models.ImageField(upload_to='llegada/', blank=True, null=True)
-    observaciones = models.TextField(blank=True, null=True)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    observaciones = models.TextField(null=True)
+    
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
 
+    def save(self, *args, **kwargs):
+        sitio = self.candidato.sitio
+        if not sitio.img_google:  # Verifica si la imagen no existe en el modelo Sitio
+            imagen_content = get_google_maps(
+                sitio.lat_nominal, 
+                sitio.lon_nominal, 
+                zoom=15  # Ajustar el zoom según sea necesario
+            )
+            if imagen_content:
+                filename = f"{sitio.PTICellID}_nominal.png"
+                sitio.img_google.save(filename, ContentFile(imagen_content), save=True)  # Guarda la imagen en el modelo Sitio
+        
+        super(RegistroLlegada, self).save(*args, **kwargs) 
+        
     def image_tag(self):
         return format_html('<img src="{}" width="150" height="auto"/>', self.imagen_llegada.url)
-
     image_tag.short_description = 'Imagen llegada'
-
     # image_tag.allow_tags = True
 
     def __str__(self):
@@ -271,6 +271,8 @@ class RegistroLocalidad(models.Model):
     municipio = models.CharField(max_length=25, blank=True, null=True)
     localidad = models.CharField(max_length=25, blank=True, null=True)
     energia_localidad = models.BooleanField(default=True)
+    
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         if not self.pk:  # Comprobar si es una nueva instancia
@@ -308,7 +310,9 @@ class RegistroPropietario(models.Model):
     propietario_telf = models.CharField("Telefono de Contacto", max_length=15)
     propietario_direccion = models.TextField("Direccion Domicilio", max_length=100)
     propietario_estado_civil = models.BooleanField("Estado Civil", default=True)
-
+    
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    
     def save(self, *args, **kwargs):
         if not self.pk:  # Comprobar si es una nueva instancia
             candidato_id = f"{self.sitio.pk}_{self.sitio.contador_llegadas}"
@@ -343,8 +347,10 @@ class RegistroPropiedad(models.Model):
     propiedad_rol = models.CharField("Rol", max_length=100)
     propiedad_escritura = models.CharField("Escritura", max_length=100)
     propiedad_registro_civil = models.TextField("Registro Civil", max_length=100)
-    propiedad_imagen = models.ImageField(upload_to='sitios/propiedad', blank=True, null=True)
-    propiedad_descripcion = models.TextField("Comentarios", blank=True, null=True)
+    propiedad_imagen = models.ImageField(upload_to='sitios/propiedad',null=True)
+    propiedad_descripcion = models.TextField("Comentarios")
+    
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def image_tag(self):
         return format_html('<img src="{}" width="150" height="auto"/>', self.propiedad_imagen.url)
@@ -384,15 +390,16 @@ class RegistroSitio(models.Model):
         verbose_name="Registro",
     )
 
-    sitio_fecha = models.DateTimeField("Fecha de Visita", default=timezone.now)
-    sitio_lat = models.FloatField("Latitud Torre", blank=True, null=True)
-    sitio_lon = models.FloatField("Longitud Torre", blank=True, null=True)
-    # sitio_imagen = models.ImageField(upload_to='sitios/', blank=True, null=True)
-    sitio_descripcion = models.TextField("Comentarios", blank=True, null=True)
+    sitio_fecha = models.DateTimeField("Fecha de Visita")
+    sitio_lat = models.FloatField("Latitud Torre")
+    sitio_lon = models.FloatField("Longitud Torre")
+    sitio_descripcion = models.TextField("Comentarios")
 
     img_google_dist_nominal = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)
     img_google_sitio = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)
 
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    
     def save(self, *args, **kwargs):
         # Crear el pk de candidato
         if not self.pk:
@@ -475,8 +482,10 @@ class RegistroSitioImagenes(models.Model):
         verbose_name="Registro",
     )
 
-    pic = models.FileField(upload_to='sitios/fotos/', blank=True, null=True)
-    descripcion = models.CharField(max_length=100, blank=True, null=True)
+    pic = models.FileField(upload_to='sitios/fotos/')
+    descripcion = models.CharField(max_length=100)
+    
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         if not self.pk:
@@ -515,15 +524,17 @@ class RegistioElectrico(models.Model):
         verbose_name="Registro",
     )
 
-    electrico_lat = models.FloatField("Latitud Poste", blank=True, null=True)
-    electrico_lon = models.FloatField("Longitud Poste", blank=True, null=True)
+    electrico_lat = models.FloatField("Latitud Poste")
+    electrico_lon = models.FloatField("Longitud Poste")
     electrico_no_poste = models.CharField("Identificacion Poste", max_length=10, blank=True, null=True)
-    electrico_comentario = models.TextField("Comentario", blank=True, null=True)
+    electrico_comentario = models.TextField("Comentario")
     electrico_imagen1 = models.ImageField("Imagen Poste", upload_to='sitios/')
     electrico_imagen2 = models.ImageField("Imagen Electrico", upload_to='sitios/', blank=True, null=True)
 
     electrico_img_google = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)
 
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    
     def save(self, *args, **kwargs):
         if not self.pk:
             candidato_id = f"{self.sitio.pk}_{self.sitio.contador_llegadas}"
@@ -582,25 +593,4 @@ class RegistioElectrico(models.Model):
     class Meta:
         verbose_name = "Eléctrico"
         verbose_name_plural = "Eléctrico"
-    # def save(self, *args, **kwargs):
-    #     id_candidato = self.candidato.pk
-    #     registro_sitio = RegistroSitio.objects.get(pk=id_candidato)
-    #     latitud_torre = registro_sitio.electrico_lat
-    #     longitud_torre = registro_sitio.electrico_lon
-
-    #     if not self.electrico_img_google:  # Si no hay imagen ya asociada, obten una nueva
-    #         imagen_content = obtener_imagen_google_maps(
-    #             self.electrico_lat, 
-    #             self.electrico_lon,
-    #             label= "S",
-    #             color="	red",
-    #             lat_nominal=latitud_torre,
-    #             lon_nominal=longitud_torre,
-    #             zoom=15
-    #             )
-
-    #         if imagen_content:
-    #             filename = f"mapa_{self.pk or 'nuevo'}.png"
-    #             self.electrico_img_google.save(filename, ContentFile(imagen_content), save=False)
-
-    #     super(RegistroSitio, self).save(*args, **kwargs)
+ 
