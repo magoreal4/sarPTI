@@ -27,7 +27,8 @@ from .models import (
     RegistioElectrico
     )
 
-
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class LoginAPIView(APIView):
     permission_classes = [AllowAny]
@@ -56,14 +57,15 @@ class LoginAPIView(APIView):
         else:
             return Response({"success": False, "error": {"message": "Credenciales inválidas."}}, status=status.HTTP_400_BAD_REQUEST)
 
+
 class SitioListView(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, empresa_id):
         sitios = Sitio.objects.filter(empresa_id=empresa_id)
         serializer = SitioSerializer(sitios, many=True)
         return Response(serializer.data)
 
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework.permissions import IsAuthenticated
 
 class RegistroLlegadaList(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]

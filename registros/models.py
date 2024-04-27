@@ -44,7 +44,7 @@ def get_google_maps(
       
     base_url = "https://maps.googleapis.com/maps/api/staticmap?"
     api_key = use_api_key()
-    api_key = "AIzaSyD22EmbDEXIc7Meum5e2MCYj4D0JpDrmpU"
+
 
 
     # Verificar si lat_nominal y lon_nominal son válidos
