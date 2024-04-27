@@ -39,6 +39,7 @@ class RegistroLlegadaSerializer(serializers.ModelSerializer):
                 'status_llegada',
                 'imagen_llegada',
                 'observaciones',
+                "usuario"
                 ]
         # fields = '__all__'
     def create(self, validated_data):
