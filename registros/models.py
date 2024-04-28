@@ -229,7 +229,7 @@ class RegistroLlegada(models.Model):
     imagen_llegada = models.ImageField(upload_to='llegada/', blank=True, null=True)
     observaciones = models.TextField(null=True)
     
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         sitio = self.candidato.sitio
@@ -272,7 +272,7 @@ class RegistroLocalidad(models.Model):
     localidad = models.CharField(max_length=25, blank=True, null=True)
     energia_localidad = models.BooleanField(default=True)
     
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         if not self.pk:  # Comprobar si es una nueva instancia
@@ -311,7 +311,7 @@ class RegistroPropietario(models.Model):
     propietario_direccion = models.TextField("Direccion Domicilio", max_length=100)
     propietario_estado_civil = models.BooleanField("Estado Civil", default=True)
     
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def save(self, *args, **kwargs):
         if not self.pk:  # Comprobar si es una nueva instancia
@@ -350,7 +350,7 @@ class RegistroPropiedad(models.Model):
     propiedad_imagen = models.ImageField(upload_to='sitios/propiedad',null=True)
     propiedad_descripcion = models.TextField("Comentarios")
     
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def image_tag(self):
         return format_html('<img src="{}" width="150" height="auto"/>', self.propiedad_imagen.url)
@@ -398,7 +398,7 @@ class RegistroSitio(models.Model):
     img_google_dist_nominal = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)
     img_google_sitio = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)
 
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def save(self, *args, **kwargs):
         # Crear el pk de candidato
@@ -533,7 +533,7 @@ class RegistioElectrico(models.Model):
 
     electrico_img_google = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)
 
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def save(self, *args, **kwargs):
         if not self.pk:
