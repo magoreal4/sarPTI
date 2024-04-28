@@ -49,3 +49,6 @@ DATABASES = {
 # DATABASES = {
 #     'default': env.db('DATABASE_URL', default='psql://Gonzalo:ojalaque@127.0.0.1:5432/tekon'),
 # }
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+

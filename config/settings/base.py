@@ -11,8 +11,8 @@ load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
-    "semantic_admin",
-    "semantic_forms",
+    # "semantic_admin",
+    # "semantic_forms",
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -130,6 +130,7 @@ REST_FRAMEWORK = {
 
 CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://magoreal.loca.lt']
 
+LOGIN_REDIRECT_URL = '/admin/'
 # SEMANTIC_APP_LIST = [
 #     {
 #         "app_label": "registros",
@@ -148,4 +149,6 @@ CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://magoreal.loca.lt']
 #     },
 
 # ]
+
+
 
