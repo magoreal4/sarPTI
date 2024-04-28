@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db.models import F
-
+import pytz
 from .models import (Empresa,
                      Sitio,
                      UserProfile,
@@ -146,7 +146,7 @@ class RegistroLlegadaInline(admin.StackedInline):
     model = RegistroLlegada
     extra = 0
     readonly_fields = (
-        'fecha_llegada', 'status_llegada_text',
+        'fecha_llegada_chile', 'status_llegada_text',
         'lat_llegada', 'lat_llegada_gms',
         'lon_llegada', 'lon_llegada_gms',
         'imagen_llegada_preview', 'observaciones',
@@ -154,7 +154,7 @@ class RegistroLlegadaInline(admin.StackedInline):
     fieldsets = (
         ('', {
             'fields': (
-                ('fecha_llegada', 'status_llegada_text',),
+                ('fecha_llegada_chile', 'status_llegada_text',),
                 ('lat_llegada', 'lat_llegada_gms',),
                 ('lon_llegada', 'lon_llegada_gms',),
                 ('imagen_llegada_preview', 'observaciones'),
@@ -162,6 +162,12 @@ class RegistroLlegadaInline(admin.StackedInline):
             ),
         }),)
 
+    def fecha_llegada_chile(self, obj):
+        timezone_chile = pytz.timezone('America/Santiago')
+        datetime_chile = obj.fecha_llegada.astimezone(timezone_chile)
+        return date_format(datetime_chile, "d/m/Y  -  H:i")
+    fecha_llegada_chile.short_description = "Fecha Llegada"
+    
     def lat_llegada_gms(self, obj):
         return dec_to_gms(obj.lat_llegada)
 
@@ -189,22 +195,30 @@ class RegistroLlegadaInline(admin.StackedInline):
 
 
 class RegistroLlegadaAdmin(admin.ModelAdmin):
+    ordering = ('-fecha_llegada',)
     list_display = ('candidato',
+                    'usuario',
                     'status_llegada',
-                    'fecha_llegada',
+                    'fecha_llegada_chile',
                     # 'imagen_thumbnail',
                     )
     list_editable = ('status_llegada',)
-    readonly_fields = ['image_tag']
+    readonly_fields = ['image_tag', 'fecha_llegada_chile']
     fields = (
-        'candidato', 'status_llegada', 'fecha_llegada', 'lat_llegada', 'lon_llegada', 'observaciones', 'imagen_llegada',
+        'candidato', 'status_llegada', 'fecha_llegada_chile', 'lat_llegada', 'lon_llegada', 'observaciones', 'imagen_llegada',
         'image_tag')
 
+    def fecha_llegada_chile(self, obj):
+        timezone_chile = pytz.timezone('America/Santiago')
+        datetime_chile = obj.fecha_llegada.astimezone(timezone_chile)
+        return date_format(datetime_chile, "j F Y - H:i")
+    fecha_llegada_chile.short_description = 'Fecha - Hora'
+    fecha_llegada_chile.admin_order_field = 'fecha_llegada'
+    
     def imagen_thumbnail(self, obj):
         if obj.imagen_llegada:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
             return format_html('<img src="{}" width="160" height=""/>', obj.imagen_llegada.url)
         return "No hay imagen"
-
     imagen_thumbnail.short_description = 'Imagen Localidad'
 
 
@@ -344,7 +358,7 @@ admin.site.register(RegistroPropiedad, RegistroPropiedadAdmin)
 class RegistroSitioInline(admin.StackedInline):
     model = RegistroSitio
     extra = 0
-    readonly_fields = ('sitio_fecha',
+    readonly_fields = ('sitio_fecha_chile',
                        'sitio_lat', 'sitio_lat_gms',
                        'sitio_lon', 'sitio_lon_gms',
                        'sitio_imagen_thumbnail',
@@ -355,7 +369,7 @@ class RegistroSitioInline(admin.StackedInline):
     fieldsets = (
         ('', {
             'fields': (
-                'sitio_fecha',
+                'sitio_fecha_chile',
                 ('sitio_lat', 'sitio_lat_gms'),
                 ('sitio_lon', 'sitio_lon_gms'),
                 ('img_google_distancia_nominal', 'sitio_descripcion'),
@@ -363,6 +377,13 @@ class RegistroSitioInline(admin.StackedInline):
                 'img_google',
             ),
         }),)
+
+
+    def sitio_fecha_chile(self, obj):
+        timezone_chile = pytz.timezone('America/Santiago')
+        datetime_chile = obj.sitio_fecha.astimezone(timezone_chile)
+        return date_format(datetime_chile, "d/m/Y  -  H:i")
+    sitio_fecha_chile.short_description = 'Fecha - Hora'
 
     def sitio_imagen_thumbnail(self, obj):
         if obj.sitio_imagen:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
@@ -410,15 +431,17 @@ class RegistroSitioInline(admin.StackedInline):
 
 
 class RegistroSitioAdmin(admin.ModelAdmin):
+    ordering = ('-sitio_fecha',)
     list_display = ('candidato',
-                    'formatted_fecha_sitio',
+                    'usuario',
+                    'sitio_fecha_chile',
                     'sitio_descripcion',
                     )
     exclude = ('sitio',)
     # list_editable = ('sitio_descripcion', )
-    readonly_fields = ('image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
+    readonly_fields = ('sitio_fecha_chile', 'image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
     fields = ('candidato',
-              'sitio_fecha',
+              'sitio_fecha_chile',
               'sitio_lat',
               'sitio_lon',
               'sitio_descripcion',
@@ -426,11 +449,12 @@ class RegistroSitioAdmin(admin.ModelAdmin):
               'image_tag_img_google_dist_nominal')
     ordering = ['sitio_fecha']
 
-    def formatted_fecha_sitio(self, obj):
-        return date_format(obj.sitio_fecha, "d/m/Y  -  H:i")
-
-    formatted_fecha_sitio.short_description = 'Fecha - Hora'
-    formatted_fecha_sitio.admin_order_field = 'sitio_fecha'
+    def sitio_fecha_chile(self, obj):
+        timezone_chile = pytz.timezone('America/Santiago')
+        datetime_chile = obj.sitio_fecha.astimezone(timezone_chile)
+        return date_format(datetime_chile, "d/m/Y  -  H:i")
+    sitio_fecha_chile.short_description = 'Fecha - Hora'
+    sitio_fecha_chile.admin_order_field = 'sitio_fecha'
 
 
 admin.site.register(RegistroSitio, RegistroSitioAdmin)
@@ -486,7 +510,6 @@ class RegistroElectricoInline(admin.StackedInline):
                        'electrico_imagen1_thumbnail',
                        'electrico_imagen2_thumbnail',
                        'img_google_electrico', 'distancia_poste',
-                       # 'electrico_google_thumbnail', 'distancia_coordenadas'
                        )
     fieldsets = (
         ('', {
@@ -558,25 +581,11 @@ class RegistroElectricoInline(admin.StackedInline):
 
 class RegistioElectricoAdmin(admin.ModelAdmin):
     list_display = ('candidato',
+                    'usuario',
                     'electrico_no_poste',
                     'electrico_comentario',
                     )
     exclude = ('sitio',)
-    # list_editable = ('sitio_descripcion', )
-    # readonly_fields = ('image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
-    # fields = ('candidato', 
-    #           'sitio_fecha', 
-    #           'sitio_lat', 
-    #           'sitio_lon', 
-    #           'sitio_descripcion', 
-    #           'image_tag_img_google_sitio',
-    #           'image_tag_img_google_dist_nominal'  ) 
-    # ordering = ['sitio_fecha']
-    # def formatted_fecha_sitio(self, obj):
-    #     return date_format(obj.sitio_fecha, "d/m/Y  -  H:i")
-    # formatted_fecha_sitio.short_description = 'Fecha - Hora'
-    # formatted_fecha_sitio.admin_order_field = 'sitio_fecha'
-
 
 admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
 
@@ -604,7 +613,9 @@ class CandidatoAdmin(admin.ModelAdmin):
 
     # CANDIDATO
     def formatted_fecha_creacion(self, obj):
-        return date_format(obj.fecha_creacion, "d/m/Y  -  H:i")
+        timezone_chile = pytz.timezone('America/Santiago')
+        datetime_chile = obj.fecha_creacion.astimezone(timezone_chile)
+        return date_format(datetime_chile, "d/m/Y  -  H:i")
     formatted_fecha_creacion.short_description = 'Fecha - Hora'
     formatted_fecha_creacion.admin_order_field = 'fecha_creacion'
 

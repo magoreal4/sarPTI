@@ -1,3 +1,6 @@
+var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+console.log(timezone);
+
 document.addEventListener('DOMContentLoaded', function() {
   // Casmbia el titulo de la pagina Registro Campo
   var h1Element = document.querySelector('h1.ui.header');

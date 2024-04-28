@@ -11,3 +11,4 @@ geopy==2.4.1
 django-import-export==3.3.8
 django-imagekit==5.0.0
 django-solo==2.2.0
+pytz
