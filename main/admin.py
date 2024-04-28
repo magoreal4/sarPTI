@@ -3,9 +3,8 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
 from solo.admin import SingletonModelAdmin
 from .models import SiteConfiguration
+from django.forms import PasswordInput
 from django.utils.html import format_html
-from .forms import ConfiguracionForm
-
 
 class MyAdminSite(admin.AdminSite):
     site_header = 'BTS PTI'
@@ -102,8 +101,19 @@ admin.site.register(User, UserAdmin)
 
 admin.site.register(Group, GroupAdmin)
 
+from django import forms
+
+class SingletonAdminForm(forms.ModelForm):
+    class Meta:
+        model = SiteConfiguration
+        fields = '__all__'
+        widgets = {
+            'api_key': PasswordInput(render_value=True),  # Muestra el campo como de tipo contraseña
+        }
+        
 class SiteConfigurationAdmin(SingletonModelAdmin):
-    form = ConfiguracionForm
+    form = SingletonAdminForm
+#     form = ConfiguracionForm
     def logo_img(self, obj):
         if obj.logo_thumbnail:
             return format_html('<img src="{}" width="100" height="100" />', obj.logo_thumbnail.url)
@@ -113,10 +123,5 @@ class SiteConfigurationAdmin(SingletonModelAdmin):
 
     readonly_fields = ['logo_img']
     fields = ('logo', 'logo_img', 'api_key')
-    
-    def get_form(self, request, obj=None, **kwargs):
-        form = super().get_form(request, obj, **kwargs)
-        form.base_fields['api_key'].help_text = 'Ingrese la clave API para acceder a la ganereacion de imagenes satelitales.'
-        return form
 
 admin.site.register(SiteConfiguration, SiteConfigurationAdmin)

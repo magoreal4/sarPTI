@@ -128,13 +128,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # APPEND_SLASH = True
 
-CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://magoreal.loca.lt']
-
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication",
     ],
 }
+
+CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://magoreal.loca.lt']
 
 # SEMANTIC_APP_LIST = [
 #     {
@@ -155,9 +155,3 @@ REST_FRAMEWORK = {
 
 # ]
 
-# ADMIN_REORDER = (
-#      {'app': 'auth', 'label': 'Grupos y Usuarios'},
-#      {'app': 'registros', 'models': ('Empresa', )},
-#     # 'registros',
-
-# )
