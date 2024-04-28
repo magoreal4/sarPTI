@@ -714,12 +714,12 @@ class CandidatoAdmin(admin.ModelAdmin):
     sitio_empresa.short_description = 'Empresa'
 
     def usuario_nombre(self, obj):
-        return self.get_llegada(obj).user_profile.get_full_name if self.get_llegada(obj) else "Sin usuario"
+        return self.get_llegada(obj).user_profile.get_full_name if self.get_llegada(obj) else "Sin nombre"
 
     usuario_nombre.short_description = 'Buscador'
 
     def usuario_user(self, obj):
-        return self.get_llegada(obj).usuario.username if self.get_llegada(obj) else "Sin usuario"
+        return self.get_llegada(obj).usuario.username if self.get_llegada(obj) else "Sin nombre"
 
     usuario_user.short_description = 'Username'
 
