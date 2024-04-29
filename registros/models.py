@@ -15,7 +15,7 @@ def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
     if lat_1 is not None and lon_1 is not None and lat_2 is not None and lon_2 is not None:
         origen_coords = (lat_1, lon_1)
         destino_coords = (lat_2, lon_2)
-        # Calcula la distancia usando geodesic de geopy
+        # Calcula la distanciroa usando geodesic de geopy
         distancia = geodesic(origen_coords, destino_coords).meters
         return distancia
     else:
@@ -130,7 +130,7 @@ class Empresa(models.Model):
 
 class Sitio(models.Model):
     PTICellID = models.CharField(
-        max_length=15,
+        max_length=17,
         unique=True,
         primary_key=True
     )
@@ -138,9 +138,9 @@ class Sitio(models.Model):
     lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
     lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Nominal')
     altura = models.CharField(max_length=10, blank=True, null=True)
-    provincia = models.CharField(max_length=25, blank=True, null=True)
+    provincia = models.CharField("Provincia/Region", max_length=25, blank=True, null=True)
     municipio = models.CharField(max_length=25, blank=True, null=True)
-    localidad = models.CharField(max_length=25, blank=True, null=True)
+    localidad = models.CharField("Localidad/Comuna", max_length=25, blank=True, null=True)
     empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
 
     img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
@@ -251,7 +251,7 @@ class RegistroLlegada(models.Model):
     # image_tag.allow_tags = True
 
     def __str__(self):
-        return f"{self.candidato.sitio}"
+        return f"{self.candidato}"
 
     class Meta:
         verbose_name = "Llegada"

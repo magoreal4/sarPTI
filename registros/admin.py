@@ -110,7 +110,7 @@ class SitioAdmin(ImportExportModelAdmin):
                     'contador_llegadas',
                     # 'img_thumbnail'
                     )
-    list_editable = ('empresa',)
+    list_editable = ('empresa','altura')
     readonly_fields = ['img_thumbnail']
     fields = (
         'PTICellID',
