@@ -2,6 +2,8 @@ from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
 
+app_name = 'main'  # Define el espacio de nombres aquí
+
 urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path("accounts/", include("django.contrib.auth.urls")),

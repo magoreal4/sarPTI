@@ -131,7 +131,7 @@ REST_FRAMEWORK = {
 
 CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://magoreal.loca.lt']
 
-LOGIN_REDIRECT_URL = '/admin/'
+LOGIN_REDIRECT_URL = 'main:home'
 # SEMANTIC_APP_LIST = [
 #     {
 #         "app_label": "registros",

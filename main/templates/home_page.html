@@ -19,9 +19,23 @@
 <div class="relative h-screen">
     <!-- Botón en la parte superior derecha -->
     <div class="absolute top-0 right-0 m-4">
-        <a href="{% url 'admin:index' %}" class="bg-[#ea3323] hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block text-center no-underline">
-            Sistema Búsqueda
-        </a>
+        <div class="flex flex-column" style="display: flex; flex-direction: column;">
+            {% if user.is_authenticated %}
+            <a href="{% url 'main:logout' %}" class="sombra mb-5 bg-[#ea3323] hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block text-center no-underline">
+                Logout
+            </a>
+            <a href="{% url 'admin:index' %}" class="sombra mb-5 bg-[#ea3323] hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block text-center no-underline">
+                Sistema de Registro
+            </a>
+            <a href="{% static 'apk/app-release.apk' %}" class="sombra bg-[#ea3323] hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block text-center no-underline">
+                Desacrgar apk
+            </a>
+            {% else %}
+            <a href="{% url 'main:login' %}" class="sombra mb-5 bg-[#ea3323] hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block text-center no-underline">
+                Login
+            </a>
+            {% endif %}
+        </div>
     </div>
 
     <!-- Contenido centrado, por ejemplo, tu imagen -->
