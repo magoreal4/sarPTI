@@ -2,3 +2,7 @@ Color #ea3323
 
 admin@btspti.com
 admin10203040!
+
+apikey google
+AIzaSyD22EmbDEXIc7Meum5e2MCYj4D0JpDrmpU
+

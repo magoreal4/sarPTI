@@ -22,10 +22,10 @@ class MyAdminSite(admin.AdminSite):
         app_list = super().get_app_list(request)
 
         # Definir el orden deseado para las aplicaciones
-        app_order = ['registros', 'main', 'auth']
+        app_order = ['registros', 'registrosgab','main', 'auth']
 
         # Configuración de orden personalizado y agrupación para 'registros'
-        custom_order = {
+        custom_order = {            
             'registros': {
                 'Grupo1': ['Empresa', 'Usuario', 'Sitio'],
                 'Grupo2': ['Candidato',],
@@ -39,34 +39,36 @@ class MyAdminSite(admin.AdminSite):
                     'RegistioElectrico'
                 ]
             },
-            # 'main': {
-            #     'Grupo4': ['SiteConfiguration'],
-            # }
-            # 'main': {
-            #     'Grupo4': ['SiteConfiguration'],
-            # }
-            # 'auth': {
-            #     'Usuarios': ['User', 'Group'],  # Asumiendo que quieres agrupar User y Group
-            # }
+            'registrosgab': {
+                'Grupo4': ['RegistroInicio',],  
+                'Grupo5': [
+                    'Imagenes',
+                    'InformacionGeneral',
+                    'InformacionPropiedad',
+                    'Croquis',
+                    'InfTecPropiedad',
+                    'Documentos',
+                    ],
+            },
         }
         subtitles = {
             'registros': {
                 'Grupo1': 'Datos del Proyecto',
-                'Grupo2': 'Registros',
-                'Grupo3': 'Detalle de Registros de campo',
+                'Grupo2': 'Consolidado',
+                'Grupo3': 'Detalle Registros',
             },
-            # 'main': {
-            #     'Grupo4': 'Configuración',
-            # }
-            # 'auth': {
-            #     'Usuarios': 'CONTROL DE ACCESO'
-            # }
+            'registrosgab': {
+                'Grupo4': 'Consolidado',
+                'Grupo5': 'Detalle Registros',
+            }
+            
         }
 
         # Títulos personalizados para las aplicaciones
         custom_titles = {
-            'registros': 'Sistema de Registros',
+            'registros': 'Registros Campo',
             'main': 'Configuración',
+            'registrosgab': 'Registros Gabinete',
         }
 
         # Reordenar la lista de aplicaciones según el orden definido

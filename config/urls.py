@@ -9,6 +9,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('main.urls')),
     path('', include('registros.urls')),
+    path('', include('registrosgab.urls')),
     ]
 
 if settings.DEBUG:

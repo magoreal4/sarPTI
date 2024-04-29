@@ -81,20 +81,6 @@ class EmpresaAdmin(admin.ModelAdmin):
 admin.site.register(Empresa, EmpresaAdmin)
 
 
-# class UsuarioAdmin(admin.ModelAdmin):
-#     list_display = ('user', 'nombre', 'telf', 'empresa_nombre', 'empresa_pais')
-#     # list_editable = ('telf', )
-#     def empresa_nombre(self, obj):
-#         return obj.empresa.nombre if obj.empresa else 'Sin asignación'
-#     empresa_nombre.short_description = 'Empresa' 
-
-#     def empresa_pais(self, obj):
-#         return obj.empresa.pais if obj.empresa else 'Sin asignación'
-#     empresa_pais.short_description = 'Pais' 
-
-# admin.site.register(Usuario, UsuarioAdmin)
-
-
 # SITIOS
 class SitiosResource(resources.ModelResource):
     class Meta:
@@ -407,7 +393,7 @@ class RegistroSitioInline(admin.StackedInline):
 
     def img_google_distancia_nominal(self, obj):
         if obj.img_google_dist_nominal:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
-            return format_html('<img src="{}" width="320" height=""/>', obj.img_google_dist_nominal.url)
+            return format_html('<img src="{}" width="420" height=""/>', obj.img_google_dist_nominal.url)
         return "No hay imagen"
 
     img_google_distancia_nominal.short_description = 'Imagen Satelital Distancia a Coordenadas nominales'
@@ -491,7 +477,7 @@ class RegistroSitioImagenesAdmin(admin.ModelAdmin):
                     'image_tag_pic',
                     'descripcion',
                     )
-    exclude = ('sitio',)
+    # exclude = ('sitio',)
     list_editable = ('descripcion',)
     readonly_fields = ('image_tag_pic',)
 

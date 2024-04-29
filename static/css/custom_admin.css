@@ -67,3 +67,22 @@ div.app-auth.module > table > thead > tr > th > a{
     color: black!important;
     box-shadow: none!important;
 }
+
+#registroinicio_form select,
+#registroinicio_form input {
+    width: 250px!important;
+}
+
+#registroinicio_form .module  textarea {
+    height: 120px; 
+}
+
+#id_croquis-0-descripcion {
+    height: 300px!important; 
+}
+
+#documentos_set-group .ui.primary.basic.fluid.button,
+#imagenes_set-group .ui.primary.basic.fluid.button {
+    display: none;
+}
+

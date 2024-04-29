@@ -1,0 +1,10 @@
+{% extends 'admin/change_form.html' %}
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+{{ block.super }}
+{% if opts.app_label == 'registrosgab' and opts.model_name == 'informaciongeneral' %}
+<script src="{% static 'js/propietario.js' %}"></script>
+{% endif %}
+{% endblock %}
+

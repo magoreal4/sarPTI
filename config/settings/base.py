@@ -24,7 +24,7 @@ INSTALLED_APPS = [
 
     'main',
     'registros',
-    # 'registrosgab',
+    'registrosgab',
 
     'tailwind',
     'theme',
