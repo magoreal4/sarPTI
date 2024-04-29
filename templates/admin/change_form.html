@@ -1,6 +1,12 @@
 {% extends 'admin/change_form.html' %}
 {% load static %}
 
+{% comment %} {% block extrahead %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/print.css' %}" media="print">
+{% endblock %} {% endcomment %}
+
+
 {% block admin_change_form_document_ready %}
 {{ block.super }}
 {% if opts.app_label == 'registrosgab' and opts.model_name == 'informaciongeneral' %}

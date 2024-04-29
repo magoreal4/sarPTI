@@ -93,10 +93,11 @@ class SitioAdmin(ImportExportModelAdmin):
                     'nombre',
                     'altura',
                     'empresa',
+                    'usuario',
                     'contador_llegadas',
                     # 'img_thumbnail'
                     )
-    list_editable = ('empresa','altura')
+    list_editable = ('empresa','usuario')
     readonly_fields = ['img_thumbnail']
     fields = (
         'PTICellID',
@@ -108,7 +109,8 @@ class SitioAdmin(ImportExportModelAdmin):
         'municipio',
         'localidad',
         'empresa',
-        'img_google',
+        'usuario',
+        # 'img_google',
         'contador_llegadas',
         'img_thumbnail'
     )

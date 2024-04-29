@@ -142,9 +142,10 @@ class Sitio(models.Model):
     municipio = models.CharField(max_length=25, blank=True, null=True)
     localidad = models.CharField("Localidad/Comuna", max_length=25, blank=True, null=True)
     empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
+    usuario = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
 
     img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
-    contador_llegadas = models.PositiveIntegerField("Registro/Candidato", default=0)
+    contador_llegadas = models.PositiveIntegerField("Reg./Cand.", default=0)
     
     def __str__(self):
         return self.PTICellID

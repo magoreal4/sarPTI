@@ -66,7 +66,8 @@ class SitioListView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     def get(self, request, empresa_id):
-        sitios = Sitio.objects.filter(empresa_id=empresa_id)
+        user = request.user
+        sitios = Sitio.objects.filter(empresa_id=empresa_id, usuario=user)
         serializer = SitioSerializer(sitios, many=True)
         return Response(serializer.data)
 

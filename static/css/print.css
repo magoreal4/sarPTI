@@ -1,0 +1,23 @@
+@media print {
+    body, html {
+      width: 100%;
+      background-color: chartreuse;
+    }
+  
+    .field-box, .form-row {
+      display: inline-block; /* O flex, según tu layout específico */
+      width: auto; /* Ajusta según sea necesario */
+      margin-right: 20px; /* Espacio entre campos */
+    }
+  
+    .related-widget-wrapper {
+      display: inline-block;
+    }
+  
+    /* Ocultar elementos que no se desean imprimir */
+    .header, .footer, #user-tools {
+      display: none;
+      color: crimson;
+    }
+  }
+  
