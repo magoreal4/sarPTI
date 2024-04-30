@@ -596,8 +596,9 @@ class CandidatoAdmin(admin.ModelAdmin):
     class Media:
         js = ('js/admin_custom.js',)
         css = {
-            'all': ('css/custom_admin.css',),
-        }
+            'all': ['css/admin_custom.css'],
+            }
+
 
     # CANDIDATO
     def formatted_fecha_creacion(self, obj):
@@ -737,4 +738,3 @@ class CandidatoAdmin(admin.ModelAdmin):
 
 admin.site.register(Candidato, CandidatoAdmin)
 
-# admin.site.register(Candidato)

@@ -1,7 +1,0 @@
-{% extends "admin/base_site.html" %}
-{% comment %} {% load static %}
-{% block extrahead %}
-    <!-- Incluir archivo CSS personalizado -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom_admin.css' %}">
-    {{ block.super }}  <!-- Importante para mantener otros scripts o CSS del admin original -->
-{% endblock %} {% endcomment %}

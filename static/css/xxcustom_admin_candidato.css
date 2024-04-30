@@ -1,0 +1,13 @@
+
+@media print {
+    body, h1, p {
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+        
+        color: #000 !important; /* Asegura texto negro para mejorar la legibilidad */
+      }
+      fieldset {
+        background-color: yellow;
+      }
+
+    }

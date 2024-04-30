@@ -243,9 +243,10 @@ class RegistroInicioAdmin(admin.ModelAdmin):
     
     class Media:
         js = ('js/admin_custom_reggab.js',)
-        css = {
-            'all': ('css/custom_admin.css',),
-        }
+        # css = {
+        #     'screen': ['css/custom_admin.css'],
+        #     'print': ['css/custom_admin_print.css'],
+        # }
         
     list_display = ('candidato_registro', 'candidato_letra', 'zona', 'ASNM', )
     

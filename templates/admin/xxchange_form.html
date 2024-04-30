@@ -3,14 +3,14 @@
 
 {% comment %} {% block extrahead %}
   {{ block.super }}
-  <link rel="stylesheet" type="text/css" href="{% static 'css/print.css' %}" media="print">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/chance_form.css' %}" media="print">
 {% endblock %} {% endcomment %}
 
 
-{% block admin_change_form_document_ready %}
+{% comment %} {% block admin_change_form_document_ready %}
 {{ block.super }}
 {% if opts.app_label == 'registrosgab' and opts.model_name == 'informaciongeneral' %}
 <script src="{% static 'js/propietario.js' %}"></script>
 {% endif %}
-{% endblock %}
+{% endblock %} {% endcomment %}
 

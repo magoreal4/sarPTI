@@ -739,6 +739,10 @@ select {
   --tw-backdrop-sepia:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .static {
   position: static;
 }
@@ -802,6 +806,10 @@ select {
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .h-10 {
@@ -880,6 +888,10 @@ select {
   border-radius: 0.25rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .bg-\[\#ea3323\] {
   --tw-bg-opacity: 1;
   background-color: rgb(234 51 35 / var(--tw-bg-opacity));
@@ -943,6 +955,10 @@ select {
 
 .font-bold {
   font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .italic {

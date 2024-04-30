@@ -11,8 +11,8 @@ load_dotenv(Path.joinpath(BASE_DIR, '.env'))
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
-    "semantic_admin",
-    "semantic_forms",
+    "admin_interface",
+    "colorfield",
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     'import_export',
     'solo',
 ]
+
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
