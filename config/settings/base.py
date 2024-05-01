@@ -137,24 +137,7 @@ REST_FRAMEWORK = {
 CSRF_TRUSTED_ORIGINS = ['https://sar.btspti.com', 'https://magoreal.loca.lt']
 
 LOGIN_REDIRECT_URL = 'main:home'
-# SEMANTIC_APP_LIST = [
-#     {
-#         "app_label": "registros",
-#         "models": [
-#             {"object_name": "Empresa"},
-#             {"object_name": "Usuario"},
-#             {"object_name": "Sitio"}, 
-#             # {"object_name": "RegistroLlegada"}, 
-#             # {"object_name": "RegistroSitio"}, 
-#             # {"object_name": "Candidato"}, 
-#             ],
-#     },
-#     {
-#         "app_label": "auth", 
-#         "models": [{"object_name": "User"}, {"object_name": "Group"}],
-#     },
 
-# ]
-
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
