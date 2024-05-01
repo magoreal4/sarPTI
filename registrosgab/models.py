@@ -10,16 +10,16 @@ ZONA_CHOICES = (
 
 class RegistroInicio(models.Model):
     candidato_registro = models.OneToOneField(
-        RegistroLlegada, 
+        'registros.RegistroLlegada', 
         primary_key=True,
         on_delete=models.CASCADE,
         verbose_name="Registro",
         )
     candidato_letra = models.CharField("Candidato", max_length=1)
-    radio_busqueda = models.PositiveIntegerField()
+    radio_busqueda = models.PositiveIntegerField("Redio de Buqueda (m.)", blank=True, null=True)
     tipo_solucion = models.CharField("Tipo de Solución", max_length=2500)
     zona = models.CharField("Zona", max_length=10, default='Urbana', choices=ZONA_CHOICES)
-    ASNM = models.PositiveIntegerField("ASNM Terreno", blank=True, null=True)
+    ASNM = models.PositiveIntegerField("ASNM Terreno ", blank=True, null=True)
     contactos_ingreso = models.TextField("Contactos para ingresar al sitio", blank=True, null=True)
     ruta_acceso = models.TextField("Descripción del acceso", null=True)
     ruta_huella = models.TextField("Descripción de la huella proyectada", null=True)
@@ -29,8 +29,8 @@ class RegistroInicio(models.Model):
         return f"{self.candidato_registro}"
     
     class Meta:
-        verbose_name = "Registro Gabinete"
-        verbose_name_plural = "Registro Gabinete"
+        verbose_name = "Registro Gabinete (Consolidado)"
+        verbose_name_plural = "Registro Gabinete (Consolidado)"
     
 class Imagenes(models.Model):
     registro_inicio = models.ForeignKey(
@@ -177,7 +177,9 @@ class Documentos(models.Model):
         verbose_name = "Documentos"
         verbose_name_plural = "Documentos"
     
-    
+    def image_tag_pic(self):
+        return format_html('<img src="{}" width="80" height="auto"/>', self.documento.url)
+    image_tag_pic.short_description = 'Imagen Sitio'
     
     
     

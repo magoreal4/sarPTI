@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import (
-    Sitio,
     Candidato,
     RegistroLlegada, 
     RegistroLocalidad,
@@ -11,6 +10,7 @@ from .models import (
     RegistroSitioImagenes,
     RegistioElectrico,
     )
+from main.models import Sitio
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

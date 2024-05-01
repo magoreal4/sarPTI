@@ -4,4 +4,4 @@ from django.apps import AppConfig
 class RegistrosConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'registros'
-    # verbose_name = 'BTS PTI'
+    verbose_name = 'Registros de Campo'

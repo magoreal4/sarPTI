@@ -15,16 +15,27 @@ from .models import (
 
 
 
+class ImagenesAdmin(admin.ModelAdmin):
+    list_display = ('registro_inicio',
+                    'image_tag_pic',
+                    'descripcion',
+                    )
+    exclude = ('sitio',)
+    list_editable = ('descripcion',)
+    readonly_fields = ('image_tag_pic',)
+
+admin.site.register(Imagenes, ImagenesAdmin)
 
 class ImagenesInline(admin.StackedInline):
     model = Imagenes
     extra = 0
-    template = 'admin/edit_inline/mosaic.html'
-    readonly_fields = ('pic_with_description', 'imagen', 'descripcion')
+    readonly_fields = ('pic_with_description',)
     fieldsets = (
         ('', {
             'fields': (
                 'pic_with_description',
+                'imagen',
+                'descripcion',
             ),
         }),)
 
@@ -40,35 +51,26 @@ class ImagenesInline(admin.StackedInline):
     pic_with_description.short_description = "Imagen y Descripción"
 
 
-class ImagenesAdmin(admin.ModelAdmin):
-    list_display = ('registro_inicio',
-                    'image_tag_pic',
-                    'descripcion',
-                    )
-    exclude = ('sitio',)
-    list_editable = ('descripcion',)
-    readonly_fields = ('image_tag_pic',)
-
-admin.site.register(Imagenes, ImagenesAdmin)
     
 
 
 class InformacionGeneralInline(admin.StackedInline):
     model = InformacionGeneral
     extra = 0
-    readonly_fields = ('fecha_visita', 'propietario', 'propietario_telf', 'propietario_direccion', 'propietario_email', 'estado_civil')
+    # readonly_fields = ('fecha_visita', 'propietario', 'propietario_telf', 'propietario_direccion', 'propietario_email', 'estado_civil')
     fieldsets = (
         ('', {
             'fields': (
-                ('fecha_visita', 'propietario'),
-                ('propietario_telf', 'propietario_email', 'propietario_direccion', ),
+                ('propietario', 'propietario_telf',),
+                ( 'propietario_email', 'propietario_direccion', ),
                 'estado_civil',
             ),
-            # 'classes': ('collapse',),  # Hace este grupo colapsable
-            # 'description': ('Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto.'
-            #                 ' Para más detalles, <a href="https://example.com">visita este enlace</a>.')
+ 
         }),
     )
+    class Media:
+        js = ('js/propietario.js',)
+
     
 
 class InformacionGeneralAdmin(admin.ModelAdmin):
@@ -88,12 +90,10 @@ class InformacionPropiedadInline(admin.StackedInline):
     fieldsets = (
         ('', {
             'fields': (
-                ('propiedad_hipoteca', 'estado_impuestos', 'tiempo_negociado'),
+                ('propiedad_hipoteca', 'estado_impuestos'),
+                 'tiempo_negociado',
                 ('apreciaciones','comentarios'),
             ),
-            # 'classes': ('collapse',),  # Hace este grupo colapsable
-            # 'description': ('Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto.'
-            #                 ' Para más detalles, <a href="https://example.com">visita este enlace</a>.')
         }),
     )
     
@@ -151,7 +151,8 @@ class InfTecPropiedadInline(admin.StackedInline):
         ('Acceso al Sitio', {
             'fields': (
                 ('dim_acceso', 'condiciones_acceso'),
-                ('tipo_carretera', 'acceso_sitio','cond_acceso_equipo'),
+                ('tipo_carretera', 'acceso_sitio'),
+                'cond_acceso_equipo',
             ),
         }),
         ('Entorno', {
@@ -180,25 +181,40 @@ class InfTecPropiedadInline(admin.StackedInline):
     )
     
 
+# class DocumentosAdmin(admin.ModelAdmin):
+#     list_display = ['registro_inicio', 'imagen_documento', 'descripcion']
+#     def imagen_documento(self, obj):
+#         if obj.documento:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+#             return format_html('<img src="{}" width="120" height=""/>', obj.documento.url)
+#         return "No hay imagen"
+#     imagen_documento.short_description = 'Croquis'
+# admin.site.register(Documentos,DocumentosAdmin)
+
 class DocumentosAdmin(admin.ModelAdmin):
-    list_display = ['registro_inicio', 'imagen_documento', 'descripcion']
-    def imagen_documento(self, obj):
-        if obj.documento:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
-            return format_html('<img src="{}" width="120" height=""/>', obj.documento.url)
-        return "No hay imagen"
-    imagen_documento.short_description = 'Croquis'
-admin.site.register(Documentos,DocumentosAdmin)
+    list_display = ('registro_inicio',
+                    'image_tag_pic',
+                    'descripcion',
+                    )
+    exclude = ('sitio',)
+    list_editable = ('descripcion',)
+    readonly_fields = ('image_tag_pic',)
+
+admin.site.register(Documentos, DocumentosAdmin)
+
+
 
 
 class DocumentosInline(admin.StackedInline):
     model = Documentos
     extra = 0
-    template = 'admin/edit_inline/mosaic.html'
+    # template = 'admin/edit_inline/mosaic.html'
     readonly_fields = ('pic_with_description', )
     fieldsets = (
         ('', {
             'fields': (
                 'pic_with_description',
+                'documento',
+                'descripcion',
             ),
         }),)
 
@@ -212,11 +228,6 @@ class DocumentosInline(admin.StackedInline):
             return format_html('{}{}', image_html, description_html)
         return "No hay imagen"
     pic_with_description.short_description = "Imagen y Descripción"
-
-
-
-
-
 
 
 
@@ -243,10 +254,10 @@ class RegistroInicioAdmin(admin.ModelAdmin):
     
     class Media:
         js = ('js/admin_custom_reggab.js',)
-        # css = {
-        #     'screen': ['css/custom_admin.css'],
-        #     'print': ['css/custom_admin_print.css'],
-        # }
+        css = {
+            'all': ['css/admin_custom_reggab.css'],
+            }
+
         
     list_display = ('candidato_registro', 'candidato_letra', 'zona', 'ASNM', )
     
@@ -257,8 +268,8 @@ class RegistroInicioAdmin(admin.ModelAdmin):
                 ('sitio_ID', 'candidato_registro', ),
                 ('candidato_letra', 'radio_busqueda', ),
                 ('tipo_solucion', 'zona', 'ASNM', ),
-                ('contactos_ingreso', 'ruta_acceso', ),
-                ('ruta_huella', 'inf_adicional', ),
+                ('contactos_ingreso', 'ruta_acceso' ),
+                ('ruta_huella', 'inf_adicional' ),
 
             ),
             # 'classes': ('collapse',),  # Hace este grupo colapsable

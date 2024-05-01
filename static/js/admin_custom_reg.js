@@ -1,35 +1,38 @@
 var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-
 document.addEventListener('DOMContentLoaded', function() {
   // Casmbia el titulo de la pagina Registro Campo
   var h1Element = document.querySelector('#content > h1');
   
-  var sitioIDDiv = document.querySelector('.field-sitio_ID .readonly');
-
+  var sitioIDDiv = document.querySelector('.field-sitio_ID > .readonly');
   var CellID = sitioIDDiv.textContent.trim();
   
-  var candidato = document.getElementById('id_candidato_letra').value
+  var sitioNombreDiv = document.querySelector('.field-sitio_nombre > .readonly');
+  var nombre = sitioNombreDiv.textContent.trim();
   
 
    if (h1Element) {
-    h1Element.innerHTML = "REGISTRO DE GABINETE<br>" + CellID + ' Candidato ' + candidato;
-    
+    h1Element.innerHTML = "REGISTRO DE CAMPO<br>" + CellID + '  ' + nombre;
+
+
     }
+
+
+ 
 
     // Coloca las imagenes en dos columnas
     // Encuentra el contenedor principal donde están todos los elementos
-    var mainContainer = document.querySelector('#imagenes_set-group .module');
+    var mainContainer = document.querySelector('#registrositioimagenes_set-group .module');
 
     // Crea un nuevo div que actuará como el contenedor de la grid
     var gridContainer = document.createElement('div');
-      gridContainer.className = 'imagenes-grid';
-      gridContainer.style.display = 'grid';
-      gridContainer.style.gridTemplateColumns = 'repeat(2, 1fr)'; // Dos columnas de igual ancho
-      
-      gridContainer.style.width = '100%'; // Ajusta el ancho del contenedor al 100%
+    gridContainer.className = 'imagenes-grid';
+        // Aplica estilo CSS Grid al contenedor
+        gridContainer.style.display = 'grid';
+        gridContainer.style.gridTemplateColumns = '1fr 1fr'; // Dos columnas de igual ancho
+        gridContainer.style.gridGap = '10px'; // Espacio entre columnas y filas
+        gridContainer.style.padding = '10px'; // Padding alrededor del contenido interno del grid
     
-
     // Encuentra todos los elementos que necesitas agrupar
     var contenedores = mainContainer.querySelectorAll('div.inline-related.has_original');
 
@@ -49,6 +52,11 @@ if (insertPosition) {
 }
   
 
+
+
+
+
+  
 
   });
   

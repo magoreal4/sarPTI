@@ -1,10 +1,8 @@
 from django.contrib import admin
 from django.db.models import F
 import pytz
-from .models import (Empresa,
-                     Sitio,
-                     UserProfile,
-                     Candidato,
+from main.models import Empresa, Sitio, UserProfile
+from .models import (Candidato,
                      RegistroLlegada,
                      RegistroLocalidad,
                      RegistroPropietario,
@@ -68,11 +66,6 @@ def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
         return distancia
     else:
         return None
-
-
-# admin.site.register(User, UserAdmin)
-
-# admin.site.register(Group, GroupAdmin)
 
 class EmpresaAdmin(admin.ModelAdmin):
     list_display = ('pais', 'nombre')
@@ -261,7 +254,7 @@ class RegistroPropietariodInline(admin.StackedInline):
     fieldsets = (
         ('', {
             'fields': (
-                'propietario_nombre_apellido',
+                ('propietario_nombre_apellido',),
                 ('fecha_nacimiento', 'propietario_ci', 'propietario_telf'),
                 ('propietario_direccion', 'propietario_estado_civil_mensaje'),
             ),
@@ -295,7 +288,6 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
               'propietario_direccion',
               )
 
-
 admin.site.register(RegistroPropietario, RegistroPropietarioAdmin)
 
 
@@ -314,6 +306,8 @@ class RegistroPropiedadInline(admin.StackedInline):
                 ('propiedad_imagen_thumbnail', 'propiedad_descripcion'),
             ),
         }),)
+
+
 
     def propiedad_imagen_thumbnail(self, obj):
         if obj.propiedad_imagen:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
@@ -452,7 +446,7 @@ admin.site.register(RegistroSitio, RegistroSitioAdmin)
 class RegistroSitioImagenesInline(admin.StackedInline):
     model = RegistroSitioImagenes
     extra = 0
-    template = 'admin/edit_inline/mosaic.html'
+    # template = 'admin/edit_inline/mosaic.html'
     readonly_fields = ('pic_with_description', 'pic', 'descripcion')
     fieldsets = (
         ('', {
@@ -594,10 +588,11 @@ class CandidatoAdmin(admin.ModelAdmin):
     ]
 
     class Media:
-        js = ('js/admin_custom.js',)
+        js = ('js/admin_custom_reg.js',)
         css = {
-            'all': ['css/admin_custom.css'],
+            'all': ['css/admin_custom_reg.css'],
             }
+
 
 
     # CANDIDATO

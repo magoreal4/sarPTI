@@ -7,8 +7,7 @@ from django.db import transaction
 from django.db import IntegrityError
 from geopy.distance import geodesic
 from django.utils.html import format_html
-from main.models import SiteConfiguration
-
+from configapp.models import SiteConfiguration
 
 def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
     """Calcula la distancia entre dos puntos usando geopy."""
@@ -116,60 +115,60 @@ def ajustar_zoom(distancia):
     return z
 
 
-class Empresa(models.Model):
-    pais = models.CharField(max_length=25, blank=True, null=True)
-    nombre = models.CharField("Empresa", max_length=25, blank=True, null=True)
+# class Empresa(models.Model):
+#     pais = models.CharField(max_length=25, blank=True, null=True)
+#     nombre = models.CharField("Empresa", max_length=25, blank=True, null=True)
 
-    class Meta:
-        verbose_name = "Empresa"
-        verbose_name_plural = "Empresas"
+#     class Meta:
+#         verbose_name = "Empresa"
+#         verbose_name_plural = "Empresas"
 
-    def __str__(self):
-        return f"{self.nombre} - {self.pais}"
+#     def __str__(self):
+#         return f"{self.nombre} - {self.pais}"
 
 
-class Sitio(models.Model):
-    PTICellID = models.CharField(
-        max_length=17,
-        unique=True,
-        primary_key=True
-    )
-    nombre = models.CharField(max_length=100, blank=True)
-    lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
-    lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Nominal')
-    altura = models.CharField(max_length=10, blank=True, null=True)
-    provincia = models.CharField("Provincia/Region", max_length=25, blank=True, null=True)
-    municipio = models.CharField(max_length=25, blank=True, null=True)
-    localidad = models.CharField("Localidad/Comuna", max_length=25, blank=True, null=True)
-    empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
-    usuario = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
+# class Sitio(models.Model):
+#     PTICellID = models.CharField(
+#         max_length=17,
+#         unique=True,
+#         primary_key=True
+#     )
+#     nombre = models.CharField(max_length=100, blank=True)
+#     lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
+#     lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Nominal')
+#     altura = models.CharField(max_length=10, blank=True, null=True)
+#     provincia = models.CharField("Provincia/Region", max_length=25, blank=True, null=True)
+#     municipio = models.CharField(max_length=25, blank=True, null=True)
+#     localidad = models.CharField("Localidad/Comuna", max_length=25, blank=True, null=True)
+#     empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
+#     usuario = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
 
-    img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
-    contador_llegadas = models.PositiveIntegerField("Reg./Cand.", default=0)
+#     img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
+#     contador_llegadas = models.PositiveIntegerField("Reg./Cand.", default=0)
     
-    def __str__(self):
-        return self.PTICellID
+#     def __str__(self):
+#         return self.PTICellID
 
-    class Meta:
-        verbose_name = "Datos Sitio"
-        verbose_name_plural = "Datos Sitio"
+#     class Meta:
+#         verbose_name = "Datos Sitio"
+#         verbose_name_plural = "Datos Sitio"
 
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    telf = models.CharField(max_length=15)
-    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, blank=True, null=True)
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     telf = models.CharField(max_length=15)
+#     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, blank=True, null=True)
 
-    def __str__(self):
-        return self.user.username
+#     def __str__(self):
+#         return self.user.username
 
-    @property
-    def get_full_name(self):
-        return f"{self.user.first_name} {self.user.last_name}"
+#     @property
+#     def get_full_name(self):
+#         return f"{self.user.first_name} {self.user.last_name}"
 
 
 class Candidato(models.Model):
-    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
+    sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.CharField(
         max_length=15,
         primary_key=True,  # Establece como clave primaria
@@ -206,8 +205,8 @@ class Candidato(models.Model):
         return f"{self.candidato}"
 
     class Meta:
-        verbose_name = "Registro Campo"
-        verbose_name_plural = "Registros Campo"
+        verbose_name = "Registro Campo (Consolidado)"
+        verbose_name_plural = "Registros Campo (Consolidado)"
 
 
 LLEGADA_CHOICES = (
@@ -224,8 +223,8 @@ class RegistroLlegada(models.Model):
     )
 
     fecha_llegada = models.DateTimeField("Fecha de llegada", default=timezone.now)
-    lat_llegada = models.FloatField(null=True)
-    lon_llegada = models.FloatField(null=True)
+    lat_llegada = models.FloatField("Latitud Llegada", null=True)
+    lon_llegada = models.FloatField("Longitud Llegada", null=True)
     status_llegada = models.CharField("Estatus", choices=LLEGADA_CHOICES, max_length=5)
     imagen_llegada = models.ImageField(upload_to='llegada/', blank=True, null=True)
     observaciones = models.TextField(null=True)
@@ -260,7 +259,7 @@ class RegistroLlegada(models.Model):
 
 
 class RegistroLocalidad(models.Model):
-    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
+    sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.OneToOneField(
         Candidato,
         on_delete=models.CASCADE,
@@ -297,7 +296,7 @@ class RegistroLocalidad(models.Model):
 
 
 class RegistroPropietario(models.Model):
-    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
+    sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.OneToOneField(
         Candidato,
         on_delete=models.CASCADE,
@@ -336,7 +335,7 @@ class RegistroPropietario(models.Model):
 
 
 class RegistroPropiedad(models.Model):
-    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
+    sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.OneToOneField(
         Candidato,
         on_delete=models.CASCADE,
@@ -382,7 +381,7 @@ class RegistroPropiedad(models.Model):
 
 
 class RegistroSitio(models.Model):
-    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
+    sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.OneToOneField(
         Candidato,
         on_delete=models.CASCADE,
@@ -475,7 +474,7 @@ class RegistroSitio(models.Model):
 
 
 class RegistroSitioImagenes(models.Model):
-    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
+    sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.ForeignKey(
         Candidato,
         on_delete=models.CASCADE,
@@ -516,7 +515,7 @@ class RegistroSitioImagenes(models.Model):
 
 
 class RegistioElectrico(models.Model):
-    sitio = models.ForeignKey(Sitio, on_delete=models.CASCADE)
+    sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.OneToOneField(
         Candidato,
         on_delete=models.CASCADE,

@@ -1,0 +1,109 @@
+
+/* Achica la distancia entre cada fila era mucho */
+.form-row {
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+}
+
+/* Pone los valores en fila  */
+.flex-container {
+    display: flex!important;
+    flex-direction: row!important;
+}
+
+/* Label encima el contenido (texto) */
+.field-cond_acceso_equipo .flex-container,
+.field-dim_ampliar .flex-container,
+.field-tiempo_negociado .flex-container,
+.form-row.field-propietario_nombre_apellido .flex-container,
+.flex-container.fieldBox {
+    display: flex!important;
+    flex-direction: column!important;  /* Alinea los hijos verticalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+    width: 100%;             /* Opcional, ajusta según necesites */
+    padding: 8px;            /* Espacio para un mejor diseño, ajustable */
+    box-sizing: border-box;  /* Asegura que el padding no afecte el ancho */
+}
+
+/* Ajusta los check list a row */
+.flex-container.fieldBox.field-propiedad_hipoteca,
+.flex-container.fieldBox.field-estado_impuestos
+ {
+    display: flex!important;
+    flex-direction: row!important;
+    margin-right: 50px!important;
+}
+
+
+textarea {
+    width: 100%!important;
+}
+
+.flex-container.fieldBox.field-desc_const_importantes > .form-multiline {
+    display: flex;       /* Establece el contenedor como un flexbox */
+    flex-wrap: nowrap!important; /* Establece el contenedor como un flexbox */
+}
+
+.help {
+    margin-left: 0px!important;
+    width: 100%!important;
+}
+
+/* Ajusta los textares a dos columnas */
+.form-row.field-imagen_croquis.field-descripcion > div,
+.field-ruta_huella.field-inf_adicional > div,
+.field-contactos_ingreso.field-ruta_acceso > div 
+{
+    display: grid!important;                    /* Establece el contenedor como un grid */
+    grid-template-columns: 1fr 1fr!important;   /* Divide el grid en dos columnas de igual tamaño */
+    gap: 0px;                        /* Añade un espacio entre las columnas */
+    width: 100%;   
+}
+
+.field-ruta_huella.field-inf_adicional textarea,
+.field-contactos_ingreso.field-ruta_acceso textarea {
+    width: 100%!important;
+}
+
+/* Ancho del label cuando es poco */
+label {
+    width: 100%!important;
+}
+
+/* Reduce el ancho del field (marco que se ve) */
+#id_informacionpropiedad-0-tiempo_negociado,
+#id_candidato_letra {
+    width: 50px;
+    margin-right: 120px;
+}
+
+
+/* mueve un poco el contenido y agranda el font */
+.flex-container.fieldBox .readonly {
+    font-size: larger;
+}
+
+/* Negrilla el label */
+h1,
+.flex-container label,
+.flex-container.fieldBox label {
+    font-weight: 700;
+}
+
+/* Borra el texto de Imagen y Descripcion */
+.imagenes-grid .field-pic_with_description label {
+    display: none;
+}
+
+.inline-description {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.imagenes-grid .inline-related {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 5px solid white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+

@@ -1,0 +1,19 @@
+{% extends "admin/edit_inline/stacked.html" %}
+
+{% block inline_field_sets %}
+<style>
+    .inline-related .dynamic-imagenes_set {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .inline-related .dynamic-imagenes_set .form-row {
+        flex: 0 1 50% !important; /* Ajusta a dos columnas */
+        max-width: 50% ; /* Ajusta a dos columnas */
+    }
+    .inline-related .dynamic-imagenes_set .form-row img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+{{ block.super }}
+{% endblock %}
