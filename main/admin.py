@@ -11,6 +11,7 @@ class MyAdminSite(AdminSite):
     def get_app_list(self, request):
         # Obtener la lista original de aplicaciones y modelos
         app_list = super().get_app_list(request)
+        print(app_list)
         # Aquí puedes definir el orden deseado para cada aplicación
         app_orders = {
             'main': ['Empresa', 'Sitio', ], 
@@ -30,7 +31,8 @@ class MyAdminSite(AdminSite):
                              'Croquis',
                              'InfTecPropiedad',
                              'Documentos',
-                             ]
+                             ],
+            'admin_interface.theme': ['Theme'],
             # 'another_app': ['AnotherModel1', 'AnotherModel3', 'AnotherModel2']
         }
 
@@ -42,66 +44,9 @@ class MyAdminSite(AdminSite):
 
         return app_list
 
-# Reemplaza el sitio admin predeterminado por el personalizado
+
 admin.site = MyAdminSite(name='myadmin')
 
-# class MyAdminSite(admin.AdminSite):
-#     site_header = 'BTS PTI'
-#     site_title = 'BTS PTI'
-#     index_title = 'Inicio'
-
-#     def get_app_list(self, request):
-#         # Obtener la lista original de aplicaciones y modelos
-#         app_list = super().get_app_list(request)
-
-#         # Definir el orden deseado para las aplicaciones
-#         app_order = ['registros', 'registrosgab', 'main', 'auth']
-
-#         # Configuración de orden personalizado para los modelos dentro de cada aplicación
-#         custom_order = {            
-#             'registros': [
-#                 'Empresa', 'Usuario', 'Sitio', 'Candidato', 'RegistroLlegada',
-#                 'RegistroLocalidad', 'RegistroPropietario', 'RegistroPropiedad',
-#                 'RegistroSitio', 'RegistroSitioImagenes', 'RegistioElectrico'
-#             ],
-#             'registrosgab': [
-#                 'RegistroInicio', 'Imagenes', 'InformacionGeneral', 'InformacionPropiedad',
-#                 'Croquis', 'InfTecPropiedad', 'Documentos'
-#             ],
-#         }
-
-#         # Títulos personalizados para las aplicaciones
-#         custom_titles = {
-#             'registros': 'Registros Campo',
-#             'registrosgab': 'Registros Gabinete',
-#             'main': 'Configuración',
-#         }
-
-#         # Reordenar la lista de aplicaciones según el orden definido
-#         app_list = sorted(app_list, key=lambda x: app_order.index(x['app_label']) if x['app_label'] in app_order else len(app_order))
-
-#         # Reorganizar y renombrar los modelos según el orden personalizado
-#         for app in app_list:
-#             if app['app_label'] in custom_order:
-#                 # Cambiar el título del menú
-#                 app['name'] = custom_titles.get(app['app_label'], app['name'])
-
-#                 # Reordenar los modelos de acuerdo al orden personalizado
-#                 ordered_models = []
-#                 model_names = custom_order[app['app_label']]
-#                 for model_name in model_names:
-#                     for model in app['models']:
-#                         if model['object_name'] == model_name:
-#                             ordered_models.append(model)
-#                 app['models'] = ordered_models
-
-#         return app_list
-
-
-    
-
-
-# admin.site = MyAdminSite(name='myadmin')
 
 admin.site.register(User, UserAdmin)
 
