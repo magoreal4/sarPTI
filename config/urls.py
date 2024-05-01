@@ -15,8 +15,6 @@ urlpatterns = [
     path('', include('registros.urls')),
     path('', include('registrosgab.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
-    
-    path('login/', auth_views.LoginView.as_view(), name='login'),
     ]
 
 if settings.DEBUG:
