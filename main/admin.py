@@ -7,50 +7,50 @@ from django.forms import PasswordInput
 from django.utils.html import format_html
 from django.contrib.admin import AdminSite
 
-# class MyAdminSite(AdminSite):
-#     def get_app_list(self, request):
-#         # Obtener la lista original de aplicaciones y modelos
-#         app_list = super().get_app_list(request)
-#         print(app_list)
-#         # Aquí puedes definir el orden deseado para cada aplicación
-#         app_orders = {
-#             'main': ['Empresa', 'Sitio', ], 
-#             'registros': ['Candidato',
-#                           'RegistroLlegada',
-#                           'RegistroLocalidad',
-#                           'RegistroPropietario',
-#                           'RegistroPropiedad',
-#                           'RegistroSitio',
-#                           'RegistroSitioImagenes',
-#                           'RegistioElectrico',
-#                           ],
-#             'registrosgab': ['RegistroInicio',
-#                              'Imagenes',
-#                              'InformacionGeneral',
-#                              'InformacionPropiedad',
-#                              'Croquis',
-#                              'InfTecPropiedad',
-#                              'Documentos',
-#                              ],
-#             'admin_interface.theme': ['Theme'],
-#             # 'another_app': ['AnotherModel1', 'AnotherModel3', 'AnotherModel2']
-#         }
+class MyAdminSite(AdminSite):
+    def get_app_list(self, request):
+        # Obtener la lista original de aplicaciones y modelos
+        app_list = super().get_app_list(request)
+        print(app_list)
+        # Aquí puedes definir el orden deseado para cada aplicación
+        app_orders = {
+            'main': ['Empresa', 'Sitio', ], 
+            'registros': ['Candidato',
+                          'RegistroLlegada',
+                          'RegistroLocalidad',
+                          'RegistroPropietario',
+                          'RegistroPropiedad',
+                          'RegistroSitio',
+                          'RegistroSitioImagenes',
+                          'RegistioElectrico',
+                          ],
+            'registrosgab': ['RegistroInicio',
+                             'Imagenes',
+                             'InformacionGeneral',
+                             'InformacionPropiedad',
+                             'Croquis',
+                             'InfTecPropiedad',
+                             'Documentos',
+                             ],
+            'admin_interface.theme': ['Theme'],
+            # 'another_app': ['AnotherModel1', 'AnotherModel3', 'AnotherModel2']
+        }
 
-#         # Reordenar los modelos de cada aplicación según el orden definido
-#         for app in app_list:
-#             app_name = app['app_label']
-#             if app_name in app_orders:
-#                 app['models'].sort(key=lambda x: app_orders[app_name].index(x['object_name']))
+        # Reordenar los modelos de cada aplicación según el orden definido
+        for app in app_list:
+            app_name = app['app_label']
+            if app_name in app_orders:
+                app['models'].sort(key=lambda x: app_orders[app_name].index(x['object_name']))
 
-#         return app_list
-
-
-# admin.site = MyAdminSite(name='myadmin')
+        return app_list
 
 
-# admin.site.register(User, UserAdmin)
+admin.site = MyAdminSite(name='myadmin')
 
-# admin.site.register(Group, GroupAdmin)
+
+admin.site.register(User, UserAdmin)
+
+admin.site.register(Group, GroupAdmin)
 
 from django import forms
 
