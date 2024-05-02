@@ -35,7 +35,7 @@ DATABASES = {
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.btspti.com'
+EMAIL_HOST = 'premium175.web-hosting.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True  # Usar SSL en lugar de TLS
 EMAIL_HOST_USER = 'admin@btspti.com'
