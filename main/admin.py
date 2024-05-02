@@ -11,7 +11,6 @@ class MyAdminSite(AdminSite):
     def get_app_list(self, request):
         # Obtener la lista original de aplicaciones y modelos
         app_list = super().get_app_list(request)
-        print(app_list)
         # Aquí puedes definir el orden deseado para cada aplicación
         app_orders = {
             'main': ['Empresa', 'Sitio', ], 
