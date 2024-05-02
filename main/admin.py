@@ -71,7 +71,7 @@ class SiteConfigurationAdmin(SingletonModelAdmin):
             return "No hay imagen"
     logo_img.short_description = 'Logo Preview'
 
-    readonly_fields = ['logo_img']
-    fields = ('logo', 'logo_img', 'api_key')
+    # readonly_fields = ['logo_img']
+    fields = ('logo',  'api_key')
 
 admin.site.register(SiteConfiguration, SiteConfigurationAdmin)

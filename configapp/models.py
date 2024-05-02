@@ -29,7 +29,11 @@ def get_fixed_filename(instance, filename):
     return os.path.join('admin-interface/logo/', "logo3_COClnvn.png")
 
 class SiteConfiguration(SingletonModel):
-    logo = models.ImageField(upload_to=get_fixed_filename, storage=OverwriteStorage(), validators=[validate_file_extension])
+    logo = models.ImageField(
+        upload_to=get_fixed_filename, 
+        storage=OverwriteStorage(), 
+        validators=[validate_file_extension],
+        help_text="Solo archivos png")
     logo_thumbnail = ImageSpecField(source='logo',
                                 processors=[ResizeToFill(100, 100)],
                                 format='JPEG',
