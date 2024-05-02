@@ -7,30 +7,18 @@ from django.forms import PasswordInput
 from django.utils.html import format_html
 from django.contrib.admin import AdminSite
 
-class MyAdminSite(AdminSite):
-    def get_app_list(self, request):
+class MyAdminSite(AdminSite):    
+    def get_app_list(self, request, app_label=None):
         # Obtener la lista original de aplicaciones y modelos
-        app_list = super().get_app_list(request)
+        app_list = super().get_app_list(request, app_label)
         # Aquí puedes definir el orden deseado para cada aplicación
         app_orders = {
-            'main': ['Empresa', 'Sitio', ], 
-            'registros': ['Candidato',
-                          'RegistroLlegada',
-                          'RegistroLocalidad',
-                          'RegistroPropietario',
-                          'RegistroPropiedad',
-                          'RegistroSitio',
-                          'RegistroSitioImagenes',
-                          'RegistioElectrico',
-                          ],
-            'registrosgab': ['RegistroInicio',
-                             'Imagenes',
-                             'InformacionGeneral',
-                             'InformacionPropiedad',
-                             'Croquis',
-                             'InfTecPropiedad',
-                             'Documentos',
-                             ],
+            'main': ['Empresa', 'Sitio'], 
+            'registros': ['Candidato', 'RegistroLlegada', 'RegistroLocalidad',
+                          'RegistroPropietario', 'RegistroPropiedad', 'RegistroSitio',
+                          'RegistroSitioImagenes', 'RegistioElectrico'],
+            'registrosgab': ['RegistroInicio', 'Imagenes', 'InformacionGeneral',
+                             'InformacionPropiedad', 'Croquis', 'InfTecPropiedad', 'Documentos'],
             'admin_interface.theme': ['Theme'],
             # 'another_app': ['AnotherModel1', 'AnotherModel3', 'AnotherModel2']
         }
@@ -38,10 +26,12 @@ class MyAdminSite(AdminSite):
         # Reordenar los modelos de cada aplicación según el orden definido
         for app in app_list:
             app_name = app['app_label']
-            if app_name in app_orders:
-                app['models'].sort(key=lambda x: app_orders[app_name].index(x['object_name']))
+            model_order = app_orders.get(app_name, [])
+            app['models'].sort(key=lambda x: model_order.index(x['object_name']) if x['object_name'] in model_order else float('inf'))
 
         return app_list
+		
+		
 
 
 admin.site = MyAdminSite(name='myadmin')

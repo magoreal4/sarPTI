@@ -318,3 +318,4 @@ staticfiles/
 */migrations/*.py
 !*/migrations/__init__.py
 sent_emails/
+static/apk
