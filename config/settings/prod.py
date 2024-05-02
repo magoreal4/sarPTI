@@ -40,3 +40,4 @@ EMAIL_PORT = 465
 EMAIL_USE_SSL = True  # Usar SSL en lugar de TLS
 EMAIL_HOST_USER = 'admin@btspti.com'
 EMAIL_HOST_PASSWORD = 'admin10203040!'
+DEFAULT_FROM_EMAIL = 'admin@btspti.com'
