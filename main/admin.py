@@ -96,8 +96,8 @@ class SitioAdmin(ImportExportModelAdmin):
                     'contador_llegadas',
                     # 'img_thumbnail'
                     )
-    list_editable = ('empresa','usuario')
-    readonly_fields = ['img_thumbnail']
+    # list_editable = 
+    readonly_fields = ('img_thumbnail',)
     fields = (
         'PTICellID',
         'nombre',
@@ -114,17 +114,24 @@ class SitioAdmin(ImportExportModelAdmin):
         'img_thumbnail'
     )
     
-    # Para que solo se vean lo usuarios que pertencen a la empresa
     
-    def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        if db_field.name == "usuario":
-            if request.user.is_superuser:
-                kwargs["queryset"] = User.objects.all()
-            else:
-                kwargs["queryset"] = User.objects.filter(userprofile__empresa=request.user.userprofile.empresa)
-        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.is_superuser:
+            return self.readonly_fields
+        return self.readonly_fields + ('empresa',)
+
+    def get_list_editable(self, request):
+        if request.user.is_superuser:
+            return ('empresa', 'usuario')
+        return ('usuario',)
+    
+    def changelist_view(self, request, extra_context=None):
+        # Ajustar list_editable basado en el usuario antes de mostrar la vista de lista
+        self.list_editable = self.get_list_editable(request)
+        return super(SitioAdmin, self).changelist_view(request, extra_context)
 
     
+    # Para que solo se vean lo usuarios que pertencen a la empresa
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser or request.user.has_perm('main.view_empresa_sites'):
@@ -138,8 +145,7 @@ class SitioAdmin(ImportExportModelAdmin):
             return format_html('<img src="{}" width="320"  />', obj.img_google.url)
         else:
             return "No hay imagen"
-
-    img_thumbnail.short_description = 'Ubicaion Preview'
+    img_thumbnail.short_description = 'Ubicacion Preview'
 
 
 admin.site.register(Sitio, SitioAdmin)
