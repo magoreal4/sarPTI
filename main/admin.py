@@ -6,6 +6,11 @@ from configapp.models import SiteConfiguration
 from django.forms import PasswordInput
 from django.utils.html import format_html
 from django.contrib.admin import AdminSite
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from .models import UserProfile, Empresa, Sitio
+from django import forms
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
 
 class MyAdminSite(AdminSite):    
     def get_app_list(self, request, app_label=None):
@@ -31,17 +36,115 @@ class MyAdminSite(AdminSite):
 
         return app_list
 		
-		
-
-
 admin.site = MyAdminSite(name='myadmin')
+
+
+
+class UserProfileInline(admin.StackedInline):
+    model = UserProfile
+    can_delete = False
+    verbose_name_plural = 'Buscador'
+
+    # def get_readonly_fields(self, request, obj=None):
+    #     if not request.user.is_superuser:
+    #         return self.readonly_fields + ('empresa',)
+    #     return self.readonly_fields
+
+
+class UserAdmin(BaseUserAdmin):
+    inlines = (UserProfileInline,)
+    list_display = ('username', 'first_name', 'last_name', 'get_telefono', 'email', )
+    list_filter = ()
+
+    def get_telefono(self, obj):
+        return obj.userprofile.telf if obj.userprofile else None
+    get_telefono.short_description = 'Telefono'
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if not request.user.is_superuser:
+            qs = qs.filter(userprofile__empresa=request.user.userprofile.empresa)
+        return qs
 
 
 admin.site.register(User, UserAdmin)
 
 admin.site.register(Group, GroupAdmin)
 
-from django import forms
+
+class EmpresaAdmin(admin.ModelAdmin):
+    list_display = ('pais', 'nombre')
+
+
+admin.site.register(Empresa, EmpresaAdmin)
+
+
+# SITIOS
+class SitiosResource(resources.ModelResource):
+    class Meta:
+        model = Sitio
+        import_id_fields = ('PTICellID',)
+
+
+class SitioAdmin(ImportExportModelAdmin):
+    resource_class = SitiosResource
+    list_display = ('PTICellID',
+                    'nombre',
+                    'altura',
+                    'empresa',
+                    'usuario',
+                    'contador_llegadas',
+                    # 'img_thumbnail'
+                    )
+    list_editable = ('empresa','usuario')
+    readonly_fields = ['img_thumbnail']
+    fields = (
+        'PTICellID',
+        'nombre',
+        'lat_nominal',
+        'lon_nominal',
+        'altura',
+        'provincia',
+        'municipio',
+        'localidad',
+        'empresa',
+        'usuario',
+        # 'img_google',
+        'contador_llegadas',
+        'img_thumbnail'
+    )
+    
+    # Para que solo se vean lo usuarios que pertencen a la empresa
+    
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "usuario":
+            if request.user.is_superuser:
+                kwargs["queryset"] = User.objects.all()
+            else:
+                kwargs["queryset"] = User.objects.filter(userprofile__empresa=request.user.userprofile.empresa)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
+    
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser or request.user.has_perm('main.view_empresa_sites'):
+            return qs
+        if request.user.userprofile.empresa:
+            return qs.filter(empresa=request.user.userprofile.empresa)
+        return qs.none()
+
+    def img_thumbnail(self, obj):
+        if obj.img_google:
+            return format_html('<img src="{}" width="320"  />', obj.img_google.url)
+        else:
+            return "No hay imagen"
+
+    img_thumbnail.short_description = 'Ubicaion Preview'
+
+
+admin.site.register(Sitio, SitioAdmin)
+
+
 
 class SingletonAdminForm(forms.ModelForm):
     class Meta:

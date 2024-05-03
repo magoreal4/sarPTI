@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db.models import F
 import pytz
-from main.models import Empresa, Sitio, UserProfile
+from main.models import UserProfile
 from .models import (Candidato,
                      RegistroLlegada,
                      RegistroLocalidad,
@@ -11,29 +11,10 @@ from .models import (Candidato,
                      RegistroSitioImagenes,
                      RegistioElectrico
                      )
-from import_export.admin import ImportExportModelAdmin
-from import_export import resources
+
 from django.utils.formats import date_format
 from django.utils.html import format_html
 from geopy.distance import geodesic
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.contrib.auth.models import User
-
-
-class UserProfileInline(admin.StackedInline):
-    model = UserProfile
-    can_delete = False
-    verbose_name_plural = 'Buscador'
-
-
-class UserAdmin(BaseUserAdmin):
-    inlines = (UserProfileInline,)
-
-
-# Re-register UserAdmin
-admin.site.unregister(User)
-admin.site.register(User, UserAdmin)
-
 
 def dec_to_gms(decimal_deg, is_lat=True):
     if decimal_deg is None or decimal_deg == "":
@@ -67,68 +48,7 @@ def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
     else:
         return None
 
-class EmpresaAdmin(admin.ModelAdmin):
-    list_display = ('pais', 'nombre')
 
-
-admin.site.register(Empresa, EmpresaAdmin)
-
-
-# SITIOS
-class SitiosResource(resources.ModelResource):
-    class Meta:
-        model = Sitio
-        import_id_fields = ('PTICellID',)
-
-
-class SitioAdmin(ImportExportModelAdmin):
-    list_display = ('PTICellID',
-                    'nombre',
-                    'altura',
-                    'empresa',
-                    'usuario',
-                    'contador_llegadas',
-                    # 'img_thumbnail'
-                    )
-    list_editable = ('empresa','usuario')
-    readonly_fields = ['img_thumbnail']
-    fields = (
-        'PTICellID',
-        'nombre',
-        'lat_nominal',
-        'lon_nominal',
-        'altura',
-        'provincia',
-        'municipio',
-        'localidad',
-        'empresa',
-        'usuario',
-        # 'img_google',
-        'contador_llegadas',
-        'img_thumbnail'
-    )
-    # list_filter = ('empresa',)
-
-    resource_class = SitiosResource
-    
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        if request.user.is_superuser or request.user.has_perm('main.view_empresa_sites'):
-            return qs
-        if request.user.userprofile.empresa:
-            return qs.filter(empresa=request.user.userprofile.empresa)
-        return qs.none()
-
-    def img_thumbnail(self, obj):
-        if obj.img_google:
-            return format_html('<img src="{}" width="320"  />', obj.img_google.url)
-        else:
-            return "No hay imagen"
-
-    img_thumbnail.short_description = 'Ubicaion Preview'
-
-
-admin.site.register(Sitio, SitioAdmin)
 
 
 # REGISTRO LLEGADA
