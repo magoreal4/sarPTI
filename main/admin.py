@@ -97,7 +97,7 @@ class SitioAdmin(ImportExportModelAdmin):
                     # 'img_thumbnail'
                     )
     # list_editable = 
-    readonly_fields = ('img_thumbnail',)
+    readonly_fields = ('img_thumbnail', )
     fields = (
         'PTICellID',
         'nombre',
