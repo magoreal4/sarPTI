@@ -107,8 +107,17 @@ class SitioAdmin(ImportExportModelAdmin):
         'contador_llegadas',
         'img_thumbnail'
     )
+    # list_filter = ('empresa',)
 
     resource_class = SitiosResource
+    
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser or request.user.has_perm('main.view_empresa_sites'):
+            return qs
+        if request.user.userprofile.empresa:
+            return qs.filter(empresa=request.user.userprofile.empresa)
+        return qs.none()
 
     def img_thumbnail(self, obj):
         if obj.img_google:

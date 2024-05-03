@@ -14,7 +14,7 @@ echo "Base de datos sitios creada..."
 sudo docker-compose exec sar-django python manage.py dumpdata registros --indent 2 > 04_registroscampo.json --settings=config.settings.prod
 echo "Base de registros de campo creada..."
 
-sudo docker-compose exec sar-django python manage.py dumpdata regostrosgab --indent 2 > 05_registrosgab.json --settings=config.settings.prod
+sudo docker-compose exec sar-django python manage.py dumpdata registrosgab --indent 2 > 05_registrosgab.json --settings=config.settings.prod
 echo "Base de registros de gabinete creada..."
 
 echo "Archivos creados"
