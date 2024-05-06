@@ -11,6 +11,8 @@ from .models import UserProfile, Empresa, Sitio
 from django import forms
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
+from .forms import ProfileForm
+from django import forms
 
 class MyAdminSite(AdminSite):    
     def get_app_list(self, request, app_label=None):
@@ -39,17 +41,45 @@ class MyAdminSite(AdminSite):
 admin.site = MyAdminSite(name='myadmin')
 
 
+# class UserProfileAdmin(admin.ModelAdmin):
+#     pass
+# admin.site.register(UserProfile, UserProfileAdmin)
+
+
+
+
+# Formulario personalizado para UserProfile
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        # Extraer el objeto request, si está disponible
+        self.request = kwargs.pop('request', None)
+        super(UserProfileForm, self).__init__(*args, **kwargs)
+        if not self.instance.pk and self.request:  # Verificando que sea un nuevo objeto y request esté disponible
+            # Asignar el pk de la empresa del usuario que realiza la operación
+            user_profile = self.request.user.userprofile
+            self.initial['empresa'] = user_profile.empresa.pk if user_profile.empresa else None
+        # Hacer que el campo empresa no sea editable
+        if 'empresa' in self.fields:
+            self.fields['empresa'].disabled = True
 
 class UserProfileInline(admin.StackedInline):
     model = UserProfile
+    form = UserProfileForm
     can_delete = False
     verbose_name_plural = 'Buscador'
 
-    # def get_readonly_fields(self, request, obj=None):
-    #     if not request.user.is_superuser:
-    #         return self.readonly_fields + ('empresa',)
-    #     return self.readonly_fields
-
+    def get_formset(self, request, obj=None, **kwargs):
+        # Método para inyectar el request en el formulario
+        Formset = super(UserProfileInline, self).get_formset(request, obj, **kwargs)
+        class RequestFormset(Formset):
+            def __init__(self, *args, **kwargs):
+                super(RequestFormset, self).__init__(*args, **kwargs)
+                self.form_kwargs['request'] = request  # pasar el request al formulario
+        return RequestFormset
 
 class UserAdmin(BaseUserAdmin):
     inlines = (UserProfileInline,)
@@ -60,12 +90,49 @@ class UserAdmin(BaseUserAdmin):
         return obj.userprofile.telf if obj.userprofile else None
     get_telefono.short_description = 'Telefono'
 
+    # def get_queryset(self, request):
+    #     qs = super().get_queryset(request)
+    #     if not request.user.is_superuser:
+    #         qs = qs.filter(userprofile__empresa=request.user.userprofile.empresa)
+    #     return qs
+    
+
+
+    
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        
+        if not request.user.is_superuser:
+            if 'is_superuser' in form.base_fields:
+                form.base_fields['is_superuser'].disabled = True
+        return form
+    
+    def get_fieldsets(self, request, obj=None):
+        fieldsets = super(UserAdmin, self).get_fieldsets(request, obj)
+        if not request.user.is_superuser:
+            new_fieldsets = []
+            for title, options in fieldsets:
+                fields = list(options.get('fields', []))  # Convertir los campos a lista para manipular
+                # Eliminar campos específicos relacionados con permisos
+                if 'is_superuser' in fields:
+                    fields.remove('is_superuser')
+                if 'user_permissions' in fields:
+                    fields.remove('user_permissions')
+                # if 'is_staff' in fields:
+                #     fields.remove('is_staff')
+                # if 'groups' in fields:
+                #     fields.remove('groups')
+                # Solo añadir el fieldset si todavía contiene campos
+                if fields:
+                    new_fieldsets.append((title, {'fields': fields}))
+            fieldsets = new_fieldsets
+        return fieldsets
+    
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if not request.user.is_superuser:
             qs = qs.filter(userprofile__empresa=request.user.userprofile.empresa)
         return qs
-
 
 admin.site.register(User, UserAdmin)
 
