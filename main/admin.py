@@ -58,13 +58,14 @@ class UserProfileForm(forms.ModelForm):
         # Extraer el objeto request, si está disponible
         self.request = kwargs.pop('request', None)
         super(UserProfileForm, self).__init__(*args, **kwargs)
-        if not self.instance.pk and self.request:  # Verificando que sea un nuevo objeto y request esté disponible
-            # Asignar el pk de la empresa del usuario que realiza la operación
-            user_profile = self.request.user.userprofile
-            self.initial['empresa'] = user_profile.empresa.pk if user_profile.empresa else None
-        # Hacer que el campo empresa no sea editable
-        if 'empresa' in self.fields:
-            self.fields['empresa'].disabled = True
+        if not self.request.user.is_superuser:
+            if not self.instance.pk and self.request:  # Verificando que sea un nuevo objeto y request esté disponible
+                # Asignar el pk de la empresa del usuario que realiza la operación
+                user_profile = self.request.user.userprofile
+                self.initial['empresa'] = user_profile.empresa.pk if user_profile.empresa else None
+            # Hacer que el campo empresa no sea editable
+            if 'empresa' in self.fields:
+                self.fields['empresa'].disabled = True
 
 class UserProfileInline(admin.StackedInline):
     model = UserProfile
