@@ -115,58 +115,6 @@ def ajustar_zoom(distancia):
     return z
 
 
-# class Empresa(models.Model):
-#     pais = models.CharField(max_length=25, blank=True, null=True)
-#     nombre = models.CharField("Empresa", max_length=25, blank=True, null=True)
-
-#     class Meta:
-#         verbose_name = "Empresa"
-#         verbose_name_plural = "Empresas"
-
-#     def __str__(self):
-#         return f"{self.nombre} - {self.pais}"
-
-
-# class Sitio(models.Model):
-#     PTICellID = models.CharField(
-#         max_length=17,
-#         unique=True,
-#         primary_key=True
-#     )
-#     nombre = models.CharField(max_length=100, blank=True)
-#     lat_nominal = models.FloatField(blank=True, null=True, verbose_name='Latitud Nominal')
-#     lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Nominal')
-#     altura = models.CharField(max_length=10, blank=True, null=True)
-#     provincia = models.CharField("Provincia/Region", max_length=25, blank=True, null=True)
-#     municipio = models.CharField(max_length=25, blank=True, null=True)
-#     localidad = models.CharField("Localidad/Comuna", max_length=25, blank=True, null=True)
-#     empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
-#     usuario = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
-
-#     img_google = models.ImageField(upload_to='imgs_gmap/', null=True, blank=True)
-#     contador_llegadas = models.PositiveIntegerField("Reg./Cand.", default=0)
-    
-#     def __str__(self):
-#         return self.PTICellID
-
-#     class Meta:
-#         verbose_name = "Datos Sitio"
-#         verbose_name_plural = "Datos Sitio"
-
-
-# class UserProfile(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     telf = models.CharField(max_length=15)
-#     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, blank=True, null=True)
-
-#     def __str__(self):
-#         return self.user.username
-
-#     @property
-#     def get_full_name(self):
-#         return f"{self.user.first_name} {self.user.last_name}"
-
-
 class Candidato(models.Model):
     sitio = models.ForeignKey('main.Sitio', on_delete=models.CASCADE)
     candidato = models.CharField(
@@ -267,8 +215,8 @@ class RegistroLocalidad(models.Model):
         blank=True,
         verbose_name="Registro",
     )
-    provincia = models.CharField(max_length=25, blank=True, null=True)
-    municipio = models.CharField(max_length=25, blank=True, null=True)
+    provincia = models.CharField("Provincia/Region",max_length=35, blank=True, null=True)
+    municipio = models.CharField("Municipio/Comuna",max_length=35, blank=True, null=True)
     localidad = models.CharField(max_length=25, blank=True, null=True)
     energia_localidad = models.BooleanField(default=True)
     
@@ -350,6 +298,9 @@ class RegistroPropiedad(models.Model):
     propiedad_imagen = models.ImageField(upload_to='sitios/propiedad',null=True)
     propiedad_descripcion = models.TextField("Comentarios")
     
+    # Version 1.1
+    propiedad_direccion = models.CharField("Direccion Propiedad", max_length=100, null=True, blank=True)
+    
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def image_tag(self):
@@ -394,6 +345,10 @@ class RegistroSitio(models.Model):
     sitio_lat = models.FloatField("Latitud Torre")
     sitio_lon = models.FloatField("Longitud Torre")
     sitio_descripcion = models.TextField("Comentarios")
+    
+    # Version 1.1
+    sitio_propuesta_negociacion = models.CharField("Propuesta de Negociación", max_length=100, null=True)
+    sitio_espacio_negociado = models.CharField("Espacio Negociado", max_length=100, null=True)  
 
     img_google_dist_nominal = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)
     img_google_sitio = models.ImageField(upload_to='sitios/imgs_gmap/', null=True, blank=True)

@@ -227,11 +227,14 @@ class RegistroPropiedadInline(admin.StackedInline):
     readonly_fields = ('propiedad_rol', 'propiedad_escritura',
                        'propiedad_registro_civil',
                        'propiedad_imagen_thumbnail',
-                       'propiedad_descripcion',)
+                       'propiedad_descripcion',
+                       'propiedad_direccion'
+                       )
     fieldsets = (
         ('', {
             'fields': (
                 ('propiedad_rol', 'propiedad_escritura', 'propiedad_registro_civil'),
+                ('propiedad_direccion'),
                 ('propiedad_imagen_thumbnail', 'propiedad_descripcion'),
             ),
         }),)
@@ -276,13 +279,16 @@ class RegistroSitioInline(admin.StackedInline):
                        'sitio_descripcion',
                        'img_google_distancia_nominal',
                        'distancia_coordenadas',
-                       'img_google')
+                       'img_google',
+                       'sitio_propuesta_negociacion', 'sitio_espacio_negociado'
+                       )
     fieldsets = (
         ('', {
             'fields': (
                 'sitio_fecha_chile',
                 ('sitio_lat', 'sitio_lat_gms'),
                 ('sitio_lon', 'sitio_lon_gms'),
+                ('sitio_propuesta_negociacion', 'sitio_espacio_negociado'),
                 ('img_google_distancia_nominal', 'sitio_descripcion'),
                 ('distancia_coordenadas',),
                 'img_google',
