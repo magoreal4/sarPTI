@@ -99,17 +99,22 @@ class InformacionPropiedadInline(admin.StackedInline):
     
 
 class CroquisAdmin(admin.ModelAdmin):
-    list_display = ['registro_inicio', 'image_tag_pic']
+    list_display = ('registro_inicio',
+                'image_tag_pic',
+                'descripcion',
+                )
+    
 admin.site.register(Croquis, CroquisAdmin)
 
 class CroquisInline(admin.StackedInline):
     model = Croquis
     extra = 0
-    readonly_fields = ('imagen_croquis',)
+    readonly_fields = ('image_tag_pic',)
     fieldsets = (
         ('', {
             'fields': (
-                ('imagen_croquis', 'descripcion'),
+                'image_tag_pic',
+                ('croquis', 'descripcion'),
             ),
             # 'classes': ('collapse',),  # Hace este grupo colapsable
             'description': ('Croquis del sitio respecto a la propiedad y acceso')
