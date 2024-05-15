@@ -179,15 +179,28 @@ class RegistroPropietariodInline(admin.StackedInline):
                        'propietario_ci',
                        'propietario_telf',
                        'propietario_direccion',
-                       'propietario_estado_civil_mensaje',)
+                       'propietario_estado_civil_mensaje',
+                       'propietario_email',
+                        'contacto_nombre', 'contacto_relacion',
+                        'contacto_tel', 'contacto_email'
+                       )
     fieldsets = (
-        ('', {
+        ('Datos del propietario', {
+            'description': 'Información general del propietario',
             'fields': (
                 ('propietario_nombre_apellido',),
                 ('fecha_nacimiento', 'propietario_ci', 'propietario_telf'),
-                ('propietario_direccion', 'propietario_estado_civil_mensaje'),
+                ('propietario_direccion', 'propietario_email', 'propietario_estado_civil_mensaje'),
             ),
-        }),)
+        }),
+        ('Datos de contacto', {
+            'description': 'Información del contacto o apoderado',
+            'fields': (
+                ('contacto_nombre', 'contacto_relacion'),
+                ('contacto_tel', 'contacto_email'),
+            ),
+        }),
+    )
 
     def propietario_estado_civil_mensaje(self, obj):
         if obj.propietario_estado_civil:

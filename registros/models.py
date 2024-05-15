@@ -267,7 +267,7 @@ class RegistroPropietario(models.Model):
     propietario_estado_civil = models.BooleanField("Estado Civil", default=True)
     
     # Version 1.1
-    propietario_email = models.EmailField("Email de Propietario", max_length=100, blank=True, null=True)
+    propietario_email = models.EmailField("Correo electronico", max_length=100, blank=True, null=True)
     contacto_nombre = models.CharField("Nombre de Contacto", max_length=100, blank=True, null=True)
     contacto_tel = models.CharField("Telefono de Contacto", max_length=15, blank=True, null=True)
     contacto_email = models.EmailField("Email de Contacto", max_length=100, blank=True, null=True)
