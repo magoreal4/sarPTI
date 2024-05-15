@@ -23,11 +23,14 @@ def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
 
 def use_api_key():
     # Obtener la configuración del sitio
-    config = SiteConfiguration.objects.get()
-    api_key = config.api_key
-    # Aquí puedes usar la api_key para lo que necesites
-    return api_key
-
+    try:
+        config = SiteConfiguration.objects.get()
+        api_key = config.api_key
+        if api_key in [None, ""]:  # Verificar si la api_key es nula o vacía
+            raise ValueError("API key is missing or invalid")
+        return api_key
+    except SiteConfiguration.DoesNotExist:
+        raise ValueError("Site configuration is missing")
 
 def get_google_maps(
         lat1,
@@ -43,8 +46,12 @@ def get_google_maps(
         scale=2,
         tamano="640x400",
 ):
+    try:
+        api_key = use_api_key()
+    except ValueError as e:
+        return str(e)  # Devuelve el mensaje de error si la api_key no está disponible
+
     base_url = "https://maps.googleapis.com/maps/api/staticmap?"
-    api_key = use_api_key()
     # Verificar si lat_nominal y lon_nominal son válidos
     if lat2 in [None, ""] or lon2 in [None, ""]:
         centro = f"{lat1},{lon1}"
@@ -63,7 +70,7 @@ def get_google_maps(
         "center": centro,
         "zoom": zoom,
         "size": tamano,
-        "maptype": maptype,  # "roadmap" Agrega este parámetro para obtener imágenes satelitales
+        "maptype": maptype,
         "scale": scale,
         "key": api_key,
         "markers": markers,
@@ -72,10 +79,10 @@ def get_google_maps(
     response = requests.get(base_url, params=params)
 
     if response.status_code == 200:
-
         return response.content
     else:
         return None
+
 
 
 def ajustar_zoom(distancia):
