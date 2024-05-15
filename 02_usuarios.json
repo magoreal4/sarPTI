@@ -1,0 +1,352 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$2VQfKWacRhpLyZNojvunxr$6khoOa+y39nRw4tRcjxGsZ9L90iuH2H4isu9B+odU6c=",
+    "last_login": "2024-05-03T16:53:48.486Z",
+    "is_superuser": true,
+    "username": "gonzalo",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-02T16:51:42.292Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$35ewhI3UlHEFTWyD3VwOO4$u0v3aPLBRyoM2Ov6T84lwLmkpZcIbcKgv+BYo1r8dto=",
+    "last_login": "2024-05-14T22:53:41.470Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@btspti.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-01T21:17:46Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$xZLJVfKHDiSsWvqRyEe7me$3+5+53KX0fz3q5g3oTR6VYpkEAZxVVG2kH0Xrl52g1M=",
+    "last_login": "2024-05-10T15:29:27.568Z",
+    "is_superuser": false,
+    "username": "jperez",
+    "first_name": "Juan",
+    "last_name": "Perez",
+    "email": "jperez@prueba.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-01T21:18:24Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$CVBZsY9Qp6aMs2LkjAi7SG$oNnCKocSLGBV5xPSC5yWOMuVFaC/u6ws+lGVHF4iqvY=",
+    "last_login": "2024-05-02T04:42:59Z",
+    "is_superuser": true,
+    "username": "mlujan",
+    "first_name": "",
+    "last_name": "",
+    "email": "mlujan@tekon-rl.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-02T04:38:11Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$9InDGWmIF4wrlvRrhCtdOZ$ogIXKzDtDXwRvmt5Stkda2RmvVfCPuCP9uOGdTrkPmw=",
+    "last_login": "2024-05-13T16:37:12.760Z",
+    "is_superuser": false,
+    "username": "supervisor",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-02T05:13:40Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$G5BqQ4vCvs6DjJpVO2tfWm$lKFzO2MaAWWGazqRTRmMzXjeNP6BLtxijNcLnHkyXQo=",
+    "last_login": "2024-05-14T14:27:20.258Z",
+    "is_superuser": false,
+    "username": "llizama",
+    "first_name": "Luis",
+    "last_name": "Lizama",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-13T16:39:11Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$7879110rjjaOdXOKozzKXn$mJcER261BsUaVl8dtWHczENnAY8O6l9Cd3T0ADs47Kg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "cperez",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-05-06T15:19:39.032Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$tDLzP7yTzqt0X5sVwYYVss$YV9KEoieE24jIXfAmPyGUV1kVabuCfEsOUS30LD55vM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ggarcia",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-05-06T16:22:15.684Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$z5wYQqhdRctqv5EnoESLaI$R3Ul2BawXDJ/QsR4SbZjGm3WA3CAXEHWSyFO9LEI1Us=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "aalvarez",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-06T16:27:46Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$F3Lcs4N4Qc3jAIJX1EUf2q$1Pe6MNf1VfIfpF3mFqMZ6OrDOvLRy2tE/2Y7kQv6wf4=",
+    "last_login": "2024-05-06T23:24:26.797Z",
+    "is_superuser": false,
+    "username": "jalvarez",
+    "first_name": "Joaquin",
+    "last_name": "Alvarez",
+    "email": "ja@ja.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-06T23:23:52Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Buscadores",
+    "permissions": [
+      40,
+      48,
+      76,
+      49,
+      52,
+      72,
+      68,
+      64,
+      60,
+      56,
+      101,
+      102,
+      103,
+      104,
+      77,
+      78,
+      79,
+      80,
+      97,
+      98,
+      99,
+      100,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Supervisores",
+    "permissions": [
+      17,
+      18,
+      20,
+      41,
+      42,
+      43,
+      44,
+      38,
+      40,
+      48,
+      74,
+      76,
+      49,
+      50,
+      51,
+      52,
+      70,
+      72,
+      66,
+      68,
+      62,
+      64,
+      58,
+      60,
+      54,
+      56,
+      101,
+      102,
+      103,
+      104,
+      77,
+      78,
+      79,
+      80,
+      97,
+      98,
+      99,
+      100,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96
+    ]
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 1,
+  "fields": {
+    "user": 3,
+    "telf": "+ 569 Prueba",
+    "empresa": 1
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 2,
+  "fields": {
+    "user": 5,
+    "telf": "+ 569 superviso",
+    "empresa": 1
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 4,
+  "fields": {
+    "user": 9,
+    "telf": "+ 569 superviso",
+    "empresa": 1
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 5,
+  "fields": {
+    "user": 8,
+    "telf": "+56 9 6340 5188",
+    "empresa": 1
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 6,
+  "fields": {
+    "user": 12,
+    "telf": "+56 9 1232 1212",
+    "empresa": 1
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 7,
+  "fields": {
+    "user": 13,
+    "telf": "+56 9 1232 1212",
+    "empresa": 1
+  }
+}
+]

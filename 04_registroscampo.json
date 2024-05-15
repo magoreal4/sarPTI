@@ -1,0 +1,476 @@
+[
+{
+  "model": "registros.candidato",
+  "pk": "CL-PR-1234_1",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "fecha_creacion": "2024-05-15T00:41:23.194Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-PR-1234_2",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "fecha_creacion": "2024-05-15T00:56:41.987Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-PR-1234_3",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "fecha_creacion": "2024-05-15T00:57:26.212Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-PR-1234_4",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "fecha_creacion": "2024-05-15T01:19:18.077Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "fecha_creacion": "2024-05-10T15:38:32.191Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VS-1399_2",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "fecha_creacion": "2024-05-10T16:45:15.867Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "fecha_creacion": "2024-05-13T19:21:24.025Z"
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-PR-1234_1",
+  "fields": {
+    "fecha_llegada": "2024-05-15T00:41:23.217Z",
+    "lat_llegada": -17.756,
+    "lon_llegada": -62.9818,
+    "status_llegada": "true",
+    "imagen_llegada": "",
+    "observaciones": "Se llego sin novedad en 1:45 horas",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-PR-1234_2",
+  "fields": {
+    "fecha_llegada": "2024-05-15T00:56:42.000Z",
+    "lat_llegada": -17.756,
+    "lon_llegada": -62.9818,
+    "status_llegada": "true",
+    "imagen_llegada": "",
+    "observaciones": "Se llego sin novedad en 1:45 horas",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-PR-1234_3",
+  "fields": {
+    "fecha_llegada": "2024-05-15T00:57:26.226Z",
+    "lat_llegada": -17.756,
+    "lon_llegada": -62.9818,
+    "status_llegada": "true",
+    "imagen_llegada": "",
+    "observaciones": "Se llego sin novedad en 1:45 horas",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-PR-1234_4",
+  "fields": {
+    "fecha_llegada": "2024-05-15T01:19:18.092Z",
+    "lat_llegada": -17.756,
+    "lon_llegada": -62.9818,
+    "status_llegada": "true",
+    "imagen_llegada": "",
+    "observaciones": "Se llego sin novedad en 1:45 horas",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "fecha_llegada": "2024-05-10T11:38:26.566Z",
+    "lat_llegada": -17.8685101,
+    "lon_llegada": -63.2779933,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/27612a16-dd7a-4b64-90b0-a49334f035216837528472365669127.jpg",
+    "observaciones": "se llegó sin inconveniente",
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VS-1399_2",
+  "fields": {
+    "fecha_llegada": "2024-05-10T12:45:08.905Z",
+    "lat_llegada": -17.868515,
+    "lon_llegada": -63.2779949,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/94746ea4-bc13-4f20-8810-8be07a88b9164186699383836196312.jpg",
+    "observaciones": "gffr",
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "fecha_llegada": "2024-05-13T15:21:17.605Z",
+    "lat_llegada": -33.4131039,
+    "lon_llegada": -70.6038864,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/dd9183ff-3dc4-461a-a340-2983e180def04920928819033197674.jpg",
+    "observaciones": "prueba",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrolocalidad",
+  "pk": "CL-PR-1234_1",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "provincia": "Larecaja",
+    "municipio": "Municipio tercero",
+    "localidad": "El Quior",
+    "energia_localidad": true,
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registrolocalidad",
+  "pk": "CL-PR-1234_3",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "provincia": "Larecaja",
+    "municipio": "Municipio tercero",
+    "localidad": "El Quior",
+    "energia_localidad": true,
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrolocalidad",
+  "pk": "CL-PR-1234_4",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "provincia": "Larecaja",
+    "municipio": "Municipio tercero",
+    "localidad": "El Quior",
+    "energia_localidad": true,
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrolocalidad",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "provincia": "Andres Ibañez",
+    "municipio": "el torno",
+    "localidad": "La Guardia",
+    "energia_localidad": true,
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registrolocalidad",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "provincia": "santiago",
+    "municipio": "Las Condes",
+    "localidad": "Las Condes",
+    "energia_localidad": true,
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registropropietario",
+  "pk": "CL-PR-1234_1",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "propietario_nombre_apellido": "Juan Sanginez",
+    "propietario_born": "1974-07-14T00:00:00Z",
+    "propietario_ci": "123456789",
+    "propietario_telf": "56915452245",
+    "propietario_direccion": "Calle Los Palotes",
+    "propietario_estado_civil": false,
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registropropietario",
+  "pk": "CL-PR-1234_3",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "propietario_nombre_apellido": "Juan Sanginez",
+    "propietario_born": "1974-07-14T00:00:00Z",
+    "propietario_ci": "123456789",
+    "propietario_telf": "56915452245",
+    "propietario_direccion": "Calle Los Palotes",
+    "propietario_estado_civil": false,
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registropropietario",
+  "pk": "CL-PR-1234_4",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "propietario_nombre_apellido": "Juan Sanginez",
+    "propietario_born": "1974-07-14T00:00:00Z",
+    "propietario_ci": "123456789",
+    "propietario_telf": "56915452245",
+    "propietario_direccion": "Calle Los Palotes",
+    "propietario_estado_civil": false,
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registropropietario",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "propietario_nombre_apellido": "Juan Lopez",
+    "propietario_born": "1992-05-12T00:00:00Z",
+    "propietario_ci": "678656-8",
+    "propietario_telf": "678656-8",
+    "propietario_direccion": "calle Francisco No. 20",
+    "propietario_estado_civil": true,
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registropropietario",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "propietario_nombre_apellido": "Juan Pérez",
+    "propietario_born": "2024-05-13T00:00:00Z",
+    "propietario_ci": "1234467-1",
+    "propietario_telf": "1234467-1",
+    "propietario_direccion": "las Condes 233, Santiago",
+    "propietario_estado_civil": true,
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-PR-1234_1",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "propiedad_rol": "Este es el rol",
+    "propiedad_escritura": "Este es el codigo de la escritura",
+    "propiedad_registro_civil": "No. de registro civil",
+    "propiedad_imagen": "",
+    "propiedad_descripcion": "La propiedad tiene acceso controlado y esta cerrada",
+    "propiedad_direccion": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-PR-1234_3",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "propiedad_rol": "Este es el rol",
+    "propiedad_escritura": "Este es el codigo de la escritura",
+    "propiedad_registro_civil": "No. de registro civil",
+    "propiedad_imagen": "",
+    "propiedad_descripcion": "La propiedad tiene acceso controlado y esta cerrada",
+    "propiedad_direccion": "Calle los palotes",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-PR-1234_4",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "propiedad_rol": "Este es el rol",
+    "propiedad_escritura": "Este es el codigo de la escritura",
+    "propiedad_registro_civil": "No. de registro civil",
+    "propiedad_imagen": "",
+    "propiedad_descripcion": "La propiedad tiene acceso controlado y esta cerrada",
+    "propiedad_direccion": "Calle los palotes",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "propiedad_rol": "567-783",
+    "propiedad_escritura": "no existen escrituras de la propiedad",
+    "propiedad_registro_civil": "-",
+    "propiedad_imagen": "sitios/propiedad/530c3921-965d-4253-8b75-227db7fd918b993205668238918621.jpg",
+    "propiedad_descripcion": "La copia será entregada vía correo",
+    "propiedad_direccion": null,
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "propiedad_rol": "123-123",
+    "propiedad_escritura": "fojas, número y año.",
+    "propiedad_registro_civil": "validar.",
+    "propiedad_imagen": "sitios/propiedad/6b33c7a8-1926-4c1a-9b6c-20eb902e69cd1977934761987162765.jpg",
+    "propiedad_descripcion": "documentos pendientes",
+    "propiedad_direccion": null,
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-PR-1234_3",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "sitio_fecha": "2024-07-14T00:00:00Z",
+    "sitio_lat": -17.756164,
+    "sitio_lon": -62.981803,
+    "sitio_descripcion": "El área donde sera emplazado el sitio se encuentra despejado y su topografia es plana",
+    "sitio_propuesta_negociacion": "10 años a partior de la firma",
+    "sitio_espacio_negociado": "10x10 m",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-PR-1234_3_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-PR-1234_3.png",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-PR-1234_4",
+  "fields": {
+    "sitio": "CL-PR-1234",
+    "sitio_fecha": "2024-07-14T00:00:00Z",
+    "sitio_lat": -17.756164,
+    "sitio_lon": -62.981803,
+    "sitio_descripcion": "El área donde sera emplazado el sitio se encuentra despejado y su topografia es plana",
+    "sitio_propuesta_negociacion": "10 años a partior de la firma",
+    "sitio_espacio_negociado": "10x10 m",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-PR-1234_4_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-PR-1234_4.png",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "sitio_fecha": "2024-05-10T11:54:30.762Z",
+    "sitio_lat": -17.8684979,
+    "sitio_lon": -63.278004,
+    "sitio_descripcion": "El sitio tiene acceso con control. No es de fácil acceso en lluvias por la pendiente y el tipo de material.",
+    "sitio_propuesta_negociacion": null,
+    "sitio_espacio_negociado": null,
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-VS-1399_1_dist_nominal_7aSLOTH.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-VS-1399_1_0SLPvQh.png",
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "sitio_fecha": "2024-05-13T15:27:46.904Z",
+    "sitio_lat": -33.4130845,
+    "sitio_lon": -70.6038721,
+    "sitio_descripcion": "propiedad ok",
+    "sitio_propuesta_negociacion": null,
+    "sitio_espacio_negociado": null,
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-VS-1399_3_dist_nominal_saglK2r.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-VS-1399_3_JEMq8AE.png",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 5,
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "candidato": "CL-VS-1399_1",
+    "pic": "sitios/fotos/fe0bd4c8-3f1f-4fa3-a849-2655c25697d71355102837179996943.jpg",
+    "descripcion": "Vista Lateral",
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 6,
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "candidato": "CL-VS-1399_1",
+    "pic": "sitios/fotos/9b9f4d42-c24a-45a8-b31f-97ef02c3e6585209585914054509229.jpg",
+    "descripcion": "Ingreso principal",
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 7,
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "candidato": "CL-VS-1399_3",
+    "pic": "sitios/fotos/89c5aeb5-e828-4371-a2ec-5224e7a500103354525020449746955.jpg",
+    "descripcion": "lugar validado con propietario.",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registioelectrico",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "electrico_lat": -17.8685302,
+    "electrico_lon": -63.2780423,
+    "electrico_no_poste": "123-A",
+    "electrico_comentario": "medidor",
+    "electrico_imagen1": "sitios/08631f28-ca72-458a-8019-97a20d7d152f7541481808459914337.jpg",
+    "electrico_imagen2": "sitios/236a709e-f40d-4057-9f4e-089300a0f2d9353519845181849815.jpg",
+    "electrico_img_google": "sitios/imgs_gmap/CL-VS-1399_1_dist_electrico.png",
+    "usuario": 3
+  }
+},
+{
+  "model": "registros.registioelectrico",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "sitio": "CL-VS-1399",
+    "electrico_lat": -33.4131098,
+    "electrico_lon": -70.6039035,
+    "electrico_no_poste": "12345",
+    "electrico_comentario": "postacion disponible para conección",
+    "electrico_imagen1": "sitios/110af0c0-00c6-4026-bb74-38236e37332d4414776096679373952.jpg",
+    "electrico_imagen2": "",
+    "electrico_img_google": "sitios/imgs_gmap/CL-VS-1399_3_dist_electrico.png",
+    "usuario": 8
+  }
+}
+]

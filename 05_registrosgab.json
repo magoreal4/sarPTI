@@ -1,0 +1,130 @@
+[
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "candidato_letra": "A",
+    "radio_busqueda": 350,
+    "tipo_solucion": "Greenfiled",
+    "zona": "r",
+    "ASNM": 750,
+    "contactos_ingreso": "Se debe llamar al portero",
+    "ruta_acceso": "Es encesario atravesar una quebrada qwue en epoca seca no tiene curso de agua",
+    "ruta_huella": "Es necesario abrir 100 metros de huella en terreno plano",
+    "inf_adicional": ""
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "candidato_letra": "A",
+    "radio_busqueda": 120,
+    "tipo_solucion": "Greenfiled",
+    "zona": "u",
+    "ASNM": 120,
+    "contactos_ingreso": "",
+    "ruta_acceso": "aa",
+    "ruta_huella": "a",
+    "inf_adicional": ""
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 1,
+  "fields": {
+    "registro_inicio": "CL-VS-1399_1",
+    "imagen": "gabinete/imgs/MedidorPropietario.JPG",
+    "descripcion": "El medidor esta instalado pero debe ser reemplazado"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Juan Lopez",
+    "propietario_telf": "678656-8",
+    "propietario_direccion": "Doble via a La Guardia Km.13",
+    "propietario_email": "magoreal4@gmail.com",
+    "estado_civil": "Casado"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "propiedad_hipoteca": true,
+    "estado_impuestos": true,
+    "apreciaciones": "No existe nignun requerimiento por parte del propietario",
+    "tiempo_negociado": "10",
+    "comentarios": "Es necesario revisar los documentos que seran enviados por correo"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "croquis": "croquis/Vista0.JPG",
+    "descripcion": "El ingreso ser mediante servidumbre, mismop que se detalla con color amarillo en el dibujo"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "CL-VS-1399_3",
+  "fields": {
+    "croquis": "croquis/IMG_20230205_164203.jpg",
+    "descripcion": "aaa"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "CL-VS-1399_1",
+  "fields": {
+    "dim_frente": "10",
+    "dim_largo": "10",
+    "dim_ampliar": "5 metros",
+    "area": "100",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "plana",
+    "uso_terreno": "terreno agricola",
+    "desc_acceso_sitio": "acceso mediante la ruta X, a traves de un viaducto XXX",
+    "material_terreno": "Material blando, tiene sembradillos",
+    "dim_acceso": "6x100",
+    "condiciones_acceso": "Es terreno con topigrafia accidentada",
+    "tipo_carretera": "Ripiado",
+    "acceso_sitio": "Solo se accede por una senda",
+    "cond_acceso_equipo": "Se debe evaluar el acceso para la grua",
+    "desc_const_aledanas": "Se tiene un puente en cosntruccion a 50 metros",
+    "desc_const_importantes": "No se tiene nunguna",
+    "riesgo_inundaciones": true,
+    "consideraciones_ambientales": "No existen",
+    "obras_civiles_especiales": "Se requiere una obra de arte al ingreso. Es necesario demoler un ambiente de 5x5",
+    "demoliciones": true,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": "5 arboles de aprox 20 cm",
+    "cons_camino": "Incoroporar alcantarilla",
+    "const_tendido_electrico": "1200 metros al poste",
+    "colocacion_postes": "Es necesario completar 5 postes",
+    "instalacion_transformador": "25KVA",
+    "canalizacion_subterranea": "No corresponde",
+    "comentarios": "xx",
+    "proveedor_agua": "Disponibilidad de agua para construccion",
+    "proveedor_electrico": "ENEL",
+    "no_medidor": "233-a",
+    "ubicacion_tendido_electrico": "Llega unicamente a 100 de la propiedad",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "-"
+  }
+},
+{
+  "model": "registrosgab.documentos",
+  "pk": 1,
+  "fields": {
+    "registro_inicio": "CL-VS-1399_1",
+    "documento": "documentos/TendidoElectrico.JPG",
+    "descripcion": "RUT del Propietario"
+  }
+}
+]

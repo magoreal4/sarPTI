@@ -1,0 +1,18 @@
+[
+{
+  "model": "main.empresa",
+  "pk": 1,
+  "fields": {
+    "pais": "Chile",
+    "nombre": "PRUEBA"
+  }
+},
+{
+  "model": "main.empresa",
+  "pk": 2,
+  "fields": {
+    "pais": "Chile",
+    "nombre": "PRUEBA2"
+  }
+}
+]
