@@ -182,13 +182,14 @@ class RegistroPropietariodInline(admin.StackedInline):
                        'propietario_estado_civil_mensaje',
                        'propietario_email',
                         'contacto_nombre', 'contacto_relacion',
-                        'contacto_tel', 'contacto_email'
+                        'contacto_tel', 'contacto_email',
+                        'propietario_tipo_persona'
                        )
     fieldsets = (
         ('Datos del propietario', {
             'description': 'Información general del propietario',
             'fields': (
-                ('propietario_nombre_apellido',),
+                ('propietario_nombre_apellido', 'propietario_tipo_persona',),
                 ('fecha_nacimiento', 'propietario_ci', 'propietario_telf'),
                 ('propietario_direccion', 'propietario_email', 'propietario_estado_civil_mensaje'),
             ),

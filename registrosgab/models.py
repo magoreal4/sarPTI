@@ -17,12 +17,12 @@ class RegistroInicio(models.Model):
         )
     candidato_letra = models.CharField("Candidato", max_length=1)
     radio_busqueda = models.PositiveIntegerField("Redio de Buqueda (m.)", blank=True, null=True)
-    tipo_solucion = models.CharField("Tipo de Solución", max_length=2500)
+    tipo_solucion = models.CharField("Tipo de Solución", help_text="Greenfield/Rooftop", max_length=2500)
     zona = models.CharField("Zona", max_length=10, default='Urbana', choices=ZONA_CHOICES)
-    ASNM = models.PositiveIntegerField("ASNM Terreno ", blank=True, null=True)
+    ASNM = models.PositiveIntegerField("ASNM Terreno (m)", help_text="Altura sobre el nivel del mar",blank=True, null=True)
     contactos_ingreso = models.TextField("Contactos para ingresar al sitio", blank=True, null=True)
-    ruta_acceso = models.TextField("Descripción del acceso", null=True)
-    ruta_huella = models.TextField("Descripción de la huella proyectada", null=True)
+    ruta_acceso = models.TextField("Descripción del acceso a la propiedad", help_text="Como se llega al sitio", null=True)
+    ruta_huella = models.TextField("Descripción de la huella proyectada", help_text="Punto de vista constructivo, que trabajos se ejecutaran para llegar al sitio respecto a un acceso", null=True)
     inf_adicional = models.TextField("Información Adicional", blank=True, null=True)
     
     def __str__(self):
@@ -69,6 +69,11 @@ class InformacionGeneral(models.Model):
         verbose_name_plural = "Propietario"
             
 
+ESTADO_DOCUMENTACION = (
+    ('p', 'Pendiente por propietario'),
+    ('c', 'Completa'),
+    ('i', 'Incompleta'),
+)
 class InformacionPropiedad(models.Model):
     registro_inicio = models.OneToOneField(
         RegistroInicio, 
@@ -79,8 +84,8 @@ class InformacionPropiedad(models.Model):
     propiedad_hipoteca = models.BooleanField("Propiedad con Hipoteca", default=False)
     estado_impuestos = models.BooleanField("Impuestos Municipales al dia", default=True)
     apreciaciones = models.TextField(blank=True, null=True, help_text="Apreciaciones preliminares del dueño sobre el alquiler de la propiedad")
-    tiempo_negociado = models.CharField("Tiempo negociado (años)", max_length=2, blank=True, null=True)   
-    comentarios = models.TextField("Comentarios Adicionales", blank=True, null=True)
+    estado_documentacion = models.CharField(max_length=1, choices=ESTADO_DOCUMENTACION, default='p')
+    comentarios = models.TextField("Comentarios Adicionales", help_text="Entreo otros, el estado de la documentación", blank=True, null=True)
     
     class Meta:
         verbose_name = "Propiedad"
@@ -115,7 +120,7 @@ class InfTecPropiedad(models.Model):
         ) 
     dim_frente = models.CharField("Frente (m.)",max_length=10, blank=True, null=True)
     dim_largo = models.CharField("Largo (m.)", max_length=10, blank=True, null=True)
-    dim_ampliar = models.CharField("Dimensiones disponibles para ampliar",max_length=10, blank=True, null=True)  
+    dim_ampliar = models.CharField("Dimensiones adicionales", help_text="Postacion, empalme, servidumbre, otros", max_length=10, blank=True, null=True)  
     area = models.CharField("Area (m2)",max_length=10, blank=True, null=True)   
     
     forma_terreno = models.CharField("Forma del Terreno", max_length=255, blank=True, null=True,
@@ -128,42 +133,50 @@ class InfTecPropiedad(models.Model):
     
     dim_acceso = models.CharField("Ancho & Longitud", max_length=255, blank=True, null=True,
                                   help_text="Dimensiones acceso/carretera/huella (ancho x largo)")  
-    condiciones_acceso = models.CharField(max_length=255, blank=True, null=True)    
-    tipo_carretera = models.CharField(max_length=255, blank=True, null=True)
-    acceso_sitio = models.CharField("Tipo de Vehiculo 4x4, 4x42, otros", max_length=255, blank=True, null=True)
-    cond_acceso_equipo = models.TextField("Condiciones Acceso Equipo (gruas, camiones, etc)", blank=True, null=True)
+    # condiciones_acceso = models.CharField(max_length=255, blank=True, null=True)    
+    # tipo_carretera = models.CharField(max_length=255, blank=True, null=True)
+    acceso_sitio = models.CharField("Tipo de vehiculo 4x4, 4x42, otros", max_length=255, blank=True, null=True)
+    cond_acceso_equipo = models.TextField("Condiciones de acceso para equipo (gruas, camiones, etc)", blank=True, null=True)
     
-    desc_const_aledanas = models.TextField("Descripción Construcciones",blank=True, null=True,
-                                           help_text="Descripción construcciones colindantes alrededor del sitio y cercania")  
+    desc_const_aledanas = models.TextField("Descripción de obstáculos y entorno",blank=True, null=True,
+                                           help_text="Descripción construcciones colindantes, elementos naturales alrededor del sitio y cercania")  
     desc_const_importantes = models.TextField("Descripción y ubicación construcciones importantes",blank=True, null=True,
-                                              help_text="Descripción y ubicación Ubicación de construcciones importantes cercanas y distancia a éstas : aeropuertos, muelles, edificios, escuelas, colegios, centros de salud, centros comerciales, etc.")
+                                              help_text="Descripción y ubicación de construcciones importantes cercanas y distancia a éstas: aeropuertos, muelles, edificios, escuelas, colegios, centros de salud, centros comerciales, lineas ferreas, lineas de alta tensión, etc.")
     riesgo_inundaciones = models.BooleanField(default=False)
-    consideraciones_ambientales = models.TextField("Consideraciones Ambioerales", blank=True, null=True,
-                                                   help_text="Consideraciones ambientales : ubicación de ríos, quebradas, nacientes, mantos acuíferos, reservas forestales, derrumbes, etc.")
+    consideraciones_ambientales = models.TextField("Consideraciones ambientales", blank=True, null=True,
+                                                   help_text="Ubicación de ríos, árboles de gran altura, quebradas, nacientes, mantos acuíferos, reservas forestales, derrumbes, etc.")
     
-    obras_civiles_especiales = models.TextField("Obras Civiles Especiales y/o Adicionales", blank=True, null=True)  
+    obras_civiles_especiales = models.TextField("Obras civiles especiales y trabajos adicionales", 
+                                                help_text="Ademas de los seleccionados abajo, describir exigencias de construcción, mejoramiento por parte del propietario",
+                                                blank=True, null=True)  
     
     demoliciones = models.BooleanField(default=False)
-    mov_tierras = models.BooleanField("Movimiento de Tierras", default=False)
-    muros_contencion = models.BooleanField("Muros de Contención", default=False)
-    tala_arboles = models.CharField(max_length=255, blank=True, null=True)
-    cons_camino = models.CharField("Construcción huella", max_length=255, blank=True, null=True)
-    const_tendido_electrico = models.CharField("Construcción Tendido Electrico",max_length=255, blank=True, null=True)
-    colocacion_postes = models.CharField("Colocación de Postes",max_length=255, blank=True, null=True)
-    instalacion_transformador = models.CharField(max_length=255, blank=True, null=True) 
-    canalizacion_subterranea = models.CharField(max_length=255, blank=True, null=True)
+    mov_tierras = models.BooleanField("Movimiento de tierras", default=False)
+    muros_contencion = models.BooleanField("Muros de contención", default=False)
+    tala_arboles = models.BooleanField("Tala de árboles", default=False)
+    cons_camino = models.BooleanField("Construcción acceso/huella", default=False)
+    acceso_independiente = models.BooleanField("Acceso independiente", default=False)
+    
     comentarios = models.TextField(blank=True, null=True)
+    disponibilidad_agua = models.BooleanField("Disponibilidad de agua para construcción", default=True)
 
-    proveedor_agua = models.CharField("Proveedor de Agua", max_length=255, blank=True, null=True)
     proveedor_electrico = models.CharField("Proveedor Energía Electrica", max_length=255, blank=True, null=True)
     no_medidor = models.CharField("Número de Medidor", max_length=255, blank=True, null=True)    
+    dist_medidor_sitio = models.CharField("Distancia del medidor al sitio", max_length=255, blank=True, null=True)
+    
+    canalizacion_subterranea = models.CharField("Canalización subterránea", max_length=255, blank=True, null=True)
     ubicacion_tendido_electrico = models.CharField(max_length=255, blank=True, null=True)   
+    const_tendido_electrico = models.CharField("Construcción tendido eléctrico",max_length=255, blank=True, null=True) #no va
     transformador_capacidad = models.CharField(max_length=255, blank=True, null=True)   
     transformador_distancia = models.CharField(max_length=255, blank=True, null=True)
+    
+    energia_provisoria =models.TextField("Disponibilidad de energía provisoria", 
+                                         help_text="Descripción de la disponibilidad de energía provisoria, si es que existe, distancia, tipo de conección, autorización, etc.",
+                                         blank=True, null=True)
 
     class Meta:
-        verbose_name = "Inf. Técnica"
-        verbose_name_plural = "Inf. Técnica"
+        verbose_name = "Información Técnica del Sitio"
+        verbose_name_plural = "Información Técnica del Sitio"
     
 class Documentos(models.Model):
     registro_inicio = models.ForeignKey(

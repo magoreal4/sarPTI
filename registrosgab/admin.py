@@ -80,7 +80,9 @@ admin.site.register(InformacionGeneral, InformacionGeneralAdmin)
 
 
 class InformacionPropiedadAdmin(admin.ModelAdmin):
-    list_display = ['registro_inicio', 'propiedad_hipoteca', 'estado_impuestos', 'tiempo_negociado']
+    list_display = ['registro_inicio', 
+                    'propiedad_hipoteca', 
+                    'estado_impuestos']
 admin.site.register(InformacionPropiedad, InformacionPropiedadAdmin)
 
 class InformacionPropiedadInline(admin.StackedInline):
@@ -91,7 +93,7 @@ class InformacionPropiedadInline(admin.StackedInline):
         ('', {
             'fields': (
                 ('propiedad_hipoteca', 'estado_impuestos'),
-                 'tiempo_negociado',
+                 'estado_documentacion',
                 ('apreciaciones','comentarios'),
             ),
         }),
@@ -137,7 +139,7 @@ class InfTecPropiedadInline(admin.StackedInline):
     extra = 0
     # readonly_fields = ('fecha_visita', 'propietario', 'propietario_telf', 'propietario_direccion', 'propietario_email', 'estado_civil')
     fieldsets = (
-        ('Dimensiones', {
+        ('-  Dimensiones', {
             'fields': (
                 ('dim_frente', 'dim_largo', 'area'),
                 'dim_ampliar'
@@ -146,41 +148,41 @@ class InfTecPropiedadInline(admin.StackedInline):
             # 'description': ('Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto.'
             #                 ' Para más detalles, <a href="https://example.com">visita este enlace</a>.')
         }),
-        ('Terreno', {
+        ('-  Terreno', {
             'fields': (
                 ('forma_terreno', 'topografia_terreno', 'uso_terreno'),
                 ('material_terreno', 'desc_acceso_sitio'),
             ),
         
         }),
-        ('Acceso al Sitio', {
+        ('-  Acceso', {
             'fields': (
-                ('dim_acceso', 'condiciones_acceso'),
-                ('tipo_carretera', 'acceso_sitio'),
+                ('dim_acceso', 'acceso_sitio'),
+                # ('tipo_carretera', ),
                 'cond_acceso_equipo',
             ),
         }),
-        ('Entorno', {
+        ('-  Entorno', {
             'fields': (
                 ('desc_const_aledanas', 'desc_const_importantes'),
                 ('riesgo_inundaciones', 'consideraciones_ambientales'),
             ),
         }),
-        ('Adicionales', {
+        ('-  Adicionales', {
             'fields': (
                 'obras_civiles_especiales',
                 ('demoliciones', 'mov_tierras', 'muros_contencion'),
-                ('tala_arboles', 'cons_camino'),
-                ('const_tendido_electrico', 'colocacion_postes'),
-                ('instalacion_transformador', 'canalizacion_subterranea'),
-                'comentarios'
+                ('tala_arboles', 'cons_camino', 'acceso_independiente'),
+                'comentarios',
+                'disponibilidad_agua'
             ),
         }),
-        ('Servicios', {
+        ('Energía Eléctrica', {
             'fields': (
-                'proveedor_agua',
-                ('proveedor_electrico', 'no_medidor'),
-                ('ubicacion_tendido_electrico', 'transformador_capacidad','transformador_distancia'),
+                ('proveedor_electrico', 'no_medidor', 'dist_medidor_sitio'),
+                ('canalizacion_subterranea', 'ubicacion_tendido_electrico','const_tendido_electrico'  ),
+                ('transformador_capacidad','transformador_distancia'),
+                'energia_provisoria',
             ),
         }),
     )

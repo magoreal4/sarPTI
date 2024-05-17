@@ -5,6 +5,8 @@
 }
 
 /* Pone los valores en fila  */
+.form-row.field-propietario_tipo_persona.field-propietario_nombre_apellido
+  > .flex-container,
 .flex-container {
   flex-flow: row !important;
 }
