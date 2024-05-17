@@ -172,7 +172,7 @@ class InfTecPropiedadInline(admin.StackedInline):
             'fields': (
                 'obras_civiles_especiales',
                 ('demoliciones', 'mov_tierras', 'muros_contencion'),
-                ('tala_arboles', 'cons_camino', 'acceso_independiente'),
+                ('tala_arboles', 'acceso_independiente', 'camino_acceso',),
                 'comentarios',
                 'disponibilidad_agua'
             ),

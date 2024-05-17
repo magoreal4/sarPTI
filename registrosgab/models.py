@@ -154,8 +154,8 @@ class InfTecPropiedad(models.Model):
     mov_tierras = models.BooleanField("Movimiento de tierras", default=False)
     muros_contencion = models.BooleanField("Muros de contención", default=False)
     tala_arboles = models.BooleanField("Tala de árboles", default=False)
-    cons_camino = models.BooleanField("Construcción acceso/huella", default=False)
     acceso_independiente = models.BooleanField("Acceso independiente", default=False)
+    camino_acceso = models.BooleanField("Construcción acceso/huella", default=False)
     
     comentarios = models.TextField(blank=True, null=True)
     disponibilidad_agua = models.BooleanField("Disponibilidad de agua para construcción", default=True)
