@@ -155,6 +155,7 @@ class InfTecPropiedad(models.Model):
     muros_contencion = models.BooleanField("Muros de contención", default=False)
     tala_arboles = models.BooleanField("Tala de árboles", default=False)
     acceso_independiente = models.BooleanField("Acceso independiente", default=False)
+    cons_camino = models.CharField(max_length=255, blank=True, null=True, help_text="Construcción acceso/huella")
     camino_acceso = models.BooleanField("Construcción acceso/huella", default=False)
     
     comentarios = models.TextField(blank=True, null=True)
