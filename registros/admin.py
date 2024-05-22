@@ -659,12 +659,13 @@ class CandidatoAdmin(admin.ModelAdmin):
 
     def usuario_nombre(self, obj):
         llegada = self.get_llegada(obj)
-        if llegada:
+        if llegada and llegada.user_profile:
             return llegada.user_profile.get_full_name
         else:
             return "Sin nombre"
 
     usuario_nombre.short_description = 'Buscador'
+
 
     def usuario_user(self, obj):
         return self.get_llegada(obj).usuario.username if self.get_llegada(obj) else "Sin nombre"
