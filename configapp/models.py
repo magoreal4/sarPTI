@@ -45,6 +45,8 @@ class SiteConfiguration(SingletonModel):
         null=True,
         help_text="API Key de Google Maps, para generar imagenes satelitales en los reporte",
         )
+    recipients = models.TextField("Destinarios", default="soporte@btspti.com", help_text="Ingrese correos electrónicos separados por comas")
+    
     
     def save(self, *args, **kwargs):
         # Cambia el nombre del archivo cada vez que se guarda el modelo

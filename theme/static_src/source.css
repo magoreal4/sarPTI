@@ -6,6 +6,10 @@
     @apply text-green-300;
 }
 
+.boton-primary {
+  @apply sombra mb-5 bg-primary hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block text-center no-underline;
+}
+
 .leaflet-control {
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid #ccc;

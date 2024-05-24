@@ -239,6 +239,6 @@ class SiteConfigurationAdmin(SingletonModelAdmin):
     logo_img.short_description = 'Logo Preview'
 
     # readonly_fields = ['logo_img']
-    fields = ('logo',  'api_key')
+    fields = ('logo',  'api_key', 'recipients')
 
 admin.site.register(SiteConfiguration, SiteConfigurationAdmin)
