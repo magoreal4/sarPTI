@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load markdown_filters %}
+
+{% block body_class %} 
+max-w-2xl mx-auto bg-secondary
+{% endblock body_class %} 
+
+{% block content %}
+<div class=" bg-slate-200 px-6">
+
+<h1 class="text-center font-semibold !text-xl py-4">{{ terms.title }}</h1>
+<div class="prose-sm">
+    {{ terms.content|markdownify_custom|safe  }}
+</div>
+</div>
+{% endblock %}

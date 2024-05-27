@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
 from solo.admin import SingletonModelAdmin
-from configapp.models import SiteConfiguration
+from configapp.models import SiteConfiguration, PolicyDocument, TermsConditions
 from django.forms import PasswordInput
 from django.utils.html import format_html
 from django.contrib.admin import AdminSite
@@ -11,8 +11,10 @@ from .models import UserProfile, Empresa, Sitio
 from django import forms
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
-from .forms import ProfileForm
 from django import forms
+from markdownx.admin import MarkdownxModelAdmin
+
+
 
 class MyAdminSite(AdminSite):    
     def get_app_list(self, request, app_label=None):
@@ -26,7 +28,8 @@ class MyAdminSite(AdminSite):
                           'RegistroSitioImagenes', 'RegistioElectrico'],
             'registrosgab': ['RegistroInicio', 'Imagenes', 'InformacionGeneral',
                              'InformacionPropiedad', 'Croquis', 'InfTecPropiedad', 'Documentos'],
-            'admin_interface.theme': ['Theme'],
+            # 'admin_interface.theme': ['Theme'],
+            # 'configapp': ['PolicyDocument'],
             # 'another_app': ['AnotherModel1', 'AnotherModel3', 'AnotherModel2']
         }
 
@@ -39,6 +42,8 @@ class MyAdminSite(AdminSite):
         return app_list
 		
 admin.site = MyAdminSite(name='myadmin')
+
+
 
 
 # class UserProfileAdmin(admin.ModelAdmin):
@@ -90,13 +95,6 @@ class UserAdmin(BaseUserAdmin):
     def get_telefono(self, obj):
         return obj.userprofile.telf if obj.userprofile else None
     get_telefono.short_description = 'Telefono'
-
-    # def get_queryset(self, request):
-    #     qs = super().get_queryset(request)
-    #     if not request.user.is_superuser:
-    #         qs = qs.filter(userprofile__empresa=request.user.userprofile.empresa)
-    #     return qs
-    
 
 
     
@@ -242,3 +240,14 @@ class SiteConfigurationAdmin(SingletonModelAdmin):
     fields = ('logo',  'api_key', 'recipients')
 
 admin.site.register(SiteConfiguration, SiteConfigurationAdmin)
+
+
+from configapp.models import PolicyDocument
+
+
+class MarkdownxModelAdmin(MarkdownxModelAdmin, SingletonModelAdmin):
+    pass
+admin.site.register(PolicyDocument, MarkdownxModelAdmin)
+admin.site.register(TermsConditions, MarkdownxModelAdmin)
+
+

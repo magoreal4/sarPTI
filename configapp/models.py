@@ -7,6 +7,30 @@ from django.core.exceptions import ValidationError
 import os
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
+from markdownx.models import MarkdownxField
+
+
+class PolicyDocument(SingletonModel):
+    title = models.CharField(max_length=100)
+    content = MarkdownxField()
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'politica de privacidad'
+        verbose_name_plural = 'politica de privacidad'
+
+class TermsConditions(SingletonModel):
+    title = models.CharField(max_length=100)
+    content = MarkdownxField()
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'terminos y condiciones'
+        verbose_name_plural = 'terminos y condiciones'
 
 # Sobrescribe el sistema de almacenamiento para permitir la sobreescritura de archivos
 class OverwriteStorage(FileSystemStorage):

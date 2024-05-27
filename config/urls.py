@@ -15,7 +15,9 @@ urlpatterns = [
     path('', include('registrosgab.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
     path('accounts/password_reset/', auth_views.PasswordResetView.as_view(), name='admin_password_reset'),
-    path('accounts/password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done')
+    path('accounts/password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('markdownx/', include('markdownx.urls')),
+    path('', include('configapp.urls')),
     ]
 
 if settings.DEBUG:
