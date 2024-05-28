@@ -1,0 +1,168 @@
+@media (max-width: 767px) {
+  .admin-interface .aligned .form-row > div {
+    display: flex;
+    width: 100%;
+    max-width: 100vw;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Centrea la descripcion de la imagen */
+
+.inline-description {
+  text-align: center;
+}
+
+/* Marco de las imagenes */
+.imagenes-grid .inline-related {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 5px solid white;
+  border-radius: 4px;
+  overflow: hidden;
+  border-bottom: 0px;
+  margin: 10px !important;
+}
+
+.logo {
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* Label encima el contenido (texto) */
+.field-energia_provisoria > div > .flex-container,
+.field-estado_documentacion > div > .flex-container,
+.field-proveedor_agua > div > .flex-container,
+.field-comentarios > div > .flex-container,
+.field-obras_civiles_especiales > div > .flex-container,
+.field-cond_acceso_equipo > div > .flex-container,
+.field-dim_ampliar > div > .flex-container,
+.field-estado_civil > div > .flex-container,
+.field-tiempo_negociado > div > .flex-container,
+.flex-container.fieldBox {
+  display: flex;
+  flex-direction: column; /* Alinea los hijos verticalmente */
+  align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+  width: 100%; /* Opcional, ajusta según necesites */
+  padding: 8px; /* Espacio para un mejor diseño, ajustable */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  /* background-color: yellowgreen; */
+}
+
+/* .flex-container.form-multiline {
+    width: 100%;
+} */
+
+/* Pone en una sola linea */
+.field-acceso_independiente,
+.field-cons_camino,
+.field-tala_arboles,
+.field-propiedad_hipoteca.field-estado_impuestos
+  > .flex-container.form-multiline,
+.field-propiedad_hipoteca,
+.field-estado_impuestos,
+.field-muros_contencion,
+.field-mov_tierras,
+.field-demoliciones,
+.field-demoliciones.field-mov_tierras.field-muros_contencion
+  > .flex-container.form-multiline,
+.field-riesgo_inundaciones.field-consideraciones_ambientales
+  > .flex-container.form-multiline,
+.flex-container.fieldBox.field-riesgo_inundaciones {
+  flex-direction: row !important;
+  /* background-color: aquamarine; */
+}
+
+/* Negrilla el label */
+h1,
+.flex-container label {
+  font-weight: 700;
+}
+
+label {
+  width: 100% !important;
+}
+
+textarea {
+  width: 95% !important;
+  height: 100px !important;
+}
+
+/* Dos columnas */
+.field-desc_const_aledanas.field-desc_const_importantes
+  > .flex-container.form-multiline,
+.field-apreciaciones.field-comentarios > .flex-container.form-multiline,
+.field-ruta_huella.field-inf_adicional > .flex-container.form-multiline,
+.field-contactos_ingreso.field-ruta_acceso > .flex-container.form-multiline {
+  display: grid !important; /* Establece el contenedor como un grid */
+  grid-template-columns: 1fr 1fr !important; /* Divide el grid en dos columnas de igual tamaño */
+  gap: 0px; /* Añade un espacio entre las columnas */
+  width: 100%;
+  /* background-color: cyan; */
+}
+
+/* Borra el texto de Imagen y Descripcion */
+.field-pic_with_description label,
+.imagenes-grid .field-pic_with_description label {
+  display: none;
+}
+
+.help {
+  width: 90% !important;
+  margin-left: 5% !important;
+}
+
+/* Reducir el cuadro del field */
+.field-candidato_letra input {
+  width: 30% !important;
+  margin-right: 30px !important;
+}
+
+.field-estado_civil input {
+  width: 200px !important;
+  /* background-color: yellow;   */
+}
+
+.field-tiempo_negociado input {
+  width: 50px !important;
+  /* background-color: red;   */
+}
+
+/* .field-estado_impuestos > input {
+    width: 10px!important;
+    background-color: blueviolet;
+}
+
+
+.field-estado_impuestos > label {
+    background-color: blueviolet;
+    width: 350px!important;
+} */
+
+@media only print {
+  /* Encabezado */
+  .help,
+  .form-row.field-documento,
+  #content a,
+  .breadcrumbs,
+  #content > h2,
+  h3,
+  .submit-row,
+  .object-tools,
+  #user-tools,
+  .form-row.field-imagen,
+  .form-row.field-descripcion {
+    display: none !important;
+  }
+
+  #header {
+    background-color: white !important;
+  }
+
+  :root .admin-interface {
+    --admin-interface-module-background-color: gray;
+  }
+
+  .add-row {
+    display: none !important;
+  }
+}
