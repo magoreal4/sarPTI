@@ -27,8 +27,8 @@ class Sitio(models.Model):
     lon_nominal = models.FloatField(blank=True, null=True, verbose_name='Longitud Nominal')
     altura = models.CharField(max_length=10, blank=True, null=True)
     provincia = models.CharField("Provincia/Region", max_length=25, blank=True, null=True)
-    municipio = models.CharField(max_length=25, blank=True, null=True)
-    localidad = models.CharField("Localidad/Comuna", max_length=25, blank=True, null=True)
+    municipio = models.CharField(max_length=50, blank=True, null=True)
+    localidad = models.CharField("Localidad/Comuna", max_length=50, blank=True, null=True)
     empresa = models.ForeignKey(Empresa, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
     usuario = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='sitios', blank=True, null=True)
 
