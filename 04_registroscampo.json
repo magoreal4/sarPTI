@@ -1,476 +1,1376 @@
 [
 {
   "model": "registros.candidato",
-  "pk": "CL-PR-1234_1",
+  "pk": "CL-TAR-5017_1",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "fecha_creacion": "2024-05-15T00:41:23.194Z"
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-18T04:25:28.562Z"
   }
 },
 {
   "model": "registros.candidato",
-  "pk": "CL-PR-1234_2",
+  "pk": "CL-TAR-5017_2",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "fecha_creacion": "2024-05-15T00:56:41.987Z"
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-18T04:27:57.833Z"
   }
 },
 {
   "model": "registros.candidato",
-  "pk": "CL-PR-1234_3",
+  "pk": "CL-TAR-5017_3",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "fecha_creacion": "2024-05-15T00:57:26.212Z"
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-20T13:24:31.871Z"
   }
 },
 {
   "model": "registros.candidato",
-  "pk": "CL-PR-1234_4",
+  "pk": "CL-TAR-5017_4",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "fecha_creacion": "2024-05-15T01:19:18.077Z"
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-22T16:18:26.894Z"
   }
 },
 {
   "model": "registros.candidato",
-  "pk": "CL-VS-1399_1",
+  "pk": "CL-TAR-5017_5",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "fecha_creacion": "2024-05-10T15:38:32.191Z"
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-23T14:02:27.227Z"
   }
 },
 {
   "model": "registros.candidato",
-  "pk": "CL-VS-1399_2",
+  "pk": "CL-TAR-5017_6",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "fecha_creacion": "2024-05-10T16:45:15.867Z"
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-23T14:03:10.342Z"
   }
 },
 {
   "model": "registros.candidato",
-  "pk": "CL-VS-1399_3",
+  "pk": "CL-TAR-5017_7",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "fecha_creacion": "2024-05-13T19:21:24.025Z"
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-23T15:17:21.873Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-TAR-5017_8",
+  "fields": {
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-23T15:18:44.420Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-TAR-5017_9",
+  "fields": {
+    "sitio": "CL-TAR-5017",
+    "fecha_creacion": "2024-05-23T18:12:00.918Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-TAR-5020_1",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "fecha_creacion": "2024-05-23T11:06:03.533Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-TAR-5020_2",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "fecha_creacion": "2024-05-23T11:27:41.632Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-TAR-5020_3",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "fecha_creacion": "2024-05-23T13:04:42.802Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-TAR-5020_4",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "fecha_creacion": "2024-05-28T20:38:50.391Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-TAR-5020_5",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "fecha_creacion": "2024-05-28T20:51:00.528Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VAL-5076_1",
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "fecha_creacion": "2024-05-21T23:41:14.927Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VAL-5076_2",
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "fecha_creacion": "2024-05-21T23:43:08.301Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VAL-5076_3",
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "fecha_creacion": "2024-05-22T00:14:37.114Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VAL-5076_4",
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "fecha_creacion": "2024-05-22T00:15:09.075Z"
+  }
+},
+{
+  "model": "registros.candidato",
+  "pk": "CL-VS-1403_1",
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "fecha_creacion": "2024-05-22T19:29:08.157Z"
   }
 },
 {
   "model": "registros.registrollegada",
-  "pk": "CL-PR-1234_1",
+  "pk": "CL-TAR-5017_1",
   "fields": {
-    "fecha_llegada": "2024-05-15T00:41:23.217Z",
-    "lat_llegada": -17.756,
-    "lon_llegada": -62.9818,
-    "status_llegada": "true",
-    "imagen_llegada": "",
-    "observaciones": "Se llego sin novedad en 1:45 horas",
-    "usuario": 8
+    "fecha_llegada": "2024-05-18T00:25:22.846Z",
+    "lat_llegada": -40.6607994,
+    "lon_llegada": -72.8129585,
+    "status_llegada": "false",
+    "imagen_llegada": "llegada/d21205e7-e6db-41a6-87a0-a3cb31bbe39f4725797338577930014.jpg",
+    "observaciones": "Prueba App\nRodrigo Arias",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrollegada",
-  "pk": "CL-PR-1234_2",
+  "pk": "CL-TAR-5017_2",
   "fields": {
-    "fecha_llegada": "2024-05-15T00:56:42.000Z",
-    "lat_llegada": -17.756,
-    "lon_llegada": -62.9818,
+    "fecha_llegada": "2024-05-18T00:27:50.327Z",
+    "lat_llegada": -40.6201438,
+    "lon_llegada": -72.7848897,
     "status_llegada": "true",
-    "imagen_llegada": "",
-    "observaciones": "Se llego sin novedad en 1:45 horas",
-    "usuario": 8
+    "imagen_llegada": "llegada/de31939b-d19e-45c0-914d-284620b683a12677864322540475453.jpg",
+    "observaciones": "Prueba App\nRodrigo Arias",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrollegada",
-  "pk": "CL-PR-1234_3",
+  "pk": "CL-TAR-5017_3",
   "fields": {
-    "fecha_llegada": "2024-05-15T00:57:26.226Z",
-    "lat_llegada": -17.756,
-    "lon_llegada": -62.9818,
+    "fecha_llegada": "2024-05-20T09:24:28.226Z",
+    "lat_llegada": -40.6200815,
+    "lon_llegada": -72.7804575,
     "status_llegada": "true",
-    "imagen_llegada": "",
-    "observaciones": "Se llego sin novedad en 1:45 horas",
-    "usuario": 8
+    "imagen_llegada": "llegada/e4fb7550-a0c6-4835-959c-7346a4e726c36621623379483772401.jpg",
+    "observaciones": "Prueba listA",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrollegada",
-  "pk": "CL-PR-1234_4",
+  "pk": "CL-TAR-5017_4",
   "fields": {
-    "fecha_llegada": "2024-05-15T01:19:18.092Z",
-    "lat_llegada": -17.756,
-    "lon_llegada": -62.9818,
+    "fecha_llegada": "2024-05-22T12:18:07.082Z",
+    "lat_llegada": -33.4397143,
+    "lon_llegada": -70.6516076,
     "status_llegada": "true",
-    "imagen_llegada": "",
-    "observaciones": "Se llego sin novedad en 1:45 horas",
-    "usuario": 8
+    "imagen_llegada": "llegada/6699d7ca-199d-4d4a-8c89-a53530d2c47c4750835495170325974.jpg",
+    "observaciones": "ninguno",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrollegada",
-  "pk": "CL-VS-1399_1",
+  "pk": "CL-TAR-5017_5",
   "fields": {
-    "fecha_llegada": "2024-05-10T11:38:26.566Z",
-    "lat_llegada": -17.8685101,
-    "lon_llegada": -63.2779933,
+    "fecha_llegada": "2024-05-23T09:59:32.678Z",
+    "lat_llegada": -33.4396932,
+    "lon_llegada": -70.6516777,
     "status_llegada": "true",
-    "imagen_llegada": "llegada/27612a16-dd7a-4b64-90b0-a49334f035216837528472365669127.jpg",
-    "observaciones": "se llegó sin inconveniente",
-    "usuario": 3
+    "imagen_llegada": "llegada/8237d8e9-1c37-4cba-84a0-16e9b2f54b875804198418183561280.jpg",
+    "observaciones": ".",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrollegada",
-  "pk": "CL-VS-1399_2",
+  "pk": "CL-TAR-5017_6",
   "fields": {
-    "fecha_llegada": "2024-05-10T12:45:08.905Z",
-    "lat_llegada": -17.868515,
-    "lon_llegada": -63.2779949,
+    "fecha_llegada": "2024-05-23T10:00:43.373Z",
+    "lat_llegada": -33.4404834,
+    "lon_llegada": -70.6514611,
     "status_llegada": "true",
-    "imagen_llegada": "llegada/94746ea4-bc13-4f20-8810-8be07a88b9164186699383836196312.jpg",
-    "observaciones": "gffr",
-    "usuario": 3
+    "imagen_llegada": "llegada/89186e49-c4b3-416c-930c-105ab439331227147604941504439.jpg",
+    "observaciones": ".",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrollegada",
-  "pk": "CL-VS-1399_3",
+  "pk": "CL-TAR-5017_7",
   "fields": {
-    "fecha_llegada": "2024-05-13T15:21:17.605Z",
-    "lat_llegada": -33.4131039,
-    "lon_llegada": -70.6038864,
+    "fecha_llegada": "2024-05-23T11:17:16.848Z",
+    "lat_llegada": -40.6188032,
+    "lon_llegada": -72.7882138,
+    "status_llegada": "false",
+    "imagen_llegada": "llegada/3237a327-5cdb-4ac1-aa86-2e0962bdd0267449447475917174035.jpg",
+    "observaciones": "Prueba",
+    "usuario": 16
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-TAR-5017_8",
+  "fields": {
+    "fecha_llegada": "2024-05-23T11:18:40.155Z",
+    "lat_llegada": -40.6188032,
+    "lon_llegada": -72.7882138,
     "status_llegada": "true",
-    "imagen_llegada": "llegada/dd9183ff-3dc4-461a-a340-2983e180def04920928819033197674.jpg",
+    "imagen_llegada": "llegada/1fcc5c68-0dc8-4815-b084-43ae5e4b3b3e6889987606257514594.jpg",
     "observaciones": "prueba",
+    "usuario": 16
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-TAR-5017_9",
+  "fields": {
+    "fecha_llegada": "2024-05-23T14:11:56.715Z",
+    "lat_llegada": -40.607049,
+    "lon_llegada": -72.8183635,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/9a5ae558-5b43-4605-8158-eae7fad3747d4694062741314795101.jpg",
+    "observaciones": "Detalle",
+    "usuario": 21
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-TAR-5020_1",
+  "fields": {
+    "fecha_llegada": "2024-05-23T07:05:59.584Z",
+    "lat_llegada": -35.0302248,
+    "lon_llegada": -71.2520159,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/e32858e7-e9b2-4d4e-8332-c38cb70e8cbe6800084054005018384.jpg",
+    "observaciones": "prueba funcionamiento",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-TAR-5020_2",
+  "fields": {
+    "fecha_llegada": "2024-05-23T07:27:36.139Z",
+    "lat_llegada": -35.030266,
+    "lon_llegada": -71.251757,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/5e0191f5-66d4-49c2-9272-10519c4c6eee2277560222144270239.jpg",
+    "observaciones": "ok",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-TAR-5020_3",
+  "fields": {
+    "fecha_llegada": "2024-05-23T09:04:39.137Z",
+    "lat_llegada": -36.133955,
+    "lon_llegada": -71.807802,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/5578c9ee-1cc3-4b5c-8c0c-e7b57ad308f93332294001941993594.jpg",
+    "observaciones": "ok. linares",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-TAR-5020_4",
+  "fields": {
+    "fecha_llegada": "2024-05-28T16:38:44.600Z",
+    "lat_llegada": -33.4348612,
+    "lon_llegada": -70.6171376,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/9cb442b4-415b-44f9-aa63-4794acc896359108650983474538490.jpg",
+    "observaciones": "todo ok",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-TAR-5020_5",
+  "fields": {
+    "fecha_llegada": "2024-05-28T16:50:56.883Z",
+    "lat_llegada": -33.434804,
+    "lon_llegada": -70.6171623,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/6fc7c26d-c04c-4bfb-ab35-09433ff1be071334122433555014020.jpg",
+    "observaciones": "odjd",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VAL-5076_1",
+  "fields": {
+    "fecha_llegada": "2024-05-21T19:40:05.958Z",
+    "lat_llegada": -33.5433614,
+    "lon_llegada": -70.6652634,
+    "status_llegada": "false",
+    "imagen_llegada": "llegada/5e181d0a-ee8b-4383-9436-a29766ba08544087183205257967124.jpg",
+    "observaciones": "prueba de app",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VAL-5076_2",
+  "fields": {
+    "fecha_llegada": "2024-05-21T19:42:27.967Z",
+    "lat_llegada": -33.5434912,
+    "lon_llegada": -70.665377,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/f0a7ed5a-502d-42c5-b07b-1d238848955a4500442887102641639.jpg",
+    "observaciones": "prueba app",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VAL-5076_3",
+  "fields": {
+    "fecha_llegada": "2024-05-21T20:14:31.311Z",
+    "lat_llegada": -33.5433516,
+    "lon_llegada": -70.66534,
+    "status_llegada": "false",
+    "imagen_llegada": "llegada/ab4a8862-2f59-4e26-96c1-4476ff51eafd4289438790952784201.jpg",
+    "observaciones": "taco",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VAL-5076_4",
+  "fields": {
+    "fecha_llegada": "2024-05-21T20:15:04.778Z",
+    "lat_llegada": -33.5433959,
+    "lon_llegada": -70.6653843,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/1bbc8117-7c42-409e-ab7c-21242ac680a33837573989833290634.jpg",
+    "observaciones": "fafaf",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrollegada",
+  "pk": "CL-VS-1403_1",
+  "fields": {
+    "fecha_llegada": "2024-05-22T15:29:01.441Z",
+    "lat_llegada": -33.4130778,
+    "lon_llegada": -70.6038744,
+    "status_llegada": "true",
+    "imagen_llegada": "llegada/28441d2c-1c95-4a75-8522-df30137bb22c8731915573535367380.jpg",
+    "observaciones": "visita terreno en compañia Entel",
     "usuario": 8
   }
 },
 {
   "model": "registros.registrolocalidad",
-  "pk": "CL-PR-1234_1",
+  "pk": "CL-TAR-5017_2",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "provincia": "Larecaja",
-    "municipio": "Municipio tercero",
-    "localidad": "El Quior",
+    "sitio": "CL-TAR-5017",
+    "provincia": "Los Lagos",
+    "municipio": "Puyehue",
+    "localidad": "Entrelagos",
     "energia_localidad": true,
-    "usuario": 3
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrolocalidad",
-  "pk": "CL-PR-1234_3",
+  "pk": "CL-TAR-5017_3",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "provincia": "Larecaja",
-    "municipio": "Municipio tercero",
-    "localidad": "El Quior",
+    "sitio": "CL-TAR-5017",
+    "provincia": "los lagos",
+    "municipio": "union",
+    "localidad": "rio buemo",
     "energia_localidad": true,
-    "usuario": 8
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrolocalidad",
-  "pk": "CL-PR-1234_4",
+  "pk": "CL-TAR-5017_6",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "provincia": "Larecaja",
-    "municipio": "Municipio tercero",
-    "localidad": "El Quior",
+    "sitio": "CL-TAR-5017",
+    "provincia": "1",
+    "municipio": "arica",
+    "localidad": "HUARA",
     "energia_localidad": true,
-    "usuario": 8
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrolocalidad",
-  "pk": "CL-VS-1399_1",
+  "pk": "CL-TAR-5017_8",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "provincia": "Andres Ibañez",
-    "municipio": "el torno",
-    "localidad": "La Guardia",
+    "sitio": "CL-TAR-5017",
+    "provincia": "los lagos",
+    "municipio": "puyehue",
+    "localidad": "HUARA",
     "energia_localidad": true,
-    "usuario": 3
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrolocalidad",
-  "pk": "CL-VS-1399_3",
+  "pk": "CL-TAR-5017_9",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "provincia": "santiago",
-    "municipio": "Las Condes",
-    "localidad": "Las Condes",
+    "sitio": "CL-TAR-5017",
+    "provincia": "Lps Lagos",
+    "municipio": "Puyehue",
+    "localidad": "HUARA",
     "energia_localidad": true,
-    "usuario": 8
+    "usuario": 21
   }
 },
 {
-  "model": "registros.registropropietario",
-  "pk": "CL-PR-1234_1",
+  "model": "registros.registrolocalidad",
+  "pk": "CL-TAR-5020_1",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "propietario_nombre_apellido": "Juan Sanginez",
-    "propietario_born": "1974-07-14T00:00:00Z",
-    "propietario_ci": "123456789",
-    "propietario_telf": "56915452245",
-    "propietario_direccion": "Calle Los Palotes",
-    "propietario_estado_civil": false,
-    "usuario": 3
+    "sitio": "CL-TAR-5020",
+    "provincia": "1",
+    "municipio": "Arica Prueba",
+    "localidad": "CAMIÑA",
+    "energia_localidad": true,
+    "usuario": 18
   }
 },
 {
-  "model": "registros.registropropietario",
-  "pk": "CL-PR-1234_3",
+  "model": "registros.registrolocalidad",
+  "pk": "CL-TAR-5020_2",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "propietario_nombre_apellido": "Juan Sanginez",
-    "propietario_born": "1974-07-14T00:00:00Z",
-    "propietario_ci": "123456789",
-    "propietario_telf": "56915452245",
-    "propietario_direccion": "Calle Los Palotes",
-    "propietario_estado_civil": false,
-    "usuario": 8
+    "sitio": "CL-TAR-5020",
+    "provincia": "12",
+    "municipio": "Magallanes",
+    "localidad": "Talca",
+    "energia_localidad": true,
+    "usuario": 18
   }
 },
 {
-  "model": "registros.registropropietario",
-  "pk": "CL-PR-1234_4",
+  "model": "registros.registrolocalidad",
+  "pk": "CL-TAR-5020_4",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "propietario_nombre_apellido": "Juan Sanginez",
-    "propietario_born": "1974-07-14T00:00:00Z",
-    "propietario_ci": "123456789",
-    "propietario_telf": "56915452245",
-    "propietario_direccion": "Calle Los Palotes",
-    "propietario_estado_civil": false,
-    "usuario": 8
+    "sitio": "CL-TAR-5020",
+    "provincia": "13",
+    "municipio": "Providencia",
+    "localidad": "Xx",
+    "energia_localidad": true,
+    "usuario": 18
   }
 },
 {
-  "model": "registros.registropropietario",
-  "pk": "CL-VS-1399_1",
+  "model": "registros.registrolocalidad",
+  "pk": "CL-VAL-5076_2",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "propietario_nombre_apellido": "Juan Lopez",
-    "propietario_born": "1992-05-12T00:00:00Z",
-    "propietario_ci": "678656-8",
-    "propietario_telf": "678656-8",
-    "propietario_direccion": "calle Francisco No. 20",
-    "propietario_estado_civil": true,
-    "usuario": 3
+    "sitio": "CL-VAL-5076",
+    "provincia": "5",
+    "municipio": "petorca",
+    "localidad": "PETORCA",
+    "energia_localidad": true,
+    "usuario": 17
   }
 },
 {
-  "model": "registros.registropropietario",
-  "pk": "CL-VS-1399_3",
+  "model": "registros.registrolocalidad",
+  "pk": "CL-VAL-5076_4",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "propietario_nombre_apellido": "Juan Pérez",
-    "propietario_born": "2024-05-13T00:00:00Z",
-    "propietario_ci": "1234467-1",
-    "propietario_telf": "1234467-1",
-    "propietario_direccion": "las Condes 233, Santiago",
-    "propietario_estado_civil": true,
+    "sitio": "CL-VAL-5076",
+    "provincia": "5",
+    "municipio": "pepensb",
+    "localidad": "PETORCA",
+    "energia_localidad": true,
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrolocalidad",
+  "pk": "CL-VS-1403_1",
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "provincia": "Valparaiso",
+    "municipio": "La Ligua",
+    "localidad": "La LIgua",
+    "energia_localidad": true,
     "usuario": 8
   }
 },
 {
   "model": "registros.registropropiedad",
-  "pk": "CL-PR-1234_1",
+  "pk": "CL-TAR-5017_3",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "propiedad_rol": "Este es el rol",
-    "propiedad_escritura": "Este es el codigo de la escritura",
-    "propiedad_registro_civil": "No. de registro civil",
-    "propiedad_imagen": "",
-    "propiedad_descripcion": "La propiedad tiene acceso controlado y esta cerrada",
-    "propiedad_direccion": null,
-    "usuario": 3
+    "sitio": "CL-TAR-5017",
+    "propiedad_rol": "123-66",
+    "propiedad_escritura": "nn",
+    "propiedad_registro_civil": "nn",
+    "propiedad_imagen": "sitios/propiedad/25727040-f35f-4418-a6d6-d5596ae458a35700974821157843104.jpg",
+    "propiedad_descripcion": "nnn",
+    "propiedad_direccion": "nn",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registropropiedad",
-  "pk": "CL-PR-1234_3",
+  "pk": "CL-TAR-5017_8",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "propiedad_rol": "Este es el rol",
-    "propiedad_escritura": "Este es el codigo de la escritura",
-    "propiedad_registro_civil": "No. de registro civil",
-    "propiedad_imagen": "",
-    "propiedad_descripcion": "La propiedad tiene acceso controlado y esta cerrada",
-    "propiedad_direccion": "Calle los palotes",
-    "usuario": 8
+    "sitio": "CL-TAR-5017",
+    "propiedad_rol": "5656666",
+    "propiedad_escritura": "ggg",
+    "propiedad_registro_civil": "hhh",
+    "propiedad_imagen": "sitios/propiedad/a27fb817-8078-4ae0-b995-9c4727ea46bc6196376576495364270.jpg",
+    "propiedad_descripcion": "hhhhh",
+    "propiedad_direccion": "hhh",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registropropiedad",
-  "pk": "CL-PR-1234_4",
+  "pk": "CL-TAR-5017_9",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "propiedad_rol": "Este es el rol",
-    "propiedad_escritura": "Este es el codigo de la escritura",
-    "propiedad_registro_civil": "No. de registro civil",
-    "propiedad_imagen": "",
-    "propiedad_descripcion": "La propiedad tiene acceso controlado y esta cerrada",
-    "propiedad_direccion": "Calle los palotes",
-    "usuario": 8
+    "sitio": "CL-TAR-5017",
+    "propiedad_rol": "123-44",
+    "propiedad_escritura": "los lagos",
+    "propiedad_registro_civil": "nn",
+    "propiedad_imagen": "sitios/propiedad/51bf26f7-a85d-4e9b-83a3-bca84e962f46555852320082585148.jpg",
+    "propiedad_descripcion": "nn",
+    "propiedad_direccion": "nnnn",
+    "usuario": 21
   }
 },
 {
   "model": "registros.registropropiedad",
-  "pk": "CL-VS-1399_1",
+  "pk": "CL-TAR-5020_1",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "propiedad_rol": "567-783",
-    "propiedad_escritura": "no existen escrituras de la propiedad",
+    "sitio": "CL-TAR-5020",
+    "propiedad_rol": "1234-1",
+    "propiedad_escritura": "Si",
+    "propiedad_registro_civil": "Camiña",
+    "propiedad_imagen": "sitios/propiedad/779dfabe-d0c3-4db2-b0de-51fa80dac9992443592050597255630.jpg",
+    "propiedad_descripcion": "prueba",
+    "propiedad_direccion": "Prueba de las pruebas 1234",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-TAR-5020_2",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "propiedad_rol": "1233-5",
+    "propiedad_escritura": "Si",
+    "propiedad_registro_civil": "Talca",
+    "propiedad_imagen": "sitios/propiedad/dafe7eb2-fdca-4cfd-8260-11f5d2dbfd611357174149390590026.jpg",
+    "propiedad_descripcion": "Prueba 2",
+    "propiedad_direccion": "Prueba",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-TAR-5020_4",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "propiedad_rol": "ndjd",
+    "propiedad_escritura": "ejfj",
+    "propiedad_registro_civil": "fnfn",
+    "propiedad_imagen": "sitios/propiedad/3b333595-5b87-4a38-af28-737747e772ab5717159844890997113.jpg",
+    "propiedad_descripcion": "kfn",
+    "propiedad_direccion": "nfnd",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-VAL-5076_2",
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "propiedad_rol": "hshah",
+    "propiedad_escritura": "ksjs",
+    "propiedad_registro_civil": "jdgsvab",
+    "propiedad_imagen": "sitios/propiedad/14f62811-9a43-418e-b92b-f2b15050925f3132364970530503081.jpg",
+    "propiedad_descripcion": "gsvsbsks",
+    "propiedad_direccion": "bdbs",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registropropiedad",
+  "pk": "CL-VS-1403_1",
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "propiedad_rol": "-",
+    "propiedad_escritura": "-",
     "propiedad_registro_civil": "-",
-    "propiedad_imagen": "sitios/propiedad/530c3921-965d-4253-8b75-227db7fd918b993205668238918621.jpg",
-    "propiedad_descripcion": "La copia será entregada vía correo",
-    "propiedad_direccion": null,
-    "usuario": 3
-  }
-},
-{
-  "model": "registros.registropropiedad",
-  "pk": "CL-VS-1399_3",
-  "fields": {
-    "sitio": "CL-VS-1399",
-    "propiedad_rol": "123-123",
-    "propiedad_escritura": "fojas, número y año.",
-    "propiedad_registro_civil": "validar.",
-    "propiedad_imagen": "sitios/propiedad/6b33c7a8-1926-4c1a-9b6c-20eb902e69cd1977934761987162765.jpg",
-    "propiedad_descripcion": "documentos pendientes",
-    "propiedad_direccion": null,
+    "propiedad_imagen": "sitios/propiedad/e4b49772-dd9c-493a-a5e0-49ebb235aa997148791612460681227.jpg",
+    "propiedad_descripcion": "a espera documentación por parte de propietaria.",
+    "propiedad_direccion": "-",
     "usuario": 8
   }
 },
 {
   "model": "registros.registrositio",
-  "pk": "CL-PR-1234_3",
+  "pk": "CL-TAR-5017_3",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "sitio_fecha": "2024-07-14T00:00:00Z",
-    "sitio_lat": -17.756164,
-    "sitio_lon": -62.981803,
-    "sitio_descripcion": "El área donde sera emplazado el sitio se encuentra despejado y su topografia es plana",
-    "sitio_propuesta_negociacion": "10 años a partior de la firma",
-    "sitio_espacio_negociado": "10x10 m",
-    "img_google_dist_nominal": "sitios/imgs_gmap/CL-PR-1234_3_dist_nominal.png",
-    "img_google_sitio": "sitios/imgs_gmap/CL-PR-1234_3.png",
-    "usuario": 8
+    "sitio": "CL-TAR-5017",
+    "sitio_fecha": "2024-05-20T09:29:26.948Z",
+    "sitio_lat": -40.6200815,
+    "sitio_lon": -72.7804575,
+    "sitio_descripcion": "lejos",
+    "sitio_propuesta_negociacion": "nn",
+    "sitio_espacio_negociado": "nn",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-TAR-5017_3_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-TAR-5017_3.png",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrositio",
-  "pk": "CL-PR-1234_4",
+  "pk": "CL-TAR-5017_8",
   "fields": {
-    "sitio": "CL-PR-1234",
-    "sitio_fecha": "2024-07-14T00:00:00Z",
-    "sitio_lat": -17.756164,
-    "sitio_lon": -62.981803,
-    "sitio_descripcion": "El área donde sera emplazado el sitio se encuentra despejado y su topografia es plana",
-    "sitio_propuesta_negociacion": "10 años a partior de la firma",
-    "sitio_espacio_negociado": "10x10 m",
-    "img_google_dist_nominal": "sitios/imgs_gmap/CL-PR-1234_4_dist_nominal.png",
-    "img_google_sitio": "sitios/imgs_gmap/CL-PR-1234_4.png",
-    "usuario": 8
+    "sitio": "CL-TAR-5017",
+    "sitio_fecha": "2024-05-23T11:26:09.745Z",
+    "sitio_lat": -40.6188032,
+    "sitio_lon": -72.7882138,
+    "sitio_descripcion": "ffggg",
+    "sitio_propuesta_negociacion": "hhh",
+    "sitio_espacio_negociado": "jjj",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-TAR-5017_8_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-TAR-5017_8.png",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrositio",
-  "pk": "CL-VS-1399_1",
+  "pk": "CL-TAR-5017_9",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "sitio_fecha": "2024-05-10T11:54:30.762Z",
-    "sitio_lat": -17.8684979,
-    "sitio_lon": -63.278004,
-    "sitio_descripcion": "El sitio tiene acceso con control. No es de fácil acceso en lluvias por la pendiente y el tipo de material.",
-    "sitio_propuesta_negociacion": null,
-    "sitio_espacio_negociado": null,
-    "img_google_dist_nominal": "sitios/imgs_gmap/CL-VS-1399_1_dist_nominal_7aSLOTH.png",
-    "img_google_sitio": "sitios/imgs_gmap/CL-VS-1399_1_0SLPvQh.png",
-    "usuario": 3
+    "sitio": "CL-TAR-5017",
+    "sitio_fecha": "2024-05-23T14:18:05.893Z",
+    "sitio_lat": -40.6068714,
+    "sitio_lon": -72.8182178,
+    "sitio_descripcion": "vv",
+    "sitio_propuesta_negociacion": "no",
+    "sitio_espacio_negociado": "no",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-TAR-5017_9_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-TAR-5017_9.png",
+    "usuario": 21
   }
 },
 {
   "model": "registros.registrositio",
-  "pk": "CL-VS-1399_3",
+  "pk": "CL-TAR-5020_1",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "sitio_fecha": "2024-05-13T15:27:46.904Z",
-    "sitio_lat": -33.4130845,
-    "sitio_lon": -70.6038721,
-    "sitio_descripcion": "propiedad ok",
-    "sitio_propuesta_negociacion": null,
-    "sitio_espacio_negociado": null,
-    "img_google_dist_nominal": "sitios/imgs_gmap/CL-VS-1399_3_dist_nominal_saglK2r.png",
-    "img_google_sitio": "sitios/imgs_gmap/CL-VS-1399_3_JEMq8AE.png",
+    "sitio": "CL-TAR-5020",
+    "sitio_fecha": "2024-05-23T07:12:51.264Z",
+    "sitio_lat": -35.0302237,
+    "sitio_lon": -71.2519139,
+    "sitio_descripcion": "Sitio a emplzar en su patio, prueba de funcionamiento",
+    "sitio_propuesta_negociacion": "30 UF",
+    "sitio_espacio_negociado": "30 m2",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-TAR-5020_1_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-TAR-5020_1.png",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-TAR-5020_2",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "sitio_fecha": "2024-05-23T07:32:01.964Z",
+    "sitio_lat": -35.030266,
+    "sitio_lon": -71.251757,
+    "sitio_descripcion": "prueba",
+    "sitio_propuesta_negociacion": "15UF",
+    "sitio_espacio_negociado": "20m2",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-TAR-5020_2_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-TAR-5020_2.png",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-TAR-5020_4",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "sitio_fecha": "2024-05-28T16:48:31.489Z",
+    "sitio_lat": -33.4347901,
+    "sitio_lon": -70.6171588,
+    "sitio_descripcion": "ndnd",
+    "sitio_propuesta_negociacion": "jdjf",
+    "sitio_espacio_negociado": "hdhd4",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-TAR-5020_4_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-TAR-5020_4.png",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-VAL-5076_2",
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "sitio_fecha": "2024-05-21T19:53:48.456Z",
+    "sitio_lat": -33.543377,
+    "sitio_lon": -70.6653911,
+    "sitio_descripcion": "prueba",
+    "sitio_propuesta_negociacion": "haha",
+    "sitio_espacio_negociado": "fafafa",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-VAL-5076_2_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-VAL-5076_2.png",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositio",
+  "pk": "CL-VS-1403_1",
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "sitio_fecha": "2024-05-22T15:56:56.803Z",
+    "sitio_lat": -33.4130834,
+    "sitio_lon": -70.603863,
+    "sitio_descripcion": "coordenadas validadas a 60 mts de altura.",
+    "sitio_propuesta_negociacion": "16 Uf mensuales, pago bono único 2millones de pesos",
+    "sitio_espacio_negociado": "150m2",
+    "img_google_dist_nominal": "sitios/imgs_gmap/CL-VS-1403_1_dist_nominal.png",
+    "img_google_sitio": "sitios/imgs_gmap/CL-VS-1403_1.png",
     "usuario": 8
   }
 },
 {
   "model": "registros.registrositioimagenes",
-  "pk": 5,
+  "pk": 26,
   "fields": {
-    "sitio": "CL-VS-1399",
-    "candidato": "CL-VS-1399_1",
-    "pic": "sitios/fotos/fe0bd4c8-3f1f-4fa3-a849-2655c25697d71355102837179996943.jpg",
-    "descripcion": "Vista Lateral",
-    "usuario": 3
+    "sitio": "CL-TAR-5017",
+    "candidato": "CL-TAR-5017_3",
+    "pic": "sitios/fotos/e454ae5a-92de-4b26-9348-b0f9ba0bf9395250123321259098922.jpg",
+    "descripcion": "nn",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrositioimagenes",
-  "pk": 6,
+  "pk": 27,
   "fields": {
-    "sitio": "CL-VS-1399",
-    "candidato": "CL-VS-1399_1",
-    "pic": "sitios/fotos/9b9f4d42-c24a-45a8-b31f-97ef02c3e6585209585914054509229.jpg",
-    "descripcion": "Ingreso principal",
-    "usuario": 3
+    "sitio": "CL-TAR-5017",
+    "candidato": "CL-TAR-5017_3",
+    "pic": "sitios/fotos/6edc8aa9-16b7-4fff-81d7-f78faffb6b3e5728296169806133298.jpg",
+    "descripcion": "nn",
+    "usuario": 16
   }
 },
 {
   "model": "registros.registrositioimagenes",
-  "pk": 7,
+  "pk": 28,
   "fields": {
-    "sitio": "CL-VS-1399",
-    "candidato": "CL-VS-1399_3",
-    "pic": "sitios/fotos/89c5aeb5-e828-4371-a2ec-5224e7a500103354525020449746955.jpg",
-    "descripcion": "lugar validado con propietario.",
+    "sitio": "CL-TAR-5017",
+    "candidato": "CL-TAR-5017_3",
+    "pic": "sitios/fotos/4b19530d-c8ca-4fae-a566-1f9cb7e7da225373471635239279959.jpg",
+    "descripcion": "nn",
+    "usuario": 16
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 29,
+  "fields": {
+    "sitio": "CL-TAR-5017",
+    "candidato": "CL-TAR-5017_3",
+    "pic": "sitios/fotos/6910a331-4dc2-45bf-97b2-b331671520c95981869286460151804.jpg",
+    "descripcion": "nn",
+    "usuario": 16
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 30,
+  "fields": {
+    "sitio": "CL-TAR-5017",
+    "candidato": "CL-TAR-5017_3",
+    "pic": "sitios/fotos/580a040b-c114-403d-83c6-710fb15820a03075789268109063061.jpg",
+    "descripcion": "nn",
+    "usuario": 16
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 31,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/8e11fcd6-955f-4a2b-8b74-52a3442853dc560073192585902550.jpg",
+    "descripcion": "lalsns",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 32,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/96a9afa1-a25f-40b2-8cef-633fb13d29564525357906738262425.jpg",
+    "descripcion": "hsbsb",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 33,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/8e11fcd6-955f-4a2b-8b74-52a3442853dc560073192585902550_TzVuhjL.jpg",
+    "descripcion": "lalsns",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 34,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/5c704337-7bd0-471f-82b6-c0737c8d91d06515677984265622515.jpg",
+    "descripcion": "havavsg",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 35,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/8e11fcd6-955f-4a2b-8b74-52a3442853dc560073192585902550_FJp8Iw4.jpg",
+    "descripcion": "lalsns",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 36,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/96a9afa1-a25f-40b2-8cef-633fb13d29564525357906738262425_E6rIBTz.jpg",
+    "descripcion": "hsbsb",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 37,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/c4c6332e-f5ca-4f30-8dfe-575aa9f87d141438196400492173088.jpg",
+    "descripcion": "gsgsv",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 38,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/96a9afa1-a25f-40b2-8cef-633fb13d29564525357906738262425_Cc77CFv.jpg",
+    "descripcion": "hsbsb",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 39,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/5c704337-7bd0-471f-82b6-c0737c8d91d06515677984265622515_lDVSp4P.jpg",
+    "descripcion": "havavsg",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 40,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/a4989662-0beb-4ff1-a2de-a0bbefeb7f843742239063850177550.jpg",
+    "descripcion": "vabab",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 41,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/5c704337-7bd0-471f-82b6-c0737c8d91d06515677984265622515_r0ZBjm2.jpg",
+    "descripcion": "havavsg",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 42,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/8e11fcd6-955f-4a2b-8b74-52a3442853dc560073192585902550_wA0y6BS.jpg",
+    "descripcion": "lalsns",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 43,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/c4c6332e-f5ca-4f30-8dfe-575aa9f87d141438196400492173088_0Dk2yXM.jpg",
+    "descripcion": "gsgsv",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 44,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/96a9afa1-a25f-40b2-8cef-633fb13d29564525357906738262425_7b4qVjH.jpg",
+    "descripcion": "hsbsb",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 45,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/c4c6332e-f5ca-4f30-8dfe-575aa9f87d141438196400492173088_n1FSe3e.jpg",
+    "descripcion": "gsgsv",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 46,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/a4989662-0beb-4ff1-a2de-a0bbefeb7f843742239063850177550_dBAc1YU.jpg",
+    "descripcion": "vabab",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 47,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/5c704337-7bd0-471f-82b6-c0737c8d91d06515677984265622515_LiPjPoi.jpg",
+    "descripcion": "havavsg",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 48,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/a4989662-0beb-4ff1-a2de-a0bbefeb7f843742239063850177550_8MhryTZ.jpg",
+    "descripcion": "vabab",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 49,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/c4c6332e-f5ca-4f30-8dfe-575aa9f87d141438196400492173088_hnipN7b.jpg",
+    "descripcion": "gsgsv",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 50,
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "candidato": "CL-VAL-5076_2",
+    "pic": "sitios/fotos/a4989662-0beb-4ff1-a2de-a0bbefeb7f843742239063850177550_eS8f5WL.jpg",
+    "descripcion": "vabab",
+    "usuario": 17
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 51,
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "candidato": "CL-VS-1403_1",
+    "pic": "sitios/fotos/12ea9963-2187-4330-9515-3c1737e1892d5957712571065588475.jpg",
+    "descripcion": "deslindes",
     "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 52,
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "candidato": "CL-VS-1403_1",
+    "pic": "sitios/fotos/3ebcf5e1-2e33-4bb6-aded-470734ea55c82948827861755979863.jpg",
+    "descripcion": "a espera validación de propietario.",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 53,
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "candidato": "CL-VS-1403_1",
+    "pic": "sitios/fotos/41e1c84a-b1bb-4a1d-ad0a-ee721d682a5b4951191185525519218.jpg",
+    "descripcion": "prueba.",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 54,
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "candidato": "CL-VS-1403_1",
+    "pic": "sitios/fotos/476dd765-fdc0-42bb-a8a3-c38dcb5c5c7c3044740935169335280.jpg",
+    "descripcion": "punto emplazado visto por propietaria.",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 55,
+  "fields": {
+    "sitio": "CL-VS-1403",
+    "candidato": "CL-VS-1403_1",
+    "pic": "sitios/fotos/5bc5a882-f04e-462f-94eb-203d94a4bcba7638357094322147154.jpg",
+    "descripcion": "punto emplazado.",
+    "usuario": 8
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 56,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_1",
+    "pic": "sitios/fotos/d72aa6d5-4861-49b0-8dbb-9c02ca303cb42895345953741116768.jpg",
+    "descripcion": "Sitio",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 57,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_1",
+    "pic": "sitios/fotos/aa627980-cba9-4012-8f2f-8ab49b7bfbf25397937618083065996.jpg",
+    "descripcion": "Validación",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 58,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_1",
+    "pic": "sitios/fotos/fa66b82f-b651-4e94-826b-05da1e4b80a81032257582504533307.jpg",
+    "descripcion": "GPS",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 59,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_1",
+    "pic": "sitios/fotos/eba2961e-3b84-43c4-a022-08a3ec2996cf2327657331840829269.jpg",
+    "descripcion": "Sitio",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 60,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_2",
+    "pic": "sitios/fotos/13c85f78-c5b2-4a4a-8ff8-1c76b1eb0eb51397600689997823747.jpg",
+    "descripcion": "Sitio",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 61,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_2",
+    "pic": "sitios/fotos/e38bcfc4-8b44-4f2d-a5bf-baace0d0f16e6544972868298875235.jpg",
+    "descripcion": "Carnet Validador",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 62,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_2",
+    "pic": "sitios/fotos/2fb2da91-9641-489f-999d-e42e2df7c1377383783294311476387.jpg",
+    "descripcion": "GPS",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 63,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_2",
+    "pic": "sitios/fotos/c8e7b690-0cb2-48e5-bb07-2171dca489fe9088187689550684712.jpg",
+    "descripcion": "espacio negociado",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 64,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/f840a8bd-f649-4521-9cff-20db4650ab243378114649543570866.jpg",
+    "descripcion": "sitio",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 65,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/742b935a-3fd0-441f-89f5-02808ec7860d7454446823367285736.jpg",
+    "descripcion": "jdjd",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 66,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/92ec2bb2-16e3-4cbc-be1c-1d6189300c936916327657804012435.jpg",
+    "descripcion": "jdjd",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 67,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/1f894455-39b2-402e-b019-d1b2997ede165468659602649685011.jpg",
+    "descripcion": "sitio",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 68,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/5578c0d6-341c-4715-8564-5d03bc5879265802328048606255631.jpg",
+    "descripcion": "jejf",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 69,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/f840a8bd-f649-4521-9cff-20db4650ab243378114649543570866_TuEbahO.jpg",
+    "descripcion": "sitio",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 70,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/742b935a-3fd0-441f-89f5-02808ec7860d7454446823367285736_PQKRHHT.jpg",
+    "descripcion": "jdjd",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 71,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/92ec2bb2-16e3-4cbc-be1c-1d6189300c936916327657804012435_ksFOGe4.jpg",
+    "descripcion": "jdjd",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 72,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/1f894455-39b2-402e-b019-d1b2997ede165468659602649685011_kaXHFqp.jpg",
+    "descripcion": "sitio",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registrositioimagenes",
+  "pk": 73,
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "candidato": "CL-TAR-5020_4",
+    "pic": "sitios/fotos/5578c0d6-341c-4715-8564-5d03bc5879265802328048606255631_hsdzomT.jpg",
+    "descripcion": "jejf",
+    "usuario": 18
   }
 },
 {
   "model": "registros.registioelectrico",
-  "pk": "CL-VS-1399_1",
+  "pk": "CL-TAR-5017_3",
   "fields": {
-    "sitio": "CL-VS-1399",
-    "electrico_lat": -17.8685302,
-    "electrico_lon": -63.2780423,
-    "electrico_no_poste": "123-A",
-    "electrico_comentario": "medidor",
-    "electrico_imagen1": "sitios/08631f28-ca72-458a-8019-97a20d7d152f7541481808459914337.jpg",
-    "electrico_imagen2": "sitios/236a709e-f40d-4057-9f4e-089300a0f2d9353519845181849815.jpg",
-    "electrico_img_google": "sitios/imgs_gmap/CL-VS-1399_1_dist_electrico.png",
-    "usuario": 3
-  }
-},
-{
-  "model": "registros.registioelectrico",
-  "pk": "CL-VS-1399_3",
-  "fields": {
-    "sitio": "CL-VS-1399",
-    "electrico_lat": -33.4131098,
-    "electrico_lon": -70.6039035,
-    "electrico_no_poste": "12345",
-    "electrico_comentario": "postacion disponible para conección",
-    "electrico_imagen1": "sitios/110af0c0-00c6-4026-bb74-38236e37332d4414776096679373952.jpg",
+    "sitio": "CL-TAR-5017",
+    "electrico_lat": -40.6200815,
+    "electrico_lon": -72.7804575,
+    "electrico_no_poste": "mn",
+    "electrico_comentario": "nn",
+    "electrico_imagen1": "sitios/ec60457a-0241-4f8d-9f5b-8c64521923b98745081714708931679.jpg",
     "electrico_imagen2": "",
-    "electrico_img_google": "sitios/imgs_gmap/CL-VS-1399_3_dist_electrico.png",
-    "usuario": 8
+    "electrico_img_google": "sitios/imgs_gmap/CL-TAR-5017_3_dist_electrico.png",
+    "usuario": 16
+  }
+},
+{
+  "model": "registros.registioelectrico",
+  "pk": "CL-TAR-5020_1",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "electrico_lat": -35.0302448,
+    "electrico_lon": -71.2519728,
+    "electrico_no_poste": "12345",
+    "electrico_comentario": "Poste Coneción CGE-Prueba",
+    "electrico_imagen1": "sitios/008a1589-b205-4f8b-bd39-0796469911c09202454840359232835.jpg",
+    "electrico_imagen2": "sitios/f36039b9-a98e-4af8-8f9e-89a9efaa39582327301438536605300.jpg",
+    "electrico_img_google": "sitios/imgs_gmap/CL-TAR-5020_1_dist_electrico.png",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registioelectrico",
+  "pk": "CL-TAR-5020_2",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "electrico_lat": -35.030266,
+    "electrico_lon": -71.251757,
+    "electrico_no_poste": "234567",
+    "electrico_comentario": "Poste Enel",
+    "electrico_imagen1": "sitios/64ff0ec9-568e-4299-8d19-51c0313c4db9220578461874228062.jpg",
+    "electrico_imagen2": "sitios/806bfe78-61f1-4b30-bf1f-0d8b197907c11636239823619965323.jpg",
+    "electrico_img_google": "sitios/imgs_gmap/CL-TAR-5020_2_dist_electrico.png",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registioelectrico",
+  "pk": "CL-TAR-5020_4",
+  "fields": {
+    "sitio": "CL-TAR-5020",
+    "electrico_lat": -33.4348049,
+    "electrico_lon": -70.617175,
+    "electrico_no_poste": "3456",
+    "electrico_comentario": "poste enel",
+    "electrico_imagen1": "sitios/f785ffdb-dcb5-4a95-946f-ba8a987a03494489687275290941462.jpg",
+    "electrico_imagen2": "sitios/67f85919-9609-4ade-8e2d-ccfbf89037f27627291724450599485.jpg",
+    "electrico_img_google": "sitios/imgs_gmap/CL-TAR-5020_4_dist_electrico.png",
+    "usuario": 18
+  }
+},
+{
+  "model": "registros.registioelectrico",
+  "pk": "CL-VAL-5076_2",
+  "fields": {
+    "sitio": "CL-VAL-5076",
+    "electrico_lat": -33.543343,
+    "electrico_lon": -70.6653634,
+    "electrico_no_poste": "hshsbsb",
+    "electrico_comentario": "gagav",
+    "electrico_imagen1": "sitios/12c98374-2068-4a63-87df-3e561bffe9f75020178577021278134.jpg",
+    "electrico_imagen2": "",
+    "electrico_img_google": "sitios/imgs_gmap/CL-VAL-5076_2_dist_electrico.png",
+    "usuario": 17
   }
 }
 ]

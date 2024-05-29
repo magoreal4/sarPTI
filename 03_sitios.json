@@ -1,6 +1,57 @@
 [
 {
   "model": "main.sitio",
+  "pk": "BO-SC-1450",
+  "fields": {
+    "nombre": "RUTA LA GUARDIA 2",
+    "lat_nominal": -17.883472,
+    "lon_nominal": -63.282124,
+    "altura": null,
+    "provincia": null,
+    "municipio": null,
+    "localidad": null,
+    "empresa": 3,
+    "usuario": 14,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "CHILE",
+  "fields": {
+    "nombre": "HUARA",
+    "lat_nominal": -33.439695,
+    "lon_nominal": -70.651559,
+    "altura": "500",
+    "provincia": "METROPOLITANA",
+    "municipio": "SANTIAGO",
+    "localidad": "SANTIAGO",
+    "empresa": null,
+    "usuario": 21,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "CHILE-PTI",
+  "fields": {
+    "nombre": "SANTIAGO",
+    "lat_nominal": 2.0,
+    "lon_nominal": null,
+    "altura": "750",
+    "provincia": "METROPOLITANA",
+    "municipio": "SANTIAGO",
+    "localidad": "SANTIAGO",
+    "empresa": null,
+    "usuario": 16,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
   "pk": "CL-AIS-5011",
   "fields": {
     "nombre": "COYHAIQUE - COYHAIQUE ALTO - LLOO",
@@ -3061,23 +3112,6 @@
 },
 {
   "model": "main.sitio",
-  "pk": "CL-PR-1234",
-  "fields": {
-    "nombre": "Cotoca 1",
-    "lat_nominal": -17.758647,
-    "lon_nominal": -62.983443,
-    "altura": "45",
-    "provincia": "Larecaja Prueba",
-    "municipio": "Municipio Prueba",
-    "localidad": "Localidad Prueba",
-    "empresa": 1,
-    "usuario": 8,
-    "img_google": "imgs_gmap/CL-PR-1234_nominal.png",
-    "contador_llegadas": 4
-  }
-},
-{
-  "model": "main.sitio",
   "pk": "CL-RIO-5012",
   "fields": {
     "nombre": "CHABRANCO Y FOLILCO - LLOO",
@@ -3316,23 +3350,6 @@
 },
 {
   "model": "main.sitio",
-  "pk": "CL-RT-0000",
-  "fields": {
-    "nombre": "Coquimbo",
-    "lat_nominal": -17.0,
-    "lon_nominal": -34.0,
-    "altura": "48",
-    "provincia": "Metropilitana",
-    "municipio": "-",
-    "localidad": "Lo Vasquez",
-    "empresa": 2,
-    "usuario": null,
-    "img_google": "",
-    "contador_llegadas": 0
-  }
-},
-{
-  "model": "main.sitio",
   "pk": "CL-TAR-5010",
   "fields": {
     "nombre": "CAMINA - FRANCIA - LLOO",
@@ -3342,9 +3359,9 @@
     "provincia": "1",
     "municipio": null,
     "localidad": "CAMIÑA",
-    "empresa": null,
-    "usuario": null,
-    "img_google": "",
+    "empresa": 8,
+    "usuario": 23,
+    "img_google": "imgs_gmap/CL-TAR-5010_nominal.png",
     "contador_llegadas": 0
   }
 },
@@ -3427,10 +3444,10 @@
     "provincia": "1",
     "municipio": null,
     "localidad": "HUARA",
-    "empresa": null,
-    "usuario": null,
-    "img_google": "",
-    "contador_llegadas": 0
+    "empresa": 4,
+    "usuario": 21,
+    "img_google": "imgs_gmap/CL-TAR-5017_nominal.png",
+    "contador_llegadas": 9
   }
 },
 {
@@ -3444,9 +3461,9 @@
     "provincia": "1",
     "municipio": null,
     "localidad": "HUARA",
-    "empresa": 1,
-    "usuario": 8,
-    "img_google": "",
+    "empresa": null,
+    "usuario": null,
+    "img_google": "imgs_gmap/CL-TAR-5018_nominal.png",
     "contador_llegadas": 0
   }
 },
@@ -3461,9 +3478,9 @@
     "provincia": "1",
     "municipio": null,
     "localidad": "POZO ALMONTE",
-    "empresa": 1,
-    "usuario": 8,
-    "img_google": "",
+    "empresa": null,
+    "usuario": null,
+    "img_google": "imgs_gmap/CL-TAR-5019_nominal.png",
     "contador_llegadas": 0
   }
 },
@@ -3478,10 +3495,10 @@
     "provincia": "1",
     "municipio": null,
     "localidad": "CAMIÑA",
-    "empresa": 1,
-    "usuario": 8,
-    "img_google": "",
-    "contador_llegadas": 0
+    "empresa": 6,
+    "usuario": 18,
+    "img_google": "imgs_gmap/CL-TAR-5020_nominal.png",
+    "contador_llegadas": 5
   }
 },
 {
@@ -3495,27 +3512,44 @@
     "provincia": "5",
     "municipio": null,
     "localidad": "PETORCA",
-    "empresa": 1,
-    "usuario": 8,
-    "img_google": "",
-    "contador_llegadas": 0
+    "empresa": 5,
+    "usuario": 17,
+    "img_google": "imgs_gmap/CL-VAL-5076_nominal_ME7CtEU.png",
+    "contador_llegadas": 4
   }
 },
 {
   "model": "main.sitio",
-  "pk": "CL-VS-1399",
+  "pk": "CL-VS-1403",
   "fields": {
-    "nombre": "Campestre",
-    "lat_nominal": -17.871556,
-    "lon_nominal": -63.273872,
+    "nombre": "Ruta 5_Los Vilos Santiago-Sector Pichicuy",
+    "lat_nominal": -32.334815,
+    "lon_nominal": -71.448789,
     "altura": "48",
-    "provincia": "Andres Ibañez",
-    "municipio": "La Guardia",
-    "localidad": "La Guardia",
-    "empresa": 1,
-    "usuario": 3,
-    "img_google": "imgs_gmap/CL-VS-1399_nominal_c4X4V8Q.png",
-    "contador_llegadas": 3
+    "provincia": "Valparaiso",
+    "municipio": null,
+    "localidad": "La LIgua",
+    "empresa": 7,
+    "usuario": 8,
+    "img_google": "imgs_gmap/CL-VS-1403_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "Cl-RM-1111",
+  "fields": {
+    "nombre": "Prueba Newenche",
+    "lat_nominal": -33.57759,
+    "lon_nominal": -70.56511,
+    "altura": "48",
+    "provincia": "RM- Metropolitana",
+    "municipio": null,
+    "localidad": "Puente Alto",
+    "empresa": 4,
+    "usuario": 22,
+    "img_google": "",
+    "contador_llegadas": 0
   }
 }
 ]
