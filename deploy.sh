@@ -8,7 +8,7 @@ cat > ${app} <<EOF
 # /etc/nginx/sites-available/$app
 
 upstream web_$app {
-    server django:$puerto;
+    server localhost:$puerto;
 }
 server {
     server_name $dominio www.${dominio};
