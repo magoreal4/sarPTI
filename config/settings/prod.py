@@ -24,7 +24,7 @@ DATABASES = {
         'NAME': 'base',
         'USER': 'magoreal',
         'PASSWORD': 'ojalaque',
-        'HOST': 'ser-db',
+        'HOST': 'sar-db',
         'PORT': '5432',
     }
 }
