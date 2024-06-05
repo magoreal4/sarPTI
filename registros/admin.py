@@ -222,16 +222,16 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
                     'propietario_nombre_apellido',
                     'propietario_telf',
                     )
-    fields = (
-        'sitio',
-        'candidato',
-        'propietario_nombre_apellido',
-        'propietario_born',
-        'propietario_estado_civil',
-        'propietario_ci',
-        'propietario_telf',
-        'propietario_direccion',
-        )
+    # fields = (
+    #     'sitio',
+    #     'candidato',
+    #     'propietario_nombre_apellido',
+    #     'propietario_born',
+    #     'propietario_estado_civil',
+    #     'propietario_ci',
+    #     'propietario_telf',
+    #     'propietario_direccion',
+    #     )
 
 admin.site.register(RegistroPropietario, RegistroPropietarioAdmin)
 
@@ -273,12 +273,12 @@ class RegistroPropiedadAdmin(admin.ModelAdmin):
                     )
     # list_editable = ('status_llegada', )
     readonly_fields = ['image_tag']
-    fields = ('candidato',
-              'propiedad_rol',
-              'propiedad_escritura',
-              'propiedad_registro_civil',
-              'propiedad_descripcion',
-              'propiedad_imagen', 'image_tag',)
+    # fields = ('candidato',
+    #           'propiedad_rol',
+    #           'propiedad_escritura',
+    #           'propiedad_registro_civil',
+    #           'propiedad_descripcion',
+    #           'propiedad_imagen', 'image_tag',)
 
 
 admin.site.register(RegistroPropiedad, RegistroPropiedadAdmin)
