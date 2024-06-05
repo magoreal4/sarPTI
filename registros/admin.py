@@ -222,16 +222,16 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
                     'propietario_nombre_apellido',
                     'propietario_telf',
                     )
-    # fields = (
-    #     'sitio',
-    #     'candidato',
-    #     'propietario_nombre_apellido',
-    #     'propietario_born',
-    #     'propietario_estado_civil',
-    #     'propietario_ci',
-    #     'propietario_telf',
-    #     'propietario_direccion',
-    #     )
+    # fields = ("__all__",)
+        # 'sitio',
+        # 'candidato',
+        # 'propietario_nombre_apellido',
+        # 'propietario_born',
+        # 'propietario_estado_civil',
+        # 'propietario_ci',
+        # 'propietario_telf',
+        # 'propietario_direccion',
+        # )
 
 admin.site.register(RegistroPropietario, RegistroPropietarioAdmin)
 
@@ -373,13 +373,13 @@ class RegistroSitioAdmin(admin.ModelAdmin):
     exclude = ('sitio',)
     # list_editable = ('sitio_descripcion', )
     readonly_fields = ('sitio_fecha_chile', 'image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
-    fields = ('candidato',
-              'sitio_fecha_chile',
-              'sitio_lat',
-              'sitio_lon',
-              'sitio_descripcion',
-              'image_tag_img_google_sitio',
-              'image_tag_img_google_dist_nominal')
+    # fields = ('candidato',
+    #           'sitio_fecha_chile',
+    #           'sitio_lat',
+    #           'sitio_lon',
+    #           'sitio_descripcion',
+    #           'image_tag_img_google_sitio',
+    #           'image_tag_img_google_dist_nominal')
     ordering = ['sitio_fecha']
 
     def sitio_fecha_chile(self, obj):
