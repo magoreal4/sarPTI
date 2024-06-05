@@ -9,36 +9,27 @@
   <div class="absolute top-0 right-0 m-4">
     <div class="flex flex-column" style="display: flex; flex-direction: column">
       {% if user.is_authenticated %}
-      <a
-        href="{% url 'logout' %}"
-        class="boton-primary"
-      >
+      <a href="{% url 'logout' %}" class="boton-primary">
         Logout
       </a>
-      <a
-        href="{% url 'admin:index' %}"
-        class="boton-primary"
-      >
+      <a href="{% url 'admin:index' %}" class="boton-primary">
         Sistema de Registro
       </a>
-      <a
-        href="{% static 'apk/app-release.apk' %}"
-        class="boton-primary"
-      >
-        Descargar apk
+      <a href="{% static 'apk/app-release.apk' %}" class="boton-primary">
+        Descargar App Android
+      </a>
+      <a href="{% url 'configapp:policy_view' %}" class="boton-primary">
+        Politicas de Privacidad
+      </a>
+      <a href="{% url 'configapp:terms_view' %}" class="boton-primary">
+        Terminos y Condiciones
       </a>
       {% else %}
-      <a
-        href="{% url 'login' %}"
-        class="boton-primary"
-      >
+      <a href="{% url 'login' %}" class="boton-primary">
         Login
       </a>
       {% endif %}
-      <a
-      href="{% url 'support:support_form' %}"
-      class="boton-primary"
-    >
+      <a href="{% url 'support:support_form' %}" class="boton-primary">
       Contáctanos
     </a>
     </div>

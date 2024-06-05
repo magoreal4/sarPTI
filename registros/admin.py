@@ -222,14 +222,16 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
                     'propietario_nombre_apellido',
                     'propietario_telf',
                     )
-    fields = ('candidato',
-              'propietario_nombre_apellido',
-              'propietario_born',
-              'propietario_estado_civil',
-              'propietario_ci',
-              'propietario_telf',
-              'propietario_direccion',
-              )
+    fields = (
+        'sitio',
+        'candidato',
+        'propietario_nombre_apellido',
+        'propietario_born',
+        'propietario_estado_civil',
+        'propietario_ci',
+        'propietario_telf',
+        'propietario_direccion',
+        )
 
 admin.site.register(RegistroPropietario, RegistroPropietarioAdmin)
 
@@ -516,7 +518,7 @@ class RegistioElectricoAdmin(admin.ModelAdmin):
                     'electrico_no_poste',
                     'electrico_comentario',
                     )
-    exclude = ('sitio',)
+    # exclude = ('sitio',)
 
 admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
 
