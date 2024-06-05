@@ -1,3 +1,5 @@
+import logging
+import bugsnag
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
@@ -153,7 +155,9 @@ class RegistroSitioList(APIView):
             try:
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
-            except ValueError as e:
+            except Exception as e:
+                bugsnag.notify(e)
+                logging.error(e, exc_info=True)
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -170,6 +174,9 @@ class RegistroSitioImagenesList(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+        bugsnag.notify(serializer.errors)
+        logging.error(serializer.errors, exc_info=True)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class RegistioElectricoList(APIView):
@@ -187,5 +194,7 @@ class RegistioElectricoList(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             except ValueError as e:
+                bugsnag.notify(e)
+                logging.error(e, exc_info=True)
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
