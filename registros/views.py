@@ -158,6 +158,7 @@ class RegistroSitioList(APIView):
             except Exception as e:
                 bugsnag.notify(e)
                 logging.error(e, exc_info=True)
+                logging.error(self.request.data, exc_info=True)
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
