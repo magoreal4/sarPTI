@@ -154,6 +154,7 @@ class SitiosResource(resources.ModelResource):
 
 class SitioAdmin(ImportExportModelAdmin):
     resource_class = SitiosResource
+    ordering = ('PTICellID',)
     list_display = ('PTICellID',
                     'nombre',
                     'altura',

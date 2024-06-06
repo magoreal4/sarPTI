@@ -523,11 +523,30 @@ class RegistioElectricoAdmin(admin.ModelAdmin):
 admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
 
 
+
+from django.utils.translation import gettext_lazy as _
+
+class EmpresaFilter(admin.SimpleListFilter):
+    title = _('empresa')
+    parameter_name = 'empresa'
+
+    def lookups(self, request, model_admin):
+        # Aquí puedes definir las opciones que se mostrarán en el filtro
+        # Esto es solo un ejemplo
+        empresas = set([c.sitio.empresa for c in model_admin.model.objects.all()])
+        return [(emp.id, emp.nombre) for emp in empresas]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(sitio__empresa__id=self.value())
+        return queryset
+    
+    
 # REGISTRO CAMPO
 class CandidatoAdmin(admin.ModelAdmin):
     user_model = None
     list_display = ('candidato', 'sitio_nombre', 'usuario_nombre', 'sitio_empresa',  'formatted_fecha_creacion')
-
+    list_filter = (EmpresaFilter,'sitio')
     inlines = [
         RegistroLlegadaInline,
         RegistroLocalidadInline,
@@ -570,7 +589,7 @@ class CandidatoAdmin(admin.ModelAdmin):
 
     # DATOS PROYECTO
     readonly_fields = (
-        'sitio_ID', 'sitio_nombre', 'sitio_altura',
+        'sitio_ID', 'candidato','sitio_nombre', 'sitio_altura',
         'sitio_provincia', 'sitio_municipio', 'sitio_localidad',
         'usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa',
         'sitio_lat_nominal', 'sitio_lat_nominal_gms',
@@ -581,7 +600,8 @@ class CandidatoAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Datos de Proyecto', {
             'fields': (
-                ('sitio_ID', 'sitio_nombre', 'sitio_altura'),
+                
+                ('sitio_ID','candidato', 'sitio_nombre', 'sitio_altura'),
                 ('sitio_provincia', 'sitio_municipio', 'sitio_localidad',),
                 ('usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa'),
                 ('sitio_lat_nominal', 'sitio_lat_nominal_gms'),
@@ -658,6 +678,7 @@ class CandidatoAdmin(admin.ModelAdmin):
         return f"{obj.sitio.empresa}"
 
     sitio_empresa.short_description = 'Empresa'
+    sitio_empresa.admin_order_field = 'sitio__empresa'
 
     def usuario_nombre(self, obj):
         llegada = self.get_llegada(obj)
@@ -667,7 +688,7 @@ class CandidatoAdmin(admin.ModelAdmin):
             return "Sin nombre"
 
     usuario_nombre.short_description = 'Buscador'
-
+    usuario_nombre.admin_order_field = 'sitio__usuario'
 
     def usuario_user(self, obj):
         return self.get_llegada(obj).usuario.username if self.get_llegada(obj) else "Sin nombre"
