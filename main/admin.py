@@ -179,7 +179,10 @@ class SitioAdmin(ImportExportModelAdmin):
         'img_thumbnail'
     )
     
-    list_filter = ('empresa', 'usuario')
+    def get_list_filter(self, request):
+        if request.user.is_superuser:
+            return ('empresa', 'usuario')
+        return ()  # No filters for non-superusers
     
     
     def get_readonly_fields(self, request, obj=None):
