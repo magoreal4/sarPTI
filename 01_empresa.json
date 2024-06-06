@@ -1,14 +1,6 @@
 [
 {
   "model": "main.empresa",
-  "pk": 3,
-  "fields": {
-    "pais": "Costa Rica",
-    "nombre": "PTI"
-  }
-},
-{
-  "model": "main.empresa",
   "pk": 4,
   "fields": {
     "pais": "Chile",
@@ -33,15 +25,15 @@
 },
 {
   "model": "main.empresa",
-  "pk": 7,
+  "pk": 9,
   "fields": {
     "pais": "Chile",
-    "nombre": "PTI"
+    "nombre": "OSC"
   }
 },
 {
   "model": "main.empresa",
-  "pk": 8,
+  "pk": 11,
   "fields": {
     "pais": "Chile",
     "nombre": "PRUEBA"

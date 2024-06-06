@@ -1,98 +1,53 @@
 [
 {
   "model": "registrosgab.registroinicio",
-  "pk": "CL-VAL-5076_1",
+  "pk": "09-158_2",
   "fields": {
-    "candidato_letra": "s",
-    "radio_busqueda": 6,
-    "tipo_solucion": "ddd",
-    "zona": "u",
-    "ASNM": 3,
-    "contactos_ingreso": "dddd",
-    "ruta_acceso": "ddd",
-    "ruta_huella": "sss",
-    "inf_adicional": "sss"
+    "candidato_letra": "A",
+    "radio_busqueda": 0,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 319,
+    "contactos_ingreso": "Carabineros indica que, ellos no están autorizados a ir, a excepción de casos específicos y se ingresa con personal del Grupo de Operaciones Policiales Especiales (GOPE).",
+    "ruta_acceso": "Para ingresar al polígono se debe contar con un intermediario de la Comunidad o hacer las solicitudes para ser escoltado por el GOPE.\r\n\r\n- Para hacer ingreso al sector de conflicto Subtel debe elevar la solicitud a la Delegación Provincial o directamente a la Comisaría de Carabineros, el requerimiento será evaluarlo con el jefe de la defensa de esta zona de Excepción Constitucional de Emergencia.\r\n\r\n- Cave señalar que, el ingreso aunque sea con personal del GOPE no se puede asegurar estar libre de incidentes o de la completa seguridad del personal en terreno. Carabineros nos entrego opciones para ir a ver factibilidad, ambas opciones fueron descartadas por propietario.",
+    "ruta_huella": "No se pudo acceder",
+    "inf_adicional": "Se levantaron dos lugares proporcionados por carabineros y propietarios no desearon proyectar antenas"
   }
 },
 {
-  "model": "registrosgab.informaciongeneral",
-  "pk": "CL-VAL-5076_1",
+  "model": "registrosgab.imagenes",
+  "pk": 1,
   "fields": {
-    "fecha_visita": "2024-05-09T00:00:00Z",
-    "propietario": "sdgsdsfsd",
-    "propietario_telf": "adfsfaf",
-    "propietario_direccion": "sdd",
-    "propietario_email": "gggg@fgfg.cl",
-    "estado_civil": "gggg"
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/20240604_143355.jpg",
+    "descripcion": "sin acceso"
   }
 },
 {
-  "model": "registrosgab.informacionpropiedad",
-  "pk": "CL-VAL-5076_1",
-  "fields": {
-    "propiedad_hipoteca": true,
-    "estado_impuestos": true,
-    "apreciaciones": "el termino es contribuciones los impuestos municipales no se consideran",
-    "estado_documentacion": "p",
-    "comentarios": "el estatus a elegir no considera la realidad de campo... no se puede determinar si esta completa o incompleta a por parte del propietario, se debería revisar esa clasificación..."
-  }
-},
-{
-  "model": "registrosgab.croquis",
-  "pk": "CL-VAL-5076_1",
-  "fields": {
-    "croquis": "",
-    "descripcion": ""
-  }
-},
-{
-  "model": "registrosgab.inftecpropiedad",
-  "pk": "CL-VAL-5076_1",
-  "fields": {
-    "dim_frente": "sd",
-    "dim_largo": "ddf",
-    "dim_ampliar": "vcv",
-    "area": "cv",
-    "forma_terreno": "cvv",
-    "topografia_terreno": null,
-    "uso_terreno": null,
-    "desc_acceso_sitio": "",
-    "material_terreno": null,
-    "dim_acceso": null,
-    "acceso_sitio": null,
-    "cond_acceso_equipo": "",
-    "desc_const_aledanas": "",
-    "desc_const_importantes": "",
-    "riesgo_inundaciones": false,
-    "consideraciones_ambientales": "",
-    "obras_civiles_especiales": "",
-    "demoliciones": false,
-    "mov_tierras": false,
-    "muros_contencion": false,
-    "tala_arboles": false,
-    "acceso_independiente": false,
-    "cons_camino": null,
-    "camino_acceso": false,
-    "comentarios": "",
-    "disponibilidad_agua": true,
-    "proveedor_electrico": null,
-    "no_medidor": null,
-    "dist_medidor_sitio": null,
-    "canalizacion_subterranea": null,
-    "ubicacion_tendido_electrico": null,
-    "const_tendido_electrico": null,
-    "transformador_capacidad": null,
-    "transformador_distancia": null,
-    "energia_provisoria": ""
-  }
-},
-{
-  "model": "registrosgab.documentos",
+  "model": "registrosgab.imagenes",
   "pk": 2,
   "fields": {
-    "registro_inicio": "CL-VAL-5076_1",
-    "documento": "",
-    "descripcion": null
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/20240604_154806.jpg",
+    "descripcion": "sin acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 3,
+  "fields": {
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/20240604_154811.jpg",
+    "descripcion": "sin acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 4,
+  "fields": {
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/Screenshot_20240604_142829_Map_Coordinates.jpg",
+    "descripcion": "sin acceso"
   }
 }
 ]

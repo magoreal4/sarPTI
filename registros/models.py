@@ -503,7 +503,7 @@ class RegistioElectrico(models.Model):
     electrico_lat = models.FloatField("Latitud Poste")
     electrico_lon = models.FloatField("Longitud Poste")
     electrico_no_poste = models.CharField("Identificacion Poste", max_length=10, blank=True, null=True)
-    electrico_comentario = models.TextField("Comentario")
+    electrico_comentario = models.TextField("Comentario", blank=True, null=True)
     electrico_imagen1 = models.ImageField("Imagen Poste", upload_to='sitios/')
     electrico_imagen2 = models.ImageField("Imagen Electrico", upload_to='sitios/', blank=True, null=True)
 
