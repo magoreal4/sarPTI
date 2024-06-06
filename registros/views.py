@@ -1,3 +1,5 @@
+import logging
+import bugsnag
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
@@ -14,9 +16,8 @@ from .serializers import (
     RegistroSitioSerializer,
     RegistroSitioImagenesSerializer,
     RegistioElectricoSerializer
-    )
+)
 from main.models import UserProfile, Sitio
-
 
 from .models import (
     RegistroLlegada,
@@ -26,10 +27,11 @@ from .models import (
     RegistroSitio,
     RegistroSitioImagenes,
     RegistioElectrico
-    )
+)
 
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+
 
 class LoginAPIView(APIView):
     permission_classes = [AllowAny]
@@ -59,12 +61,14 @@ class LoginAPIView(APIView):
             }
             return Response({"success": True, "data": data, "message": mensaje}, status=status.HTTP_200_OK)
         else:
-            return Response({"success": False, "error": {"message": "Credenciales inválidas."}}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"success": False, "error": {"message": "Credenciales inválidas."}},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class SitioListView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+
     def get(self, request, empresa_id):
         user = request.user
         sitios = Sitio.objects.filter(empresa_id=empresa_id, usuario=user)
@@ -88,6 +92,7 @@ class RegistroLlegadaList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class RegistroLocalidadList(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
@@ -103,6 +108,7 @@ class RegistroLocalidadList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class RegistroPropietarioList(APIView):
     authentication_classes = [TokenAuthentication]
@@ -120,10 +126,11 @@ class RegistroPropietarioList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class RegistroPropiedadList(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
-    
+
     def get(self, request, format=None):
         registros = RegistroPropiedad.objects.all()
         serializer = RegistroPropiedadSerializer(registros, many=True)
@@ -139,27 +146,38 @@ class RegistroPropiedadList(APIView):
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 class RegistroSitioList(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
         registros = RegistroSitio.objects.all()
         serializer = RegistroSitioSerializer(registros, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = RegistroSitioSerializer(data=request.data)
-        if serializer.is_valid():
-            try:
+        try:
+            serializer = RegistroSitioSerializer(data=request.data)
+            if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
-            except ValueError as e:
-                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+            if serializer.errors:
+                logging.error(serializer.errors, exc_info=True)
+                logging.error(request.data, exc_info=True)
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logging.error(e, exc_info=True)
+            logging.error(request.data, exc_info=True)
+            return Response({'error': 'Error al guardar el registro'}, status=status.HTTP_400_BAD_REQUEST)
+
 
 class RegistroSitioImagenesList(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
         registros = RegistroSitioImagenes.objects.all()
         serializer = RegistroSitioImagenesSerializer(registros, many=True)
@@ -170,11 +188,16 @@ class RegistroSitioImagenesList(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        bugsnag.notify(serializer.errors)
+        logging.error(serializer.errors, exc_info=True)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class RegistioElectricoList(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+
     def get(self, request, format=None):
         registros = RegistioElectrico.objects.all()
         serializer = RegistioElectricoSerializer(registros, many=True)
@@ -187,5 +210,7 @@ class RegistioElectricoList(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             except ValueError as e:
+                bugsnag.notify(e)
+                logging.error(e, exc_info=True)
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
