@@ -162,7 +162,6 @@ class SitioAdmin(ImportExportModelAdmin):
                     'contador_llegadas',
                     # 'img_thumbnail'
                     )
-    # list_editable = 
     readonly_fields = ('img_thumbnail', )
     fields = (
         'PTICellID',
@@ -179,6 +178,8 @@ class SitioAdmin(ImportExportModelAdmin):
         'contador_llegadas',
         'img_thumbnail'
     )
+    
+    list_filter = ('empresa', 'usuario')
     
     
     def get_readonly_fields(self, request, obj=None):
