@@ -264,7 +264,7 @@ class RegistroPropietario(models.Model):
         verbose_name="Registro",
     )
     # Version 1.2
-    propietario_tipo_persona = models.CharField("Tipo de Persona", choices=TIPO_PERSONA, max_length=8)
+    propietario_tipo_persona = models.CharField("Tipo de Persona", choices=TIPO_PERSONA, max_length=8, default='natural' )
     
     propietario_nombre_apellido = models.CharField('Nombre y Apellido', max_length=100)
     propietario_born = models.DateTimeField("Fecha de Nacimiento")
