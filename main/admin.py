@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
 from solo.admin import SingletonModelAdmin
-from configapp.models import SiteConfiguration, PolicyDocument, TermsConditions
+from configapp.models import SiteConfiguration, PolicyDocument, TermsConditions, ApkFile
 from django.forms import PasswordInput
 from django.utils.html import format_html
 from django.contrib.admin import AdminSite
@@ -242,12 +242,23 @@ class SiteConfigurationAdmin(SingletonModelAdmin):
 admin.site.register(SiteConfiguration, SiteConfigurationAdmin)
 
 
-from configapp.models import PolicyDocument
-
 
 class MarkdownxModelAdmin(MarkdownxModelAdmin, SingletonModelAdmin):
     pass
 admin.site.register(PolicyDocument, MarkdownxModelAdmin)
 admin.site.register(TermsConditions, MarkdownxModelAdmin)
+
+
+class FileAdmin(admin.ModelAdmin):
+    list_display = ('name', 'file_link')
+
+    def file_link(self, obj):
+        if obj.file:
+            return format_html("<a href='{url}'>Download</a>", url=obj.file.url)
+        return "-"
+    file_link.short_description = 'File Link'
+
+admin.site.register(ApkFile, FileAdmin)
+
 
 

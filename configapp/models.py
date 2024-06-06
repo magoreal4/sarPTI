@@ -90,3 +90,9 @@ class SiteConfiguration(SingletonModel):
     class Meta:
         verbose_name = "Configuración"
     
+class ApkFile(models.Model):
+    name = models.CharField(max_length=25)
+    file = models.FileField(upload_to='apks/')
+    
+    def __str__(self):
+        return self.name
