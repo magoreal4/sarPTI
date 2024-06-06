@@ -459,7 +459,7 @@ class RegistroSitioImagenes(models.Model):
     )
 
     pic = models.FileField(upload_to='sitios/fotos/')
-    descripcion = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=100, blank=True, null=True, default="---") 
     
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
