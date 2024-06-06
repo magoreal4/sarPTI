@@ -184,14 +184,19 @@ class RegistroSitioImagenesList(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = RegistroSitioImagenesSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-        bugsnag.notify(serializer.errors)
-        logging.error(serializer.errors, exc_info=True)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            serializer = RegistroSitioImagenesSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            if serializer.errors:
+                logging.error(serializer.errors, exc_info=True)
+                logging.error(request.data, exc_info=True)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logging.error(e, exc_info=True)
+            logging.error(request.data, exc_info=True)
+            return Response({'error': 'Error al guardar el registro'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class RegistioElectricoList(APIView):
@@ -204,13 +209,15 @@ class RegistioElectricoList(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = RegistioElectricoSerializer(data=request.data)
-        if serializer.is_valid():
-            try:
+        try:
+            serializer = RegistioElectricoSerializer(data=request.data)
+            if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
-            except ValueError as e:
-                bugsnag.notify(e)
-                logging.error(e, exc_info=True)
-                return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            if serializer.errors:
+                logging.error(serializer.errors, exc_info=True)
+                logging.error(request.data, exc_info=True)
+        except Exception as e:
+            logging.error(e, exc_info=True)
+            logging.error(request.data, exc_info=True)
+            return Response({'error': 'Error al guardar el registro'}, status=status.HTTP_400_BAD_REQUEST)
