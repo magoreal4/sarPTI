@@ -1,7 +1,8 @@
 from django.db import models
 from registros.models import RegistroLlegada, RegistroPropietario
-from registros.models import RegistroSitio 
+# from registros.models import RegistroSitio 
 from django.utils.html import format_html
+from django.contrib.auth.models import User
 
 ZONA_CHOICES = (
     ('u', 'Urbana'),
@@ -9,6 +10,7 @@ ZONA_CHOICES = (
 )
 
 class RegistroInicio(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     candidato_registro = models.OneToOneField(
         'registros.RegistroLlegada', 
         primary_key=True,

@@ -523,19 +523,16 @@ class RegistioElectricoAdmin(admin.ModelAdmin):
 admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
 
 
-
-from django.utils.translation import gettext_lazy as _
-
 class EmpresaFilter(admin.SimpleListFilter):
-    title = _('empresa')
+    title = 'empresa'
     parameter_name = 'empresa'
 
     def lookups(self, request, model_admin):
-        # Aquí puedes definir las opciones que se mostrarán en el filtro
-        # Esto es solo un ejemplo
-        empresas = set([c.sitio.empresa for c in model_admin.model.objects.all()])
-        return [(emp.id, emp.nombre) for emp in empresas]
-
+        if request.user.is_superuser:
+            empresas = set([c.sitio.empresa for c in model_admin.model.objects.all()])
+            return [(emp.id, emp.nombre) for emp in empresas]
+        return []
+    
     def queryset(self, request, queryset):
         if self.value():
             return queryset.filter(sitio__empresa__id=self.value())
@@ -545,7 +542,12 @@ class EmpresaFilter(admin.SimpleListFilter):
 # REGISTRO CAMPO
 class CandidatoAdmin(admin.ModelAdmin):
     user_model = None
-    list_display = ('candidato', 'sitio_nombre', 'usuario_nombre', 'sitio_empresa',  'formatted_fecha_creacion')
+    list_display = ('candidato', 
+                    'sitio_nombre', 
+                    'usuario_nombre', 
+                    'sitio_empresa',  
+                    'formatted_fecha_creacion'
+                    )
     list_filter = (EmpresaFilter,'sitio')
     inlines = [
         RegistroLlegadaInline,
