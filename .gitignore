@@ -314,8 +314,9 @@ db/
 staticfiles/
 
 
-# Ignore Django migrations:
-*/migrations/*.py
+# Ignorar archivos de migraciones de Django excepto __init__.py
+*/migrations/*
 !*/migrations/__init__.py
-sent_emails/
+
+
 static/apk/*
