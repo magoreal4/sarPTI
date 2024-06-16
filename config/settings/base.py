@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'bugsnag.django.middleware.BugsnagMiddleware',
+    # 'bugsnag.django.middleware.BugsnagMiddleware',
     ]
 
 # SITE_ID = 1
@@ -144,7 +144,7 @@ LOGIN_REDIRECT_URL = 'main:home'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
-BUGSNAG = {
-    'api_key': '71bd4c7003c02f91bf02a7bd08bbb888',
-    'project_root': os.path.abspath(os.path.dirname(__file__)),
-}
+# BUGSNAG = {
+#     'api_key': '71bd4c7003c02f91bf02a7bd08bbb888',
+#     'project_root': os.path.abspath(os.path.dirname(__file__)),
+# }

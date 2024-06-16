@@ -11,7 +11,7 @@ from .models import (
     InfTecPropiedad,
     Documentos,
     )
-from main.models import UserProfile
+
 
 
 
@@ -188,7 +188,14 @@ class InfTecPropiedadInline(admin.StackedInline):
     )
     
 
-
+# class DocumentosAdmin(admin.ModelAdmin):
+#     list_display = ['registro_inicio', 'imagen_documento', 'descripcion']
+#     def imagen_documento(self, obj):
+#         if obj.documento:  # Reemplaza 'imagen' con el nombre real de tu campo de imagen en el modelo FormularioPreIng
+#             return format_html('<img src="{}" width="120" height=""/>', obj.documento.url)
+#         return "No hay imagen"
+#     imagen_documento.short_description = 'Croquis'
+# admin.site.register(Documentos,DocumentosAdmin)
 
 class DocumentosAdmin(admin.ModelAdmin):
     list_display = ('registro_inicio',
@@ -231,46 +238,14 @@ class DocumentosInline(admin.StackedInline):
 
 
 
-
-class UserFullNameFilter(admin.SimpleListFilter):
-    title = 'nombre'  # Nombre que aparece en el sitio de admin
-    parameter_name = 'user_full_name'  # Parámetro utilizado en la URL
-
-    def lookups(self, request, model_admin):
-        if request.user.is_superuser:  # Filtro visible solo para superusuarios
-            users = set([u.user for u in UserProfile.objects.all()])
-            return [(u.id, u.get_full_name()) for u in users if u is not None]
-        return []
-
-    def queryset(self, request, queryset):
-        if self.value():
-            return queryset.filter(usuario__id__exact=self.value())
-        return queryset
-
-class UserCompanyFilter(admin.SimpleListFilter):
-    title = 'empresa'
-    parameter_name = 'user_company'
-
-    def lookups(self, request, model_admin):
-        if request.user.is_superuser:  # Filtro visible solo para superusuarios
-            empresas = set([up.empresa for up in UserProfile.objects.all() if up.empresa is not None])
-            return [(e.id, e.nombre) for e in empresas]
-        return []
-
-    def queryset(self, request, queryset):
-        if self.value():
-            return queryset.filter(usuario__userprofile__empresa__id__exact=self.value())
-        return queryset
-
 class RegistroInicioAdmin(admin.ModelAdmin):
     form = RegistroInicioForm
     list_display = (
-        'candidato_registro', 
-        'candidato_letra', 
-        'usuario_nombre', 
+        'candidato_registro',
+        'candidato_letra',
+        'usuario_nombre',
         'usuario_empresa', )
-    readonly_fields = ('sitio_ID', 'usuario_nombre', 'usuario_empresa' )
-    list_filter = (UserCompanyFilter, UserFullNameFilter )
+    
     inlines = [
         ImagenesInline,
         InformacionGeneralInline,
@@ -279,23 +254,23 @@ class RegistroInicioAdmin(admin.ModelAdmin):
         InfTecPropiedadInline,
         DocumentosInline
     ]
-
+    
     def save_model(self, request, obj, form, change):
         obj.usuario = request.user  # Asigna el usuario logueado
         super().save_model(request, obj, form, change)
-        
+
     def usuario_nombre(self, obj):
         if hasattr(obj.usuario, 'userprofile'):
             return obj.usuario.userprofile.get_full_name
         return obj.usuario.get_full_name() if obj.usuario else 'Guardar Formulario'
     usuario_nombre.short_description = 'Buscador'
     usuario_nombre.admin_order_field = 'usuario'
-    
+
     def usuario_empresa(self, obj):
         return obj.usuario.userprofile.empresa.nombre if hasattr(obj.usuario, 'userprofile') and obj.usuario.userprofile.empresa else 'Sin empresa'
     usuario_empresa.short_description = 'Empresa'
     usuario_empresa.admin_order_field = 'usuario__userprofile__empresa'
-    
+   
     def get_form(self, request, obj=None, **kwargs):
         Form = super(RegistroInicioAdmin, self).get_form(request, obj, **kwargs)
         class DynamicForm(Form):
@@ -303,17 +278,36 @@ class RegistroInicioAdmin(admin.ModelAdmin):
                 kwargs.update({'user_id': request.user.id})
                 return Form(*args, **kwargs)
         return DynamicForm
-    
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        # Permitir que superusuarios o usuarios con permisos especiales vean todos los registros
+        if request.user.is_superuser or request.user.has_perm('main.view_all_registros'):
+            return qs
+        # Asegurarse de que el usuario tiene un perfil de usuario y que este perfil tiene una empresa
+        if hasattr(request.user, 'userprofile') and request.user.userprofile.empresa:
+            # Verificar si la empresa del usuario es PTI
+            if request.user.userprofile.empresa.nombre == "PTI":
+                return qs
+            # Filtrar los registros por la empresa del usuario si no es PTI
+            return qs.filter(usuario__userprofile__empresa=request.user.userprofile.empresa)
+        # Si no hay empresa asociada al perfil, no mostrar registros
+        return qs.none()
+
+        
     class Media:
         js = ('js/admin_custom_reggab.js',)
         css = {
             'all': ['css/admin_custom_reggab.css'],
             }
 
+        
+    
+    readonly_fields = ('sitio_ID', )
     fieldsets = (
         ('Datos Generales', {
             'fields': (
-                ('sitio_ID', 'candidato_registro', 'usuario_nombre', 'usuario_empresa', ),
+                ('sitio_ID', 'candidato_registro', ),
                 ('candidato_letra', 'radio_busqueda', ),
                 ('tipo_solucion', 'zona', 'ASNM', ),
                 ('contactos_ingreso', 'ruta_acceso' ),

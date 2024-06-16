@@ -27,24 +27,24 @@ INTERNAL_IPS = [
 
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'base',
-#         'USER': 'magoreal',
-#         'PASSWORD': 'ojalaque',
-#         'HOST': '127.0.0.1',  # Asegúrate de que esto coincida con el nombre del servicio en docker-compose.yml
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'base',
+        'USER': 'postgres',
+        'PASSWORD': 'ojalaque',
+        'HOST': 'localhost',  # Asegúrate de que esto coincida con el nombre del servicio en docker-compose.yml
+        'PORT': '5432',
+    }
+}
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
