@@ -219,11 +219,7 @@ class SitioAdmin(ImportExportModelAdmin):
         # Si no hay empresa asociada o el perfil no está completo, no devuelve registros
         return qs.none()
 
-    def get_list_filter(self, request):
-        # Agregar filtro de empresa para superusuarios o usuarios de la empresa "PTI"
-        if request.user.is_superuser or (hasattr(request.user, 'userprofile') and request.user.userprofile.empresa and request.user.userprofile.empresa.nombre == "PTI"):
-            return ('usuario__userprofile__empresa',)
-        return ()  # No filters for other users
+
 
     def img_thumbnail(self, obj):
         if obj.img_google:

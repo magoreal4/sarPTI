@@ -236,7 +236,19 @@ class DocumentosInline(admin.StackedInline):
         return "No hay imagen"
     pic_with_description.short_description = "Imagen y Descripción"
 
+class EmpresaFilter(admin.SimpleListFilter):
+    title = 'empresa'  # o usa el nombre que prefieras para el título del filtro
+    parameter_name = 'empresa'
 
+    def lookups(self, request, model_admin):
+        # Aquí puedes ajustar la lógica para recuperar un conjunto de empresas que quieres mostrar
+        empresas = set([c.usuario.userprofile.empresa for c in model_admin.model.objects.all() if c.usuario and hasattr(c.usuario, 'userprofile') and c.usuario.userprofile.empresa])
+        return [(empresa.id, empresa.nombre) for empresa in empresas]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(usuario__userprofile__empresa__id=self.value())
+        return queryset
 
 class RegistroInicioAdmin(admin.ModelAdmin):
     form = RegistroInicioForm
@@ -245,7 +257,6 @@ class RegistroInicioAdmin(admin.ModelAdmin):
         'candidato_letra',
         'usuario_nombre',
         'usuario_empresa', )
-    
     inlines = [
         ImagenesInline,
         InformacionGeneralInline,
@@ -254,16 +265,12 @@ class RegistroInicioAdmin(admin.ModelAdmin):
         InfTecPropiedadInline,
         DocumentosInline
     ]
-    
+    list_filter = (EmpresaFilter,)
     def save_model(self, request, obj, form, change):
         obj.usuario = request.user  # Asigna el usuario logueado
         super().save_model(request, obj, form, change)
 
-    def get_list_filter(self, request):
-        # Agregar filtro de empresa para superusuarios o usuarios de la empresa "PTI"
-        if request.user.is_superuser or (hasattr(request.user, 'userprofile') and request.user.userprofile.empresa and request.user.userprofile.empresa.nombre == "PTI"):
-            return ('usuario__userprofile__empresa',)
-        return ()  # No filters for other users
+
     
     def usuario_nombre(self, obj):
         if hasattr(obj.usuario, 'userprofile'):
