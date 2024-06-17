@@ -13,8 +13,10 @@ class Empresa(models.Model):
         verbose_name_plural = "Empresas"
 
     def __str__(self):
+        # Comprueba si el campo 'pais' está vacío y devuelve solo el nombre si es así
+        if not self.pais:
+            return f"{self.nombre}"
         return f"{self.nombre} - {self.pais}"
-
 
 class Sitio(models.Model):
     PTICellID = models.CharField(

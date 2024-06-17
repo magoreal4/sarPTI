@@ -181,7 +181,7 @@ class SitioAdmin(ImportExportModelAdmin):
     )
     
     def get_list_filter(self, request):
-        if request.user.is_superuser:
+        if request.user.is_superuser or request.user.userprofile.empresa.nombre == "PTI":
             return ('empresa', 'usuario')
         return ()  # No filters for non-superusers
     
@@ -202,14 +202,28 @@ class SitioAdmin(ImportExportModelAdmin):
         return super(SitioAdmin, self).changelist_view(request, extra_context)
 
     
-    # Para que solo se vean lo usuarios que pertencen a la empresa
     def get_queryset(self, request):
         qs = super().get_queryset(request)
+        # Verifica si el usuario es superusuario o tiene permisos especiales
         if request.user.is_superuser or request.user.has_perm('main.view_empresa_sites'):
             return qs
-        if request.user.userprofile.empresa:
+
+        # Asegura que el usuario tenga un perfil y empresa asociados
+        if hasattr(request.user, 'userprofile') and request.user.userprofile.empresa:
+            # Si la empresa del usuario es 'PTI', devuelve todos los registros
+            if request.user.userprofile.empresa.nombre == "PTI":
+                return qs
+            # De lo contrario, filtra por la empresa del usuario
             return qs.filter(empresa=request.user.userprofile.empresa)
+
+        # Si no hay empresa asociada o el perfil no está completo, no devuelve registros
         return qs.none()
+
+    def get_list_filter(self, request):
+        # Agregar filtro de empresa para superusuarios o usuarios de la empresa "PTI"
+        if request.user.is_superuser or (hasattr(request.user, 'userprofile') and request.user.userprofile.empresa and request.user.userprofile.empresa.nombre == "PTI"):
+            return ('usuario__userprofile__empresa',)
+        return ()  # No filters for other users
 
     def img_thumbnail(self, obj):
         if obj.img_google:

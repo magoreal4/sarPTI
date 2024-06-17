@@ -259,6 +259,12 @@ class RegistroInicioAdmin(admin.ModelAdmin):
         obj.usuario = request.user  # Asigna el usuario logueado
         super().save_model(request, obj, form, change)
 
+    def get_list_filter(self, request):
+        # Agregar filtro de empresa para superusuarios o usuarios de la empresa "PTI"
+        if request.user.is_superuser or (hasattr(request.user, 'userprofile') and request.user.userprofile.empresa and request.user.userprofile.empresa.nombre == "PTI"):
+            return ('usuario__userprofile__empresa',)
+        return ()  # No filters for other users
+    
     def usuario_nombre(self, obj):
         if hasattr(obj.usuario, 'userprofile'):
             return obj.usuario.userprofile.get_full_name
