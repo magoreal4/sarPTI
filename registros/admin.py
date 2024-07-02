@@ -373,7 +373,7 @@ class RegistroSitioAdmin(admin.ModelAdmin):
                     'sitio_fecha_chile',
                     'sitio_descripcion',
                     )
-    exclude = ('sitio',)
+    # exclude = ('sitio',)
     # list_editable = ('sitio_descripcion', )
     readonly_fields = ('sitio_fecha_chile', 'image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
     # fields = ('candidato',
@@ -526,29 +526,33 @@ class RegistioElectricoAdmin(admin.ModelAdmin):
 admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
 
 
-
-from django.utils.translation import gettext_lazy as _
-
 class EmpresaFilter(admin.SimpleListFilter):
-    title = _('empresa')
+    title = 'empresa'
     parameter_name = 'empresa'
 
     def lookups(self, request, model_admin):
-        # Aquí puedes definir las opciones que se mostrarán en el filtro
-        # Esto es solo un ejemplo
-        empresas = set([c.sitio.empresa for c in model_admin.model.objects.all()])
-        return [(emp.id, emp.nombre) for emp in empresas]
+        # Permiso para superusuario y usuarios de la empresa PTI para ver todos los filtros de empresa
+        if request.user.is_superuser or (hasattr(request.user, 'userprofile') and request.user.userprofile.empresa.nombre == "PTI"):
+            empresas = set([c.sitio.empresa for c in model_admin.model.objects.all() if c.sitio and c.sitio.empresa])
+            return [(emp.id, emp.nombre) for emp in empresas if emp]
+        return []
 
     def queryset(self, request, queryset):
         if self.value():
             return queryset.filter(sitio__empresa__id=self.value())
         return queryset
+
     
     
 # REGISTRO CAMPO
 class CandidatoAdmin(admin.ModelAdmin):
     user_model = None
-    list_display = ('candidato', 'sitio_nombre', 'usuario_nombre', 'sitio_empresa',  'formatted_fecha_creacion')
+    list_display = ('candidato', 
+                    'sitio_nombre', 
+                    'usuario_nombre', 
+                    'sitio_empresa',  
+                    'formatted_fecha_creacion'
+                    )
     list_filter = (EmpresaFilter,'sitio')
     inlines = [
         RegistroLlegadaInline,
@@ -589,6 +593,23 @@ class CandidatoAdmin(admin.ModelAdmin):
                 return f"{empresa_nombre} - {empresa_pais}"
         return "No disponible"
     candidato_empresa.short_description = 'Empresa - País'
+    
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        # Verifica si el usuario es superusuario o tiene permisos especiales
+        if request.user.is_superuser or request.user.has_perm('main.view_empresa_sites'):
+            return qs
+
+        # Asegura que el usuario tenga un perfil y empresa asociados
+        if hasattr(request.user, 'userprofile') and request.user.userprofile.empresa:
+            # Si la empresa del usuario es 'PTI', devuelve todos los registros
+            if request.user.userprofile.empresa.nombre == "PTI":
+                return qs
+            # De lo contrario, filtra por la empresa del usuario
+            return qs.filter(sitio__empresa=request.user.userprofile.empresa)
+
+        # Si no hay empresa asociada o el perfil no está completo, no devuelve registros
+        return qs.none()
 
     # DATOS PROYECTO
     readonly_fields = (
