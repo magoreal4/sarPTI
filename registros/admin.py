@@ -222,17 +222,20 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
                     'propietario_nombre_apellido',
                     'propietario_telf',
                     )
-    # fields = ("__all__",)
-        # 'sitio',
-        # 'candidato',
-        # 'propietario_nombre_apellido',
-        # 'propietario_born',
-        # 'propietario_estado_civil',
-        # 'propietario_ci',
-        # 'propietario_telf',
-        # 'propietario_direccion',
-        # )
-
+    list_editable = ('propietario_telf',)
+    readonly_fields = ('propietario_tipo_persona',
+                       'propietario_nombre_apellido',
+                       'propietario_born',
+                       'propietario_ci',
+                    #    'propietario_telf',
+                       'propietario_direccion',
+                       'propietario_estado_civil',
+                       'propietario_email',
+                       'contacto_nombre',
+                       'contacto_tel',
+                       'contacto_email',
+                       'contacto_relacion'
+                    )
 admin.site.register(RegistroPropietario, RegistroPropietarioAdmin)
 
 
