@@ -185,6 +185,7 @@ class RegistroPropietariodInline(admin.StackedInline):
                         'contacto_tel', 'contacto_email',
                         'propietario_tipo_persona'
                        )
+    list_editable = ('propietario_telf',)
     fieldsets = (
         ('Datos del propietario', {
             'description': 'Información general del propietario',
@@ -222,6 +223,21 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
                     'propietario_nombre_apellido',
                     'propietario_telf',
                     )
+    list_editable = ('propietario_telf',)
+    readonly_fields = ('propietario_tipo_persona',
+                       'propietario_nombre_apellido',
+                       'propietario_born',
+                       'propietario_ci',
+                    #    'propietario_telf',
+                       'propietario_direccion',
+                       'propietario_estado_civil',
+                       'propietario_email',
+                       'contacto_nombre',
+                       'contacto_tel',
+                       'contacto_email',
+                       'contacto_relacion'
+                    )
+
     # fields = ("__all__",)
         # 'sitio',
         # 'candidato',
