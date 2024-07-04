@@ -1,0 +1,42 @@
+[
+{
+  "model": "main.empresa",
+  "pk": 4,
+  "fields": {
+    "pais": "Chile",
+    "nombre": "Newenche"
+  }
+},
+{
+  "model": "main.empresa",
+  "pk": 5,
+  "fields": {
+    "pais": "Chile",
+    "nombre": "SERLET"
+  }
+},
+{
+  "model": "main.empresa",
+  "pk": 6,
+  "fields": {
+    "pais": "Chile",
+    "nombre": "GH3"
+  }
+},
+{
+  "model": "main.empresa",
+  "pk": 9,
+  "fields": {
+    "pais": "Chile",
+    "nombre": "OSC"
+  }
+},
+{
+  "model": "main.empresa",
+  "pk": 11,
+  "fields": {
+    "pais": "Chile",
+    "nombre": "PRUEBA"
+  }
+}
+]

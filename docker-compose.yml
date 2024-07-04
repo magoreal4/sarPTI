@@ -1,0 +1,24 @@
+services:
+
+  sar-django:
+    container_name: sar-django
+    build: .
+    restart: always
+    ports:
+    - 8899:8000
+    volumes:
+    - ./:/app
+    depends_on:
+      - sar-db
+
+  sar-db:
+    image: postgres:14.3-alpine3.16
+    container_name: sar-db
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_DB=base
+      - POSTGRES_USER=magoreal
+      - POSTGRES_PASSWORD=ojalaque
+    volumes:
+      - ./db:/var/lib/postgresql/data
