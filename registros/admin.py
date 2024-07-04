@@ -544,7 +544,7 @@ class EmpresaFilter(admin.SimpleListFilter):
             return queryset.filter(sitio__empresa__id=self.value())
         return queryset
     
-    
+from django.core.exceptions import PermissionDenied   
 # REGISTRO CAMPO
 class CandidatoAdmin(admin.ModelAdmin):
     user_model = None
@@ -571,7 +571,15 @@ class CandidatoAdmin(admin.ModelAdmin):
             'all': ['css/admin_custom_reg.css'],
             }
 
-
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        empresa_usuario = request.user.userprofile.empresa
+        if empresa_usuario == "PTI" or request.user.is_superuser:
+            return qs
+            # Suponiendo que 'Candidato' tiene un campo 'sitio' que está vinculado a 'Sitio'
+        qs = qs.filter(sitio__usuario__userprofile__empresa=empresa_usuario)
+        return qs
+        
 
     # CANDIDATO
     def formatted_fecha_creacion(self, obj):
