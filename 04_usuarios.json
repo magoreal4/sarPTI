@@ -1,0 +1,920 @@
+[
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$35ewhI3UlHEFTWyD3VwOO4$u0v3aPLBRyoM2Ov6T84lwLmkpZcIbcKgv+BYo1r8dto=",
+    "last_login": "2024-06-12T03:41:02.894Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Admin",
+    "last_name": "Admin",
+    "email": "admin@btspti.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-01T21:17:46Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$FySBo2mXNbuUoErySr9lzy$VBtWlokKS92+56U7r8Bougje7ZsWi2gwfrYJuBSrEP0=",
+    "last_login": "2024-06-11T16:11:55.557Z",
+    "is_superuser": true,
+    "username": "llizama",
+    "first_name": "Luis",
+    "last_name": "Lizama",
+    "email": "llizama@phoenixintnl.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-13T16:39:11Z",
+    "groups": [
+      1,
+      2
+    ],
+    "user_permissions": [
+      5,
+      6,
+      7,
+      8,
+      1,
+      2,
+      3,
+      4,
+      13,
+      14,
+      15,
+      16,
+      9,
+      10,
+      11,
+      12,
+      17,
+      18,
+      19,
+      20,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      21,
+      22,
+      23,
+      24,
+      97,
+      98,
+      99,
+      100,
+      29,
+      30,
+      31,
+      32,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      73,
+      74,
+      75,
+      76,
+      41,
+      42,
+      43,
+      44,
+      69,
+      70,
+      71,
+      72,
+      65,
+      66,
+      67,
+      68,
+      61,
+      62,
+      63,
+      64,
+      57,
+      58,
+      59,
+      60,
+      53,
+      54,
+      55,
+      56,
+      49,
+      50,
+      51,
+      52,
+      45,
+      46,
+      47,
+      48,
+      113,
+      114,
+      115,
+      116,
+      133,
+      134,
+      135,
+      136,
+      129,
+      130,
+      131,
+      132,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      109,
+      110,
+      111,
+      112,
+      25,
+      26,
+      27,
+      28,
+      137,
+      138,
+      139,
+      140
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$iULHCVhP26QWisr8QGKL8M$MPxVuim0BlaT2yWyeE1CPBtWlKonaSRZcib4+fkbx4M=",
+    "last_login": "2024-06-05T17:13:28Z",
+    "is_superuser": false,
+    "username": "jfuentes",
+    "first_name": "Javier",
+    "last_name": "Fuentes",
+    "email": "javier.fuentes@newenche.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-17T18:20:28Z",
+    "groups": [
+      2,
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 17,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$aEDllfNqvgVzxmbNmNq3WC$zsmKLUqaHwun4Ve4d9rYXAPlr3nHqY4RYurPvgttLa0=",
+    "last_login": "2024-06-04T20:10:51.042Z",
+    "is_superuser": false,
+    "username": "sletelier",
+    "first_name": "Sergio",
+    "last_name": "Letelier",
+    "email": "sletelier@serlet.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-20T15:08:22Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$JX2zhCZ7XTXcd0kSlLMYE1$IVWxBcasysZh6NShgM6dxLkqnKJLZJfOgFZGawU7jMM=",
+    "last_login": "2024-06-12T14:16:02.469Z",
+    "is_superuser": false,
+    "username": "gneira",
+    "first_name": "Gonzalo",
+    "last_name": "Neira",
+    "email": "gneira@gh3.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-21T12:20:20Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 28,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$b3nvexhDjQge84xfkCDayo$hO6Yd1SvpcVHeSE2CPqzLngPm9cEtlUcwEhZ0KEe+L8=",
+    "last_login": "2024-06-10T16:09:50.073Z",
+    "is_superuser": false,
+    "username": "rarias",
+    "first_name": "Rodrigo",
+    "last_name": "Arias Nilo",
+    "email": "r.ariasnilo@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-08-01T16:26:15Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 29,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$AcxrOW5M792fzhtxHvLdRV$GVJrzEZj1iI3ZCDrLqrembr/mStOf+gBewY1q2zAsLo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "csepulveda",
+    "first_name": "Claudio",
+    "last_name": "Sepulveda",
+    "email": "cs.topografia2000@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:27:05Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 30,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$UCqNApGN9fBRuZ1xWHU1yC$j8mE8sOo4FROsjvp9FHvjnN+ysIkxdZX6aoaaA9qDrI=",
+    "last_login": "2024-06-12T13:52:22.422Z",
+    "is_superuser": false,
+    "username": "jmsoto",
+    "first_name": "Juan Manuel",
+    "last_name": "Soto",
+    "email": "jmsoto@gh3.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:36:27Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": [
+      33,
+      34,
+      35,
+      36,
+      73,
+      74,
+      75,
+      76,
+      41,
+      42,
+      43,
+      44,
+      69,
+      70,
+      71,
+      72,
+      65,
+      66,
+      67,
+      68,
+      61,
+      62,
+      63,
+      64,
+      57,
+      58,
+      59,
+      60,
+      53,
+      54,
+      55,
+      56,
+      113,
+      114,
+      115,
+      116,
+      133,
+      134,
+      135,
+      136,
+      129,
+      130,
+      131,
+      132,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      109,
+      110,
+      111,
+      112
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 31,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$yV1ll9hUh98hBjwqPe7OWs$zcKhdpSVX4OS6pbuc7V/swIbiqhSnv3svvUxk97YVXw=",
+    "last_login": "2024-06-12T12:41:13.344Z",
+    "is_superuser": false,
+    "username": "csantander",
+    "first_name": "Carlos",
+    "last_name": "Santander",
+    "email": "csantander@gh3.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:40:50Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 32,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$86kxVWAMHsimxyAQbF93Lm$fjCbAMRHLg72QjrPej7qUSEb5nXTKKx7JzvbzU5Lll4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "caravena",
+    "first_name": "Cristian",
+    "last_name": "Aravena",
+    "email": "caravena@gh3.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:42:08Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 33,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$H0IAXmIU3hn8Ib95SYQKyz$nbnMsk4BhsUtB3ZROc6V/tAJc8ynhuNNASOKWwsRplY=",
+    "last_login": "2024-06-11T21:14:59.237Z",
+    "is_superuser": false,
+    "username": "wrivera",
+    "first_name": "Wilson",
+    "last_name": "Rivera",
+    "email": "wrivera@gh3.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:43:22Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 34,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$TQJ454oRyR33PMZS0aR0g9$ltLpmgNYxJrqGgBoLaS0D8v6KARG7HSEilWyjQA+y5A=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "cbustamante",
+    "first_name": "Cristobal",
+    "last_name": "Bustamante",
+    "email": "cbustamante@gh3.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:44:23Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 35,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$vw1bMY9CVGLVnkZyXiFDi7$yZZ9OjV/LvOjXCeowjD0QTxQ4jgChzfqEFvyhYVwbJg=",
+    "last_login": "2024-06-06T20:29:22.417Z",
+    "is_superuser": false,
+    "username": "vbarahona",
+    "first_name": "Venecia",
+    "last_name": "Barahona",
+    "email": "vbarahona@serlet.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:46:27Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 36,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$EgSzxPhpHbdeVaZOb5NxaJ$UhotLI2O7JgygGeCsuoz4etDpM8rcVm3HLpJ2izdnDU=",
+    "last_login": "2024-05-30T19:38:50.926Z",
+    "is_superuser": false,
+    "username": "jmichel",
+    "first_name": "Jesus",
+    "last_name": "Michel",
+    "email": "jmichel@serlet.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:47:46Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 37,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$ILlV8LdXTtHbnx7LP8ovvD$wCgS9H88ikLkOtsYCYUNUzHlPY8LgB8NWVfwLqujWy8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ppavelic",
+    "first_name": "Pablo",
+    "last_name": "Pavelic",
+    "email": "ppavelic@serlet.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:48:54Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 38,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$tZQhQVJc66YeSXKNoh7Idy$o4dw7cf10la/YAbwbvfow1n6f9Az+tiTfKRvn12Dgqc=",
+    "last_login": "2024-05-30T19:16:55.374Z",
+    "is_superuser": false,
+    "username": "ldiaz",
+    "first_name": "Luis",
+    "last_name": "Diaz",
+    "email": "ldiaz@serlet.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:49:50Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 39,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$JGRK5w21bfOsDOyia7c6Xw$yMYHXrjSAYM+JU3H1QhV1GkFW5GQhylv+wticBu092M=",
+    "last_login": "2024-05-30T21:30:15.957Z",
+    "is_superuser": false,
+    "username": "mperez",
+    "first_name": "Mario",
+    "last_name": "Perez",
+    "email": "mperez@serlet.cl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-29T16:50:46Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 40,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$UiWQvPtofc3x7vCG9kcfS1$3UaRpRYYMLbPUrxsXznDAfbVCkFYNzk/+BDAp1cVhlU=",
+    "last_login": "2024-06-12T01:45:54.624Z",
+    "is_superuser": false,
+    "username": "mmella",
+    "first_name": "Maikel",
+    "last_name": "Mella",
+    "email": "maikel.mella@osc-topsolutionsgroup.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-30T15:53:59Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": [
+      33,
+      34,
+      35,
+      36,
+      73,
+      74,
+      75,
+      76,
+      41,
+      42,
+      43,
+      44,
+      69,
+      70,
+      71,
+      72,
+      65,
+      66,
+      67,
+      68,
+      61,
+      62,
+      63,
+      64,
+      57,
+      58,
+      59,
+      60,
+      53,
+      54,
+      55,
+      56
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 41,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$M6flGXPJxanRBoSg5vwSZK$q0SokGlq3HIyaBjrQs0B4dYupyBCPjPQDUS5NvGBzb8=",
+    "last_login": "2024-06-08T01:27:09.746Z",
+    "is_superuser": false,
+    "username": "dbartsch",
+    "first_name": "Dieter",
+    "last_name": "Bartsch",
+    "email": "dieter.bartsch@osc-topsolutionsgroup.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-30T15:55:31Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 42,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$FtCm3i6eBlJ6kt36ciVZfw$N1a8gfHCgcp1FN2Yt9fbAxndFJqCTjV3jDiSR+KRltw=",
+    "last_login": "2024-06-08T00:55:10.778Z",
+    "is_superuser": false,
+    "username": "cmella",
+    "first_name": "Cristian",
+    "last_name": "Mella",
+    "email": "cristian.mella@osc-topsolutionsgroup.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-30T15:56:20Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 43,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$DdCFpkBv5vciVlWruJ5eb4$9LmT8qGh9fEeGOnDl+7nWj3a/LWvRdXGxvYdjEKrzlY=",
+    "last_login": "2024-06-04T17:48:53Z",
+    "is_superuser": true,
+    "username": "yalberca",
+    "first_name": "Yesica",
+    "last_name": "Alberca Ruiz",
+    "email": "yalberca@phoenixintnl.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-31T19:00:51Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 44,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$umBJfMSt49d1KGz5km3x1j$4G5BcoWRKeCOuov3bXjkMXyt0ZM1cudD7M6Ba0K2B2k=",
+    "last_login": "2024-06-11T19:10:50.892Z",
+    "is_superuser": false,
+    "username": "prueba",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-06-01T01:58:32Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": [
+      73,
+      74,
+      75,
+      76,
+      41,
+      42,
+      43,
+      44,
+      69,
+      70,
+      71,
+      72,
+      65,
+      66,
+      67,
+      68,
+      61,
+      62,
+      63,
+      64,
+      57,
+      58,
+      59,
+      60,
+      53,
+      54,
+      55,
+      56
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 45,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$FPTuBJF6TAL20thGzeAUeD$RN0UumvYQ7aFOlkjm2Wta7D704InGjE4Dr0jxVqXkkg=",
+    "last_login": "2024-06-05T02:00:58.354Z",
+    "is_superuser": true,
+    "username": "galfinger",
+    "first_name": "Grace",
+    "last_name": "Alfinger",
+    "email": "galfinger@phoenixintnl.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-06-04T16:35:36Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 18,
+  "fields": {
+    "user": 8,
+    "telf": "+56 963405188",
+    "empresa": null
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 20,
+  "fields": {
+    "user": 28,
+    "telf": "+56 934558940",
+    "empresa": 4
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 21,
+  "fields": {
+    "user": 29,
+    "telf": "+56 994146417",
+    "empresa": 4
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 22,
+  "fields": {
+    "user": 30,
+    "telf": "+56 945984280",
+    "empresa": 6
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 23,
+  "fields": {
+    "user": 16,
+    "telf": "+56 992135105",
+    "empresa": 4
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 24,
+  "fields": {
+    "user": 31,
+    "telf": "+56 972642053",
+    "empresa": 6
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 25,
+  "fields": {
+    "user": 32,
+    "telf": "+56 989171789",
+    "empresa": 6
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 26,
+  "fields": {
+    "user": 33,
+    "telf": "+56 961578407",
+    "empresa": 6
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 27,
+  "fields": {
+    "user": 34,
+    "telf": "+56 992491800",
+    "empresa": 6
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 28,
+  "fields": {
+    "user": 18,
+    "telf": "+56 992313917",
+    "empresa": 6
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 29,
+  "fields": {
+    "user": 17,
+    "telf": "+56  942410750",
+    "empresa": 5
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 30,
+  "fields": {
+    "user": 35,
+    "telf": "+56  973659487",
+    "empresa": 5
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 31,
+  "fields": {
+    "user": 36,
+    "telf": "+56  942317951",
+    "empresa": 5
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 32,
+  "fields": {
+    "user": 37,
+    "telf": "+56  944188291",
+    "empresa": 5
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 33,
+  "fields": {
+    "user": 38,
+    "telf": "+56  933078208",
+    "empresa": 5
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 34,
+  "fields": {
+    "user": 39,
+    "telf": "+56  982334179",
+    "empresa": 5
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 35,
+  "fields": {
+    "user": 40,
+    "telf": "+56 946337494",
+    "empresa": 9
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 36,
+  "fields": {
+    "user": 41,
+    "telf": "+56 986622881",
+    "empresa": 9
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 37,
+  "fields": {
+    "user": 42,
+    "telf": "+56 937445355",
+    "empresa": 9
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 38,
+  "fields": {
+    "user": 43,
+    "telf": "+51 993487486",
+    "empresa": null
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 39,
+  "fields": {
+    "user": 44,
+    "telf": "+ 569 Prueba",
+    "empresa": 11
+  }
+},
+{
+  "model": "main.userprofile",
+  "pk": 40,
+  "fields": {
+    "user": 45,
+    "telf": "+56 942519222",
+    "empresa": null
+  }
+}
+]

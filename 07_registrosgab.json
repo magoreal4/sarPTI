@@ -1,0 +1,4071 @@
+[
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-022_2",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "A",
+    "radio_busqueda": 2468,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1458,
+    "contactos_ingreso": "ALEX BORDONES V \r\n941869778",
+    "ruta_acceso": "INGRESO POR ASEQUIA",
+    "ruta_huella": "HUELLA EXISTENTE",
+    "inf_adicional": ""
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-022_3",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "B",
+    "radio_busqueda": 2468,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1439,
+    "contactos_ingreso": "RENE ESPINOZA\r\n944827674",
+    "ruta_acceso": "JUNTO A RUTA C-495 ESTA EL PORTON",
+    "ruta_huella": "MEJORAR CAMINO EXISTENTE",
+    "inf_adicional": "PASO DE ASEQUIA DESPUES DE PORTON, CONSIDERAR PARA INGRESO DE MAQUINARIAS"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-024_1",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "A",
+    "radio_busqueda": 962,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1475,
+    "contactos_ingreso": "CARLOS PAEZ MORALES\r\nSIN TELEFONO",
+    "ruta_acceso": "RUTA C-489 KM37 APROX SECTOR LAS TINAJAS",
+    "ruta_huella": "CAMINO EXISTENTE",
+    "inf_adicional": "SITIOS PROYECTADO AL COSTADO DE RUTA EN TERRENO PRIVADO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-024_2",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "B",
+    "radio_busqueda": 962,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1443,
+    "contactos_ingreso": "LUIS BOLADOS\r\n954745092",
+    "ruta_acceso": "COSTADO DE RUTA C-489 ALTURA KM 35",
+    "ruta_huella": "PROYEECION DE HUELLA CON 15 METROS DE DESNIVEL",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-028_1",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "A",
+    "radio_busqueda": 1161,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1878,
+    "contactos_ingreso": "KATHERINE ALCAYAGA\r\n971421367",
+    "ruta_acceso": "PROPIEDAD EN CASA ESQUINA, AL COSTADO DE CANCHA DE FUTBOL\r\nHAY CAMINO VECINAL, A UN COSTADO ESTA LA ENTRADA",
+    "ruta_huella": "HUELLA EXISTENTE",
+    "inf_adicional": ""
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-028_2",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "B",
+    "radio_busqueda": 1161,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1898,
+    "contactos_ingreso": "DANILO CARMONA VILLEGAS",
+    "ruta_acceso": "EL PATIO TRASERO DEL PROPIETARIO DESLINDA CON CERRO Y ECISTE CAMINO QUE PERMITE EL INGRESO AL SITIO",
+    "ruta_huella": "SE PROYECTA HUELLA DE 10 MTS, SE DEBE MEJORAR O CONSTRUIR ACCESO PROPIO",
+    "inf_adicional": "ACCESO PRINCIPAL DE PROPIEDAD NO TIENE PASO AL SITIO PROYECTADO, SOLO POR EL DESLINDE AL FONDO DE LA PROPIEDAD"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-031_1",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "A",
+    "radio_busqueda": 1331,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1338,
+    "contactos_ingreso": "OSCAR ROJAS\r\n944639822",
+    "ruta_acceso": "PORTON DE ACCESO A UN COSTADO DE RUTA C-495",
+    "ruta_huella": "HUELLA EXISTENTE",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-031_2",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "B",
+    "radio_busqueda": 1331,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1308,
+    "contactos_ingreso": "ROSALBA VARGAS VILLALBA\r\n962769053",
+    "ruta_acceso": "INGRESO POR RUTA C-495 CAMINO DEL POBLADO, PORTON DE METAL CON MADERA",
+    "ruta_huella": "ACCESO EXISTENTE",
+    "inf_adicional": "PORTON 3 METROS DE ANCHO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-039_2",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "A",
+    "radio_busqueda": 7263,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1159,
+    "contactos_ingreso": "HERNAN FUENTES SANTIBAÑEZ\r\nHIJO\r\n985432094",
+    "ruta_acceso": "ACCESO A UN COSTADO DE RUTA C-495 ALTURA 31,4 KM",
+    "ruta_huella": "EXISTENTE PERO SIN PORTON DE ACCESO",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-039_4",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "B",
+    "radio_busqueda": 7263,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 1234,
+    "contactos_ingreso": "ACCESO A UN COSTADO DE RUTA C-495 ALTURA 34,1 KM",
+    "ruta_acceso": "EXISTENTE SIN PORTON DE ACCESO",
+    "ruta_huella": "CONSTRUIR PORTON DE ACCESOI",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-045_1",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "A",
+    "radio_busqueda": 17665,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 270,
+    "contactos_ingreso": "PEDRO ROJAS SANCHEZ",
+    "ruta_acceso": "PORTON CONTIGUO A RUTA C-440 KM 34",
+    "ruta_huella": "EXISTENTE",
+    "inf_adicional": "SITIO SE ENCUENTRA A UNOS 10 METROS DEL ACCESO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-045_2",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "B",
+    "radio_busqueda": 17665,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 280,
+    "contactos_ingreso": "FLORA RAMIREZ MORALES",
+    "ruta_acceso": "INGRESO POR PORTON DE LA PROPIETARIA",
+    "ruta_huella": "SE PROYECTA HUELLA DE 10 MT, EN TERRENO PLANO",
+    "inf_adicional": "TERRENO AGRICOLA PROYECCION DE SITIO A UN COSTADO DE CASA DE LA PROPIETARIA.\r\nCIERRE PERISFERICO SIN PORTON DE ACCESO."
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-045_3",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "C",
+    "radio_busqueda": 17665,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 304,
+    "contactos_ingreso": "BERTA LEYES LOPEZ",
+    "ruta_acceso": "ACCESO POR PORTON DE 3 MT CONTIGUOA RUTA C-432 KM 23,4",
+    "ruta_huella": "SE PROYECTA HUELLA DE 10 MT APROX.",
+    "inf_adicional": "TERRENO AGRICOLA, CON PROYECCION DE SITIO POSTERIOR A DESLINDE FRONTAL, LUEGO DE RUT C-432.\r\nPORTON EXISTENTE TIPO CAMPO DE 3 MT."
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "03-045_4",
+  "fields": {
+    "usuario": 33,
+    "candidato_letra": "D",
+    "radio_busqueda": 17665,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "u",
+    "ASNM": 332,
+    "contactos_ingreso": "SILVIO ARAYA GUERRA\r\nTELEFONO: 995349055",
+    "ruta_acceso": "SE PROYECTA PORTON ACCESO",
+    "ruta_huella": "SE PROYECTA HUELLA DE 10 MT",
+    "inf_adicional": "TERRENO AGRICOLA, PROYECCION DE SITIO FRENTE A CASA DE LA PROPIETARIA, CONTIGUO A RUTA C-432 KM 23,2.\r\nCIERRE PERISFERICO, SIN PORTON DE ACCESO EN ZONA DE PROYECCION."
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-010_1",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 5153,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 983,
+    "contactos_ingreso": "JORGE BUGUEÑO (PRESIDENTE DE COMUNIDAD \r\nTELEFONO: 940294285",
+    "ruta_acceso": "ACCESO AL SITIO POR RUTA D-907",
+    "ruta_huella": "HUELLA EXISTENTE",
+    "inf_adicional": "CAMINO CON RIESGOSO CUANDO HAY LLUVIAS"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-010_2",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "B",
+    "radio_busqueda": 5153,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 983,
+    "contactos_ingreso": "JORGE BUGUEÑO\r\nTELEFONO: 940294285",
+    "ruta_acceso": "ACCESO AL SITIO POR RUTA D-907",
+    "ruta_huella": "HUELLA EXISTENTE",
+    "inf_adicional": "CAMINO PELIGROSO CUANDO LLUEVE"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-011_1",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 1436,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 514,
+    "contactos_ingreso": "RENAN PEREZ PEREZ\r\n983821666",
+    "ruta_acceso": "ACCESO SIN DIFICULTAD",
+    "ruta_huella": "NO REQUIERE HUELLA",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-024_1",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 3300,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 462,
+    "contactos_ingreso": "DANILO HENRIQUEZ PASTEN",
+    "ruta_acceso": "INGRESAR POR EUTA D-929 CAMINO DE TIERRA",
+    "ruta_huella": "CAMINO DE HUELLA CON INCLINACION",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-026_1",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 6800,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 524,
+    "contactos_ingreso": "CON PROPIETARIO\r\nSILVERIO CEPEDA\r\n920608339",
+    "ruta_acceso": "SITIO PROYEECTADO A UN COSTADO DE LA RUTA D-71",
+    "ruta_huella": "NO REQUIERE HUELLA",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-036_1",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 765,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 765,
+    "contactos_ingreso": "OMAR MUÑOZ\r\n953871594",
+    "ruta_acceso": "LIBRE ACCESO A SITIO",
+    "ruta_huella": "HUELLA EXISTENTE",
+    "inf_adicional": "SITIO PROTECTADO SE ENCUENTRA DENTRO DE FUNDO DE LIBRE ACCESO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-037_2",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 11900,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 683,
+    "contactos_ingreso": "ROSA MANQUE\r\n972978137",
+    "ruta_acceso": "SITIO SE ENCUENTRA AL COSTADO DE RUTA D-805",
+    "ruta_huella": "NO REQUIERE HUELLA PROYECTADA",
+    "inf_adicional": "NO HAY"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-092_1",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 1664,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 543,
+    "contactos_ingreso": "FERNANDO VILCHES\r\nPRESIDENTE COMUNIDAD\r\n995244147",
+    "ruta_acceso": "INGRESO POR RUTA D-789",
+    "ruta_huella": "HUELLA EXISTENTE",
+    "inf_adicional": "CAMINO DEBE SER RECORRIDO EN 4X4 CON LLUVIA"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-092_2",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "B",
+    "radio_busqueda": 1664,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 543,
+    "contactos_ingreso": "FERNANDO VILCHES\r\nPRESIDENTE COMUNIDAD\r\n995244147",
+    "ruta_acceso": "INGRESAR POR RUTA D-789 HASTA SITIO",
+    "ruta_huella": "HUELLA EXISTENTE\r\nCAMINO BARROSO",
+    "inf_adicional": ""
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-098_1",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 5846,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 262,
+    "contactos_ingreso": "JAIME PIZARRO ROJAS",
+    "ruta_acceso": "ACCESO AL SITIO POR RUTA D-649. SITIO SE ENCUENTRA EN COMUNIDAD AGRICOLA LA CALERA, SECTOR EL RINCON.",
+    "ruta_huella": "HUELLA EXISTENTE.",
+    "inf_adicional": "CAMINO DE TIERRA HASTA EL SITIO PROYECTADO.\r\nTERRENO CORRESPONDE A COMUNIDAD AGRICOLA LA CALERA"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "04-098_2",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "B",
+    "radio_busqueda": 5846,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 262,
+    "contactos_ingreso": "JAIME PIZARRO ROJAS\r\nTELEFONO: 946500305",
+    "ruta_acceso": "ACCESO DIRECTO AL SITIO POR RUTA D-649",
+    "ruta_huella": "HUELLA EXISTENTE.",
+    "inf_adicional": "CAMINO DE TIERRA HASTA AL SITIO PROYECTADO.\r\nSITIO SE ENCUENTRA EN COMUNIDAD AGRICOLA LA CALERA (SECTOR EL RINCON)"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "05-005_4",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "A",
+    "radio_busqueda": 2900,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 760,
+    "contactos_ingreso": "SAMUEL ASTUDILLO\r\n983072708",
+    "ruta_acceso": "FACIL ACCESO POR CAMINO 3 KM DE RIPIO",
+    "ruta_huella": "NO",
+    "inf_adicional": "NO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "05-005_5",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "B",
+    "radio_busqueda": 2511,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "u",
+    "ASNM": 630,
+    "contactos_ingreso": "WALDO OYANEDEL (HIJO)\r\n996646392",
+    "ruta_acceso": "ACCESO HABILITADO",
+    "ruta_huella": "SIN PROBLEMAS DE ACCESO, CAMINO ASFALTADO",
+    "inf_adicional": "NO APLICA"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "05-005_6",
+  "fields": {
+    "usuario": 31,
+    "candidato_letra": "C",
+    "radio_busqueda": 3900,
+    "tipo_solucion": "GREENFIELD",
+    "zona": "r",
+    "ASNM": 673,
+    "contactos_ingreso": "PAMELA OLIVARES AGUILERA",
+    "ruta_acceso": "ACCESO PASA POR RIACHUELO SIN MUCHO CAUDAL",
+    "ruta_huella": "HUELLA CON DESNIVEL",
+    "inf_adicional": "VERIFICAR ROL PORQUE PROPIETARIA DICE TNEER LA ESCRITURA DE ESE LUGAR  DEL TERRENO"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-056_1",
+  "fields": {
+    "usuario": 41,
+    "candidato_letra": "A",
+    "radio_busqueda": 2700,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 96,
+    "contactos_ingreso": "es un caballero que vive en el lugar y dejo el telefono en los datos de contacto",
+    "ruta_acceso": "camino publico llego directamente al acceso de la propiedad por camino asequible",
+    "ruta_huella": "no se necesita huella porque ya es existente",
+    "inf_adicional": "propieratrio solicita porton tipo rural"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-059_7",
+  "fields": {
+    "usuario": 41,
+    "candidato_letra": "A",
+    "radio_busqueda": 8758,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 2000,
+    "contactos_ingreso": "mismo propietario",
+    "ruta_acceso": "se requiere  adicionar porton tipo rural",
+    "ruta_huella": "se requiere crear huella de aproximado 40 metros desde porton de ingreso a lugar de emplazamiento",
+    "inf_adicional": "puede que se requiera movimiento de tierra para acceso propio"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-083_1",
+  "fields": {
+    "usuario": 41,
+    "candidato_letra": "A",
+    "radio_busqueda": 1215,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 74,
+    "contactos_ingreso": "se conversa con la mama del propietario el cual es profesor en universidad de la frontera",
+    "ruta_acceso": "acceso desde la ruta principal sin inconvenientes",
+    "ruta_huella": "no es necesario hacer huella, esta libre el acceso al emplazamiento",
+    "inf_adicional": "dispuestos a entregar energia provisoria"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-083_2",
+  "fields": {
+    "usuario": 41,
+    "candidato_letra": "B",
+    "radio_busqueda": 1074,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 74,
+    "contactos_ingreso": "propietario es una señora 3ra edad que vive en la misma propiedad con 2 hijos. el contacto oficial es el hijo llamado mauricio",
+    "ruta_acceso": "Hay que generar un acceso independiente con porton rural.",
+    "ruta_huella": "Hay que hacer huella de 30 metros",
+    "inf_adicional": "energía publica a 55 metros"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-137_1",
+  "fields": {
+    "usuario": 42,
+    "candidato_letra": "A",
+    "radio_busqueda": 3000,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 106,
+    "contactos_ingreso": "Propietaria es una señora que vive con su pareja, tiene la disposición de arrendar para la antena",
+    "ruta_acceso": "El acceso es a traves de una servidumbre municipal para sede vecinal, por ese camino se accede a las parcelas y es libre, llega hasta la misma casa y lugar de emplazamiento.",
+    "ruta_huella": "no hay que proyectar huella, los camiones para la construcción pueden llegar a la propiedad sin problemas.",
+    "inf_adicional": "propietaria esta dispuesta a compartir energia."
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-137_2",
+  "fields": {
+    "usuario": 42,
+    "candidato_letra": "B",
+    "radio_busqueda": 3000,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 106,
+    "contactos_ingreso": "Propietario es un caballero de tercera edad agricultor que vive con su señora, muy interesado en el arriendo como en la cobertura que pueda proporcionar. facilita parte de su terreno agricola que tiene despejado par ala instalación de antena",
+    "ruta_acceso": "Acceso requiere portón rural para acceso independiente desde la ruta R328. habria que distanciarse los h/3.",
+    "ruta_huella": "no se necesita huella, hay acceso directo desde la ruta",
+    "inf_adicional": "Esta dispuesto a compartir energía pero habría que verificar capacidad. La energía publica esta en la ruta a 100mts del punto de emplazamiento."
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-142_3",
+  "fields": {
+    "usuario": 42,
+    "candidato_letra": "A",
+    "radio_busqueda": 2100,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 916,
+    "contactos_ingreso": "Los contactos fueron ingresados en el apartado del registro de terreno",
+    "ruta_acceso": "El ingreso es por ruta ruta R-122 a parcelaciones, camino de tierra hasta el sitio delpropietario.",
+    "ruta_huella": "ingreso del propietario hasta el emplazamiento son 15 metros, que serán despejados de árboles por el propietario.",
+    "inf_adicional": "sin info adicional"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-142_5",
+  "fields": {
+    "usuario": 42,
+    "candidato_letra": "B",
+    "radio_busqueda": 2100,
+    "tipo_solucion": "Greenfield",
+    "zona": "u",
+    "ASNM": 864,
+    "contactos_ingreso": "Dueño de propiedad no cuenta con número telefónico ni usa dirección de mail.",
+    "ruta_acceso": "acceso vehicular desde ruta estrecho, hacia el interior camino vehicular.",
+    "ruta_huella": "Huella desde el ingreso del sitio hasta el emplazamiento aproximadamente 30 metros.",
+    "inf_adicional": "Construir portón de ingreso."
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-158_2",
+  "fields": {
+    "usuario": null,
+    "candidato_letra": "A",
+    "radio_busqueda": 2000,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 319,
+    "contactos_ingreso": "Carabineros indica que, ellos no están autorizados a ir, a excepción de casos específicos y se ingresa con personal del Grupo de Operaciones Policiales Especiales (GOPE).",
+    "ruta_acceso": "Para ingresar al polígono se debe contar con un intermediario de la Comunidad o hacer las solicitudes para ser escoltado por el GOPE.\r\n\r\n- Para hacer ingreso al sector de conflicto Subtel debe elevar la solicitud a la Delegación Provincial o directamente a la Comisaría de Carabineros, el requerimiento será evaluarlo con el jefe de la defensa de esta zona de Excepción Constitucional de Emergencia.\r\n\r\n- Cave señalar que, el ingreso aunque sea con personal del GOPE no se puede asegurar estar libre de incidentes o de la completa seguridad del personal en terreno. Carabineros nos entrego opciones para ir a ver factibilidad, ambas opciones fueron descartadas por propietario.",
+    "ruta_huella": "No se pudo acceder",
+    "inf_adicional": "Se levantaron dos lugares proporcionados por carabineros y propietarios no desearon proyectar antenas"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-158_4",
+  "fields": {
+    "usuario": 42,
+    "candidato_letra": "B",
+    "radio_busqueda": 2200,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 314,
+    "contactos_ingreso": "Con propietaria sra. Graciela Morales",
+    "ruta_acceso": "Desde Ruta 5 se ingresa a ruta R-560 y se ingresa en primer portón a camino interior de ripio",
+    "ruta_huella": "terreno plano pero blando, requiere ripio desde camino interior (L=30 mts)",
+    "inf_adicional": "Inicio de zona de conflicto mapuche"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-187_6",
+  "fields": {
+    "usuario": 42,
+    "candidato_letra": "A",
+    "radio_busqueda": 1600,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 183,
+    "contactos_ingreso": "propietaria es una señora de tercera edad, ocupa el telefono del nieto que vive con ella ya que no maneja tecnologia",
+    "ruta_acceso": "sitio esta dividido por una ruta r-264, la casa esta a un lado de la misma y el sitio de emplazamiento al otro, el acceso requiere construcción de portón rural",
+    "ruta_huella": "hay un camino de acceso al punto de emplazamiento pero por lado del vecino, si se quiere llegar directo hay que hacer huella por la propiedad por unos 80 metros. estos 80 metros corresponden a cerro con pasto, no hay necesidad de raleo.",
+    "inf_adicional": "sin info adicional"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "09-187_8",
+  "fields": {
+    "usuario": 42,
+    "candidato_letra": "B",
+    "radio_busqueda": 1600,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 118,
+    "contactos_ingreso": "Como contacto del sitio queda hija de la propietaria Juanita Marín",
+    "ruta_acceso": "Cerca de la ruta R-86",
+    "ruta_huella": "Emplazado en cima de colina, panorámica",
+    "inf_adicional": "sitio de facil acceso desde camino interior pero se requiere huella"
+  }
+},
+{
+  "model": "registrosgab.registroinicio",
+  "pk": "10-053_2",
+  "fields": {
+    "usuario": 41,
+    "candidato_letra": "A",
+    "radio_busqueda": 3500,
+    "tipo_solucion": "Greenfield",
+    "zona": "r",
+    "ASNM": 89,
+    "contactos_ingreso": "propietario se llama Juan y vive con su familia al costado de la ruta U-11",
+    "ruta_acceso": "sin problemas ya que esta al costado de l camino",
+    "ruta_huella": "no se necesita generar huella",
+    "inf_adicional": "ninguna"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 1,
+  "fields": {
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/20240604_143355.jpg",
+    "descripcion": "sin acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 2,
+  "fields": {
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/20240604_154806.jpg",
+    "descripcion": "sin acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 3,
+  "fields": {
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/20240604_154811.jpg",
+    "descripcion": "sin acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 4,
+  "fields": {
+    "registro_inicio": "09-158_2",
+    "imagen": "gabinete/imgs/Screenshot_20240604_142829_Map_Coordinates.jpg",
+    "descripcion": "sin acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 5,
+  "fields": {
+    "registro_inicio": "09-187_6",
+    "imagen": "gabinete/imgs/n_poste_más_cercano_en_ruta_Frontel.jpg",
+    "descripcion": "n° poste más cercano en ruta (Frontel)"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 6,
+  "fields": {
+    "registro_inicio": "09-187_8",
+    "imagen": "gabinete/imgs/vista_de_propiedad_desde_ruta_R-86.jpg",
+    "descripcion": "Vista de la propiedad desde la ruta R-86"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 8,
+  "fields": {
+    "registro_inicio": "09-059_7",
+    "imagen": "gabinete/imgs/porton_ingreso.jpg",
+    "descripcion": "Imagen de acceso a la propiedad"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 9,
+  "fields": {
+    "registro_inicio": "09-056_1",
+    "imagen": "gabinete/imgs/cambiar_porton.jpg",
+    "descripcion": "portón acceso a propiedad"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 10,
+  "fields": {
+    "registro_inicio": "09-056_1",
+    "imagen": "gabinete/imgs/Huella_al_emplazamiento.jpg",
+    "descripcion": "huella hacia el emplazamiento"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 11,
+  "fields": {
+    "registro_inicio": "09-056_1",
+    "imagen": "gabinete/imgs/ruta_acceso_al_predio.jpg",
+    "descripcion": "ruta acceso al predio"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 12,
+  "fields": {
+    "registro_inicio": "09-142_3",
+    "imagen": "gabinete/imgs/180.jpg",
+    "descripcion": "zona de arboles a despejar"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 13,
+  "fields": {
+    "registro_inicio": "09-142_3",
+    "imagen": "gabinete/imgs/20240606_141715.jpg",
+    "descripcion": "guia para llegar"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 14,
+  "fields": {
+    "registro_inicio": "09-142_3",
+    "imagen": "gabinete/imgs/20240606_142026.jpg",
+    "descripcion": "dia con lluvia y sin visibilidad para dron"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 15,
+  "fields": {
+    "registro_inicio": "09-142_3",
+    "imagen": "gabinete/imgs/acceso_a_casa_del_propietario.jpg",
+    "descripcion": "acceso expedito"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 16,
+  "fields": {
+    "registro_inicio": "09-142_3",
+    "imagen": "gabinete/imgs/lluvia_y_viento_NO_permiten_volar_RPA.jpg",
+    "descripcion": "situacion del clima en la visita"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 17,
+  "fields": {
+    "registro_inicio": "09-142_3",
+    "imagen": "gabinete/imgs/Screenshot_20240606_151543_Maps.jpg",
+    "descripcion": "ubicacion"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 18,
+  "fields": {
+    "registro_inicio": "09-142_5",
+    "imagen": "gabinete/imgs/20240606_141909.jpg",
+    "descripcion": "ruta de llegada"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 19,
+  "fields": {
+    "registro_inicio": "09-142_5",
+    "imagen": "gabinete/imgs/lluvia_y_viento_NO_permiten_volar_RPA_xpqmIPD.jpg",
+    "descripcion": "situacion del clima"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 20,
+  "fields": {
+    "registro_inicio": "09-142_5",
+    "imagen": "gabinete/imgs/de_poste_anterior_a_poste_empalme.jpg",
+    "descripcion": "fotografia empalme"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 21,
+  "fields": {
+    "registro_inicio": "09-142_5",
+    "imagen": "gabinete/imgs/a_sitio_4.jpg",
+    "descripcion": "acceso peatonal"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 22,
+  "fields": {
+    "registro_inicio": "09-187_6",
+    "imagen": "gabinete/imgs/inicio_de_vuelo_con_vHive.jpg",
+    "descripcion": "intento con dron"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 23,
+  "fields": {
+    "registro_inicio": "09-187_6",
+    "imagen": "gabinete/imgs/lluvia_y_viento_dificultan_volar_RPA.jpg",
+    "descripcion": "clima"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 24,
+  "fields": {
+    "registro_inicio": "09-187_6",
+    "imagen": "gabinete/imgs/poste_más_cercano_en_ruta_R-86_a_22_kms.jpg",
+    "descripcion": "poste mas cercano"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 25,
+  "fields": {
+    "registro_inicio": "09-187_6",
+    "imagen": "gabinete/imgs/camino_de_acceso_alternativo_a_través_de_vecino.jpg",
+    "descripcion": "camino x el vecino"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 26,
+  "fields": {
+    "registro_inicio": "09-187_6",
+    "imagen": "gabinete/imgs/acceso_peatonal_desde_ruta_R-264.jpg",
+    "descripcion": "acceso peatonal para huella"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 27,
+  "fields": {
+    "registro_inicio": "09-187_8",
+    "imagen": "gabinete/imgs/20240606_11145p.m.ByGPSMapCamera.jpg",
+    "descripcion": "casa de propietaria"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 28,
+  "fields": {
+    "registro_inicio": "09-187_8",
+    "imagen": "gabinete/imgs/lugar_de_emplazamiento.jpg",
+    "descripcion": "lugar emplazamiento"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 29,
+  "fields": {
+    "registro_inicio": "09-187_8",
+    "imagen": "gabinete/imgs/vista_desde_sitio.jpg",
+    "descripcion": "vista desde el sitio"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 30,
+  "fields": {
+    "registro_inicio": "09-187_8",
+    "imagen": "gabinete/imgs/lluvia_y_viento_NO_permiten_volar_RPA_gZATttF.jpg",
+    "descripcion": "clima en la visita"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 31,
+  "fields": {
+    "registro_inicio": "09-137_1",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.52.21_PM_1.jpeg",
+    "descripcion": "camino vecinal de acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 32,
+  "fields": {
+    "registro_inicio": "09-137_1",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.53.02_PM.jpeg",
+    "descripcion": "camino vecinal"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 33,
+  "fields": {
+    "registro_inicio": "09-137_1",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.53.03_PM.jpeg",
+    "descripcion": "acceso propiedad"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 34,
+  "fields": {
+    "registro_inicio": "09-137_1",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.51.28_PM.jpeg",
+    "descripcion": "caseta referencia ruta R-330"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 35,
+  "fields": {
+    "registro_inicio": "09-137_1",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.53.32_PM.jpeg",
+    "descripcion": "rol"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 36,
+  "fields": {
+    "registro_inicio": "09-137_1",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.54.10_PM.jpeg",
+    "descripcion": "acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 37,
+  "fields": {
+    "registro_inicio": "09-137_1",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.55.02_PM.jpeg",
+    "descripcion": "lugar emplazamiento con buena vista al valle"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 38,
+  "fields": {
+    "registro_inicio": "09-137_2",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.58.59_PM.jpeg",
+    "descripcion": "Acceso a propiedad desde ruta R-328"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 39,
+  "fields": {
+    "registro_inicio": "09-137_2",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_2.59.40_PM.jpeg",
+    "descripcion": "Llegada línea elécteica a la casa"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 40,
+  "fields": {
+    "registro_inicio": "09-137_2",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_3.00.14_PM.jpeg",
+    "descripcion": "Poste empalme s/número"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 41,
+  "fields": {
+    "registro_inicio": "09-137_2",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_3.00.36_PM.jpeg",
+    "descripcion": "Línea en BT viene de poste con transformador que pasa en propiedad de en frente"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 42,
+  "fields": {
+    "registro_inicio": "09-137_2",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_3.01.20_PM.jpeg",
+    "descripcion": "Poste con trafo en línea MT (propiedad de en frente)"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 43,
+  "fields": {
+    "registro_inicio": "09-137_2",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_3.01.59_PM.jpeg",
+    "descripcion": "cedula"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 44,
+  "fields": {
+    "registro_inicio": "09-137_2",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_3.03.04_PM.jpeg",
+    "descripcion": "Se requeriría construcción de portón rural para acceso directo desde ruta R-328"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 45,
+  "fields": {
+    "registro_inicio": "09-083_1",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0005.jpg",
+    "descripcion": "propiedad"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 46,
+  "fields": {
+    "registro_inicio": "09-083_1",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0009.jpg",
+    "descripcion": "lugar de emplazamiento"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 47,
+  "fields": {
+    "registro_inicio": "09-083_1",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0013.jpg",
+    "descripcion": "camino de llegada"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 48,
+  "fields": {
+    "registro_inicio": "09-083_1",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0015.jpg",
+    "descripcion": "acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 49,
+  "fields": {
+    "registro_inicio": "09-083_1",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0007.jpg",
+    "descripcion": "medidor energia"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 50,
+  "fields": {
+    "registro_inicio": "09-083_2",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0034.jpg",
+    "descripcion": "propiedad"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 51,
+  "fields": {
+    "registro_inicio": "09-083_2",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0036.jpg",
+    "descripcion": "acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 52,
+  "fields": {
+    "registro_inicio": "09-083_2",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0038.jpg",
+    "descripcion": "postacion"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 53,
+  "fields": {
+    "registro_inicio": "09-083_2",
+    "imagen": "gabinete/imgs/IMG-20240607-WA0043.jpg",
+    "descripcion": "emplazamiento"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 54,
+  "fields": {
+    "registro_inicio": "10-053_2",
+    "imagen": "gabinete/imgs/Imagen_de_WhatsApp_2024-06-07_a_las_18.04.52_7838af13.jpg",
+    "descripcion": "propiedad"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 55,
+  "fields": {
+    "registro_inicio": "10-053_2",
+    "imagen": "gabinete/imgs/Imagen_de_WhatsApp_2024-06-07_a_las_18.03.00_1034ef16.jpg",
+    "descripcion": "camino acceso"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 56,
+  "fields": {
+    "registro_inicio": "09-059_7",
+    "imagen": "gabinete/imgs/Imagen_de_WhatsApp_2024-06-07_a_las_15.45.35_827fa785.jpg",
+    "descripcion": "sitio"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 57,
+  "fields": {
+    "registro_inicio": "09-059_7",
+    "imagen": "gabinete/imgs/Imagen_de_WhatsApp_2024-06-07_a_las_15.45.35_bf1be3bf.jpg",
+    "descripcion": "emplazamiento"
+  }
+},
+{
+  "model": "registrosgab.imagenes",
+  "pk": 58,
+  "fields": {
+    "registro_inicio": "09-158_4",
+    "imagen": "gabinete/imgs/WhatsApp_Image_2024-06-07_at_19.55.55.jpeg",
+    "descripcion": "inicio de huella proy. desde camino interior"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-022_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "ALEX BORDONES VILLEGAS",
+    "propietario_telf": "941869778",
+    "propietario_direccion": "CONAY SN ALTO DEL CARMEN RUTA C-495",
+    "propietario_email": "alexbordones76@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-022_3",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "RENE ESPINOZA",
+    "propietario_telf": "944827674",
+    "propietario_direccion": "CONAY SN RUTA C.495 KM 40,4",
+    "propietario_email": "renealbertoespinozaflores@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-024_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "CLAUDIO PAEZ MORALES",
+    "propietario_telf": "PENDIENTE",
+    "propietario_direccion": "camino público, camino alto del Carmen, la cuesta km 37",
+    "propietario_email": "claudiopaez1958@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-024_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "LUIS BOLADOS",
+    "propietario_telf": "954745092",
+    "propietario_direccion": "TINAJILLA SN KM35",
+    "propietario_email": "PENDIENTE@PTI.CL",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-028_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "KATHERINE ALCAYAGA CARMONA",
+    "propietario_telf": "971421367",
+    "propietario_direccion": "JUNTAS DE VALERIANO SN",
+    "propietario_email": "nicolasteamobebe36@gmail.com",
+    "estado_civil": "SOLTERA"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-028_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "DANILO ORLANDO CARMONA VILLEGAS",
+    "propietario_telf": "991558131",
+    "propietario_direccion": "JUNTAS DE VALERIANO SN",
+    "propietario_email": "PENDIENTE@PTI.CL",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-031_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "JUAN PATRICIO ROJAS SAEZ",
+    "propietario_telf": "996390456",
+    "propietario_direccion": "PAMPA BAJA 2506, LA SERENA",
+    "propietario_email": "jpatriciorojas@gmail.com",
+    "estado_civil": "CASADO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-031_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "ROSALBA DEL ROSARIO VARGAS VILLALBA",
+    "propietario_telf": "962769053",
+    "propietario_direccion": "EL VALLE 2912 LA PAMPA COMUNA ALTO DEL CARMEN",
+    "propietario_email": "rosalba.rosario24@gmail.com",
+    "estado_civil": "DIVORCIADA"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-039_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "AGRICOLA RIO EL TRANSITO LTDA",
+    "propietario_telf": "991628517",
+    "propietario_direccion": "ALTO DEL CARMEN",
+    "propietario_email": "horaciogaytan@gmail.com",
+    "estado_civil": "VIUDO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-039_4",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "SARA SANTIBAÑEZ CAMPILLAY",
+    "propietario_telf": "985432094",
+    "propietario_direccion": "LA ARENA BAJA SN",
+    "propietario_email": "fuenteshernan1926@gmail.com",
+    "estado_civil": "VIUDA"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-045_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "PEDRO GILBERTO ROJAS SANCHEZ",
+    "propietario_telf": "968409511",
+    "propietario_direccion": "CAMINO CARRIZAL KM34",
+    "propietario_email": "pendiente@pti.cl",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-045_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "FLORA RAMIREZ MORALES",
+    "propietario_telf": "993524550",
+    "propietario_direccion": "PARCELA DONQUEI S/N",
+    "propietario_email": "floramirezmorales.20@gmail.com",
+    "estado_civil": "CASADA"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-045_3",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "BERTA YOLANDA LEYES LOPEZ",
+    "propietario_telf": "926316031",
+    "propietario_direccion": "LOCALIDAD CANTO DEL AGUA, RUT C-432 KM 23,4",
+    "propietario_email": "villalobosmario255@gmail.com",
+    "estado_civil": "CASADA"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "03-045_4",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "NORMA OGGAZ VARA",
+    "propietario_telf": "995349055",
+    "propietario_direccion": "LOCALIDAD CANTO DE AGUA C-440 KM 23,2",
+    "propietario_email": "pendiente@pti.cl",
+    "estado_civil": "CASADA"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-010_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "JORGE BUGUEÑO (PRESIDENTE COMUNIDAD)",
+    "propietario_telf": "940294285",
+    "propietario_direccion": "COMUNIDAD CANELA ALTA SECTOR TALHUEN S/N",
+    "propietario_email": "pendiente@pti.cl",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-010_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "JORGE BUGUEÑO (PRESIDENTE COMUNIDAD)",
+    "propietario_telf": "940294285",
+    "propietario_direccion": "PENDIENTE POR PARTE DEL REPRESENTANTE DE LA COMUNIDAD",
+    "propietario_email": "pendiente@pti.cl",
+    "estado_civil": "PENDIENTE"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-011_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Renan Pérez Pérez",
+    "propietario_telf": "983821666",
+    "propietario_direccion": "canela baja sector tome sin numero",
+    "propietario_email": "renanperez81@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-024_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "DANILO HENRIQUEZ PASTEN BARRERA",
+    "propietario_telf": "959696328",
+    "propietario_direccion": "CANELA ALTA SECTOR LAS TRANCAS SN",
+    "propietario_email": "danilopasten89@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-026_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "SILVERIO ANTONIO CEPEDA CORTES",
+    "propietario_telf": "920608339",
+    "propietario_direccion": "EL DURAZNO SN",
+    "propietario_email": "NO@TIENE.CL",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-036_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "ARTURO MARIN",
+    "propietario_telf": "999975456",
+    "propietario_direccion": "FUNDO QUILLAICILLO SN",
+    "propietario_email": "PENDIENTE@PTI.CL",
+    "estado_civil": null
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-037_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "ANTONIO MANQUE",
+    "propietario_telf": "972978137",
+    "propietario_direccion": "parcela 104 , choapa. illapel",
+    "propietario_email": "rosamanque@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-092_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "FERNANDO VILCHES",
+    "propietario_telf": "995244147",
+    "propietario_direccion": "COMUNIDAD ALGARROBO SN LOS HORNILLOS",
+    "propietario_email": "PENDIENTE@PTI.CL",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-092_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "FERNANDO VILCHES",
+    "propietario_telf": "995244147",
+    "propietario_direccion": "COMUNIDAD ALGARROBO SN LOS HORNILLOS",
+    "propietario_email": "PENDIENTE@PTI.CL",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-098_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "JAIME PIZARRO ROJAS (PRESIDENTE COMUNIDAD)",
+    "propietario_telf": "946500305",
+    "propietario_direccion": "SECTOR EL RINCON S/N",
+    "propietario_email": "jaime.890p@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "04-098_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "JAIME PIZARRO ROJAS (PRESIDENTE COMUNIDAD)",
+    "propietario_telf": "946500305",
+    "propietario_direccion": "SECTOR EL RINCON S/N",
+    "propietario_email": "jaime.890p@gmail.com",
+    "estado_civil": "SOLTERO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "05-005_4",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "FRANCISCA ESCOBAR FAUST",
+    "propietario_telf": "990475923",
+    "propietario_direccion": "PENDIENTE",
+    "propietario_email": "escobarfaust@gmail.com",
+    "estado_civil": "CASADO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "05-005_5",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "HUMBERTO OYANEDEL",
+    "propietario_telf": "996646392",
+    "propietario_direccion": "FRUTILLAR BAJO HIJUELA 5 SN",
+    "propietario_email": "waldoyanedel@gmail.com",
+    "estado_civil": "CASADO"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "05-005_6",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "ROSA AMELIA AGUILERA AGUILERA",
+    "propietario_telf": "983547435",
+    "propietario_direccion": "FRUTILLAR BAJO SN",
+    "propietario_email": "pamelaolivaresaguilera@gmail.com",
+    "estado_civil": "SOLTERA"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-056_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "nelson salazar Valdebenito",
+    "propietario_telf": "70013819",
+    "propietario_direccion": "camino a san jorge km 10",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "casado"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-059_7",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "victor antipan curallanca",
+    "propietario_telf": "91682184",
+    "propietario_direccion": "sector reguecahuin",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "casado"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-083_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "ignacio Enrique soto painen",
+    "propietario_telf": "xxxxxxxx",
+    "propietario_direccion": "camino monopatines s/n",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "soltero"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-083_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "laura quiñenao coella",
+    "propietario_telf": "102407342",
+    "propietario_direccion": "sector chapod maquehue rural",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "viuda"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-137_1",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Daisy Alejandra Campo Sáez",
+    "propietario_telf": "15512794-5",
+    "propietario_direccion": "parcela 12, lote B 2B, colonia Lolenco, Angol",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "soltera"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-137_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Arnoldo Natonio",
+    "propietario_telf": "9101833-0",
+    "propietario_direccion": "Parcela 17, Lote 1, Santa Elena, Angol",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "casado"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-142_3",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Gustavo San Martín Novoa",
+    "propietario_telf": "11300607-2",
+    "propietario_direccion": "parcela 3, Maiténrehue, el Maqui",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "soltero"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-142_5",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "José Juvenal Larregla Vallejos",
+    "propietario_telf": "6011957-0",
+    "propietario_direccion": "ruta R-120 s/n",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "casado"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-158_4",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Graciela del Carmen Morales Manquel",
+    "propietario_telf": "13630264-7",
+    "propietario_direccion": "hijuela Las Quintas, Lote C, Ercilla",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "soltera"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-187_6",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Rosalía Figueroa Lonconao",
+    "propietario_telf": "5095496-k",
+    "propietario_direccion": "ruta R-264 s/n",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "casada"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "09-187_8",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Margarita del Carmen Ramos Colimil",
+    "propietario_telf": "6647234-5",
+    "propietario_direccion": "Ruta R-86 s/n, Trintre",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "soltera"
+  }
+},
+{
+  "model": "registrosgab.informaciongeneral",
+  "pk": "10-053_2",
+  "fields": {
+    "fecha_visita": null,
+    "propietario": "Juan Altamirano",
+    "propietario_telf": "no tiene",
+    "propietario_direccion": "ruta U-11 km 2,3",
+    "propietario_email": "xxx@gmail.com",
+    "estado_civil": "casado"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-022_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "FALTA CBR",
+    "estado_documentacion": "i",
+    "comentarios": ""
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-022_3",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PENDIENTE CBR\r\nROL 902-44",
+    "estado_documentacion": "i",
+    "comentarios": ""
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-024_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PENDIENTE CBR",
+    "estado_documentacion": "i",
+    "comentarios": "PROPIETARIO TRABAJA FUERA DE CIUDAD"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-024_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PENDIENTES CBR",
+    "estado_documentacion": "i",
+    "comentarios": "NO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-028_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DOCUMENTOS CBR\r\nPROPIEDAD SIN DEUDA\r\nSEGUN PROPIETARIA COMPLETA",
+    "estado_documentacion": "i",
+    "comentarios": ""
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-028_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PENDIENTES CBR\r\nFOJAS 1880 N°1242\r\nREGISTRO DE PROPIEDAD",
+    "estado_documentacion": "i",
+    "comentarios": ""
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-031_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DOCUMENTOS SOCIEDAD PENDIENTES Y CBR",
+    "estado_documentacion": "i",
+    "comentarios": ""
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-031_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DOCUMENTOS PENDIENTES CBR \r\nROL 08012-00010",
+    "estado_documentacion": "i",
+    "comentarios": "DOCUMENTOS SOLICITADOS A PROPIETARIA QUE NO VIVE EN EL LIGAR, ES SEGUNDA VIVIENDA"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-039_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "ROL 892-23\r\nCBR ALTO DEL CARMEN",
+    "estado_documentacion": "i",
+    "comentarios": "NO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-039_4",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "FALTAN DOCUMENTOS CBR",
+    "estado_documentacion": "p",
+    "comentarios": "NO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-045_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PENDIENTE CBR\r\nROL 8000-105",
+    "estado_documentacion": "p",
+    "comentarios": "PROPIEDAD CUENTA CON ESCRITURA Y DOCUMENTACIÓN AL DÍA"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-045_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PROPIETARIO INTERESADO A NEGOCIAR",
+    "estado_documentacion": "p",
+    "comentarios": "PROPIETARIO CUENTA CON ESCRITURA VIGENTE"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-045_3",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PROPIETARIO DISPUESTO A NEGOCIAR",
+    "estado_documentacion": "p",
+    "comentarios": "PROPIETARIO CUENTA CON ESCRITURA VIGENTE.\r\nPENDIENTE CERTIFICADOS CBR\r\nROL PENDIENTE POR PARTE DEL PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "03-045_4",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PROPIETARIO DISPUESTO A NEGOCIAR",
+    "estado_documentacion": "p",
+    "comentarios": "PROPIETARIO CUENTA CON ESCRITURA Y DOCUMENTACIÓN VIGENTE A SU NOMBRE\r\nROL 08000-00168"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-010_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": false,
+    "apreciaciones": "PRESIDENTE DE LA COMUNIDAD DEBE ESPERAR A REUNIRSE CON LA COMUNIDAD PARA PLANTEAR TEMA DE ARRIENDO DE UN POSIBLE SITIO.",
+    "estado_documentacion": "p",
+    "comentarios": "UNA VEZ REUNIDAD LA COMUNIDAD EN REUNION EXTRAORDINARIA, SE INFORMARA SOBRE LA DECISION."
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-010_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": false,
+    "apreciaciones": "PRESIDENTE DE LA COMUNIDAD DEBE ESPERAR A REUNIRSE CON LA COMUNIDAD PARA PLANTEAR TEMA DE ARRIENDO DE UN POSIBLE SITIO.",
+    "estado_documentacion": "p",
+    "comentarios": "UNA VEZ REUNIDAD LA COMUNIDAD EN REUNION EXTRAORDINARIA, SE INFORMARA SOBRE LA DECISION."
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-011_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "FALTA DOCUMENTOS CBR",
+    "estado_documentacion": "i",
+    "comentarios": "PROPIETARIO CONSEGUIRA DOCUMENTOS A LA BREVEDAD"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-024_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PENDIENTES CBR",
+    "estado_documentacion": "i",
+    "comentarios": "NO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-026_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "FALTAN DOCUMENTOS CBR",
+    "estado_documentacion": "i",
+    "comentarios": "NO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-036_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PENDIENTE CBR",
+    "estado_documentacion": "i",
+    "comentarios": "ABOGADO DUEÑO DE COMUNIDAD Y DE SITIOS EXISTENTES"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-037_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "FALTAN DOCUMENTOS CBR",
+    "estado_documentacion": "i",
+    "comentarios": "PROPIETARIO NO SE ENCUENTRA CON DOCUMENTACION AL MOMENTO DE LA VISTA"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-092_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DOCUMENTOS PENDIENTES HASTA PROXIMA REUNION DE COMUNIDAD EN PRIMERA SEMANA DE NOVIEMBRE",
+    "estado_documentacion": "i",
+    "comentarios": ""
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-092_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DOCUMENTACION PENDIENTE\r\nPOR SER COMUNIDAD SE REUNIRAN PRIMERA SMEANA DE NOVIEMBRE PARA TOCAR EL TEMA",
+    "estado_documentacion": "p",
+    "comentarios": ""
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-098_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DISPUESTO O INTERESADO EN NEGOCIAR",
+    "estado_documentacion": "p",
+    "comentarios": "COMUNIDAD AGRICOLA LA CALERA\r\nRUT DE LA COMUNIDAD 53.217.880-0\r\nROL PROPIEDAD : 3069-13"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "04-098_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DISPUESTO O INTERESADO A NEGOCIAR",
+    "estado_documentacion": "p",
+    "comentarios": "DOCUMENTACIÓN A NOMBRE DE COMUNIDAD AGRICOLA LA CALERA RUT DE LA PROPIEDAD: 53.217.880-0.\r\nPRESIDENTE DE LA COMUNIDAD JAIME PIZARRO ROJAS.\r\nROL: 3069-13"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "05-005_4",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "DOCUMENTOS CBR",
+    "estado_documentacion": "i",
+    "comentarios": "DISPUESTA A NEGOCIAR"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "05-005_5",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "PROPIETARIO DISPUESTO E INTERESADO",
+    "estado_documentacion": "i",
+    "comentarios": "NO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "05-005_6",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": false,
+    "apreciaciones": "DOCUMENTOS CBR",
+    "estado_documentacion": "i",
+    "comentarios": "FALTA VERIFICAR LA ESCRITURA DEL TERRENO"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-056_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "no tenia la documentacion",
+    "estado_documentacion": "p",
+    "comentarios": "la enviara y avisara telefonicamente"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-059_7",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "los buscara",
+    "estado_documentacion": "p",
+    "comentarios": "hay que llamarlo para ver como le fue ocn la busqueda"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-083_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "buscara la señora los documentos en el intertanto se aprueba el sitio",
+    "estado_documentacion": "p",
+    "comentarios": "no tenia la documentación a mano"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-083_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "documentacion la buscara el propietario no la tenia a mano",
+    "estado_documentacion": "p",
+    "comentarios": "se pide buscar la documentación en el intertanto se aprueba el sitio"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-137_1",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "sin documentacion a mano",
+    "estado_documentacion": "p",
+    "comentarios": "en búsqueda de documentación, solo tenemos el rol."
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-137_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "sin documentos amano",
+    "estado_documentacion": "p",
+    "comentarios": "buscara la documentacion"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-142_3",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "sin documentacion en el momento de la visita",
+    "estado_documentacion": "p",
+    "comentarios": "propietario buscara documentacion"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-142_5",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "sin documentacion",
+    "estado_documentacion": "p",
+    "comentarios": "hay que buscarla"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-158_4",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "sin documentos en el momento",
+    "estado_documentacion": "p",
+    "comentarios": "buscara la documentacion"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-187_6",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "no la tenia a mano, la buscara",
+    "estado_documentacion": "p",
+    "comentarios": "mientras sitio se aprueba, propietario buscara los papeles de la propiedad"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "09-187_8",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "no tenian la documentacion  a mano",
+    "estado_documentacion": "p",
+    "comentarios": "propietario buscara documentacion"
+  }
+},
+{
+  "model": "registrosgab.informacionpropiedad",
+  "pk": "10-053_2",
+  "fields": {
+    "propiedad_hipoteca": false,
+    "estado_impuestos": true,
+    "apreciaciones": "no tenia los documentos a mano",
+    "estado_documentacion": "p",
+    "comentarios": "los buscara en el intertanto"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-022_2",
+  "fields": {
+    "croquis": "croquis/Croquis_03-022-1_nZrDoBb.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-022_3",
+  "fields": {
+    "croquis": "croquis/Croquis_03-022-3.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-024_1",
+  "fields": {
+    "croquis": "croquis/Croquis_03-024-1.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-024_2",
+  "fields": {
+    "croquis": "croquis/Croquis_03-024-2.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-028_1",
+  "fields": {
+    "croquis": "croquis/Croquis_03-028-1.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-028_2",
+  "fields": {
+    "croquis": "croquis/Croquis_03-028-2.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-031_1",
+  "fields": {
+    "croquis": "croquis/Croquis_03-031-1.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-031_2",
+  "fields": {
+    "croquis": "croquis/Croquis_03-031-2.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-039_2",
+  "fields": {
+    "croquis": "croquis/Croquis_03-039-2.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-039_4",
+  "fields": {
+    "croquis": "croquis/Croquis_03-039-2_2.jpg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-045_1",
+  "fields": {
+    "croquis": "croquis/Croquis_03-045-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-045_2",
+  "fields": {
+    "croquis": "croquis/Croquis_03-045-2.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-045_3",
+  "fields": {
+    "croquis": "croquis/Croquis_03-045-3.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "03-045_4",
+  "fields": {
+    "croquis": "croquis/Croquis_03-045-4.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-010_1",
+  "fields": {
+    "croquis": "croquis/Croquis_04-010-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-010_2",
+  "fields": {
+    "croquis": "croquis/Croquis_04-010-2.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-024_1",
+  "fields": {
+    "croquis": "croquis/Croquis_04-024-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-036_1",
+  "fields": {
+    "croquis": "croquis/Croquis_04-036-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-037_2",
+  "fields": {
+    "croquis": "croquis/Croquis_04-037-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-092_1",
+  "fields": {
+    "croquis": "croquis/Croquis_04-092-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-092_2",
+  "fields": {
+    "croquis": "croquis/Croquis_04-092-2.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-098_1",
+  "fields": {
+    "croquis": "croquis/Croquis_04-098-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "04-098_2",
+  "fields": {
+    "croquis": "croquis/Croquis_04-098-2.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "05-005_4",
+  "fields": {
+    "croquis": "croquis/Croquis_05-005-1.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "05-005_5",
+  "fields": {
+    "croquis": "croquis/Croquis_05-005-2.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "05-005_6",
+  "fields": {
+    "croquis": "croquis/Croquis_05-005-3.jpeg",
+    "descripcion": ""
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-056_1",
+  "fields": {
+    "croquis": "croquis/Imagen_de_WhatsApp_2024-06-07_a_las_20.38.48_6659518c.jpg",
+    "descripcion": "croquis"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-059_7",
+  "fields": {
+    "croquis": "croquis/Imagen_de_WhatsApp_2024-06-07_a_las_20.34.38_c76d5643.jpg",
+    "descripcion": "croquis"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-083_1",
+  "fields": {
+    "croquis": "croquis/Imagen_de_WhatsApp_2024-06-07_a_las_20.28.26_b45dae84.jpg",
+    "descripcion": "croquis"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-083_2",
+  "fields": {
+    "croquis": "croquis/Imagen_de_WhatsApp_2024-06-07_a_las_21.25.22_86c5900e.jpg",
+    "descripcion": "croquis"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-137_1",
+  "fields": {
+    "croquis": "croquis/WhatsApp_Image_2024-06-07_at_19.43.33.jpeg",
+    "descripcion": "esquema de propiedad, accesos, deslindes, líneas eléctricas, construcciones y emplazamiento de sitio proyectado"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-137_2",
+  "fields": {
+    "croquis": "croquis/WhatsApp_Image_2024-06-07_at_19.43.36.jpeg",
+    "descripcion": "esquema de propiedad, accesos, deslindes, líneas eléctricas, construcciones y emplazamiento de sitio proyectado"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-142_3",
+  "fields": {
+    "croquis": "croquis/WhatsApp_Image_2024-06-07_at_19.16.09.jpeg",
+    "descripcion": "esquema de propiedad, accesos, deslindes, líneas eléctricas, construcciones y emplazamiento de sitio proyectado"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-142_5",
+  "fields": {
+    "croquis": "croquis/WhatsApp_Image_2024-06-07_at_19.16.14.jpeg",
+    "descripcion": "esquema de propiedad, accesos, deslindes, líneas eléctricas, construcciones y emplazamiento de sitio proyectado"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-158_4",
+  "fields": {
+    "croquis": "croquis/WhatsApp_Image_2024-06-07_at_19.16.48.jpeg",
+    "descripcion": "esquema de propiedad, accesos, deslindes, líneas eléctricas, construcciones y emplazamiento de sitio proyectado"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-187_6",
+  "fields": {
+    "croquis": "croquis/WhatsApp_Image_2024-06-07_at_19.16.21.jpeg",
+    "descripcion": "esquema de propiedad, accesos, deslindes, líneas eléctricas, construcciones y emplazamiento de sitio proyectado"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "09-187_8",
+  "fields": {
+    "croquis": "croquis/WhatsApp_Image_2024-06-07_at_19.16.31.jpeg",
+    "descripcion": "esquema de propiedad, accesos, deslindes, líneas eléctricas, construcciones y emplazamiento de sitio proyectado"
+  }
+},
+{
+  "model": "registrosgab.croquis",
+  "pk": "10-053_2",
+  "fields": {
+    "croquis": "croquis/Imagen_de_WhatsApp_2024-06-07_a_las_18.03.51_31f5bb44.jpg",
+    "descripcion": "croquis"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-022_2",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "CUADRADO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "4 METROS DE ANCHO",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "REFORZAR PASO POR ASEQUIA AL INTERIOR DEL TERRENO",
+    "desc_const_aledanas": "NO",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "REFORZAR O CONSTRUIR ACCESO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "62853",
+    "dist_medidor_sitio": "80 METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°57'59,9\" S 70°07'53,7\" W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "10 KVA",
+    "transformador_distancia": "500 METROS",
+    "energia_provisoria": "SI, CON EL PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-022_3",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "CUADRADO",
+    "topografia_terreno": "LEVE DESNIVEL",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "PORTON 3 MTS ANCHO Y 15 AL SITIO",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "MEJORAR ACCESO PARA MAQUINARIAS",
+    "desc_const_aledanas": "NO",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "MEJORAR ACCESO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "5858163",
+    "dist_medidor_sitio": "25 METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°58'23,0\" S 70°09'08,8\" W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "25 KVA (13,2 KV)",
+    "transformador_distancia": "220 METROS",
+    "energia_provisoria": "SI, CON PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-024_1",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "PEQUEÑO DESNIVEL SOBRE TERRENO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "PORTON DE ACCESO CONTIGUO A RUTA C-489 ALTURA KM37",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "4 DE ANCHO Y 10 DE LARGO",
+    "acceso_sitio": "4X2",
+    "cond_acceso_equipo": "PORTON ESTRECHO PARA MAQUINARIAS",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO HAY",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "NO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "ESPACIO DISPONIBLE PARA CONSTRUCCION",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "7014717",
+    "dist_medidor_sitio": "130 MTS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "29°02'21,1\" S 70°28'59,1\" W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "135",
+    "energia_provisoria": "SI, CON EL PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-024_2",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "UN POCO DE DESNIVEL",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "TERRENO CONTIGUO A RUTA C-489 ALTURA KM35",
+    "material_terreno": "TIERRA Y PIEDRAS",
+    "dim_acceso": "ANCHO 4 METROS Y 15 DE LARGO",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "CON ACCESO A MAQUINARIAS POR PORTON PROPIO",
+    "desc_const_aledanas": "ROCAS Y DESNIVEL",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "ACCESO INDEPENDIENTE Y HUELLA DE 15 METROS APP",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "1685",
+    "dist_medidor_sitio": "50 METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "29°01'14,1\" S 70°28'39,9\" W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "55 METROS",
+    "energia_provisoria": "SI, CON PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-028_1",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "CUADRADO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "SIN OBS",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "3 MTS DE ANCHO Y 10 MTS AL PORTON",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "CONSTRUIR PORTON DE ACCESO PROPIO",
+    "desc_const_aledanas": "SIN OBSTACULOS",
+    "desc_const_importantes": "",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "",
+    "obras_civiles_especiales": "NO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "201907000500",
+    "dist_medidor_sitio": "3O METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°52'59,5\" S 70°02'34,7\" W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "10 KVA",
+    "transformador_distancia": "120 METROS",
+    "energia_provisoria": "SI, CON PROPIETARIA"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-028_2",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "CUADRADO",
+    "topografia_terreno": "UN POCO DE DESNIVEL",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "SE DEBE CONSTRUIR PORTON DE ACCESO",
+    "material_terreno": "TIERRA Y PIEDRAS",
+    "dim_acceso": "10 METROS",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "SE DEBE PROYECTAR PORTON DE ACCESO",
+    "desc_const_aledanas": "NO",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "ACCESO INDEPENDIENTE",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "4305756",
+    "dist_medidor_sitio": "30 METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°53'03,0\" S 70°02'44,4\" W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "10 KVA",
+    "transformador_distancia": "125 METROS",
+    "energia_provisoria": "SI CON PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-031_1",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "ARIDO CON ROCAS",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "SITIO PROYECTADO SE ENCUENTRA A UN COSTADO DE INGRESO",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "4 MTS Y 12 AL SITIO",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "AMPLIO ESPACIO PARA MAQUINARIAS Y ACOPIO",
+    "desc_const_aledanas": "NO",
+    "desc_const_importantes": "PICKING A 6O METROS",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "POSIBLEMENTE UN MURO DE CONTENCION",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": true,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "17528",
+    "dist_medidor_sitio": "55 METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°58'31\"1 S 70°13'17,8\"",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "80 METROS",
+    "energia_provisoria": "SI CON PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-031_2",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "PARCELA",
+    "topografia_terreno": "PLANA",
+    "uso_terreno": "AGRICOLA HABITACIONAL",
+    "desc_acceso_sitio": "ACCESO POR PORTON DE PROPIEDAD 3 METROS",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "3 MTS DE ANCHO Y 50 MTS LARGO AL SITIO",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "",
+    "obras_civiles_especiales": "NO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "INGRESO POR PORTON PASA POR UNA ASEQUIA Y TIENE UN TUBO DE PVC DE 250MM APROX, SUPERFICIAL IMPEDIRIA EL PASO DE MAQUINARIA Y VEHICULOS CON CARGA",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "5002944",
+    "dist_medidor_sitio": "50 METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°58'23,6\" S 70°12'49,6\" W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "30 KVA",
+    "transformador_distancia": "290 MEROS",
+    "energia_provisoria": "SI, CON LA PROPIETARIA"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-039_2",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "POR FALDA DE CERRO CON DESNIVEL",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "AL FINAL DEL CAMINO POR BORDE DEL CERRO CON PORTON DE ACCESO A VIÑA",
+    "material_terreno": "TIERRA Y PIEDRAS",
+    "dim_acceso": "3 MTS DE ANCGO, 300 MTS AL SITIO",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "SIN PROBLEMAS DE ACCESO, POR EL SECTOR TRANSITAN TRACTORES Y VEHÍCULOS VARIOS",
+    "desc_const_aledanas": "NO",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "POSIBLEMENTE SE DEBA TALAR UN ARBOL",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": true,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "63214506",
+    "dist_medidor_sitio": "5O METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "S28°53'33.2\" W70°16'28,9 \"",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "TRIFASICO, NO SE APRECIA CAPACIDAD",
+    "transformador_distancia": "50 METROS",
+    "energia_provisoria": "SI, CON LA AGRICILA."
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-039_4",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "ROCOSO",
+    "topografia_terreno": "PLANA CON LEVE DESNIVEL",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "A POCOS METROS DE ENTRADA PRINCIPAL",
+    "material_terreno": "TIERRA Y PIEDRAS",
+    "dim_acceso": "3 METROS DE ANCHO Y 40 AL SITIO",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "CAMINO AMPLIO",
+    "desc_const_aledanas": "NO",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO",
+    "obras_civiles_especiales": "ESPACIO PARA TRABAJO DE MAQUINARIAS Y ACOPIO DE MATERIALES",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "4230419",
+    "dist_medidor_sitio": "70 METROS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°55'03,5\" S 70°16'38,5\"",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "TRIFASICO, NO SE APRECIA CAPACIDAD",
+    "transformador_distancia": "220 METROS",
+    "energia_provisoria": "SI, CON VECINO DE PROPIEDAD (HIJO) YA QUE ELLA NO CUENTA CON ENERGIA ELECTRICA."
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-045_1",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1MT POSTE",
+    "area": "9",
+    "forma_terreno": "CUADRADO",
+    "topografia_terreno": "PLANA",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "ACCESO POR RUTA C-440 KM 35",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "3 MT ANCHO, 10MT AL SITIO",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "CONSTRUIR ACCESO INDEPENDIENTE",
+    "desc_const_aledanas": "SIN OBSTÁCULOS",
+    "desc_const_importantes": "NO EXISTEN",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "MATAQUITO",
+    "no_medidor": "150029975",
+    "dist_medidor_sitio": "75",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "EN RUTA C-440",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "45 KVA",
+    "transformador_distancia": "350 MT",
+    "energia_provisoria": "SI, CON EL PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-045_2",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1MT POSTE",
+    "area": "9",
+    "forma_terreno": "CUADRADO",
+    "topografia_terreno": "PLANA",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "TERRENO SITIO PROYECTADO ESTA CONTIGUO A CAMINO VECINAL DE ACCESO PUBLICO",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "3 MT ANCHO, 10MT DE HUELLA",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "CONSTRUIR ACCESO INDEPENDIENTE",
+    "desc_const_aledanas": "SIN OBSTACULOS",
+    "desc_const_importantes": "NO EXISTEN",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "MATAQUITO",
+    "no_medidor": "150029707",
+    "dist_medidor_sitio": "60 MT",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°08'47,3\" s 70°50'40,7\"w",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "NO VISIBLE, TRANSFORMADOR TRIFASICO",
+    "transformador_distancia": "80 MT",
+    "energia_provisoria": "SI, CON PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-045_3",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1MT POSTE",
+    "area": "9",
+    "forma_terreno": "RECTANGULAR",
+    "topografia_terreno": "PLANA",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "SITIO CONTIGUO A RUTA C440 KM 23.4 ZONA CANTO DEL AGUA",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "3 MT ANCHO, 10MT DE HUELLA",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "SE DEBE AMPLIAR PORTON, ACTUALMENTE CIERRE DE ALAMBRADO Y MALLA.",
+    "desc_const_aledanas": "SIN OBSTACULOS",
+    "desc_const_importantes": "NO EXISTENTES",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "MATAQUITO",
+    "no_medidor": "1500300080",
+    "dist_medidor_sitio": "40",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "COSTADO RUTA C-440",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "45 KVA",
+    "transformador_distancia": "500 MT",
+    "energia_provisoria": "SI, CON PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "03-045_4",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1MT POSTE",
+    "area": "9",
+    "forma_terreno": "RECTANGULAR",
+    "topografia_terreno": "PLANA",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "SITIO CONTIGUO A RUTA C-432 KM 20,2 POR ZONA CANTO DE AGUA",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "3 MT ANCHO, 10MT DE HUELLA",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "PROYECCION DE ACCESO NORMALES",
+    "desc_const_aledanas": "SIN OBSTACULOS",
+    "desc_const_importantes": "NO EXISTEN",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "TERRENO PROPIETARIO AMPLIO, ACCESODE ESTE POR EXTREMO LEJANO A SITIO PROYECTADO.",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "MATAQUITO",
+    "no_medidor": "2019-0908010",
+    "dist_medidor_sitio": "15 MT",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "28°06'28,0\"S 70°47'52,2\"W",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "30 KVA",
+    "transformador_distancia": "180 MT",
+    "energia_provisoria": "SI CON EL PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-010_1",
+  "fields": {
+    "dim_frente": "10",
+    "dim_largo": "10",
+    "dim_ampliar": "EMPALME",
+    "area": "100",
+    "forma_terreno": "IRREGULAR",
+    "topografia_terreno": "CON DESNIVELES",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "CAMINO DE TIERRA EXISTENTE HASTA SITIO PROYECTADO. ACCESO LIBRE.",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "4 MT Y 480 MT AL SITIO",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "CAMINO AL COSTADO DE RUT D-907 LIBRE DE ACCESO HASTA LA FALTA DEL CERRO",
+    "desc_const_aledanas": "CAMINO BARROSO CUANDO HAY LLUVIAS",
+    "desc_const_importantes": "NO EXISTENTES",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "SOLO CUANDO HAY LLUVIAS, EXTREMAR PRECAUSIONES EN CAMINOS BARROSOS.",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "",
+    "disponibilidad_agua": false,
+    "proveedor_electrico": "SIN ENERGIA",
+    "no_medidor": "SIN ENERGIA",
+    "dist_medidor_sitio": "NO APLICA",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "SIN ENERGIA",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "SIN ENERGIA",
+    "transformador_distancia": "NO APLICA",
+    "energia_provisoria": "SIN DISPONIBILIDAD DE ENERGIA PROVISORIA, YA QUE NO HAY LINEAS ELECTRICAS EN EL SECTOR.\r\nSE RECOMIENDA ENERGIA ERNC."
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-010_2",
+  "fields": {
+    "dim_frente": "10",
+    "dim_largo": "10",
+    "dim_ampliar": "EMPALME",
+    "area": "100",
+    "forma_terreno": "IRREGULAR",
+    "topografia_terreno": "CON DESNIVELES",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "LIBRE ACCESO AL SITIO.",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "LIBRE ACCESO (SIN CERCO)",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "LIBRE ACCESO A FALDA DE CERRO POR RUTA D-907. SIN PROBLEMAS PARA GRUAS O CAMIONES HASTA LA LA FALDA DEL CERRO.",
+    "desc_const_aledanas": "CAMINO BARROSO CUANDO LLUEVE",
+    "desc_const_importantes": "NO EXISTENTES",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "SOLO CUANDO HAY LLUVIAS, EXTREMAR PRECAUSIONES EN CAMINOS BARROSOS.",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "SITIO DE LIBRE ACCESO.",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "SIN ENERGIA",
+    "no_medidor": "SIN ENERGIA",
+    "dist_medidor_sitio": "NO APLICA",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "SIN ENERGIA",
+    "const_tendido_electrico": "NO",
+    "transformador_capacidad": "SIN ENERGIA",
+    "transformador_distancia": "NO APLICA",
+    "energia_provisoria": "SIN DISPONIBILIDAD DE ENERGIA PROVISORIA, YA QUE NO HAY LINEAS ELECTRICAS EN EL SECTOR.\r\nSE RECOMIENDA ENERGIA ERNC."
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-011_1",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "ACCESO LIBRE POR RUTA Y COORDINAR CON PROPIETARIO",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "PORTON DE 3 METROS",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "SIN PROBLEMAS PERO SE DEBE CONSTRIR ACCESO PROPIO",
+    "desc_const_aledanas": "NO",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "CONSIDERAR COMUNIDAD DE CANELA BAJA",
+    "obras_civiles_especiales": "ACCESO PROPIO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "SITIO PROYECTADO SIN COMPLICACIONES PARA CONSTRUIR",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "NO HAY",
+    "dist_medidor_sitio": "NO HAY",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "103 METROS",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "800 METROS",
+    "energia_provisoria": "NO HAY DISPONIBILIDAD DE ENERGIA PROVISORIA PORQUE PROPIETARIO NO TIENE MEDIDOR PROPIO."
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-024_1",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "SITIO CON CAMINO EXISTENTE",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "3 METROS X 10 MTS DE LARGO",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "INGRESO DE MAQUINARIA POR CAMINO PRINCIPAL A CONSTRIUR",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO HAY",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "COMUNIDAD EN EL SECTOR",
+    "obras_civiles_especiales": "NO HAY",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "NO HAY",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "PENDIENTE",
+    "no_medidor": "NO HAY",
+    "dist_medidor_sitio": "NO HAY",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "NO",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "450 MTS",
+    "energia_provisoria": "NO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-026_1",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "ACCESO LIBRE, FACIL ACCESO",
+    "material_terreno": "TIERRA Y PIEDRAS",
+    "dim_acceso": "4 MTS Y AL SITIO 15 MTS",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "SSIN PROBLEMAS DE ACCESO PARA MAQUINARIA",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO HAY",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "CERCA DE COMUNIDAD LOS POZOS",
+    "obras_civiles_especiales": "NO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "FACIL ACCESO",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "PENDIENTE",
+    "dist_medidor_sitio": "180 MTS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "15 MTS",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "1000 MTS",
+    "energia_provisoria": "SI, CON PROPIETARIO A 180 METROS"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-036_1",
+  "fields": {
+    "dim_frente": "10",
+    "dim_largo": "10",
+    "dim_ampliar": "NO APLICA",
+    "area": "100",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "DESNIVEL",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "FUNDO CON ACCESO LIBRE RUTA D-777",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "4 METROS DE ANCHO",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "SIN INCONVENIENTES",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO HAY",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO HAY",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "NO",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "NO TIENE",
+    "no_medidor": "NO TIENE",
+    "dist_medidor_sitio": "NO APLICA",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "NO",
+    "const_tendido_electrico": "NO",
+    "transformador_capacidad": "NO HAY",
+    "transformador_distancia": "NO HAY",
+    "energia_provisoria": "NO EXISTE ENERGIA EN EL FUNDO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-037_2",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9",
+    "forma_terreno": "ARIDO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "SE DEBE PROYECTAR ACCESO DIRECTO A SITIO\r\n(POR AHORA INGRESAR POR PROPIEDAD)",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "5 DE ANCHO Y LONG. 3 MTS",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "SIN COMPLICACIONES, SITIO A UN COSTADO DE CAMINO",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO HAY",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO HAY\r\nCOMUNIDAD",
+    "obras_civiles_especiales": "NO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": true,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "NO",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "PENDIENTE",
+    "no_medidor": "PENDIENTE",
+    "dist_medidor_sitio": "120 MTS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "50 MTS",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "600 MTS",
+    "energia_provisoria": "CON EL PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-092_1",
+  "fields": {
+    "dim_frente": null,
+    "dim_largo": null,
+    "dim_ampliar": null,
+    "area": null,
+    "forma_terreno": "EXTENSO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "INGRESAR POR RUTA D-789 AL SITIO",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "CAMINO 3,5 MTS DE ANCHO AL SITIO",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "EN INVIERNO SUBIR CON MAQUINARIA  CON DOBLE TRACCION",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO EXISTEN",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES, COMUNIDAD",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "SIN ENERGIA",
+    "no_medidor": "SIN ENERGIA",
+    "dist_medidor_sitio": "SIN ENERGIA",
+    "canalizacion_subterranea": "SIN ENERGIA",
+    "ubicacion_tendido_electrico": "SIN ENERGIA",
+    "const_tendido_electrico": "SIN ENERGIA",
+    "transformador_capacidad": "SIN ENERGIA",
+    "transformador_distancia": "SIN ENERGIA",
+    "energia_provisoria": "SIN POSIBILIDAD DE PROVISORIA, COMUNIDAD CON ENERGIA SOLAR"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-092_2",
+  "fields": {
+    "dim_frente": "10",
+    "dim_largo": "10",
+    "dim_ampliar": null,
+    "area": "100",
+    "forma_terreno": "IRREGULAR",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "INGRESO POR RUTA D-789",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "CAMINO 3,5 MTS DE ANCHO AL SITIO",
+    "acceso_sitio": "4X4",
+    "cond_acceso_equipo": "EN INVIERNO SUBIR CON DOBLE TRACCION",
+    "desc_const_aledanas": "NO HAY",
+    "desc_const_importantes": "NO",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES\r\nCOMUNIDAD",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "SIN ENERGIA",
+    "no_medidor": "SIN ENERGIA|",
+    "dist_medidor_sitio": "SIN ENERGIA",
+    "canalizacion_subterranea": "SIN ENERGIA",
+    "ubicacion_tendido_electrico": "SIN ENERGIA",
+    "const_tendido_electrico": "SIN ENERGIA",
+    "transformador_capacidad": "SIN ENERGIA",
+    "transformador_distancia": "SIN ENERGIA",
+    "energia_provisoria": "SIN POSIBILIDAD, COMUNIDAD CON ENERGIA SOLAR"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-098_1",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "EMPALME",
+    "area": "9",
+    "forma_terreno": "IRREGULAR",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "SE ENCUENTRA AL COSTADO DE LA RUTA D-649",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "LIBRE ACCESO (SIN CERCO)",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "LIBRE ACCESO SIN PORTON. ACCESO LIBRE PARA GRUAS Y/O CAMIONES GRANDES",
+    "desc_const_aledanas": "SIN OBSTACULOS",
+    "desc_const_importantes": "NO EXISTEN",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "SITIO PLANO, LIBRE DE ACCESO",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "SIN MEDIDOR",
+    "dist_medidor_sitio": "NO APLICA",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "S 30°48.666´   W 071°23.969",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15KVA",
+    "transformador_distancia": "90  MT",
+    "energia_provisoria": "NO EXISTE DISPONIBILIDAD, POR NO EXISTIR MEDIDOR CERCANO. \r\nSOLO EXISTE LINEA ELECTRICA EN RUTA, CON TRANSFORMADOR A 90 METROS DE DISTANCIA."
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "04-098_2",
+  "fields": {
+    "dim_frente": "3",
+    "dim_largo": "3",
+    "dim_ampliar": "EMPALME",
+    "area": "9",
+    "forma_terreno": "IRREGULAR",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "SIN USO DEFINIDO",
+    "desc_acceso_sitio": "SITIO SE ENCUENTRA A UN COSTADO DE LA RUTA D-649, DE ACCESO LIBRE.",
+    "material_terreno": "TIERRA",
+    "dim_acceso": "LIBRE ACCESO (SIN CERCO)",
+    "acceso_sitio": "4X2 Y 4X4",
+    "cond_acceso_equipo": "ACCESO LIBRE SIN PORTON, SIN PROBLEMAS PARA GRUAS O CAMIONES GRANDES.",
+    "desc_const_aledanas": "SIN OBSTACULOS",
+    "desc_const_importantes": "NO EXISTEN",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NORMALES.",
+    "obras_civiles_especiales": "",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "SITI LIBRE DE ACCESO",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CGE",
+    "no_medidor": "SIN MEDIDOR",
+    "dist_medidor_sitio": "NO APLICA",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "S  30°49.226´  W 071°.23.254",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "870 MT",
+    "energia_provisoria": "SIN ENERGIA PROVISORIA DISPONIBLE"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "05-005_4",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "LARGO Y ANGOSTO",
+    "topografia_terreno": "PLANO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "SITIO A UN COSTADO DEL CAMINO\r\nSIN PROBLEMAS DE ACCESO",
+    "material_terreno": "TIERRA Y PIEDRAS",
+    "dim_acceso": "HUELLA 4 MTS DE ANCHO",
+    "acceso_sitio": "4X2",
+    "cond_acceso_equipo": "COSNTRUIR ACCESO INDEPENDIENTE\r\nCAMINO CON CURVAS Y RIPIO DE 3 KM",
+    "desc_const_aledanas": "SIN OBSTACULOS",
+    "desc_const_importantes": "NO HAY",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "INVADIR LO MENOS POSIBLE EL ENTORNO",
+    "obras_civiles_especiales": "PORTON SITIO",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CONAFE",
+    "no_medidor": "PENDIENTE",
+    "dist_medidor_sitio": "60 MTS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "A 20 METROS DEL SITIO",
+    "const_tendido_electrico": null,
+    "transformador_capacidad": "10 KVA",
+    "transformador_distancia": "80 MTS",
+    "energia_provisoria": "SI CON EL ARRENDATARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "05-005_5",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "NO APLICA",
+    "area": "9 M2",
+    "forma_terreno": "LARGO Y ANGOSTO",
+    "topografia_terreno": "UN POCO DE DESNIVEL",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "SIN PROBLEMAS DE ACCESO",
+    "material_terreno": "TIERRA Y PIEDRAS",
+    "dim_acceso": "PORTON DE 3 METROS",
+    "acceso_sitio": "4X2",
+    "cond_acceso_equipo": "SE RECOMIENDA CONSITRUIR PORTON PARA SITIO",
+    "desc_const_aledanas": "SIN OBSTACULOS CAMINO 3 METOS DE ANCHO",
+    "desc_const_importantes": "NO HAY",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "NO HAY",
+    "obras_civiles_especiales": "REQUIERE PORTON DE ACCESO  A OBRA",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CONAFE",
+    "no_medidor": "PENDIENTE",
+    "dist_medidor_sitio": "200 MTS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "A 20 METROS DEL SITIO",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "10 KVA",
+    "transformador_distancia": "260 MTS",
+    "energia_provisoria": "SI, CON EL PROPIETARIO"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "05-005_6",
+  "fields": {
+    "dim_frente": "3 MTS",
+    "dim_largo": "3 MTS",
+    "dim_ampliar": "1 MT POSTE",
+    "area": "9 M2",
+    "forma_terreno": "CON DESNIVEL",
+    "topografia_terreno": "PEDREGOSO",
+    "uso_terreno": "AGRICOLA",
+    "desc_acceso_sitio": "ACCESO POR RIACHUELO CON POCO CAUDAL",
+    "material_terreno": "PIEDRAS Y TIERRA",
+    "dim_acceso": "HUELLA ANGOSTA",
+    "acceso_sitio": "4X2",
+    "cond_acceso_equipo": "",
+    "desc_const_aledanas": "",
+    "desc_const_importantes": "",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "PASO POR RIACHUELO",
+    "obras_civiles_especiales": "SE DEBE CONSTRUIR CAMINO DE ACCESO A SITIO",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "SITIO PASA POR RIACHUELO",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "CONAFE",
+    "no_medidor": "PENDIENTE",
+    "dist_medidor_sitio": "50 MTS",
+    "canalizacion_subterranea": "NO",
+    "ubicacion_tendido_electrico": "450",
+    "const_tendido_electrico": "SI",
+    "transformador_capacidad": "15 KVA",
+    "transformador_distancia": "450 MTS",
+    "energia_provisoria": "SI, CON PROPIETARIA"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-056_1",
+  "fields": {
+    "dim_frente": "800",
+    "dim_largo": "4000",
+    "dim_ampliar": "-",
+    "area": "3200000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "colinas",
+    "uso_terreno": "agricola",
+    "desc_acceso_sitio": "Existe huella para llegar",
+    "material_terreno": "tierra y greda",
+    "dim_acceso": "3 metros",
+    "acceso_sitio": "se necesita 4x4",
+    "cond_acceso_equipo": "solo camiones, camino muy angosto para gruas",
+    "desc_const_aledanas": "terreno con inclinacion y arboles de 30 metros",
+    "desc_const_importantes": "ninguna",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "mucha neblina, frio y lluvia por estar entre cerros",
+    "obras_civiles_especiales": "movimiento de tierra para mejorar huella existente",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "se requiere material para relleno de huella",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "-",
+    "dist_medidor_sitio": "35 mts",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "pasa por la propiedad linea de media tension",
+    "const_tendido_electrico": "60 metros",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "-",
+    "energia_provisoria": "no tenemos provisoria"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-059_7",
+  "fields": {
+    "dim_frente": "300",
+    "dim_largo": "1400",
+    "dim_ampliar": "-",
+    "area": "420000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "colinas",
+    "uso_terreno": "agricola / forestal",
+    "desc_acceso_sitio": "se requiere movimiento de tierra para hacer posible ingreso independiente",
+    "material_terreno": "tierra y greda",
+    "dim_acceso": "4 metros",
+    "acceso_sitio": "se necesita 4x4",
+    "cond_acceso_equipo": "pueden ingresar solo camiones, no entra una grua de mayor tamaño",
+    "desc_const_aledanas": "arboles de gran altura 35 metros",
+    "desc_const_importantes": "ninguna",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "clima lluvioso y frio",
+    "obras_civiles_especiales": "movimiento de tierras para acceso independiente",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "ninguno",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "-",
+    "dist_medidor_sitio": "45 metros",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "a nivel de camino principal",
+    "const_tendido_electrico": "45 metros",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "-",
+    "energia_provisoria": "no existe posibilidad de energía provisoria"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-083_1",
+  "fields": {
+    "dim_frente": "100",
+    "dim_largo": "200",
+    "dim_ampliar": "-",
+    "area": "20000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "parejo",
+    "uso_terreno": "Agricola / habitacional",
+    "desc_acceso_sitio": "sin inconvenientes y expedito",
+    "material_terreno": "tierra",
+    "dim_acceso": "3 metros",
+    "acceso_sitio": "se puede acceder con 4x2",
+    "cond_acceso_equipo": "sin problemas puede acceder la grua o camion",
+    "desc_const_aledanas": "arboles de a lo menos 25 metros",
+    "desc_const_importantes": "solo casas de 1 piso de baja altura",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "solo cuidar arboles del entorno en la construccion",
+    "obras_civiles_especiales": "ninguna",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "la entrada esta al costado de la ruta principal",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "esta la foto pero el numero no esta ilegible",
+    "dist_medidor_sitio": "110 mts",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "a nivel de camino principal",
+    "const_tendido_electrico": "si, desde el poste son 110 metros",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "-",
+    "energia_provisoria": "estan dispuestos a entregar provisoria"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-083_2",
+  "fields": {
+    "dim_frente": "200",
+    "dim_largo": "200",
+    "dim_ampliar": "-",
+    "area": "40000",
+    "forma_terreno": "cuadrado",
+    "topografia_terreno": "parejo",
+    "uso_terreno": "Agricola / habitacional",
+    "desc_acceso_sitio": "se debe hacer acceso independiente",
+    "material_terreno": "tierra",
+    "dim_acceso": "4 metros",
+    "acceso_sitio": "se puede acceder con 4x2",
+    "cond_acceso_equipo": "no hay impedimento para ingreso de camiones ni Gruas",
+    "desc_const_aledanas": "arboles sobre 20 metros",
+    "desc_const_importantes": "solo casas de poca altura, de 1 piso",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "normales, de mucha lluvia en la zona.",
+    "obras_civiles_especiales": "ninguno",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "hay que construir un acceso independiente y huella de h/3",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "-",
+    "dist_medidor_sitio": "45 mts",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "a nivel de camino principal",
+    "const_tendido_electrico": "si, desde el poste son 40 metros",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "-",
+    "energia_provisoria": "Si, propietaria dispuesta a entregar energía provisoria"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-137_1",
+  "fields": {
+    "dim_frente": "20",
+    "dim_largo": "50",
+    "dim_ampliar": "-",
+    "area": "1000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "parejo",
+    "uso_terreno": "habitacional",
+    "desc_acceso_sitio": "camino interior de ripio",
+    "material_terreno": "tierra",
+    "dim_acceso": "5 metros",
+    "acceso_sitio": "se puede acceder con 4x2",
+    "cond_acceso_equipo": "no hay problemas en el acceso de camión, pero desde la casa hacia el emplazamiento hay poco espacio de maniobra para vehiculos menores",
+    "desc_const_aledanas": "cortina de arboles de 15 metros",
+    "desc_const_importantes": "no existen construcciones importantes, solo casas cercanas de baja altura",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "mucho viento y lluvia fuerte",
+    "obras_civiles_especiales": "no se requiere, solo alguna poda de arboles",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": true,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "propietario dispuesto a corta de arboles,",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "-",
+    "dist_medidor_sitio": "30 metros",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "a 30 metros",
+    "const_tendido_electrico": "en baja tension 30 metros",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "300 metros",
+    "energia_provisoria": "si, propietario dispuesto a entregar energia provisoria"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-137_2",
+  "fields": {
+    "dim_frente": "300",
+    "dim_largo": "100",
+    "dim_ampliar": "-",
+    "area": "30000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "plano",
+    "uso_terreno": "agricola",
+    "desc_acceso_sitio": "se requiere construccion de porton rural para acceso independiente",
+    "material_terreno": "tierra vegetal arcillosa",
+    "dim_acceso": "4 metros",
+    "acceso_sitio": "se puede acceder con 4x2",
+    "cond_acceso_equipo": "No hay problema con acceso de maquinaria grande",
+    "desc_const_aledanas": "no existen obstaculos cercanos",
+    "desc_const_importantes": "solo casas de 1 piso de baja altura",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "zona de mucha lluvia y barro",
+    "obras_civiles_especiales": "construccion de porton para acceso independiente.",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "ninguno",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "-",
+    "dist_medidor_sitio": "280 metros",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "320 metros en baja tension",
+    "const_tendido_electrico": "320 metros",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "400 mts",
+    "energia_provisoria": "Si, propietario puede entregar provisoria"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-142_3",
+  "fields": {
+    "dim_frente": "200",
+    "dim_largo": "400",
+    "dim_ampliar": "-",
+    "area": "80.000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "cerro con pendiente pronunciada",
+    "uso_terreno": "bosque nativo",
+    "desc_acceso_sitio": "camino interior de tierra, huella hacia sitio es de tierra vegetal y será despejada por propietario",
+    "material_terreno": "tierra vegetal",
+    "dim_acceso": "4 mts",
+    "acceso_sitio": "4x2",
+    "cond_acceso_equipo": "camino interior apto para camiones. huella hacia sitio (L=15 mts) solo para vehículos menores",
+    "desc_const_aledanas": "zona boscosa de 15 mts de altura aprox.",
+    "desc_const_importantes": "no existen construcciones cercanas de altura considerable",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "zona boscosa, de lluvia y viento. posible caída de ramas",
+    "obras_civiles_especiales": "no se requieren",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": true,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "propietario despejará el lugar de emplazamiento para construir, por lo que solo habría que talar un par de árboles menores",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "Frontel",
+    "no_medidor": null,
+    "dist_medidor_sitio": null,
+    "canalizacion_subterranea": "NO (terreno boscoso)",
+    "ubicacion_tendido_electrico": "poste MT a 100 mts",
+    "const_tendido_electrico": "transformador y 100 mts en BT",
+    "transformador_capacidad": "no se encontró",
+    "transformador_distancia": "no se encontró",
+    "energia_provisoria": "NO, casa de propietario está a 300 mts bajando el cerro"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-142_5",
+  "fields": {
+    "dim_frente": "200",
+    "dim_largo": "300",
+    "dim_ampliar": "-",
+    "area": "60.000",
+    "forma_terreno": "semi rectangular",
+    "topografia_terreno": "sinuosa",
+    "uso_terreno": "habitacional con un par de animales",
+    "desc_acceso_sitio": "camino interior de tierra",
+    "material_terreno": "tierra vegetal arcillosa",
+    "dim_acceso": "3 mts.",
+    "acceso_sitio": "4x2",
+    "cond_acceso_equipo": "camino interior solo para vehículos menores",
+    "desc_const_aledanas": "sin obstáculos cercanos",
+    "desc_const_importantes": "solo algunas casas de baja altura en las cercanías",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "zona lluviosa",
+    "obras_civiles_especiales": "solo huella",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "30 mts de huella con pendiente suave",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "Frontel",
+    "no_medidor": null,
+    "dist_medidor_sitio": null,
+    "canalizacion_subterranea": null,
+    "ubicacion_tendido_electrico": "poste BT a 80 mts",
+    "const_tendido_electrico": "solo LE. BT. aérea",
+    "transformador_capacidad": null,
+    "transformador_distancia": "180 mts",
+    "energia_provisoria": "SI"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-158_4",
+  "fields": {
+    "dim_frente": "200",
+    "dim_largo": "500",
+    "dim_ampliar": "-",
+    "area": "100.000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "plana",
+    "uso_terreno": "agrícola",
+    "desc_acceso_sitio": "camino interior de ripio apto para vehículos y camiones menores",
+    "material_terreno": "tierra vegetal arcillosa",
+    "dim_acceso": "5 mts",
+    "acceso_sitio": "4x2",
+    "cond_acceso_equipo": "camino interior para camiones menores, hacia el sitio es terreno agrícola blando, solo vehículos menores",
+    "desc_const_aledanas": "existe cortina de árboles de 20 mts aprox. en casi todo el perímetro de la propiedad",
+    "desc_const_importantes": "junto a sitio proyectado solo hay un invernadero de baja altura",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "zona lluviosa, vuelve el terreno barroso",
+    "obras_civiles_especiales": "solo se requiere incorporar ripio desde camino interior a sitio proyectado (L=30 mts), para apretar el terreno",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": true,
+    "comentarios": "solo se requiere incorporar ripio desde camino interior a sitio proyectado (L=30 mts), para apretar el terreno",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "Frontel",
+    "no_medidor": null,
+    "dist_medidor_sitio": "70 mts",
+    "canalizacion_subterranea": "NO (terreno agrícola)",
+    "ubicacion_tendido_electrico": "poste BT a 40 mts",
+    "const_tendido_electrico": "solo LE. BT. aérea",
+    "transformador_capacidad": "15kVA",
+    "transformador_distancia": "110",
+    "energia_provisoria": "SI"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-187_6",
+  "fields": {
+    "dim_frente": "160",
+    "dim_largo": "300",
+    "dim_ampliar": "-",
+    "area": "48000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "cerro con pendiente media",
+    "uso_terreno": "terreno sin uso",
+    "desc_acceso_sitio": "requiere construccion de porton rural para acceso independiente",
+    "material_terreno": "tierra vegetal arcillosa",
+    "dim_acceso": "4 metros",
+    "acceso_sitio": "se necesita 4x4",
+    "cond_acceso_equipo": "haciendo huella pueden ingresar camiones y gruas, sin huella no hay acceso, es solo pasto y espinos",
+    "desc_const_aledanas": "Arboles menres de 10 metros",
+    "desc_const_importantes": "no hay construcciones cercanas",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "zona lluviosa y mucho frio, se genera mucho barro",
+    "obras_civiles_especiales": "porton de acceso y huella",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "par construir hay que hacer trabajos de adecuacion",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "-",
+    "dist_medidor_sitio": "no hay medidor",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "a 2 kms",
+    "const_tendido_electrico": "2 kms media tension",
+    "transformador_capacidad": "no existe",
+    "transformador_distancia": "no existe",
+    "energia_provisoria": "Propietario no tiene energía para disponer"
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "09-187_8",
+  "fields": {
+    "dim_frente": "200",
+    "dim_largo": "100",
+    "dim_ampliar": "-",
+    "area": "20000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "colinas",
+    "uso_terreno": "habitacional",
+    "desc_acceso_sitio": "camino vecinal de ripio y se requiere huella al interior",
+    "material_terreno": "tierra vegetal arcillosa",
+    "dim_acceso": "5 metros",
+    "acceso_sitio": "se puede acceder con 4x2",
+    "cond_acceso_equipo": "no hay problemas con acceso de camiones y gruas",
+    "desc_const_aledanas": "linea de media tension cercana, no hay presencia de arboles.",
+    "desc_const_importantes": "ninguna construccion importante, solo casas de 1 piso de baja altura",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "zona de mucha lluvia y barrosa ademas del viento",
+    "obras_civiles_especiales": "hay que hacer huella como de 20 metros",
+    "demoliciones": false,
+    "mov_tierras": false,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": true,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "hay que hacer adecuaciones menores",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "frontel",
+    "no_medidor": "-",
+    "dist_medidor_sitio": "60 metros",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "60 metros",
+    "const_tendido_electrico": "60 metros baja tension",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "-",
+    "energia_provisoria": "Propietaria dispuesta a entregar energia provisoria, pero esta construyendo su casa, no tiene empalme aun."
+  }
+},
+{
+  "model": "registrosgab.inftecpropiedad",
+  "pk": "10-053_2",
+  "fields": {
+    "dim_frente": "100",
+    "dim_largo": "200",
+    "dim_ampliar": "-",
+    "area": "20000",
+    "forma_terreno": "rectangular",
+    "topografia_terreno": "parejo",
+    "uso_terreno": "Agricola / habitacional",
+    "desc_acceso_sitio": "sin ningun obstaculo, expedito",
+    "material_terreno": "tierra",
+    "dim_acceso": "4 metros",
+    "acceso_sitio": "se puede acceder con 4x2",
+    "cond_acceso_equipo": "no hay problema para camion o grua",
+    "desc_const_aledanas": "arboles de 15 metros",
+    "desc_const_importantes": "solo casas de un piso de baja altura",
+    "riesgo_inundaciones": false,
+    "consideraciones_ambientales": "ninguna",
+    "obras_civiles_especiales": "ninguno",
+    "demoliciones": false,
+    "mov_tierras": true,
+    "muros_contencion": false,
+    "tala_arboles": false,
+    "acceso_independiente": false,
+    "cons_camino": null,
+    "camino_acceso": false,
+    "comentarios": "el acceso es por la entrada de la propiedad",
+    "disponibilidad_agua": true,
+    "proveedor_electrico": "SAESA",
+    "no_medidor": "540319",
+    "dist_medidor_sitio": "120 metro",
+    "canalizacion_subterranea": "no",
+    "ubicacion_tendido_electrico": "a nivel de camino principal",
+    "const_tendido_electrico": "120 metros",
+    "transformador_capacidad": "-",
+    "transformador_distancia": "-",
+    "energia_provisoria": "si, esta dispuesto a entregar energia provisoria"
+  }
+},
+{
+  "model": "registrosgab.documentos",
+  "pk": 3,
+  "fields": {
+    "registro_inicio": "09-158_2",
+    "documento": "documentos/Plancheta_SII_353-46.png",
+    "descripcion": "Los propietarios de toda la zona son familiares mapuches pertenecientes a la comunidad temucuicui, radicales de la lucha mapuche por la recuperacion de tierras, nisiquiera carabineros esta autorizado a ingresar a la zona que comprende todo el poligono"
+  }
+},
+{
+  "model": "registrosgab.documentos",
+  "pk": 4,
+  "fields": {
+    "registro_inicio": "09-158_4",
+    "documento": "documentos/WhatsApp_Image_2024-06-07_at_20.24.44.jpeg",
+    "descripcion": "Carnet propietaria"
+  }
+},
+{
+  "model": "registrosgab.documentos",
+  "pk": 5,
+  "fields": {
+    "registro_inicio": "09-142_3",
+    "documento": "documentos/carnet_propietario_a.jpg",
+    "descripcion": null
+  }
+},
+{
+  "model": "registrosgab.documentos",
+  "pk": 6,
+  "fields": {
+    "registro_inicio": "09-142_5",
+    "documento": "documentos/carnet_propietario_a_4wyt8t7.jpg",
+    "descripcion": null
+  }
+}
+]

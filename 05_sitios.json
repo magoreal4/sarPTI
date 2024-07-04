@@ -1,0 +1,2620 @@
+[
+{
+  "model": "main.sitio",
+  "pk": "0-001",
+  "fields": {
+    "nombre": "Chile Prueba",
+    "lat_nominal": -17.0,
+    "lon_nominal": -64.0,
+    "altura": "65",
+    "provincia": "Provincia",
+    "municipio": "Municipio",
+    "localidad": "Comun",
+    "empresa": 11,
+    "usuario": 44,
+    "img_google": "imgs_gmap/0-001_nominal_lxrovjH.png",
+    "contador_llegadas": 36
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-003",
+  "fields": {
+    "nombre": "CAMINA - FRANCIA - LLOO",
+    "lat_nominal": -19.387433,
+    "lon_nominal": -69.577347,
+    "altura": "24",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "CAMIÑA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-004",
+  "fields": {
+    "nombre": "RPT MOQUELLA - LLOO",
+    "lat_nominal": -19.343819,
+    "lon_nominal": -69.499245,
+    "altura": "24",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "CAMIÑA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-017",
+  "fields": {
+    "nombre": "HUARA - CALETA CAMARONES - LLOO",
+    "lat_nominal": -19.183012,
+    "lon_nominal": -69.686501,
+    "altura": "36",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "ARICA",
+    "localidad": "CAMARONES",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-018",
+  "fields": {
+    "nombre": "HUARA - MINITA - LLOO",
+    "lat_nominal": -19.092145,
+    "lon_nominal": -69.598947,
+    "altura": "24",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "HUARA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-020",
+  "fields": {
+    "nombre": "HUARA - PACHICA - LLOO",
+    "lat_nominal": -19.867196,
+    "lon_nominal": -69.438122,
+    "altura": "12",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "HUARA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-021",
+  "fields": {
+    "nombre": "POROMA Y COSCAYA - LLOO",
+    "lat_nominal": -19.870506,
+    "lon_nominal": -69.1805,
+    "altura": "42",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "HUARA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-022",
+  "fields": {
+    "nombre": "HUARA - SIBAYA - LLOO",
+    "lat_nominal": -19.780691,
+    "lon_nominal": -69.160844,
+    "altura": "36",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "HUARA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-027",
+  "fields": {
+    "nombre": "HUARA - USMAGAMA - LLOO",
+    "lat_nominal": -19.744214,
+    "lon_nominal": -69.220073,
+    "altura": "42",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "HUARA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "01-032",
+  "fields": {
+    "nombre": "POZO ALMONTE - PARCA - LLOO",
+    "lat_nominal": -20.01718,
+    "lon_nominal": -69.208505,
+    "altura": "42",
+    "provincia": "REGIÓN DE TARAPACÁ",
+    "municipio": "TAMARUGAL",
+    "localidad": "POZO ALMONTE",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "02-001",
+  "fields": {
+    "nombre": "RUTA 710 - TALTAL 3 - LLOO",
+    "lat_nominal": -24.502307,
+    "lon_nominal": -70.55881,
+    "altura": "36",
+    "provincia": "REGIÓN DE ANTOFAGASTA",
+    "municipio": "ANTOFAGASTA",
+    "localidad": "TALTAL",
+    "empresa": 5,
+    "usuario": 36,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "02-008",
+  "fields": {
+    "nombre": "CALAMA - CUPO - LLOO",
+    "lat_nominal": -22.117417,
+    "lon_nominal": -68.317275,
+    "altura": "24",
+    "provincia": "REGIÓN DE ANTOFAGASTA",
+    "municipio": "EL LOA",
+    "localidad": "CALAMA",
+    "empresa": 5,
+    "usuario": 36,
+    "img_google": "imgs_gmap/02-008_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "02-014",
+  "fields": {
+    "nombre": "OLLAGUE - CEBOLLAR - LLOO",
+    "lat_nominal": -21.533643,
+    "lon_nominal": -68.340691,
+    "altura": "24",
+    "provincia": "REGIÓN DE ANTOFAGASTA",
+    "municipio": "EL LOA",
+    "localidad": "OLLAGÜE",
+    "empresa": 5,
+    "usuario": 36,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "02-015",
+  "fields": {
+    "nombre": "OLLAGUE - COSCA - LLOO",
+    "lat_nominal": -21.115658,
+    "lon_nominal": -68.363769,
+    "altura": "48",
+    "provincia": "REGIÓN DE ANTOFAGASTA",
+    "municipio": "EL LOA",
+    "localidad": "OLLAGÜE",
+    "empresa": 5,
+    "usuario": 36,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-004",
+  "fields": {
+    "nombre": "CALDERA - BARRANQUILLA - LLOO",
+    "lat_nominal": -27.512923,
+    "lon_nominal": -70.889998,
+    "altura": "60",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "COPIAPÓ",
+    "localidad": "CALDERA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-004_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-005",
+  "fields": {
+    "nombre": "RPT CALETA OBISPITO - LLOO",
+    "lat_nominal": -26.746122,
+    "lon_nominal": -70.739896,
+    "altura": "42",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "COPIAPÓ",
+    "localidad": "CALDERA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-016",
+  "fields": {
+    "nombre": "TIERRA AMARILLA - JUNTA DEL POTRO - LLOO",
+    "lat_nominal": -28.162325,
+    "lon_nominal": -69.792019,
+    "altura": "60",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "COPIAPÓ",
+    "localidad": "TIERRA AMARILLA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-016_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-019",
+  "fields": {
+    "nombre": "RPT RIO JORQUERA Y JUNTA DEL POTRO - LLOO",
+    "lat_nominal": -28.0004,
+    "lon_nominal": -69.881318,
+    "altura": "18",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "COPIAPÓ",
+    "localidad": "TIERRA AMARILLA",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-019_nominal.png",
+    "contador_llegadas": 3
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-022",
+  "fields": {
+    "nombre": "MALAGUIN Y CONAY - LLOO",
+    "lat_nominal": -28.965586,
+    "lon_nominal": -70.135559,
+    "altura": "72",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "HUASCO",
+    "localidad": "ALTO DEL CARMEN",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-022_nominal.png",
+    "contador_llegadas": 3
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-024",
+  "fields": {
+    "nombre": "ALTO DEL CARMEN - DURAZNITO - LLOO",
+    "lat_nominal": -29.027609,
+    "lon_nominal": -70.47999,
+    "altura": "36",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "HUASCO",
+    "localidad": "ALTO DEL CARMEN",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-024_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-028",
+  "fields": {
+    "nombre": "ALTO DEL CARMEN - JUNTA DE VALERIANO - LLOO",
+    "lat_nominal": -28.884137,
+    "lon_nominal": -70.042221,
+    "altura": "24",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "HUASCO",
+    "localidad": "ALTO DEL CARMEN",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-028_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-031",
+  "fields": {
+    "nombre": "LA PAMPA Y CONAY - LLOO",
+    "lat_nominal": -28.972758,
+    "lon_nominal": -70.218549,
+    "altura": "24",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "HUASCO",
+    "localidad": "ALTO DEL CARMEN",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-031_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-039",
+  "fields": {
+    "nombre": "ALTO DEL CARMEN - QUEBRADA DE PINTE - LLOO",
+    "lat_nominal": -28.913097,
+    "lon_nominal": -70.273352,
+    "altura": "18",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "HUASCO",
+    "localidad": "ALTO DEL CARMEN",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-039_nominal.png",
+    "contador_llegadas": 4
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "03-045",
+  "fields": {
+    "nombre": "HUASCO - CANTO DEL AGUA - LLOO",
+    "lat_nominal": -28.13981,
+    "lon_nominal": -70.841765,
+    "altura": "30",
+    "provincia": "REGIÓN DE ATACAMA",
+    "municipio": "HUASCO",
+    "localidad": "HUASCO",
+    "empresa": 6,
+    "usuario": 33,
+    "img_google": "imgs_gmap/03-045_nominal.png",
+    "contador_llegadas": 4
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-010",
+  "fields": {
+    "nombre": "RPT POLIGONOS CANELA Y OVALLE - LLOO",
+    "lat_nominal": -31.24956,
+    "lon_nominal": -71.351427,
+    "altura": "24",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-010_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-011",
+  "fields": {
+    "nombre": "CANELA - EL TOME- LLOO",
+    "lat_nominal": -31.307352,
+    "lon_nominal": -71.495904,
+    "altura": "18",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-011_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-013",
+  "fields": {
+    "nombre": "CANELA - ESPIRITU SANTO - LLOO",
+    "lat_nominal": -31.189563,
+    "lon_nominal": -71.413477,
+    "altura": "30",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-013_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-017",
+  "fields": {
+    "nombre": "CANELA - LA CORTADERA - LLOO",
+    "lat_nominal": -31.251933,
+    "lon_nominal": -71.450391,
+    "altura": "36",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-017_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-024",
+  "fields": {
+    "nombre": "CANELA - LAS TRANCAS - LLOO",
+    "lat_nominal": -31.384999,
+    "lon_nominal": -71.30134,
+    "altura": "30",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-024_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-025",
+  "fields": {
+    "nombre": "CANELA - LOS PERALES - LLOO",
+    "lat_nominal": -31.190431,
+    "lon_nominal": -71.465009,
+    "altura": "18",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-025_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-026",
+  "fields": {
+    "nombre": "CANELA  - LOS POZOS - LLOO",
+    "lat_nominal": -31.349615,
+    "lon_nominal": -71.244219,
+    "altura": "60",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-026_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-036",
+  "fields": {
+    "nombre": "RPT QUILLAICILLO - LLOO",
+    "lat_nominal": -31.503535,
+    "lon_nominal": -71.232414,
+    "altura": "12",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "CANELA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-036_nominal.png",
+    "contador_llegadas": 3
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-037",
+  "fields": {
+    "nombre": "RPT ILLAPEL SANTA VIRGINIA - LLOO",
+    "lat_nominal": -31.546487,
+    "lon_nominal": -70.834424,
+    "altura": "12",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "CHOAPA",
+    "localidad": "ILLAPEL",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-037_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-061",
+  "fields": {
+    "nombre": "LA HIGUERA - EL TEMBLADOR - LLOO",
+    "lat_nominal": -29.478586,
+    "lon_nominal": -71.305405,
+    "altura": "42",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "ELQUI",
+    "localidad": "LA HIGUERA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-077",
+  "fields": {
+    "nombre": "COMBARBALA - LA INVERNADA - LLOO",
+    "lat_nominal": -31.135715,
+    "lon_nominal": -70.800661,
+    "altura": "24",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "COMBARBALÁ",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-084",
+  "fields": {
+    "nombre": "LA VARIOLA Y LAGUNA VERDE - LLOO",
+    "lat_nominal": -30.904479,
+    "lon_nominal": -70.951944,
+    "altura": "18",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "MONTE PATRIA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-092",
+  "fields": {
+    "nombre": "OVALLE - ALGARROBO DE HORNILLOS - LLOO",
+    "lat_nominal": -31.135996,
+    "lon_nominal": -71.515519,
+    "altura": "30",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "OVALLE",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-092_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-094",
+  "fields": {
+    "nombre": "RPT PARQUE EOLICO ARRAYAN - LLOO",
+    "lat_nominal": -30.548017,
+    "lon_nominal": -71.696497,
+    "altura": "12",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "COQUIMBO",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-098",
+  "fields": {
+    "nombre": "LA CALERA Y EL RINCON - LLOO",
+    "lat_nominal": -30.819205,
+    "lon_nominal": -71.395085,
+    "altura": "42",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "OVALLE",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-098_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-105",
+  "fields": {
+    "nombre": "OVALLE - QUEBRADA SECA DE SOTAQUÍ - LLOO",
+    "lat_nominal": -30.609262,
+    "lon_nominal": -71.050335,
+    "altura": "24",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "OVALLE",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-117",
+  "fields": {
+    "nombre": "PUNITAQUI - EL DIVISADERO - LLOO",
+    "lat_nominal": -30.814839,
+    "lon_nominal": -71.14901,
+    "altura": "60",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "PUNITAQUI",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/04-117_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "04-123",
+  "fields": {
+    "nombre": "RIO HURTADO - LA HUERTA - LLOO",
+    "lat_nominal": -30.458155,
+    "lon_nominal": -70.849925,
+    "altura": "36",
+    "provincia": "REGIÓN DE COQUIMBO",
+    "municipio": "LIMARÍ",
+    "localidad": "RÍO HURTADO",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "05-005",
+  "fields": {
+    "nombre": "PETORCA - FRUTILLAR - LLOO",
+    "lat_nominal": -32.173822,
+    "lon_nominal": -71.073004,
+    "altura": "36",
+    "provincia": "REGIÓN DE VALPARAÍSO",
+    "municipio": "PETORCA",
+    "localidad": "PETORCA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/05-005_nominal.png",
+    "contador_llegadas": 6
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "06-010",
+  "fields": {
+    "nombre": "MARCHIHUE - SAN MIGUEL DE LAS PALMAS - LLOO",
+    "lat_nominal": -34.422057,
+    "lon_nominal": -71.783125,
+    "altura": "54",
+    "provincia": "REGIÓN DEL LIBERTADOR GENERAL BERNARDO O'HIGGINS",
+    "municipio": "CARDENAL CARO",
+    "localidad": "MARCHIHUE",
+    "empresa": 5,
+    "usuario": 38,
+    "img_google": "imgs_gmap/06-010_nominal.png",
+    "contador_llegadas": 6
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "06-030",
+  "fields": {
+    "nombre": "PERALILLO - LOS MAYOS - LLOO",
+    "lat_nominal": -34.534383,
+    "lon_nominal": -71.566067,
+    "altura": "42",
+    "provincia": "REGIÓN DEL LIBERTADOR GENERAL BERNARDO O'HIGGINS",
+    "municipio": "COLCHAGUA",
+    "localidad": "PUMANQUE",
+    "empresa": 5,
+    "usuario": 38,
+    "img_google": "imgs_gmap/06-030_nominal.png",
+    "contador_llegadas": 4
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-002",
+  "fields": {
+    "nombre": "EL ARENAL Y CAMARICO - LLOO",
+    "lat_nominal": -35.901283,
+    "lon_nominal": -72.203604,
+    "altura": "42",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "CAUQUENES",
+    "localidad": "CAUQUENES",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-006",
+  "fields": {
+    "nombre": "CAUQUENES - LIUCURA Y SAN PEDRO DE ARMEGOL - LLOO",
+    "lat_nominal": -36.184059,
+    "lon_nominal": -72.129492,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "CAUQUENES",
+    "localidad": "CAUQUENES",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-020",
+  "fields": {
+    "nombre": "RANGUILI Y LOS COIPOS - LLOO",
+    "lat_nominal": -34.916488,
+    "lon_nominal": -71.664725,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "CURICÓ",
+    "localidad": "HUALAÑÉ",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-026",
+  "fields": {
+    "nombre": "SAGRADA FAMILIA - EL DURAZNO - LLOO",
+    "lat_nominal": -35.180584,
+    "lon_nominal": -71.647468,
+    "altura": "36",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "CURICÓ",
+    "localidad": "SAGRADA FAMILIA",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-032",
+  "fields": {
+    "nombre": "RPT COLBUN EL MELADO - LLOO",
+    "lat_nominal": -35.947143,
+    "lon_nominal": -70.987823,
+    "altura": "12",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "---",
+    "localidad": "COLBÚN",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-035",
+  "fields": {
+    "nombre": "COLBUN - LOS AVELLANOS - LLOO",
+    "lat_nominal": -35.844401,
+    "lon_nominal": -71.291686,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "LINARES",
+    "localidad": "COLBÚN",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-051",
+  "fields": {
+    "nombre": "VILLEGAS Y POTRERO GRANDE - LLOO",
+    "lat_nominal": -36.277159,
+    "lon_nominal": -71.305742,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "LINARES",
+    "localidad": "LONGAVÍ",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-053",
+  "fields": {
+    "nombre": "SANTA ELENA Y VILLEGAS - LLOO",
+    "lat_nominal": -36.190571,
+    "lon_nominal": -71.462202,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "LINARES",
+    "localidad": "LONGAVÍ",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-082",
+  "fields": {
+    "nombre": "EMPEDRADO - RAYENCO - LLOO",
+    "lat_nominal": -35.496655,
+    "lon_nominal": -72.271776,
+    "altura": "48",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "TALCA",
+    "localidad": "EMPEDRADO",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-083",
+  "fields": {
+    "nombre": "UNIHUE Y SAN JOSE - LLOO",
+    "lat_nominal": -35.69631,
+    "lon_nominal": -72.191028,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "TALCA",
+    "localidad": "EMPEDRADO",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-089",
+  "fields": {
+    "nombre": "PENCAHUE - LA PENA - LLOO",
+    "lat_nominal": -35.211223,
+    "lon_nominal": -71.726542,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "TALCA",
+    "localidad": "PENCAHUE",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-096",
+  "fields": {
+    "nombre": "TUNHUAO Y GONZALEZ BASTIAS - LLOO",
+    "lat_nominal": -35.420098,
+    "lon_nominal": -71.967914,
+    "altura": "60",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "TALCA",
+    "localidad": "PENCAHUE",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "imgs_gmap/07-096_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "07-112",
+  "fields": {
+    "nombre": "LAGUNA DEL MAULE - SAN CLEMENTE - LLOO",
+    "lat_nominal": -36.005748,
+    "lon_nominal": -70.557196,
+    "altura": "24",
+    "provincia": "REGIÓN DEL MAULE",
+    "municipio": "TALCA",
+    "localidad": "SAN CLEMENTE",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-020",
+  "fields": {
+    "nombre": "CURANILAHUE - BAJO LOS RIOS - LLOO",
+    "lat_nominal": -37.452628,
+    "lon_nominal": -73.069635,
+    "altura": "60",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "ARAUCO",
+    "localidad": "CURANILAHUE",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-025",
+  "fields": {
+    "nombre": "CURANILAHUE - TRONGOL ALTO - LLOO",
+    "lat_nominal": -37.56406,
+    "lon_nominal": -73.175212,
+    "altura": "72",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "ARAUCO",
+    "localidad": "CURANILAHUE",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-040",
+  "fields": {
+    "nombre": "ISLA MOCHA SUR SECTOR REMOTIZADO - LLOO",
+    "lat_nominal": -38.358329,
+    "lon_nominal": -73.900075,
+    "altura": "30",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "ARAUCO",
+    "localidad": "LEBU",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-048",
+  "fields": {
+    "nombre": "RPT ALTO BIO BIO - LLOO",
+    "lat_nominal": -38.000177,
+    "lon_nominal": -71.310107,
+    "altura": "36",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "---",
+    "localidad": "ALTO BIOBÍO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-052",
+  "fields": {
+    "nombre": "ALTO BIOBIO - QUEPUCA RALCO - LLOO",
+    "lat_nominal": -38.024854,
+    "lon_nominal": -71.470101,
+    "altura": "60",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "BIOBÍO",
+    "localidad": "ALTO BIOBÍO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-056",
+  "fields": {
+    "nombre": "ANTUCO - CANCHAS DE SKI - LLOO",
+    "lat_nominal": -37.384227,
+    "lon_nominal": -71.379184,
+    "altura": "18",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "BIOBÍO",
+    "localidad": "ANTUCO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-069",
+  "fields": {
+    "nombre": "QUILACO - BELLAVISTA - LLOO",
+    "lat_nominal": -37.797908,
+    "lon_nominal": -71.931287,
+    "altura": "30",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "BIOBÍO",
+    "localidad": "QUILACO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-074",
+  "fields": {
+    "nombre": "QUILLECO - SALTO DEL PERRO - LLOO",
+    "lat_nominal": -37.506477,
+    "lon_nominal": -71.773314,
+    "altura": "60",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "BIOBÍO",
+    "localidad": "QUILLECO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-091",
+  "fields": {
+    "nombre": "PALIHUE RELY Y LA HUERTA - LLOO",
+    "lat_nominal": -37.304988,
+    "lon_nominal": -72.766139,
+    "altura": "36",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "CONCEPCIÓN",
+    "localidad": "SANTA JUANA",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-132",
+  "fields": {
+    "nombre": "TAIMO Y SANTA CAROLINA - LLOO",
+    "lat_nominal": -36.238248,
+    "lon_nominal": -72.591383,
+    "altura": "42",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "ÑUBLE",
+    "localidad": "QUIRIHUE",
+    "empresa": 6,
+    "usuario": 31,
+    "img_google": "imgs_gmap/08-132_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-137",
+  "fields": {
+    "nombre": "SAN FABIAN - LOS PUQUIOS - LLOO",
+    "lat_nominal": -36.612051,
+    "lon_nominal": -71.458302,
+    "altura": "60",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "ÑUBLE",
+    "localidad": "COIHUECO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-139",
+  "fields": {
+    "nombre": "RPT PICHIRRINCON - LLOO",
+    "lat_nominal": -36.593178,
+    "lon_nominal": -71.251753,
+    "altura": "24",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "---",
+    "localidad": "SAN FABIÁN",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "08-151",
+  "fields": {
+    "nombre": "YUNGAY - CALABOZO - LLOO",
+    "lat_nominal": -37.023194,
+    "lon_nominal": -71.59337,
+    "altura": "12",
+    "provincia": "REGIÓN DEL BIOBÍO",
+    "municipio": "ÑUBLE",
+    "localidad": "YUNGAY",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-007",
+  "fields": {
+    "nombre": "CARAHUE - LAS NOCHAS - LLOO",
+    "lat_nominal": -38.564546,
+    "lon_nominal": -73.327053,
+    "altura": "72",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "CARAHUE",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-009",
+  "fields": {
+    "nombre": "CARAHUE - MATTE Y SANCHEZ - LLOO",
+    "lat_nominal": -38.52445,
+    "lon_nominal": -73.290065,
+    "altura": "42",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "CARAHUE",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-010",
+  "fields": {
+    "nombre": "CARAHUE - SAN JUAN DE TROVOLHUE - LLOO",
+    "lat_nominal": -38.599103,
+    "lon_nominal": -73.365613,
+    "altura": "72",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "CARAHUE",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-018",
+  "fields": {
+    "nombre": "VILLARRICA - COLIHUEPI - LLOO",
+    "lat_nominal": -38.876637,
+    "lon_nominal": -71.828473,
+    "altura": "48",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "LONCOCHE",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "imgs_gmap/09-018_nominal.png",
+    "contador_llegadas": 3
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-025",
+  "fields": {
+    "nombre": "CURARREHUE - LA FRONTERA - LLOO",
+    "lat_nominal": -39.113271,
+    "lon_nominal": -71.449664,
+    "altura": "42",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "CURARREHUE",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-032",
+  "fields": {
+    "nombre": "LOS SAUCES - LA ESTRELLA DE ALBOYANCO - LLOO",
+    "lat_nominal": -39.330588,
+    "lon_nominal": -71.509694,
+    "altura": "48",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "LOS SAUCES",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-035",
+  "fields": {
+    "nombre": "RPT  REIGOLIL - LLOO",
+    "lat_nominal": -39.075441,
+    "lon_nominal": -71.476688,
+    "altura": "36",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "CURARREHUE",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-039",
+  "fields": {
+    "nombre": "ILOHUE REPOCURA Y CHACAICO - LLOO",
+    "lat_nominal": -38.468982,
+    "lon_nominal": -72.894756,
+    "altura": "60",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "GALVARINO",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-041",
+  "fields": {
+    "nombre": "GALVARINO - LA COLONIA - LLOO",
+    "lat_nominal": -38.423045,
+    "lon_nominal": -72.846481,
+    "altura": "60",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "GALVARINO",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "imgs_gmap/09-041_nominal.png",
+    "contador_llegadas": 12
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-049",
+  "fields": {
+    "nombre": "GALVARINO - TRAHUENQUILLE - LLOO",
+    "lat_nominal": -38.430293,
+    "lon_nominal": -72.905937,
+    "altura": "60",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "GALVARINO",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-056",
+  "fields": {
+    "nombre": "GORBEA - MANTAHUE - LLOO",
+    "lat_nominal": -39.227972,
+    "lon_nominal": -72.77585,
+    "altura": "42",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "GORBEA",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "imgs_gmap/09-056_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-059",
+  "fields": {
+    "nombre": "LONCOCHE - ANCAPULLI - LLOO",
+    "lat_nominal": -39.286723,
+    "lon_nominal": -72.795087,
+    "altura": "54",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "LONCOCHE",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "imgs_gmap/09-059_nominal.png",
+    "contador_llegadas": 8
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-077",
+  "fields": {
+    "nombre": "NUEVA IMPERIAL NORTE",
+    "lat_nominal": -38.712387,
+    "lon_nominal": -72.857035,
+    "altura": "36",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "NUEVA IMPERIAL",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-083",
+  "fields": {
+    "nombre": "CHAPOD Y MAQUEHUE - LLOO",
+    "lat_nominal": -38.822402,
+    "lon_nominal": -72.734535,
+    "altura": "42",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "PADRE LAS CASAS",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "imgs_gmap/09-083_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-115",
+  "fields": {
+    "nombre": "SAAVEDRA - TEMO - LLOO",
+    "lat_nominal": -38.817746,
+    "lon_nominal": -73.238156,
+    "altura": "42",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "SAAVEDRA",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-137",
+  "fields": {
+    "nombre": "LOS SAUCES ALTO Y PUENTE BASAS CHICO - LLOO",
+    "lat_nominal": -37.897431,
+    "lon_nominal": -72.581189,
+    "altura": "42",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "CAUTÍN",
+    "localidad": "CURARREHUE",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "imgs_gmap/09-137_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-142",
+  "fields": {
+    "nombre": "ANGOL - LA FONTANA - LLOO",
+    "lat_nominal": -37.744037,
+    "lon_nominal": -72.891293,
+    "altura": "60",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "ANGOL",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "imgs_gmap/09-142_nominal.png",
+    "contador_llegadas": 5
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-149",
+  "fields": {
+    "nombre": "COLLIPULLI - EL AMARGO - LLOO",
+    "lat_nominal": -38.08423,
+    "lon_nominal": -71.862817,
+    "altura": "60",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "COLLIPULLI",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-158",
+  "fields": {
+    "nombre": "ERCILLA - BUTACO - LLOO",
+    "lat_nominal": -38.088299,
+    "lon_nominal": -72.392138,
+    "altura": "80",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "ERCILLA",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "imgs_gmap/09-158_nominal.png",
+    "contador_llegadas": 4
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-170",
+  "fields": {
+    "nombre": "GALLETUE Y PICHIPEHUENCO - LLOO",
+    "lat_nominal": -38.711512,
+    "lon_nominal": -71.237838,
+    "altura": "48",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "LONQUIMAY",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-172",
+  "fields": {
+    "nombre": "RPT POLIGONOS LONQUIMAY - LLOO",
+    "lat_nominal": -38.477641,
+    "lon_nominal": -71.236371,
+    "altura": "24",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "LONQUIMAY",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-178",
+  "fields": {
+    "nombre": "RPT RANQUIL - LLOO",
+    "lat_nominal": -38.244651,
+    "lon_nominal": -71.232481,
+    "altura": "18",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "LONQUIMAY",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-187",
+  "fields": {
+    "nombre": "LOS SAUCES - SAN FRANCISCO - LLOO",
+    "lat_nominal": -37.90755,
+    "lon_nominal": -72.713877,
+    "altura": "60",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "LOS SAUCES",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "imgs_gmap/09-187_nominal.png",
+    "contador_llegadas": 8
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "09-197",
+  "fields": {
+    "nombre": "PUREN - COYANCAHUIN - LLOO",
+    "lat_nominal": -37.945396,
+    "lon_nominal": -73.066059,
+    "altura": "60",
+    "provincia": "REGIÓN DE LA ARAUCANÍA",
+    "municipio": "MALLECO",
+    "localidad": "PURÉN",
+    "empresa": 9,
+    "usuario": 42,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-006",
+  "fields": {
+    "nombre": "ESCUELA RURAL CAPILLA DE LOURDES - ISLA CHELIN - LLOO",
+    "lat_nominal": -42.571591,
+    "lon_nominal": -73.515662,
+    "altura": "36",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "CHILOÉ",
+    "localidad": "CASTRO",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-030",
+  "fields": {
+    "nombre": "DALCAHUE - CARIHUEICO - LLOO",
+    "lat_nominal": -42.264226,
+    "lon_nominal": -73.808562,
+    "altura": "42",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "CHILOÉ",
+    "localidad": "DALCAHUE",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-053",
+  "fields": {
+    "nombre": "LUMACO - RIO BUENO - LLOO",
+    "lat_nominal": -40.469139,
+    "lon_nominal": -72.943263,
+    "altura": "54",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "RANCO",
+    "localidad": "RÍO BUENO",
+    "empresa": 9,
+    "usuario": 41,
+    "img_google": "imgs_gmap/10-053_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-075",
+  "fields": {
+    "nombre": "QUINCHAO - ISLA APIAO - LLOO",
+    "lat_nominal": -42.601216,
+    "lon_nominal": -73.218165,
+    "altura": "48",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "CHILOÉ",
+    "localidad": "QUINCHAO",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "imgs_gmap/10-075_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-076",
+  "fields": {
+    "nombre": "ISLA CAGUACHI LLOO EX TREGUACO MELA LLOO",
+    "lat_nominal": -42.488471,
+    "lon_nominal": -73.266134,
+    "altura": "36",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "CHILOÉ",
+    "localidad": "QUINCHAO",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "imgs_gmap/10-076_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-082",
+  "fields": {
+    "nombre": "CALBUCO - ISLA GUAR - LLOO",
+    "lat_nominal": -41.691303,
+    "lon_nominal": -72.954451,
+    "altura": "48",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "LLANQUIHUE",
+    "localidad": "CALBUCO",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-085",
+  "fields": {
+    "nombre": "CALBUCO - ISLA TAUTIL - LLOO",
+    "lat_nominal": -41.721922,
+    "lon_nominal": -73.051727,
+    "altura": "48",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "LLANQUIHUE",
+    "localidad": "CALBUCO",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-175",
+  "fields": {
+    "nombre": "RPT PURRANQUE SAN PEDRO - LLOO",
+    "lat_nominal": -40.944182,
+    "lon_nominal": -73.863443,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "OSORNO",
+    "localidad": "PURRANQUE",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-176",
+  "fields": {
+    "nombre": "PUYEHUE - AGUAS CALIENTES - LLOO",
+    "lat_nominal": -40.739109,
+    "lon_nominal": -72.298945,
+    "altura": "36",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "OSORNO",
+    "localidad": "PUYEHUE",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-190",
+  "fields": {
+    "nombre": "SAN JUAN DE LA COSTA - CASA DE LATA - LLOO",
+    "lat_nominal": -40.526074,
+    "lon_nominal": -73.652925,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "OSORNO",
+    "localidad": "SAN JUAN DE LA COSTA",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-216",
+  "fields": {
+    "nombre": "CHAITEN - CASA DE PESCA - LLOO",
+    "lat_nominal": -42.583926,
+    "lon_nominal": -72.828217,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "PALENA",
+    "localidad": "CHAITÉN",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-218",
+  "fields": {
+    "nombre": "CHAITEN - CHUMELDEN - LLOO",
+    "lat_nominal": -42.518727,
+    "lon_nominal": -72.793012,
+    "altura": "48",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "PALENA",
+    "localidad": "CHAITÉN",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-221",
+  "fields": {
+    "nombre": "CHAITEN - ISLA CHULIN - LLOO",
+    "lat_nominal": -42.618205,
+    "lon_nominal": -73.030141,
+    "altura": "54",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "PALENA",
+    "localidad": "CHAITÉN",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-228",
+  "fields": {
+    "nombre": "CHAITEN - RENIHUE - LLOO",
+    "lat_nominal": -42.582259,
+    "lon_nominal": -72.499634,
+    "altura": "42",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "PALENA",
+    "localidad": "CHAITÉN",
+    "empresa": 9,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-229",
+  "fields": {
+    "nombre": "CHAITEN - VILLA VANGUARDIA - LLOO",
+    "lat_nominal": -43.683945,
+    "lon_nominal": -72.31217,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "PALENA",
+    "localidad": "CHAITÉN",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-235",
+  "fields": {
+    "nombre": "RPT HORNOPIREN - LLOO",
+    "lat_nominal": -42.374828,
+    "lon_nominal": -72.411578,
+    "altura": "18",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "PALENA",
+    "localidad": "HUALAIHUE",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "10-239",
+  "fields": {
+    "nombre": "PICHICOLO E ISLA LLANCHID - LLOO",
+    "lat_nominal": -42.013374,
+    "lon_nominal": -72.59495,
+    "altura": "48",
+    "provincia": "REGIÓN DE LOS LAGOS",
+    "municipio": "PALENA",
+    "localidad": "HUALAIHUÉ",
+    "empresa": 5,
+    "usuario": null,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-003",
+  "fields": {
+    "nombre": "RPT MANIHUALES - LLOO",
+    "lat_nominal": -44.96038,
+    "lon_nominal": -72.171222,
+    "altura": "42",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "---",
+    "localidad": "AYSÉN",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-007",
+  "fields": {
+    "nombre": "AYSEN - LAGO PORTALES - LLOO",
+    "lat_nominal": -45.54212,
+    "lon_nominal": -72.550297,
+    "altura": "48",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "AYSÉN",
+    "localidad": "AYSÉN",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-011",
+  "fields": {
+    "nombre": "AYSEN - RIO EXPLORADORES - LLOO",
+    "lat_nominal": -46.337764,
+    "lon_nominal": -73.384909,
+    "altura": "30",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "AYSÉN",
+    "localidad": "AYSÉN",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-015",
+  "fields": {
+    "nombre": "RPT COCHRANE - LLOO",
+    "lat_nominal": -47.153942,
+    "lon_nominal": -72.806975,
+    "altura": "42",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "---",
+    "localidad": "COCHRANE",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/11-015_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-017",
+  "fields": {
+    "nombre": "COCHRANE - LAGO ESMERALDA - LLOO",
+    "lat_nominal": -47.332011,
+    "lon_nominal": -72.587981,
+    "altura": "30",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "CAPITÁN PRAT",
+    "localidad": "COCHRANE",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-020",
+  "fields": {
+    "nombre": "TORTEL - FIORDO STEFFENS - LLOO",
+    "lat_nominal": -47.623133,
+    "lon_nominal": -73.66076,
+    "altura": "18",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "CAPITÁN PRAT",
+    "localidad": "TORTEL",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/11-020_nominal.png",
+    "contador_llegadas": 3
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-022",
+  "fields": {
+    "nombre": "TORTEL - RIO BAKER - LLOO",
+    "lat_nominal": -47.775209,
+    "lon_nominal": -73.305897,
+    "altura": "18",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "CAPITÁN PRAT",
+    "localidad": "TORTEL",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-024",
+  "fields": {
+    "nombre": "RPT COYHAIQUE ALTO - LLOO",
+    "lat_nominal": -45.481757,
+    "lon_nominal": -71.644372,
+    "altura": "30",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "---",
+    "localidad": "COYHAIQUE",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-032",
+  "fields": {
+    "nombre": "LAGO VERDE - CISNES MEDIO - LLOO",
+    "lat_nominal": -44.720068,
+    "lon_nominal": -72.145407,
+    "altura": "60",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "COYHAIQUE",
+    "localidad": "LAGO VERDE",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-035",
+  "fields": {
+    "nombre": "RPT LAS LLAVES",
+    "lat_nominal": -46.565411,
+    "lon_nominal": -72.209446,
+    "altura": "54",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "---",
+    "localidad": "Aysén",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-049",
+  "fields": {
+    "nombre": "RPT CERRO CAJON 2 - LLOO",
+    "lat_nominal": -46.1236,
+    "lon_nominal": -72.546885,
+    "altura": "36",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "---",
+    "localidad": "RÍO IBÁÑEZ",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-051",
+  "fields": {
+    "nombre": "RIO IBANEZ - LAGO TRANQUILO - LLOO",
+    "lat_nominal": -46.630263,
+    "lon_nominal": -72.791495,
+    "altura": "42",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "GENERAL CARRERA",
+    "localidad": "RÍO IBÁÑEZ",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "11-055",
+  "fields": {
+    "nombre": "RIO EL CLARO - LAGO LAS ARDILLAS - LLOO",
+    "lat_nominal": -46.252193,
+    "lon_nominal": -72.071964,
+    "altura": "60",
+    "provincia": "REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO",
+    "municipio": "GENERAL CARRERA",
+    "localidad": "RÍO IBÁÑEZ",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "12-004",
+  "fields": {
+    "nombre": "LAGUNA BLANCA - ENTRE VIENTOS - LLOO",
+    "lat_nominal": -52.788807,
+    "lon_nominal": -71.215729,
+    "altura": "60",
+    "provincia": "REGIÓN DE MAGALLANES Y DE LA ANTÁRTICA CHILENA",
+    "municipio": "MAGALLANES",
+    "localidad": "PUNTA ARENAS",
+    "empresa": 6,
+    "usuario": 30,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "12-015",
+  "fields": {
+    "nombre": "RIO VERDE - EL SALTO - LLOO",
+    "lat_nominal": -52.563104,
+    "lon_nominal": -71.653858,
+    "altura": "42",
+    "provincia": "REGIÓN DE MAGALLANES Y DE LA ANTÁRTICA CHILENA",
+    "municipio": "MAGALLANES",
+    "localidad": "RÍO VERDE",
+    "empresa": 6,
+    "usuario": 30,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "12-024",
+  "fields": {
+    "nombre": "TIMAUKEL - RUSSFIN - LLOO",
+    "lat_nominal": -53.753915,
+    "lon_nominal": -69.206909,
+    "altura": "60",
+    "provincia": "REGIÓN DE MAGALLANES Y DE LA ANTÁRTICA CHILENA",
+    "municipio": "TIERRA DEL FUEGO",
+    "localidad": "TIMAUKEL",
+    "empresa": 6,
+    "usuario": 30,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "13-001",
+  "fields": {
+    "nombre": "LAMPA - CHICAUMA - LLOO",
+    "lat_nominal": -33.233801,
+    "lon_nominal": -70.90971,
+    "altura": "18",
+    "provincia": "REGIÓN METROPOLITANA DE SANTIAGO",
+    "municipio": "CHACABUCO",
+    "localidad": "LAMPA",
+    "empresa": 5,
+    "usuario": 38,
+    "img_google": "imgs_gmap/13-001_nominal.png",
+    "contador_llegadas": 6
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "13-012",
+  "fields": {
+    "nombre": "RPT LO VALDES Y BANOS MORALES - LLOO",
+    "lat_nominal": -33.829039,
+    "lon_nominal": -70.062101,
+    "altura": "24",
+    "provincia": "REGIÓN METROPOLITANA DE SANTIAGO",
+    "municipio": "---",
+    "localidad": "SAN JOSE DE MAIPO",
+    "empresa": 5,
+    "usuario": 38,
+    "img_google": "imgs_gmap/13-012_nominal.png",
+    "contador_llegadas": 5
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-002",
+  "fields": {
+    "nombre": "CHABRANCO Y FOLILCO - LLOO",
+    "lat_nominal": -40.234591,
+    "lon_nominal": -71.954215,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "RANCO",
+    "localidad": "FUTRONO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/14-002_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-026",
+  "fields": {
+    "nombre": "EL ARENAL Y PENINSULA ILLAGUAPI - LLOO",
+    "lat_nominal": -40.271052,
+    "lon_nominal": -72.228427,
+    "altura": "48",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "RANCO",
+    "localidad": "LAGO RANCO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/14-026_nominal.png",
+    "contador_llegadas": 2
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-027",
+  "fields": {
+    "nombre": "LAGO RANCO - HUEIMEN - LLOO",
+    "lat_nominal": -40.356839,
+    "lon_nominal": -72.455383,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "RANCO",
+    "localidad": "LAGO RANCO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/14-027_nominal.png",
+    "contador_llegadas": 1
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-029",
+  "fields": {
+    "nombre": "LAGO RANCO - LA JUNTA - LLOO",
+    "lat_nominal": -40.254762,
+    "lon_nominal": -72.655938,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "RANCO",
+    "localidad": "LAGO RANCO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/14-029_nominal.png",
+    "contador_llegadas": 10
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-033",
+  "fields": {
+    "nombre": "QUIRRASCO Y RININAHUE CERRO - LLOO",
+    "lat_nominal": -40.341305,
+    "lon_nominal": -72.117694,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "RANCO",
+    "localidad": "LAGO RANCO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/14-033_nominal.png",
+    "contador_llegadas": 9
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-064",
+  "fields": {
+    "nombre": "LANCO - HUEIMA - LLOO",
+    "lat_nominal": -39.493793,
+    "lon_nominal": -72.700625,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "VALDIVIA",
+    "localidad": "LANCO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-070",
+  "fields": {
+    "nombre": "LOS LAGOS - FLOR DEL LAGO - LLOO",
+    "lat_nominal": -39.839268,
+    "lon_nominal": -72.34542,
+    "altura": "82",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "VALDIVIA",
+    "localidad": "LOS LAGOS",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-084",
+  "fields": {
+    "nombre": "MAFIL - MULPUN - LLOO",
+    "lat_nominal": -39.778244,
+    "lon_nominal": -72.964607,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "VALDIVIA",
+    "localidad": "VALDIVIA",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-093",
+  "fields": {
+    "nombre": "MARIQUINA - LLENEHUE - LLOO",
+    "lat_nominal": -39.60506,
+    "lon_nominal": -73.277357,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "VALDIVIA",
+    "localidad": "MARIQUINA",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-110",
+  "fields": {
+    "nombre": "PAILLACO - SANTA ROSA - LLOO",
+    "lat_nominal": -40.161503,
+    "lon_nominal": -72.594844,
+    "altura": "48",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "VALDIVIA",
+    "localidad": "PAILLACO",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "imgs_gmap/14-110_nominal_eeIyy4v.png",
+    "contador_llegadas": 5
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-119",
+  "fields": {
+    "nombre": "PANGUIPULLI - LLONQUEN - LLOO",
+    "lat_nominal": -39.669903,
+    "lon_nominal": -71.906738,
+    "altura": "42",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "VALDIVIA",
+    "localidad": "PANGUIPULLI",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-121",
+  "fields": {
+    "nombre": "RPT PASO FRONTERIZO HUA HUM - LLOO",
+    "lat_nominal": -40.08974,
+    "lon_nominal": -71.696408,
+    "altura": "42",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "---",
+    "localidad": "PANGUIPULLI",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "14-127",
+  "fields": {
+    "nombre": "VALDIVIA - CUFEO - LLOO",
+    "lat_nominal": -39.965268,
+    "lon_nominal": -73.076444,
+    "altura": "60",
+    "provincia": "REGIÓN DE LOS RÍOS",
+    "municipio": "VALDIVIA",
+    "localidad": "VALDIVIA",
+    "empresa": 4,
+    "usuario": 28,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-001",
+  "fields": {
+    "nombre": "RPT CHAPISCA Y SORA - LLOO",
+    "lat_nominal": -18.370411,
+    "lon_nominal": -69.901951,
+    "altura": "12",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "---",
+    "localidad": "ARICA",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-003",
+  "fields": {
+    "nombre": "RPT ARICA - MOLINOS - LLOO",
+    "lat_nominal": -18.382543,
+    "lon_nominal": -69.94804,
+    "altura": "12",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "---",
+    "localidad": "ARICA",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-006",
+  "fields": {
+    "nombre": "AV SIMON BOLIVAR R11 - ARICA 2 - LLOO",
+    "lat_nominal": -18.355221,
+    "lon_nominal": -69.881103,
+    "altura": "24",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "ARICA",
+    "localidad": "ARICA",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-007",
+  "fields": {
+    "nombre": "ARICA - VALLE DE AZAPA ESTE 2 - LLOO",
+    "lat_nominal": -18.579974,
+    "lon_nominal": -70.001982,
+    "altura": "36",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "ARICA",
+    "localidad": "ARICA",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-009",
+  "fields": {
+    "nombre": "CAMARONES - GUANACAGUA - LLOO",
+    "lat_nominal": -18.820823,
+    "lon_nominal": -69.711345,
+    "altura": "24",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "ARICA",
+    "localidad": "CAMARONES",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-013",
+  "fields": {
+    "nombre": "CAMARONES - SAGUARA - LLOO",
+    "lat_nominal": -18.897879,
+    "lon_nominal": -69.493474,
+    "altura": "24",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "ARICA",
+    "localidad": "CAMARONES",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-017",
+  "fields": {
+    "nombre": "RPT GENERAL LAGOS Y ANCOLACANE - LLOO",
+    "lat_nominal": -17.844219,
+    "lon_nominal": -69.600878,
+    "altura": "48",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "---",
+    "localidad": "GENERAL LAGOS",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-021",
+  "fields": {
+    "nombre": "GENERAL LAGOS - GENERAL LAGOS - LLOO",
+    "lat_nominal": -17.654278,
+    "lon_nominal": -69.634599,
+    "altura": "24",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "PARINACOTA",
+    "localidad": "GENERAL LAGOS",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-029",
+  "fields": {
+    "nombre": "PUTRE ANCUTA",
+    "lat_nominal": -18.498405,
+    "lon_nominal": -69.152683,
+    "altura": "18",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "PARINACOTA",
+    "localidad": "PUTRE",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-031",
+  "fields": {
+    "nombre": "PUTRE - MURMUNTANI BAJO - LLOO",
+    "lat_nominal": -18.35082,
+    "lon_nominal": -69.554969,
+    "altura": "54",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "PARINACOTA",
+    "localidad": "PUTRE",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+},
+{
+  "model": "main.sitio",
+  "pk": "15-033",
+  "fields": {
+    "nombre": "PUTRE - PAQUISA - LLOO",
+    "lat_nominal": -18.696993,
+    "lon_nominal": -69.074801,
+    "altura": "24",
+    "provincia": "REGIÓN DE ARICA Y PARINACOTA",
+    "municipio": "PARINACOTA",
+    "localidad": "PUTRE",
+    "empresa": 4,
+    "usuario": 29,
+    "img_google": "",
+    "contador_llegadas": 0
+  }
+}
+]
