@@ -223,11 +223,10 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
                     'propietario_nombre_apellido',
                     'propietario_telf',
                     )
-    readonly_fields = ('propietario_tipo_persona',
+    readonly_fields = ('propietario_tipo_persona', 
                        'propietario_nombre_apellido',
                        'propietario_born',
                        'propietario_ci',
-                    #    'propietario_telf',
                        'propietario_direccion',
                        'propietario_estado_civil',
                        'propietario_email',
@@ -235,18 +234,8 @@ class RegistroPropietarioAdmin(admin.ModelAdmin):
                        'contacto_tel',
                        'contacto_email',
                        'contacto_relacion'
-                    ),
-    
-    # fields = ("__all__",)
-        # 'sitio',
-        # 'candidato',
-        # 'propietario_nombre_apellido',
-        # 'propietario_born',
-        # 'propietario_estado_civil',
-        # 'propietario_ci',
-        # 'propietario_telf',
-        # 'propietario_direccion',
-        # )
+                    )
+    list_editable = ('propietario_telf',)
 
 admin.site.register(RegistroPropietario, RegistroPropietarioAdmin)
 
@@ -383,7 +372,9 @@ class RegistroSitioAdmin(admin.ModelAdmin):
     list_display = ('candidato',
                     'usuario',
                     'sitio_fecha_chile',
-                    'sitio_descripcion',
+                    'sitio_lat',
+                    'sitio_lon',
+                    # 'sitio_descripcion',
                     )
     exclude = ('sitio',)
     # list_editable = ('sitio_descripcion', )

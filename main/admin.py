@@ -45,14 +45,6 @@ admin.site = MyAdminSite(name='myadmin')
 
 
 
-
-# class UserProfileAdmin(admin.ModelAdmin):
-#     pass
-# admin.site.register(UserProfile, UserProfileAdmin)
-
-
-
-
 # Formulario personalizado para UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
