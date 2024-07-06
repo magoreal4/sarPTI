@@ -391,7 +391,7 @@ class RegistroSitioAdmin(admin.ModelAdmin):
                     'sitio_lon',
                     # 'sitio_descripcion',
                     )
-    exclude = ('sitio',)
+    # exclude = ('sitio',)
     # list_editable = ('sitio_descripcion', )
     readonly_fields = ('sitio_fecha_chile', 'image_tag_img_google_dist_nominal', 'image_tag_img_google_sitio')
     # fields = ('candidato',
