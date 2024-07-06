@@ -48,7 +48,21 @@ def calcular_distancia_geopy(lat_1, lon_1, lat_2, lon_2):
     else:
         return None
 
+class EmpresaFilter(admin.SimpleListFilter):
+    title = 'empresa'
+    parameter_name = 'empresa'
 
+    def lookups(self, request, model_admin):
+        empresa_usuario = request.user.userprofile.empresa
+        if request.user.is_superuser or empresa_usuario.nombre == "PTI":
+            empresas = set([c.sitio.empresa for c in model_admin.model.objects.all()])
+            return [(emp.id, emp.nombre) for emp in empresas]
+        return []
+    
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(sitio__empresa__id=self.value())
+        return queryset
 
 
 # REGISTRO LLEGADA
@@ -110,11 +124,12 @@ class RegistroLlegadaAdmin(admin.ModelAdmin):
                     'usuario',
                     'status_llegada',
                     'fecha_llegada_chile',
-                    # 'imagen_thumbnail',
+                    # 'sitio',
                     )
+    # list_filter = (EmpresaFilter,)
     list_editable = ('status_llegada',)
     readonly_fields = ['image_tag', 'fecha_llegada_chile']
-    fields = (
+    fields = ('usuario',
         'candidato', 'status_llegada', 'fecha_llegada_chile', 'lat_llegada', 'lon_llegada', 'observaciones', 'imagen_llegada',
         'image_tag')
 
@@ -529,22 +544,8 @@ class RegistioElectricoAdmin(admin.ModelAdmin):
 admin.site.register(RegistioElectrico, RegistioElectricoAdmin)
 
 
-class EmpresaFilter(admin.SimpleListFilter):
-    title = 'empresa'
-    parameter_name = 'empresa'
 
-    def lookups(self, request, model_admin):
-        if request.user.is_superuser:
-            empresas = set([c.sitio.empresa for c in model_admin.model.objects.all()])
-            return [(emp.id, emp.nombre) for emp in empresas]
-        return []
     
-    def queryset(self, request, queryset):
-        if self.value():
-            return queryset.filter(sitio__empresa__id=self.value())
-        return queryset
-    
-from django.core.exceptions import PermissionDenied   
 # REGISTRO CAMPO
 class CandidatoAdmin(admin.ModelAdmin):
     user_model = None
@@ -554,7 +555,8 @@ class CandidatoAdmin(admin.ModelAdmin):
                     'sitio_empresa',  
                     'formatted_fecha_creacion'
                     )
-    list_filter = (EmpresaFilter,'sitio')
+    
+    list_filter = (EmpresaFilter,)
     inlines = [
         RegistroLlegadaInline,
         RegistroLocalidadInline,
@@ -573,13 +575,11 @@ class CandidatoAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
-        # empresa_usuario = request.user.userprofile.empresa
-        # if empresa_usuario.nombre == "PTI" or request.user.is_superuser:
-        #     return qs
-        #     # Suponiendo que 'Candidato' tiene un campo 'sitio' que está vinculado a 'Sitio'
-        # qs = qs.filter(sitio__usuario__userprofile__empresa=empresa_usuario)
-        return qs
-        
+        empresa_usuario = request.user.userprofile.empresa
+        if empresa_usuario.nombre == "PTI" or request.user.is_superuser:
+            return qs
+        else:
+            return qs.filter(sitio__usuario__userprofile__empresa=empresa_usuario)
 
     # CANDIDATO
     def formatted_fecha_creacion(self, obj):
@@ -604,31 +604,37 @@ class CandidatoAdmin(admin.ModelAdmin):
     candidato_empresa.short_description = 'Empresa - País'
 
     # DATOS PROYECTO
-    readonly_fields = (
-        'sitio_ID', 'candidato','sitio_nombre', 'sitio_altura',
-        'sitio_provincia', 'sitio_municipio', 'sitio_localidad',
-        'usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa',
-        'sitio_lat_nominal', 'sitio_lat_nominal_gms',
-        'sitio_lon_nominal', 'sitio_lon_nominal_gms',
-        'imagen_gmaps'
-    )
-
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.is_superuser:
+            # Si el usuario es superusuario, no incluye 'sitio_ID' ni 'candidato' como campos de solo lectura
+            return ('sitio_nombre', 'sitio_altura',
+                    'sitio_provincia', 'sitio_municipio', 'sitio_localidad',
+                    'usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa',
+                    'sitio_lat_nominal', 'sitio_lat_nominal_gms',
+                    'sitio_lon_nominal', 'sitio_lon_nominal_gms',
+                    'imagen_gmaps')
+        else:
+            # Para usuarios no superusuarios, todos estos campos son de solo lectura
+            return ('sitio_ID', 'candidato', 'sitio_nombre', 'sitio_altura',
+                    'sitio_provincia', 'sitio_municipio', 'sitio_localidad',
+                    'usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa',
+                    'sitio_lat_nominal', 'sitio_lat_nominal_gms',
+                    'sitio_lon_nominal', 'sitio_lon_nominal_gms',
+                    'imagen_gmaps')
+    
     fieldsets = (
         ('Datos de Proyecto', {
             'fields': (
-                
-                ('sitio_ID','candidato', 'sitio_nombre', 'sitio_altura'),
+                ('sitio', 'candidato', 'sitio_nombre', 'sitio_altura'),
                 ('sitio_provincia', 'sitio_municipio', 'sitio_localidad',),
                 ('usuario_nombre', 'usuario_user', 'usuario_telf', 'sitio_empresa'),
                 ('sitio_lat_nominal', 'sitio_lat_nominal_gms'),
                 ('sitio_lon_nominal', 'sitio_lon_nominal_gms'),
                 'imagen_gmaps',
             ),
-            # 'classes': ('collapse',),  # Hace este grupo colapsable
-            # 'description': ('Esta sección contiene <b>información detallada</b> sobre el sitio del proyecto.'
-            #                 ' Para más detalles, <a href="https://example.com">visita este enlace</a>.')
         }),
     )
+
 
     def get_llegada(self, obj):
         llegada = RegistroLlegada.objects.filter(candidato=obj).annotate(
